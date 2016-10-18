@@ -1,7 +1,7 @@
 package pl.wikihangman.core.arguments;
 
 /**
- * Set of application arguments extracted from command-line
+ * Set of application arguments
  * 
  * @author  Łukasz Szafirski
  */
@@ -11,17 +11,13 @@ public class ApplicationArguments {
     private final String password;
     
     /**
-     * @param arguments command-line arguments to be processed
-     * @throws pl.wikihangman.core.arguments.InvalidArgumentsExceptions
+     * 
+     * @param user      User's name
+     * @param password  User's password
      */
-    public ApplicationArguments(String[] arguments) throws InvalidArgumentsExceptions {
-        
-        if (arguments.length < 2) {
-            throw new InvalidArgumentsExceptions("Invalid number of arguments. Must be 2");
-        }
-        
-        user = arguments[0];
-        password = arguments[1];
+    public ApplicationArguments(String user, String password) {
+        this.user = user;
+        this.password = password;
     }
     
     /**
@@ -37,4 +33,6 @@ public class ApplicationArguments {
     public final String getPassword() {
         return password;
     }
+    
+    
 }
