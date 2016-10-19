@@ -1,6 +1,7 @@
 package pl.wikihangman.core.arguments;
 
 import java.io.InputStream;
+import java.util.Scanner;
 
 /**
  * {@code ArgumentsService} is responsible for extracting arguments from
@@ -9,6 +10,16 @@ import java.io.InputStream;
  * @author Łukasz Szafirski
  */
 public class ArgumentsService {
+    
+    /**
+     * Message printed when asking user for his name
+     */
+    private final String ASK_USER_NAME_MSG = "Username: ";
+    
+    /**
+     * Message printed when asking user for his password
+     */
+    private final String ASK_USER_PASSWORD_MSG = "Password: ";
     
     /**
      * @param arguments command-line arguments to be processed
@@ -28,11 +39,17 @@ public class ArgumentsService {
      * Reads application arguments from given stream
      * 
      * @param input Stream to be read from
-     * @return 
+     * @return Set of arguments
      */
     public ApplicationArguments read(InputStream input) {
         
         String user, password;
+        Scanner reader = new Scanner(input);
+        
+        System.out.print(ASK_USER_NAME_MSG);
+        user = reader.next();
+        System.out.print(ASK_USER_PASSWORD_MSG);
+        password = reader.next();
         
         return new ApplicationArguments(user, password);
     }
