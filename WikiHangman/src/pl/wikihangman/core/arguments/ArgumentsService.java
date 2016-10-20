@@ -48,8 +48,10 @@ public class ArgumentsService {
         
         System.out.print(ASK_USER_NAME_MSG);
         user = reader.next();
+        System.out.println();
         System.out.print(ASK_USER_PASSWORD_MSG);
         password = reader.next();
+        System.out.println();
         
         return new ApplicationArguments(user, password);
     }

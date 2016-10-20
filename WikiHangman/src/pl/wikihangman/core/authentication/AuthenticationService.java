@@ -41,31 +41,37 @@ public class AuthenticationService {
      * @param password  user's password
      * @return View of authenticated user
      * @throws AuthenticationException 
-     * @throws IOException
-     * @throws IndexOutOfBoundsException
+     * @throws pl.wikihangman.core.authentication.FileException 
      */
-    public User authenticate(String user, String password) throws NumberFormatException,
-            AuthenticationException, IOException, IndexOutOfBoundsException {
+    public User authenticate(String user, String password) throws
+            AuthenticationException, FileException {
         
-        FileInputStream in = new FileInputStream(dbPath);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-        boolean matched = false;
-        String line;
         Integer id = -1;
-        
-        while ((line = reader.readLine()) != null && !matched) {
-            String[] words = line.split(" ");
+            
+        try {
+            FileInputStream in = new FileInputStream(dbPath);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            boolean matched = false;
+            String line;
 
-            if (words[1].equals(user) && words[2].equals(password)) {
-                matched = true;
-                id = Integer.parseInt(words[0]);
+            while ((line = reader.readLine()) != null && !matched) {
+                String[] words = line.split(" ");
+
+                if (words[1].equals(user) && words[2].equals(password)) {
+                    matched = true;
+                    id = Integer.parseInt(words[0]);
+                }
             }
+
+            if (!matched) {
+                throw new AuthenticationException("Invalid credentials");
+            }
+        } catch(IOException | IndexOutOfBoundsException | NumberFormatException 
+                fileExceptionCause) {
+            throw new FileException("Database file exception occured. See cause for more detials",
+                    fileExceptionCause);
         }
         
-        if (!matched) {
-            throw new AuthenticationException("Invalid credentials");
-        }
-        
-        return new User(id, line, password);
+        return new User(id, user, password);
     }  
 }

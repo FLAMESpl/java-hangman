@@ -7,7 +7,10 @@ package pl.wikihangman.core.authentication;
  */
 public class User {
     
-    int id;
+    /**
+     * User's id cannot be updated.
+     */
+    final int id;
     String name;
     String password;
     
@@ -22,6 +25,30 @@ public class User {
         this.id = id;
         this.name = name;
         this.password = password;
+    }
+    
+    /**
+     * 
+     * @return User's id.
+     */
+    public final int getId() {
+        return id;
+    }
+    
+    /**
+     * 
+     * @return  User's name.
+     */
+    public String getName() {
+        return name;
+    }
+    
+    /**
+     * 
+     * @return User's password.
+     */
+    public String getPassword() {
+        return password;
     }
     
 }
