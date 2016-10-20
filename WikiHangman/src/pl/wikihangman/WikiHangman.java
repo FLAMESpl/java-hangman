@@ -21,7 +21,6 @@ public class WikiHangman {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
         ArgumentsService argumentsService = new ArgumentsService();
         ApplicationArguments arguments;
         
@@ -50,9 +49,7 @@ public class WikiHangman {
                 
                 while (!userInputValid) {
                     System.out.print(EXIT_APP_MSG);
-                    
                     String userTextInput = reader.next();
-                    arguments = argumentsService.read(System.in);
                     System.out.println();
                     
                     if (userTextInput.equals("y")) {
@@ -62,6 +59,11 @@ public class WikiHangman {
                     else if (userTextInput.equals("n")) {
                         userInputValid = true;
                     }
+                }
+                
+                if (!exit) {
+                    arguments = argumentsService.read(System.in);
+                    System.out.println();
                 }
                 
             } catch (FileException fileException) {
