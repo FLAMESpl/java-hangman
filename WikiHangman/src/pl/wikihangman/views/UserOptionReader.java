@@ -5,9 +5,10 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
- * {@class UserOptionReader} is used to get from user one of available options.
+ * {@code UserOptionReader} is used to get from user one of available options.
  * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
 public class UserOptionReader {
     

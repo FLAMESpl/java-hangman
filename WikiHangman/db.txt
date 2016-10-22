@@ -1,2 +1,3 @@
-0 elo ziom
-1 user pass
+1 janusz 123
+2 gracz qwe
+3 kura asdf

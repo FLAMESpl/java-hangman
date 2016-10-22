@@ -4,7 +4,8 @@ package pl.wikihangman.exceptions;
  * {@code FileException} Signals that either file stream could not be created
  * or data format is invalid.
  * 
- * @author lszafirski
+ * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
 public class FileException extends Exception{
     

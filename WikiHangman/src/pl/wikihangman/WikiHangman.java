@@ -2,8 +2,8 @@ package pl.wikihangman;
 
 import javax.naming.AuthenticationException;
 import pl.wikihangman.models.ApplicationArguments;
-import pl.wikihangman.views.ArgumentsService;
-import pl.wikihangman.exceptions.InvalidArgumentsExceptions;
+import pl.wikihangman.views.ArgumentsReader;
+import pl.wikihangman.exceptions.InvalidArgumentsException;
 import pl.wikihangman.models.AuthenticationService;
 import pl.wikihangman.exceptions.FileException;
 import pl.wikihangman.models.User;
@@ -12,8 +12,10 @@ import pl.wikihangman.views.UserOptionReader;
 import pl.wikihangman.views.UserStatus;
 
 /**
- *
+ * Entry point for an application.
+ * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
 public class WikiHangman {
 
@@ -25,13 +27,13 @@ public class WikiHangman {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArgumentsService argumentsService = new ArgumentsService();
+        ArgumentsReader argumentsService = new ArgumentsReader();
         ApplicationArguments arguments;
         
         try {
             arguments = argumentsService.extract(args);
             
-        } catch(InvalidArgumentsExceptions invalidArguments) {
+        } catch(InvalidArgumentsException invalidArguments) {
             arguments = argumentsService.read(System.in);
         }
         
@@ -67,6 +69,8 @@ public class WikiHangman {
                 
             } catch (FileException fileException) {
                 exit = true;
+                ExceptionLogger exceptionLogger = new ExceptionLogger(fileException);
+                exceptionLogger.log(System.err);
             }
         }
         

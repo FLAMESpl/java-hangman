@@ -1,17 +1,18 @@
 package pl.wikihangman.views;
 
-import pl.wikihangman.exceptions.InvalidArgumentsExceptions;
+import pl.wikihangman.exceptions.InvalidArgumentsException;
 import java.io.InputStream;
 import java.util.Scanner;
 import pl.wikihangman.models.ApplicationArguments;
 
 /**
- * {@code ArgumentsService} is responsible for extracting arguments from
+ * {@code ArgumentsReader} is responsible for extracting arguments from
  * command-line. In case argument extraction failed, user input might be read.
  * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
-public class ArgumentsService {
+public class ArgumentsReader {
     
     /**
      * Message printed when asking user for his name
@@ -24,14 +25,16 @@ public class ArgumentsService {
     private final String ASK_USER_PASSWORD_MSG = "Password: ";
     
     /**
+     * Extracts arguments from arguments array in order: user, password
+     * 
      * @param arguments command-line arguments to be processed
      * @return Set of extracted arguments
-     * @throws InvalidArgumentsExceptions
+     * @throws InvalidArgumentsException when there are less then two arguments
      */
-    public ApplicationArguments extract(String [] arguments) throws InvalidArgumentsExceptions {
+    public ApplicationArguments extract(String [] arguments) throws InvalidArgumentsException {
         
         if (arguments.length < 2) {
-            throw new InvalidArgumentsExceptions("Invalid number of arguments. Must be 2");
+            throw new InvalidArgumentsException("Invalid number of arguments. Must be 2");
         }
         
         return new ApplicationArguments(arguments[0], arguments[1]);

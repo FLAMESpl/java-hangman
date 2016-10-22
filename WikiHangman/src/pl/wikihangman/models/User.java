@@ -3,7 +3,8 @@ package pl.wikihangman.models;
 /**
  * Entity of single user from database
  * 
- * @author lszafirski
+ * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
 public class User {
     

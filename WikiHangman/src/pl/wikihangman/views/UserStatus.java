@@ -7,6 +7,7 @@ import pl.wikihangman.models.User;
  * Displays status of current user.
  * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
 public class UserStatus {
     
@@ -30,10 +31,10 @@ public class UserStatus {
      */
     public void display(PrintStream stream) {
         if (user == null) {
-            stream.println("Logging failed.");
+            stream.println("Logging in failed.");
         }
         else {
-            stream.println("Logged as: " + user.getName());
+            stream.println("Logged in as: " + user.getName());
         }
     }
 }

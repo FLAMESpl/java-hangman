@@ -5,10 +5,11 @@ package pl.wikihangman.exceptions;
  * requirements.
  * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
-public class InvalidArgumentsExceptions extends Exception {
+public class InvalidArgumentsException extends Exception {
     
-    public InvalidArgumentsExceptions() {
+    public InvalidArgumentsException() {
         super();
     }
     
@@ -16,7 +17,7 @@ public class InvalidArgumentsExceptions extends Exception {
      * 
      * @param message details about this exception.
      */
-    public InvalidArgumentsExceptions(String message) {
+    public InvalidArgumentsException(String message) {
         super(message);
     }
 }
