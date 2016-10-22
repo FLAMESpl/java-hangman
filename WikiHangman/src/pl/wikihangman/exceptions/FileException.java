@@ -1,4 +1,4 @@
-package pl.wikihangman.core.authentication;
+package pl.wikihangman.exceptions;
 
 /**
  * {@code FileException} Signals that either file stream could not be created

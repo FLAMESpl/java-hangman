@@ -1,5 +1,6 @@
-package pl.wikihangman.core.authentication;
+package pl.wikihangman.models;
 
+import pl.wikihangman.exceptions.FileException;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;

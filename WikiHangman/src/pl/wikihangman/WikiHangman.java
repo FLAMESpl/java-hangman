@@ -2,12 +2,12 @@ package pl.wikihangman;
 
 import java.util.Scanner;
 import javax.naming.AuthenticationException;
-import pl.wikihangman.core.arguments.ApplicationArguments;
-import pl.wikihangman.core.arguments.ArgumentsService;
-import pl.wikihangman.core.arguments.InvalidArgumentsExceptions;
-import pl.wikihangman.core.authentication.AuthenticationService;
-import pl.wikihangman.core.authentication.FileException;
-import pl.wikihangman.core.authentication.User;
+import pl.wikihangman.models.ApplicationArguments;
+import pl.wikihangman.views.ArgumentsService;
+import pl.wikihangman.exceptions.InvalidArgumentsExceptions;
+import pl.wikihangman.models.AuthenticationService;
+import pl.wikihangman.exceptions.FileException;
+import pl.wikihangman.models.User;
 
 /**
  *

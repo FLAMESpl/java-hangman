@@ -1,4 +1,4 @@
-package pl.wikihangman.core.arguments;
+package pl.wikihangman.exceptions;
 
 /**
  * Signals that given application's arguments set is not valid for application's

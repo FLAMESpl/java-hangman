@@ -1,4 +1,4 @@
-package pl.wikihangman.core.arguments;
+package pl.wikihangman.models;
 
 /**
  * Set of application arguments

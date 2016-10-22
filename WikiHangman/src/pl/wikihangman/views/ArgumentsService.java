@@ -1,7 +1,9 @@
-package pl.wikihangman.core.arguments;
+package pl.wikihangman.views;
 
+import pl.wikihangman.exceptions.InvalidArgumentsExceptions;
 import java.io.InputStream;
 import java.util.Scanner;
+import pl.wikihangman.models.ApplicationArguments;
 
 /**
  * {@code ArgumentsService} is responsible for extracting arguments from
