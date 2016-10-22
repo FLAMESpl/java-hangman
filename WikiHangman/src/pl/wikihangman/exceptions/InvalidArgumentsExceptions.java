@@ -12,6 +12,10 @@ public class InvalidArgumentsExceptions extends Exception {
         super();
     }
     
+    /**
+     * 
+     * @param message details about this exception.
+     */
     public InvalidArgumentsExceptions(String message) {
         super(message);
     }

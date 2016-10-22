@@ -1,6 +1,5 @@
 package pl.wikihangman;
 
-import java.util.Scanner;
 import javax.naming.AuthenticationException;
 import pl.wikihangman.models.ApplicationArguments;
 import pl.wikihangman.views.ArgumentsService;
@@ -8,6 +7,9 @@ import pl.wikihangman.exceptions.InvalidArgumentsExceptions;
 import pl.wikihangman.models.AuthenticationService;
 import pl.wikihangman.exceptions.FileException;
 import pl.wikihangman.models.User;
+import pl.wikihangman.views.ExceptionLogger;
+import pl.wikihangman.views.UserOptionReader;
+import pl.wikihangman.views.UserStatus;
 
 /**
  *
@@ -16,7 +18,9 @@ import pl.wikihangman.models.User;
 public class WikiHangman {
 
     private final static String USERS_DB_PATH = ".\\db.txt";
-    private final static String EXIT_APP_MSG = "Exit application? [y/n]: ";
+    private final static String EXIT_APP_MSG = "Exit application?";
+    private final static String[] EXIT_APP_OPTIONS = { "y", "n" };
+            
     /**
      * @param args the command line arguments
      */
@@ -42,28 +46,23 @@ public class WikiHangman {
                 exit = true;
 
             } catch (AuthenticationException authenticationException) {
-                System.out.println(authenticationException.getMessage());
+                ExceptionLogger exceptionLogger = new ExceptionLogger(authenticationException);
+                exceptionLogger.log(System.err);
                 
-                boolean userInputValid = false;
-                Scanner reader = new Scanner(System.in);
+                int selectedOption = -1;
+                UserOptionReader optionReader = new UserOptionReader(
+                        System.out, System.in, EXIT_APP_OPTIONS, EXIT_APP_MSG);
                 
-                while (!userInputValid) {
-                    System.out.print(EXIT_APP_MSG);
-                    String userTextInput = reader.next();
-                    System.out.println();
+                while (selectedOption < 0) {
+                    selectedOption = optionReader.read();
                     
-                    if (userTextInput.equals("y")) {
-                        userInputValid = true;
+                    if (selectedOption == 0) {
                         exit = true;
-                    }
-                    else if (userTextInput.equals("n")) {
-                        userInputValid = true;
                     }
                 }
                 
                 if (!exit) {
                     arguments = argumentsService.read(System.in);
-                    System.out.println();
                 }
                 
             } catch (FileException fileException) {
@@ -71,10 +70,7 @@ public class WikiHangman {
             }
         }
         
-        if (user == null) {
-            System.out.println("Logging failed...");
-        } else {
-            System.out.println("Logged as " + user.getName());
-        }
+        UserStatus status = new UserStatus(authService.getUser());
+        status.display(System.out);
     }
 }

@@ -26,7 +26,7 @@ public class ArgumentsService {
     /**
      * @param arguments command-line arguments to be processed
      * @return Set of extracted arguments
-     * @throws pl.wikihangman.core.arguments.InvalidArgumentsExceptions
+     * @throws InvalidArgumentsExceptions
      */
     public ApplicationArguments extract(String [] arguments) throws InvalidArgumentsExceptions {
         

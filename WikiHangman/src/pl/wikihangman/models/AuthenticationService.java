@@ -16,7 +16,15 @@ import javax.naming.AuthenticationException;
  */
 public class AuthenticationService {
     
+    /**
+     * Path to user database *.txt file
+     */
     private final String dbPath;
+    
+    /**
+     * User logged by this service
+     */
+    private User loggedUser = null;
     
     /**
      * @param userDbPath Path to the file containing users database.
@@ -26,9 +34,17 @@ public class AuthenticationService {
     }
     
     /**
+     * 
+     * @return user logged by this service
+     */
+    public User getUser() {
+        return loggedUser;
+    }
+    
+    /**
      * Reads user's database in order to match given argument.
      * 
-     * <p> File is expected to be composed in "<id> <userName> <userPassword>" 
+     * <p> File is expected to be composed in "(id) (userName) (userPassword)" 
      * manner.
      * 
      * <p> If access to the file is unsuccessful {@code IOException} is thrown.
@@ -40,10 +56,11 @@ public class AuthenticationService {
      * 
      * @param user      user's login
      * @param password  user's password
-     * @return View of authenticated user
+     * @return Authenticated user class
      * @throws AuthenticationException 
-     * @throws pl.wikihangman.core.authentication.FileException 
+     * @throws FileException 
      */
+    
     public User authenticate(String user, String password) throws
             AuthenticationException, FileException {
         
@@ -67,12 +84,12 @@ public class AuthenticationService {
             if (!matched) {
                 throw new AuthenticationException("Invalid credentials");
             }
-        } catch(IOException | IndexOutOfBoundsException | NumberFormatException 
-                fileExceptionCause) {
+        } catch(IOException | IndexOutOfBoundsException | NumberFormatException fileExceptionCause) {
             throw new FileException("Database file exception occured. See cause for more detials",
                     fileExceptionCause);
         }
         
-        return new User(id, user, password);
+        loggedUser = new User(id, user);
+        return loggedUser;
     }  
 }
