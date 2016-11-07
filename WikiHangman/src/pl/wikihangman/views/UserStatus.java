@@ -9,7 +9,7 @@ import pl.wikihangman.models.User;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class UserStatus {
+public class UserStatus implements IView {
     
     private final User user;
     
@@ -29,7 +29,7 @@ public class UserStatus {
      * 
      * @param stream target print stream
      */
-    public void display(PrintStream stream) {
+    public void print(PrintStream stream) {
         if (user == null) {
             stream.println("Logging in failed.");
         }
