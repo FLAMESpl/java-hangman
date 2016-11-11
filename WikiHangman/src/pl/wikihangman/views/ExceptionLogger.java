@@ -10,21 +10,21 @@ import java.io.PrintStream;
  */
 public class ExceptionLogger {
     
-    private final Exception exception;
+    private final PrintStream stream;
     
     /**
-     * @param exception exception from which message is logged to the stream
+     * @param stream stream where exception message will be printed
      */
-    public ExceptionLogger(Exception exception) {
-        this.exception = exception;
+    public ExceptionLogger(PrintStream stream) {
+        this.stream = stream;
     }
     
     /**
      * Prints exception's message to output stream
      * 
-     * @param stream target print stream
+     * @param exception exception of which message will be printed
      */
-    public void log(PrintStream stream) {
+    public void log(Exception exception) {
         stream.println(exception.getMessage());
     }
 }

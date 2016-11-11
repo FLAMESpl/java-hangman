@@ -18,11 +18,6 @@ import javax.naming.AuthenticationException;
 public class AuthenticationService {
     
     /**
-     * Path to user database *.txt file
-     */
-    private final String dbPath;
-    
-    /**
      * User logged by this service
      */
     private User loggedUser = null;
