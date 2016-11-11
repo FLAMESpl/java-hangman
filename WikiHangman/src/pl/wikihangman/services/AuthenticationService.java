@@ -1,4 +1,4 @@
-package pl.wikihangman.models;
+package pl.wikihangman.services;
 
 import pl.wikihangman.exceptions.FileException;
 import java.io.BufferedReader;
@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.naming.AuthenticationException;
+import pl.wikihangman.models.User;
 
 /**
  * {@code AuthenticationService} is used to authenticate given user.

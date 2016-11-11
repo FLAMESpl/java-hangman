@@ -2,7 +2,7 @@ package pl.wikihangman.controllers;
 
 import javax.naming.AuthenticationException;
 import pl.wikihangman.exceptions.FileException;
-import pl.wikihangman.models.AuthenticationService;
+import pl.wikihangman.services.AuthenticationService;
 import pl.wikihangman.models.User;
 import pl.wikihangman.views.ExceptionLogger;
 import pl.wikihangman.views.UserInputReader;
