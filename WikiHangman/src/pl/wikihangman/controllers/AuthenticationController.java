@@ -9,7 +9,8 @@ import pl.wikihangman.views.UserInputReader;
 import pl.wikihangman.views.UserOptionReader;
 
 /**
- *
+ * {@code AuthenticationController} is used to validate user's credentials
+ * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
@@ -17,22 +18,45 @@ public class AuthenticationController {
     
     private final String dbPath;
     private final AuthenticationService authenticationService;
+    private final ExceptionLogger logger;
     private final static String EXIT_APP_MSG = "Exit application?";
     private final static String[] EXIT_APP_OPTIONS = { "y", "n" };
     private final static String[] AUTH_ARGS_QUESTIONS = { "Username: ", "Password: " };
     
+    /**
+     * 
+     * @param dbPath path to users' database file
+     */
     public AuthenticationController(String dbPath) {
         this.dbPath = dbPath;
         this.authenticationService = new AuthenticationService();
+        this.logger = new ExceptionLogger(System.err);
     }
     
+    /**
+     * Authenticates user using active database file.
+     * 
+     * <p> In case of invalid credentials user will be asked to try again,
+     * but if file error occurs method exits with null value.
+     *
+     * @return if successful logged user, otherwise null
+     */
     public User authenticate() {
         return authenticate(null);
     }
     
+    /**
+     * Authenticates user using active database file.
+     * 
+     * <p> In case of invalid credentials user will be asked to try again,
+     * but if file error occurs method exits with null value.
+     *
+     * @param applicationArguments Before asking user to input credentials,
+     *      application arguments are used.
+     * @return if successful logged user, otherwise null
+     */
     public User authenticate(String[] applicationArguments) {
         
-        ExceptionLogger logger = new ExceptionLogger(System.err);
         User user = null;
         
         try {
@@ -40,11 +64,11 @@ public class AuthenticationController {
             
         } catch(AuthenticationException authenticationException) {
             logger.log(authenticationException);
-            user = repeatUserInput(logger);
+            user = repeatUserInput();
             
         } catch(IndexOutOfBoundsException indexOutOfBoundsException) {
             logger.log("Cannot read credentials from application's arguments");
-            user = repeatUserInput(logger);
+            user = repeatUserInput();
             
         } catch(FileException fileException) {
             logger.log(fileException);
@@ -53,7 +77,13 @@ public class AuthenticationController {
         return user;
     }
     
-    private User repeatUserInput(ExceptionLogger logger) {
+    /**
+     * Repeats asking user to input user name and password until he decides to
+     * exit application or authentication successes.
+     * 
+     * @return if successful logged user, otherwise null
+     */
+    private User repeatUserInput() {
         
         User user = null;
         UserOptionReader optionReader = new UserOptionReader(
