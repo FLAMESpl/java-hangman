@@ -27,12 +27,6 @@ public class AuthenticationService {
      */
     private User loggedUser = null;
     
-    /**
-     * @param userDbPath Path to the file containing users database.
-     */
-    public AuthenticationService(String userDbPath) {
-        dbPath = userDbPath;
-    }
     
     /**
      * 
@@ -57,7 +51,7 @@ public class AuthenticationService {
      * @throws FileException when file cannot be opened
      */
     
-    public User authenticate(String user, String password) throws
+    public User authenticate(String user, String password, String dbPath) throws
             AuthenticationException, FileException {
         
         Integer id = -1;
