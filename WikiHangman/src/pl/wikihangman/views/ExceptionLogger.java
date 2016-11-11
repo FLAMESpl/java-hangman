@@ -27,4 +27,13 @@ public class ExceptionLogger {
     public void log(Exception exception) {
         stream.println(exception.getMessage());
     }
+    
+    /**
+     * Prints custom message when exception's one is not sufficient
+     * 
+     * @param exceptionMessage message to be printed
+     */
+    public void log(String exceptionMessage) {
+        stream.println(exceptionMessage);
+    }
 }

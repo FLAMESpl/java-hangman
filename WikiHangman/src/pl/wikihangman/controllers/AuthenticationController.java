@@ -38,8 +38,12 @@ public class AuthenticationController {
         try {
             user = authenticationService.authenticate(applicationArguments[0], applicationArguments[1], dbPath);
             
-        } catch(AuthenticationException | IndexOutOfBoundsException authFailedException) {
-            logger.log(authFailedException);
+        } catch(AuthenticationException authenticationException) {
+            logger.log(authenticationException);
+            user = repeatUserInput(logger);
+            
+        } catch(IndexOutOfBoundsException indexOutOfBoundsException) {
+            logger.log("Cannot read credentials from application's arguments");
             user = repeatUserInput(logger);
             
         } catch(FileException fileException) {
