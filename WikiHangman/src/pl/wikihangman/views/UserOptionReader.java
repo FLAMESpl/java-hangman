@@ -3,6 +3,7 @@ package pl.wikihangman.views;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
+import java.util.function.Function;
 
 /**
  * {@code UserOptionReader} is used to get from user one of available options.

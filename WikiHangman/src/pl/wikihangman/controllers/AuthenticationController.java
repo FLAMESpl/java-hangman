@@ -2,6 +2,7 @@ package pl.wikihangman.controllers;
 
 import javax.naming.AuthenticationException;
 import pl.wikihangman.exceptions.FileException;
+import pl.wikihangman.infrastructure.YesNoEnum;
 import pl.wikihangman.services.AuthenticationService;
 import pl.wikihangman.models.User;
 import pl.wikihangman.views.ExceptionLogger;
@@ -20,7 +21,6 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
     private final ExceptionLogger logger;
     private final static String EXIT_APP_MSG = "Exit application?";
-    private final static String[] EXIT_APP_OPTIONS = { "y", "n" };
     private final static String[] AUTH_ARGS_QUESTIONS = { "Username: ", "Password: " };
     
     /**
@@ -87,10 +87,24 @@ public class AuthenticationController {
         
         User user = null;
         UserOptionReader optionReader = new UserOptionReader(
-                System.out, System.in, EXIT_APP_OPTIONS, EXIT_APP_MSG);
+                System.out, System.in, YesNoEnum.toStringArray(), EXIT_APP_MSG);
         UserInputReader inputReader = new UserInputReader();
+        
+        int selectedOptionIndex;
+        YesNoEnum selectedOption;
 
-        while (optionReader.read() == 1) {
+        for(;;) {
+            selectedOptionIndex = optionReader.read();
+            try {
+                selectedOption = YesNoEnum.values()[selectedOptionIndex];
+            } catch(IndexOutOfBoundsException ex) {
+                continue;
+            }
+            
+            if (selectedOption == YesNoEnum.YES) {
+                break;
+            }
+            
             try {
                 String[] authenticationArguments = inputReader.read(AUTH_ARGS_QUESTIONS);
                 user = authenticationService.authenticate(authenticationArguments[0], 
