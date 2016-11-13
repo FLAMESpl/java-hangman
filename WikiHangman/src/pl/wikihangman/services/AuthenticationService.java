@@ -50,7 +50,8 @@ public class AuthenticationService {
     public User authenticate(String user, String password, String dbPath) throws
             AuthenticationException, FileException {
         
-        Integer id = -1;
+        int id = -1;
+        long points = 0;
         
         try (FileInputStream in = new FileInputStream(dbPath)) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -63,6 +64,7 @@ public class AuthenticationService {
                 if (words[1].equals(user) && words[2].equals(password)) {
                     matched = true;
                     id = Integer.parseInt(words[0]);
+                    points = Long.parseLong(words[3]);
                 }
             }
 
@@ -73,7 +75,7 @@ public class AuthenticationService {
             throw new FileException("Error occured while reading database file", fileExceptionCause);
         }
         
-        loggedUser = new User(id, user);
+        loggedUser = new User(id, user, points);
         return loggedUser;
     }  
 }

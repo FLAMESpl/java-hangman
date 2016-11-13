@@ -13,16 +13,19 @@ public class User {
      */
     final int id;
     String name;
+    long points;
     
     /**
      * 
      * @param id        Unique user's id
      * @param name      User's name
+     * @param points    User's points
      */
-    public User(int id, String name) {
+    public User(int id, String name, long points) {
         
         this.id = id;
         this.name = name;
+        this.points = points;
     }
     
     /**
@@ -39,6 +42,14 @@ public class User {
      */
     public String getName() {
         return name;
+    }
+    
+    /**
+     * 
+     * @return  User's score.
+     */
+    public long getPoints() {
+        return points;
     }
     
 }

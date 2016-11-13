@@ -2,7 +2,7 @@ package pl.wikihangman.controllers;
 
 import javax.naming.AuthenticationException;
 import pl.wikihangman.exceptions.FileException;
-import pl.wikihangman.infrastructure.YesNoEnum;
+import pl.wikihangman.views.enums.YesNoEnum;
 import pl.wikihangman.services.AuthenticationService;
 import pl.wikihangman.models.User;
 import pl.wikihangman.views.ExceptionLogger;
@@ -20,7 +20,7 @@ public class AuthenticationController {
     private final String dbPath;
     private final AuthenticationService authenticationService;
     private final ExceptionLogger logger;
-    private final static String EXIT_APP_MSG = "Exit application?";
+    private final static String STOP_LOGIN_MSG = "Stop?";
     private final static String[] AUTH_ARGS_QUESTIONS = { "Username: ", "Password: " };
     
     /**
@@ -42,7 +42,8 @@ public class AuthenticationController {
      * @return if successful logged user, otherwise null
      */
     public User authenticate() {
-        return authenticate(null);
+        
+        return repeatUserInput();
     }
     
     /**
@@ -86,25 +87,14 @@ public class AuthenticationController {
     private User repeatUserInput() {
         
         User user = null;
-        UserOptionReader optionReader = new UserOptionReader(
-                System.out, System.in, YesNoEnum.toStringArray(), EXIT_APP_MSG);
+        boolean exit = false;
+        UserOptionReader optionReader = new UserOptionReader(YesNoEnum.toStringArray(), STOP_LOGIN_MSG);
         UserInputReader inputReader = new UserInputReader();
         
         int selectedOptionIndex;
         YesNoEnum selectedOption;
 
-        for(;;) {
-            selectedOptionIndex = optionReader.read();
-            try {
-                selectedOption = YesNoEnum.values()[selectedOptionIndex];
-            } catch(IndexOutOfBoundsException ex) {
-                continue;
-            }
-            
-            if (selectedOption == YesNoEnum.YES) {
-                break;
-            }
-            
+        while(!exit) {
             try {
                 String[] authenticationArguments = inputReader.read(AUTH_ARGS_QUESTIONS);
                 user = authenticationService.authenticate(authenticationArguments[0], 
@@ -115,6 +105,17 @@ public class AuthenticationController {
             } catch(FileException fileException) {
                 logger.log(fileException);
                 break;
+            }
+            
+            selectedOptionIndex = optionReader.read();
+            try {
+                selectedOption = YesNoEnum.values()[selectedOptionIndex];
+            } catch(IndexOutOfBoundsException ex) {
+                continue;
+            }
+            
+            if (selectedOption == YesNoEnum.YES) {
+                exit = true;
             }
         }
         

@@ -16,6 +16,6 @@ public class WikiHangman {
     public static void main(String[] args) {
         
         MasterController master = new MasterController();
-        master.run(args);
+        master.runLoginScreen(args);
     }
 }

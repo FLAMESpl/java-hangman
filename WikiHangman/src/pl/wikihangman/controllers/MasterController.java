@@ -3,6 +3,8 @@ package pl.wikihangman.controllers;
 import pl.wikihangman.models.User;
 import pl.wikihangman.views.ExceptionLogger;
 import pl.wikihangman.views.UserOptionReader;
+import pl.wikihangman.views.enums.GameMenuEnum;
+import pl.wikihangman.views.enums.LoginMenuEnum;
 
 /**
  *
@@ -11,33 +13,6 @@ import pl.wikihangman.views.UserOptionReader;
  */
 public class MasterController {
    
-   private enum MenuOptionEnum {
-       EXIT("exit"),
-       LOGOUT("logout"),
-       SCORE("score"),
-       START("start");
-       
-       private final String value;
-       
-       private MenuOptionEnum(String value) {
-           this.value = value;
-       }
-       
-       public String getValue() {
-           return value;
-       }
-       
-       public static String[] toStringArray() {
-           MenuOptionEnum[] values = values();
-           int arrayLength = values.length;
-           String[] result = new String[arrayLength];
-           for (int i = 0; i < arrayLength; i++) {
-               result[i] = values[i].getValue();
-           }
-           return result;
-       }
-   } 
-    
    private final static String USERS_DB_PATH = ".\\db.txt";
    private final static String MENU_MESSAGE = "Available actions:";
    
@@ -49,23 +24,53 @@ public class MasterController {
        user = null;
    }
    
-   public void run(String[] applicationArguments) {
-       
-       AuthenticationController authenticationController = new AuthenticationController(USERS_DB_PATH);
-       GameController gameController = new GameController();
-       UserOptionReader optionReader = new UserOptionReader(
-               System.out, System.in, MenuOptionEnum.toStringArray(), MENU_MESSAGE);
-       
-       user = authenticationController.authenticate(applicationArguments);
+   public void runLoginScreen(String[] applicationArguments) {
        
        int selectedOptionIndex;
        boolean exit = false;
-       MenuOptionEnum selectedOption;
+       LoginMenuEnum selectedOption;
+       AuthenticationController authenticationController = new AuthenticationController(USERS_DB_PATH);
+       UserOptionReader optionReader = new UserOptionReader(LoginMenuEnum.toStringArray(), MENU_MESSAGE);
+       
+       user = authenticationController.authenticate(applicationArguments);
+       
+       while(!exit) {
+           if (user != null) {
+               runGameScreen();
+           }
+           
+           selectedOptionIndex = optionReader.read();
+           try {
+               selectedOption = LoginMenuEnum.values()[selectedOptionIndex];
+           } catch (IndexOutOfBoundsException ex) {
+               continue;
+           }
+           
+           switch (selectedOption) {
+               case EXIT:
+                   exit = true;
+                   break;
+               case LOGIN:
+                   user = authenticationController.authenticate();
+                   break;
+               case SIGNUP:
+                   break;
+           }
+       }
+   }
+   
+   public void runGameScreen() {
+       
+       GameController gameController = new GameController(user);
+       int selectedOptionIndex;
+       boolean exit = false;
+       GameMenuEnum selectedOption;
+       UserOptionReader optionReader = new UserOptionReader(GameMenuEnum.toStringArray(), MENU_MESSAGE);
        
        while(!exit) {
            selectedOptionIndex = optionReader.read();
            try {
-               selectedOption = MenuOptionEnum.values()[selectedOptionIndex];
+               selectedOption = GameMenuEnum.values()[selectedOptionIndex];
            } catch(IndexOutOfBoundsException ex) {
                continue;
            }
@@ -73,6 +78,13 @@ public class MasterController {
            switch(selectedOption) {
                case EXIT:
                    exit = true;
+                   break;
+               case LOGOUT:
+                   exit = true;
+                   user = null;
+                   break;
+               case SCORE:
+                   gameController.requestScore(USERS_DB_PATH);
                    break;
            }
        }
