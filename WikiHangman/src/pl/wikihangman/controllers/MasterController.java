@@ -54,6 +54,7 @@ public class MasterController {
                    user = authenticationController.authenticate();
                    break;
                case SIGNUP:
+                   authenticationController.register();
                    break;
            }
        }

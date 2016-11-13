@@ -1,6 +1,7 @@
 package pl.wikihangman.controllers;
 
 import javax.naming.AuthenticationException;
+import pl.wikihangman.exceptions.EntityAlreadyExistsException;
 import pl.wikihangman.exceptions.FileException;
 import pl.wikihangman.views.enums.YesNoEnum;
 import pl.wikihangman.services.AuthenticationService;
@@ -21,7 +22,7 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
     private final ExceptionLogger logger;
     private final static String STOP_LOGIN_MSG = "Stop?";
-    private final static String[] AUTH_ARGS_QUESTIONS = { "Username: ", "Password: " };
+    private final static String[] CREDENTIALS_QUESTIONS = { "Username: ", "Password: " };
     
     /**
      * 
@@ -43,7 +44,7 @@ public class AuthenticationController {
      */
     public User authenticate() {
         
-        return repeatUserInput();
+        return repeatUserAuthentication();
     }
     
     /**
@@ -65,11 +66,11 @@ public class AuthenticationController {
             
         } catch(AuthenticationException authenticationException) {
             logger.log(authenticationException);
-            user = repeatUserInput();
+            user = repeatUserAuthentication();
             
         } catch(IndexOutOfBoundsException indexOutOfBoundsException) {
             logger.log("Cannot read credentials from application's arguments");
-            user = repeatUserInput();
+            user = repeatUserAuthentication();
             
         } catch(FileException fileException) {
             logger.log(fileException);
@@ -78,13 +79,24 @@ public class AuthenticationController {
         return user;
     }
     
+    public void register() {
+        
+        UserInputReader inputReader = new UserInputReader();
+        String[] credentials = inputReader.read(CREDENTIALS_QUESTIONS);
+        try {
+            authenticationService.register(credentials[0], credentials[1], dbPath);
+        } catch(FileException | EntityAlreadyExistsException exception) {
+            logger.log(exception);
+        }
+    }
+    
     /**
      * Repeats asking user to input user name and password until he decides to
      * exit application or authentication successes.
      * 
      * @return if successful logged user, otherwise null
      */
-    private User repeatUserInput() {
+    private User repeatUserAuthentication() {
         
         User user = null;
         boolean exit = false;
@@ -96,7 +108,7 @@ public class AuthenticationController {
 
         while(!exit) {
             try {
-                String[] authenticationArguments = inputReader.read(AUTH_ARGS_QUESTIONS);
+                String[] authenticationArguments = inputReader.read(CREDENTIALS_QUESTIONS);
                 user = authenticationService.authenticate(authenticationArguments[0], 
                         authenticationArguments[1], dbPath);
                 break;

@@ -1,14 +1,14 @@
 package pl.wikihangman.exceptions;
 
 /**
- * Signals unexpected user input
+ * Signals that entity of given unique fields already exists in database.
  * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class NoSuchAnOptionException extends Exception{
+public class EntityAlreadyExistsException extends Exception {
     
-     public NoSuchAnOptionException() {
+    public EntityAlreadyExistsException() {
         super();
     }
     
@@ -16,7 +16,7 @@ public class NoSuchAnOptionException extends Exception{
      * 
      * @param message details about this exception.
      */
-    public NoSuchAnOptionException(String message) {
+    public EntityAlreadyExistsException(String message) {
         super(message);
     }
 }
