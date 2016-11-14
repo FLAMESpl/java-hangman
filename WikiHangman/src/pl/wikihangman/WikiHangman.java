@@ -1,6 +1,5 @@
 package pl.wikihangman;
 
-import pl.wikihangman.controllers.MasterController;
 
 /**
  * Entry point for an application.
@@ -15,7 +14,5 @@ public class WikiHangman {
      */
     public static void main(String[] args) {
         
-        MasterController master = new MasterController();
-        master.runLoginScreen(args);
     }
 }
