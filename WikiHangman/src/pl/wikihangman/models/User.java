@@ -8,24 +8,65 @@ package pl.wikihangman.models;
  */
 public class User {
     
-    /**
-     * User's id cannot be updated.
-     */
-    final int id;
+    int id;
     String name;
+    String password;
     long points;
     
     /**
      * 
-     * @param id        Unique user's id
-     * @param name      User's name
-     * @param points    User's points
+     * @param id new user's id
+     * @return this object
      */
-    public User(int id, String name, long points) {
-        
+    public User setId(int id) {
         this.id = id;
+        return this;
+    }
+    
+    /**
+     * 
+     * @param name new user's name
+     * @return this object
+     */
+    public User setName(String name) {
         this.name = name;
+        return this;
+    }
+    
+    /**
+     * 
+     * @param password new user's password
+     * @return this object
+     */
+    public User setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+    
+    /**
+     * 
+     * @param points new user's points
+     * @return this object
+     */
+    public User setPoints(long points) {
         this.points = points;
+        return this;
+    }
+    
+    /**
+     * Initializes object using tokens from database's text line.
+     * 
+     * @param line complete line from database file
+     * @return this object
+     */
+    public User initializeFromTextLine(String line) throws 
+            NumberFormatException, IndexOutOfBoundsException {
+        String[] words = line.split(" ");
+        id = Integer.parseInt(words[0]);
+        name = words[1];
+        password = words[2];
+        points = Long.parseLong(words[3]);
+        return this;
     }
     
     /**
@@ -46,10 +87,28 @@ public class User {
     
     /**
      * 
+     * @return  User's password
+     */
+    public String getPassword() {
+        return password;
+    }
+    
+    /**
+     * 
      * @return  User's score.
      */
     public long getPoints() {
         return points;
     }
     
+    /**
+     * Checks if given name and passwords matches to ones held in class.
+     * 
+     * @param name user's name
+     * @param password user's password
+     * @return 
+     */
+    public boolean authenticate(String name, String password) {
+        return this.name.equals(name) && this.password.equals(password);
+    }
 }
