@@ -1,10 +1,12 @@
 package pl.wikihangman.controllers;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import pl.wikihangman.exception.EntityAlreadyExistsException;
 import pl.wikihangman.models.User;
 
@@ -56,9 +58,14 @@ public class AccountController {
             IOException, EntityAlreadyExistsException {
         
         int id = getUniqueId(userName);
+        User user = new User()
+                .setId(id)
+                .setName(userName)
+                .setPassword(password)
+                .setPoints(0);
         
-        File file = new File(DB_PATH);
-        file.
+        Files.write(Paths.get(DB_PATH), user.databaseEntity().getBytes(), StandardOpenOption.APPEND);
+        return user;
     }
     
     /**
