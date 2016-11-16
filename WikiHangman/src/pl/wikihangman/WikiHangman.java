@@ -1,5 +1,7 @@
 package pl.wikihangman;
 
+import pl.wikihangman.views.MasterView;
+
 
 /**
  * Entry point for an application.
@@ -13,6 +15,7 @@ public class WikiHangman {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        MasterView masterView = new MasterView();
+        masterView.start(args);
     }
 }

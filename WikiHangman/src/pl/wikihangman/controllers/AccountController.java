@@ -15,6 +15,7 @@ import pl.wikihangman.models.User;
  * database.
  * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
 public class AccountController {
     

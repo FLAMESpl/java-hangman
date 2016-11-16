@@ -1,6 +1,7 @@
 package pl.wikihangman.views;
 
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import pl.wikihangman.controllers.AccountController;
 import pl.wikihangman.models.User;
 
@@ -14,10 +15,12 @@ import pl.wikihangman.models.User;
 public class MasterView {
     
     private AccountController accountController;
+    private AccountsView accountsView;
     private User activeUser;
     
     public MasterView() {
         accountController = new AccountController();
+        accountsView = new AccountsView();
         activeUser = null;
     }
     
@@ -38,9 +41,15 @@ public class MasterView {
             System.err.println("Number parsing error occured");
         }
         
+        AtomicBoolean exit = new AtomicBoolean(false);
         UserActionReader reader = new UserActionReader();
-        reader.addAction("exit", null)
-              .addAction("login", null)
+        reader.setHeader("Available actions:")
+              .addAction("exit", () -> exit.set(true))
+              .addAction("login", () -> activeUser = accountsView.displayLogInView())
               .addAction("singup", null);
+        
+        while (!exit.get()) {
+            reader.read();
+        }
     }
 }

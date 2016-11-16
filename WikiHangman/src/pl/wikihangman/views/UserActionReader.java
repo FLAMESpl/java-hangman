@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class UserActionReader {
     
     private Map<String, Runnable> availableActions;
+    private String header;
     
     /**
      * Initializes empty map of available actions.
@@ -36,13 +37,23 @@ public class UserActionReader {
     }
     
     /**
-     * Prints available actions and then awaits for user input. Process is repeated
-     * until response matches one of given options.
+     * 
+     * @param header header displayed before listing available actions
+     * @return this object
+     */
+    public UserActionReader setHeader(String header) {
+        this.header = header;
+        return this;
+    }
+    
+    /**
+     * Prints header, available actions and then awaits for user input. 
+     * Process is repeated until response matches one of given options.
      */
     public void read() {
         
         String userInput;
-        String question = "Available options: " + String.join(" ", availableActions.keySet());
+        String question = header + " " + String.join(", ", availableActions.keySet());
         Scanner scanner = new Scanner(System.in);
         
         do {
