@@ -1,5 +1,7 @@
 package pl.wikihangman.views;
 
+import pl.wikihangman.models.User;
+
 /**
  *
  * @author Łukasz Szafirski
@@ -7,7 +9,7 @@ package pl.wikihangman.views;
  */
 public class GameView {
     
-    public void display() {
+    public void display(User activeUsre) {
         
     }
 }

@@ -1,4 +1,4 @@
-package pl.wikihangman.views;
+package pl.wikihangman.views.input;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,7 +54,7 @@ public class UserInputReader {
      * 
      * @return list of objects obtained from user's input
      */
-    public List<Object> read() {
+    public UserInputResult read() {
         
         Scanner scanner = new Scanner(System.in);
         List results = new ArrayList();
@@ -64,6 +64,7 @@ public class UserInputReader {
             Object newItem = converter == null ? input : converter.apply(input);
             results.add(newItem);
         });
-        return results;
+        System.out.println();
+        return new UserInputResult(results);
     }
 }

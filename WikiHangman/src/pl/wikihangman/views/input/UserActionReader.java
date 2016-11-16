@@ -1,4 +1,4 @@
-package pl.wikihangman.views;
+package pl.wikihangman.views.input;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -61,7 +61,7 @@ public class UserActionReader {
             userInput = scanner.next();
             System.out.println();
             
-        } while(availableActions.containsKey(userInput));
+        } while(!availableActions.containsKey(userInput));
         
         Runnable action = availableActions.get(userInput);
         if (action != null) {

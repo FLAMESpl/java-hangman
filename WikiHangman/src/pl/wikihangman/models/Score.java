@@ -4,6 +4,7 @@ package pl.wikihangman.models;
  * {@code Score} represents individual player's score.
  * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
 public class Score implements Comparable<Score> {
     

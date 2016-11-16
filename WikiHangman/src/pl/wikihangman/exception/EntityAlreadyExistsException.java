@@ -10,9 +10,10 @@ public class EntityAlreadyExistsException extends Exception {
     
     /**
      * 
-     * @param message information about error
+     * @param field field on which duplication occurred
+     * @param value duplicated value
      */
-    public EntityAlreadyExistsException(String message) {
-        super(message);
+    public EntityAlreadyExistsException(String field, String value) {
+        super(String.format("Entity with field `%1$s` of value `%2$s` already exists", field, value));
     } 
 }

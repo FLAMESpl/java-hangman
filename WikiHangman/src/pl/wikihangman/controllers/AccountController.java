@@ -15,7 +15,6 @@ import pl.wikihangman.models.User;
  * database.
  * 
  * @author Łukasz Szafirski
- * @version 1.0.0.0
  */
 public class AccountController {
     
@@ -97,7 +96,7 @@ public class AccountController {
             
             if (userName.equals(nextName)) {
                 throw new EntityAlreadyExistsException("Entity of `" + userName +
-                        "` already exists");
+                        "` already exists", "");
             }
         }
         
