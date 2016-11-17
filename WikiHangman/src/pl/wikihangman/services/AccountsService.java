@@ -1,4 +1,4 @@
-package pl.wikihangman.controllers;
+package pl.wikihangman.services;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -7,16 +7,20 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 import pl.wikihangman.exception.EntityAlreadyExistsException;
+import pl.wikihangman.models.Score;
 import pl.wikihangman.models.User;
 
 /**
- * {@code AccountController} allows to read and manipulate existing users in
+ * {@code AccountsService} allows to read and manipulate existing users in
  * database.
  * 
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
-public class AccountController {
+public class AccountsService {
     
     private final String DB_PATH = ".\\db.txt";
     
@@ -32,8 +36,7 @@ public class AccountController {
             IOException, NumberFormatException {
         
         User nextUser = null;
-        FileInputStream in = new FileInputStream(DB_PATH);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        BufferedReader reader = databaseBufferedReader();
         String line;
         boolean matched = false;
         
@@ -57,15 +60,36 @@ public class AccountController {
     public User register(String userName, String password) throws
             IOException, EntityAlreadyExistsException {
         
-        int id = getUniqueId(userName);
+        int id = getUniqueIdAndCheckName(userName);
         User user = new User()
                 .setId(id)
                 .setName(userName)
                 .setPassword(password)
                 .setPoints(0);
         
-        Files.write(Paths.get(DB_PATH), user.databaseEntity().getBytes(), StandardOpenOption.APPEND);
+        String databaseLine = System.lineSeparator() + user.databaseEntity();
+        Files.write(Paths.get(DB_PATH), databaseLine.getBytes(), StandardOpenOption.APPEND);
         return user;
+    }
+    
+    /**
+     * Returns all users from the database.
+     * 
+     * @return All users list
+     * @throws IOException, NumberFormatException
+     */
+    public List<User> getPlayersList() throws IOException, NumberFormatException {
+        
+        BufferedReader reader = databaseBufferedReader();
+        List<User> result = new ArrayList<>();
+        String line;
+        
+        while ((line = reader.readLine()) != null) {
+            User user = new User().initializeFromTextLine(line);
+            result.add(user);
+        }
+        
+        return result;
     }
     
     /**
@@ -77,11 +101,10 @@ public class AccountController {
      * @throws IOException
      * @throws EntityAlreadyExistsException 
      */
-    private int getUniqueId(String userName) throws
+    private int getUniqueIdAndCheckName(String userName) throws
             IOException, EntityAlreadyExistsException {
         
-        FileInputStream in = new FileInputStream(DB_PATH);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        BufferedReader reader = databaseBufferedReader();
         String line;
         int id = 1;
         
@@ -93,13 +116,18 @@ public class AccountController {
             if (id < nextId) {
                 id = nextId;
             }
+            id++;
             
             if (userName.equals(nextName)) {
-                throw new EntityAlreadyExistsException("Entity of `" + userName +
-                        "` already exists", "");
+                throw new EntityAlreadyExistsException("Name", nextName);
             }
         }
         
         return id;
+    }
+    
+    private BufferedReader databaseBufferedReader() throws IOException {
+        FileInputStream in = new FileInputStream(DB_PATH);
+        return  new BufferedReader(new InputStreamReader(in));
     }
 }

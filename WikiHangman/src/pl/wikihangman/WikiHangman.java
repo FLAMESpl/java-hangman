@@ -1,6 +1,7 @@
 package pl.wikihangman;
 
-import pl.wikihangman.infrastructure.DependencyContainer;
+import pl.wikihangman.services.AccountsService;
+import pl.wikihangman.controllers.*;
 import pl.wikihangman.views.MasterView;
 
 
@@ -16,11 +17,14 @@ public class WikiHangman {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MasterView masterView = new MasterView();
-        masterView.start(args);
-    }
-    
-    public static DependencyContainer registerDependencies() {
         
+        AccountsService accountController = new AccountsService();
+        GameController gameController = new GameController();
+        
+        MasterView masterView = new MasterView(v -> v
+                .setAccountService(accountController)
+                .setGameService(gameController));
+                
+        masterView.start(args);
     }
 }

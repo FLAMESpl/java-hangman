@@ -2,4 +2,6 @@
 2 janek qwerty 60
 3 elo ziom 10
 4 testowy test 0
-4 alfa omega 0
+5 alfa omega 0
+6 eryk ziomek 0
+7 ziomek franek 0

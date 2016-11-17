@@ -64,8 +64,6 @@ public class UserActionReader {
         } while(!availableActions.containsKey(userInput));
         
         Runnable action = availableActions.get(userInput);
-        if (action != null) {
-            action.run();
-        }
+        action.run();
     }
 }

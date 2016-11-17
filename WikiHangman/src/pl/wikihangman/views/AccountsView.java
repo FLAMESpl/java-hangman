@@ -5,7 +5,6 @@ import pl.wikihangman.views.input.UserActionReader;
 import pl.wikihangman.views.input.UserInputResult;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
-import pl.wikihangman.controllers.AccountController;
 import pl.wikihangman.exception.EntityAlreadyExistsException;
 import pl.wikihangman.models.User;
 
@@ -15,9 +14,18 @@ import pl.wikihangman.models.User;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class AccountsView {
+public class AccountsView extends ViewBase {
     
     Logger logger = new Logger();
+    
+    /**
+     * Copies all services from its parent.
+     * 
+     * @param parent calling view
+     */
+    public AccountsView(ViewBase parent) {
+        super(parent);
+    }
     
     /**
      * Captures text inputs from user needed to log in to his account
@@ -34,7 +42,6 @@ public class AccountsView {
                     .addAction("yes", () -> retry.set(true))
                     .addAction("no", () -> retry.set(false));
         
-        AccountController accountController = new AccountController();
         UserInputReader inputReader = new UserInputReader();
         inputReader.addQuestion("User name")
                    .addQuestion("Password");
@@ -48,7 +55,7 @@ public class AccountsView {
             String password = inputResult.get(1);
         
             try {
-                user = accountController.authenticate(userName, password);
+                user = getAccountService().authenticate(userName, password);
                 if (user == null) {
                     failure = true;
                     logger.log(ErrorsEnum.DB_AUTH);
@@ -84,7 +91,6 @@ public class AccountsView {
                     .addAction("yes", () -> retry.set(true))
                     .addAction("no", () -> retry.set(false));
         
-        AccountController accountController = new AccountController();
         UserInputReader inputReader = new UserInputReader();
         inputReader.addQuestion("User name")
                    .addQuestion("Password");
@@ -98,7 +104,7 @@ public class AccountsView {
             String password = inputResult.get(1);
             
             try {
-                accountController.register(userName, password);
+                getAccountService().register(userName, password);
             } catch (IOException ioException) {
                 logger.log(ErrorsEnum.DB_IO);
                 failure = true;

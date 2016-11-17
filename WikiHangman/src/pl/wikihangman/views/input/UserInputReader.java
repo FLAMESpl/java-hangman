@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
@@ -15,12 +16,24 @@ import java.util.function.Function;
 public class UserInputReader {
     
     private Map<String, Function<String, Object>> questionsMap;
+    private Consumer<UserInputResult> action;
     
     /**
      * Initializes empty hash map for questions.
      */
     public UserInputReader() {
         questionsMap = new HashMap<>();
+    }
+    
+    /**
+     * Sets action that is taken when all required data is provided.
+     * 
+     * @param action action taken at the end of the user interaction
+     * @return this object
+     */
+    public UserInputReader setAction(Consumer<UserInputResult> action) {
+        this.action = action;
+        return this;
     }
             
     
@@ -50,9 +63,8 @@ public class UserInputReader {
     
     /**
      * Prints question to the user then captures his input. Process is repeated
-     * as many times as there was entries in {@code HashMap} of questions.
-     * 
-     * @return list of objects obtained from user's input
+     * as many times as there was entries in {@code HashMap} of questions. When
+     * all data is provided correctly specified action is taken.
      */
     public UserInputResult read() {
         

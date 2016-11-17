@@ -8,17 +8,11 @@ package pl.wikihangman.models;
  */
 public class Score implements Comparable<Score> {
     
-    private final String playerName;
-    private final long points;
+    private String playerName;
+    private long points;
     
-    /**
-     * 
-     * @param playerName player's name
-     * @param points player's amount of points
-     */
-    public Score(String playerName, long points) {
-        this.playerName = playerName;
-        this.points = points;
+    public Score setPlayerName(String playerName) {
+        return this;
     }
     
     /**
