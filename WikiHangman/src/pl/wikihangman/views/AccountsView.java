@@ -1,39 +1,80 @@
 package pl.wikihangman.views;
 
-import pl.wikihangman.views.input.UserInputReader;
 import pl.wikihangman.views.input.UserActionReader;
-import pl.wikihangman.views.input.UserInputResult;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
-import pl.wikihangman.exception.EntityAlreadyExistsException;
+import java.util.function.Consumer;
 import pl.wikihangman.models.User;
+import pl.wikihangman.views.input.UserInputReader;
+import pl.wikihangman.views.input.UserInputResult;
 
 /**
- * {@code AccountsView} is used to allow user to manipulate user database.
+ * {@code MasterView} is main application view responsible for creating all
+ * other sub-views.
  * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class AccountsView extends ViewBase {
+public class MasterView extends ViewBase {
     
-    Logger logger = new Logger();
+    private Logger logger = new Logger();
+    private User activeUser = null;
+    private AccountsView accountsView;
+    private GameView gameView;
     
     /**
-     * Copies all services from its parent.
+     * Initializes new controllers.
      * 
-     * @param parent calling view
+     * @param constructorDescriptorConsumer {@code FunctionalInterface}
+     *      initializing controllers
      */
-    public AccountsView(ViewBase parent) {
-        super(parent);
+    public MasterView(Consumer<ViewBaseConstructorDescriptor> constructorDescriptorConsumer) {
+        super(constructorDescriptorConsumer);
+        accountsView = new AccountsView(this);
+        gameView = new GameView(this);
+    } 
+    
+    /**
+     * Entry point for application, loops for reading user input.
+     * 
+     * @param applicationArgs command-line arguments of application
+     */
+    public void start(String[] applicationArgs) {
+        
+        try {
+            activeUser = getAccountService().authenticate(applicationArgs[0], applicationArgs[1]);
+            if (activeUser == null) {
+                logger.log(ErrorsEnum.DB_AUTH, "Failed to use application arguments credentials");
+            } else {
+                System.out.println("Logged as " + activeUser.getName());
+                System.out.println();
+            }
+        } catch(IOException ioException) {
+            logger.log(ErrorsEnum.DB_IO);
+        } catch(IndexOutOfBoundsException | NumberFormatException formatException) {
+            logger.log(ErrorsEnum.DB_FORMAT);
+        }
+        
+        AtomicBoolean exit = new AtomicBoolean(false);
+        UserActionReader reader = accountViewsReader(exit);
+        
+        while (!exit.get()) {
+            if (activeUser != null) {
+                gameView.display(activeUser);
+                activeUser = null;
+            }
+            reader.read();
+        }
     }
     
-    /**
-     * Captures text inputs from user needed to log in to his account
-     * and eventually repeats the process if authentication failed.
-     * 
-     * @return user that logged in using this view
-     */
-    public User displayLogInView() {
+    private UserActionReader accountViewsReader(AtomicBoolean exitToken) {
+        return new UserActionReader().setHeader("Available actions:")
+              .addAction("exit", () -> exitToken.set(true))
+              .addAction("login", () -> activeUser = displayLogInView())
+              .addAction("signup", () -> accountsView.displaySignUpView());
+    }
+    
+    private User displayLogInView() {
         
         User user = null;
         AtomicBoolean retry = new AtomicBoolean(true);
@@ -77,48 +118,5 @@ public class AccountsView extends ViewBase {
         }
         
         return user;
-    }
-    
-    /**
-     * Captures text input from user needed to create new account. Process may
-     * be repeated if accesses to database failed.
-     */
-    public void displaySignUpView() {
-        
-        AtomicBoolean retry = new AtomicBoolean(true);
-        UserActionReader actionReader = new UserActionReader();
-        actionReader.setHeader("Try again?")
-                    .addAction("yes", () -> retry.set(true))
-                    .addAction("no", () -> retry.set(false));
-        
-        UserInputReader inputReader = new UserInputReader();
-        inputReader.addQuestion("User name")
-                   .addQuestion("Password");
-        
-        while(retry.get()) {
-            boolean failure = false;
-            retry.set(false);
-            
-            UserInputResult inputResult = inputReader.read();
-            String userName = inputResult.get(0);
-            String password = inputResult.get(1);
-            
-            try {
-                getAccountService().register(userName, password);
-            } catch (IOException ioException) {
-                logger.log(ErrorsEnum.DB_IO);
-                failure = true;
-            } catch (EntityAlreadyExistsException entityAlreadyExistsException) {
-                logger.log(entityAlreadyExistsException);
-                failure = true;
-            }
-            
-            if (failure) {
-                actionReader.read();
-            } else {
-                System.out.println("Successfully created account");
-                System.out.println();
-            }
-        }
     }
 }
