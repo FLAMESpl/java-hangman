@@ -10,7 +10,6 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import pl.wikihangman.exception.EntityAlreadyExistsException;
-import pl.wikihangman.models.Score;
 import pl.wikihangman.models.User;
 
 /**
@@ -22,7 +21,15 @@ import pl.wikihangman.models.User;
  */
 public class AccountsService {
     
-    private final String DB_PATH = ".\\db.txt";
+    private final String dbPath;
+    
+    /**
+     * 
+     * @param dbPath path to database file
+     */
+    public AccountsService(String dbPath) {
+        this.dbPath = dbPath;
+    }
     
     /**
      * Checks if user of given credentials exists in database.
@@ -68,7 +75,7 @@ public class AccountsService {
                 .setPoints(0);
         
         String databaseLine = System.lineSeparator() + user.databaseEntity();
-        Files.write(Paths.get(DB_PATH), databaseLine.getBytes(), StandardOpenOption.APPEND);
+        Files.write(Paths.get(dbPath), databaseLine.getBytes(), StandardOpenOption.APPEND);
         return user;
     }
     
@@ -126,8 +133,14 @@ public class AccountsService {
         return id;
     }
     
+    /**
+     * Creates {@code BufferedReader} for database file.
+     * 
+     * @return {@code BufferedReader} for database file
+     * @throws IOException 
+     */
     private BufferedReader databaseBufferedReader() throws IOException {
-        FileInputStream in = new FileInputStream(DB_PATH);
-        return  new BufferedReader(new InputStreamReader(in));
+        FileInputStream in = new FileInputStream(dbPath);
+        return new BufferedReader(new InputStreamReader(in));
     }
 }

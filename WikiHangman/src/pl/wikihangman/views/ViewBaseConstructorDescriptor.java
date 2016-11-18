@@ -13,6 +13,7 @@ public class ViewBaseConstructorDescriptor {
     
     private AccountsService accountService = null;
     private GameService gameService = null;
+    private Logger logger = null;
     
     /**
      * 
@@ -36,6 +37,16 @@ public class ViewBaseConstructorDescriptor {
     
     /**
      * 
+     * @param logger messages logger
+     * @return this object
+     */
+    public ViewBaseConstructorDescriptor setLogger(Logger logger) {
+        this.logger = logger;
+        return this;
+    }
+    
+    /**
+     * 
      * @return account service
      */
     public AccountsService getAccountService(){
@@ -48,5 +59,13 @@ public class ViewBaseConstructorDescriptor {
      */
     public GameService getGameService() {
         return gameService;
+    }
+    
+    /**
+     * 
+     * @return message logger
+     */
+    public Logger getLogger() {
+        return logger;
     }
 }

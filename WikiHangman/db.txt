@@ -5,3 +5,4 @@
 5 alfa omega 0
 6 eryk ziomek 0
 7 ziomek franek 0
+8 siemano kolano 0

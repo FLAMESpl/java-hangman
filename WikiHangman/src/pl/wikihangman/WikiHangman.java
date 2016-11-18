@@ -1,8 +1,8 @@
 package pl.wikihangman;
 
-import pl.wikihangman.services.AccountsService;
-import pl.wikihangman.controllers.*;
-import pl.wikihangman.views.MasterView;
+import pl.wikihangman.services.*;
+import pl.wikihangman.views.AccountsView;
+import pl.wikihangman.views.Logger;
 
 
 /**
@@ -13,18 +13,22 @@ import pl.wikihangman.views.MasterView;
  */
 public class WikiHangman {
             
+    private static final String DB_PATH = ".\\db.txt";
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        AccountsService accountController = new AccountsService();
-        GameController gameController = new GameController();
+        AccountsService accountService = new AccountsService(DB_PATH);
+        GameService gameServices = new GameService();
+        Logger logger = new Logger();
         
-        MasterView masterView = new MasterView(v -> v
-                .setAccountService(accountController)
-                .setGameService(gameController));
+        AccountsView accountsView = new AccountsView(v -> v
+                .setAccountService(accountService)
+                .setGameService(gameServices)
+                .setLogger(logger));
                 
-        masterView.start(args);
+        accountsView.start(args);
     }
 }

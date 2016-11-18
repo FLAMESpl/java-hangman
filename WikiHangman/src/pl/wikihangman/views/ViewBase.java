@@ -14,6 +14,7 @@ public abstract class ViewBase {
     
     private final AccountsService accountController;
     private final GameService gameController;
+    private final Logger logger;
     
     /**
      * Copies all services from its parent.
@@ -23,6 +24,7 @@ public abstract class ViewBase {
     public ViewBase(ViewBase parent) {
         accountController = parent.accountController;
         gameController = parent.gameController;
+        logger = parent.logger;
     }
     
     /**
@@ -36,6 +38,7 @@ public abstract class ViewBase {
         constructorDescriptorConsumer.accept(constructorDescriptor);
         accountController = constructorDescriptor.getAccountService();
         gameController = constructorDescriptor.getGameService();
+        logger = constructorDescriptor.getLogger();
     }
     
     /**
@@ -52,5 +55,13 @@ public abstract class ViewBase {
      */
     protected GameService getGameService() {
         return gameController;
+    }
+    
+    /**
+     * 
+     * @return message logger
+     */
+    protected Logger getLogger() {
+        return logger;
     }
 }
