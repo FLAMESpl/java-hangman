@@ -31,7 +31,7 @@ public class AccountsView extends ViewBase {
     } 
     
     /**
-     * Entry point for application, loops for reading user input.
+     * Runs input accepting loop for this view.
      * 
      * @param applicationArgs command-line arguments of application
      */

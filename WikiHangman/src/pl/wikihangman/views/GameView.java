@@ -25,7 +25,8 @@ public class GameView extends ViewBase {
     }
     
     /**
-     * Runs loop for this view.
+     * Runs input accepting loop for this view.
+     * 
      * @param activeUser actually logged in user
      */
     public void start(User activeUser) {
@@ -34,7 +35,8 @@ public class GameView extends ViewBase {
         UserActionReader actionReader = new UserActionReader();
         actionReader.setHeader("Available actions:")
                     .addAction("logout", () -> exit.set(true))
-                    .addAction("score", () -> displayScoreBoardView(activeUser));
+                    .addAction("score", () -> displayScoreBoardView(activeUser))
+                    .addAction("start", () -> new HangmanView(this).start());
         
         while (!exit.get()) {
             

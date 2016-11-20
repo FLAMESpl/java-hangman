@@ -10,7 +10,8 @@ public enum ErrorsEnum {
     
     DB_IO("Could not read/write to database file."),
     DB_FORMAT("Could not read from database, data is corrupted."),
-    DB_AUTH("Invalid credentials.");
+    DB_AUTH("Invalid credentials."),
+    INPUT("Invalid form of an input");
     
     private final String message;
     
