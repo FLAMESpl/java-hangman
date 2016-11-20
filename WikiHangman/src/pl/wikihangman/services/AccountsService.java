@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import pl.wikihangman.exception.EntityAlreadyExistsException;
+import pl.wikihangman.exceptions.EntityAlreadyExistsException;
 import pl.wikihangman.models.User;
 
 /**
@@ -62,7 +62,7 @@ public class AccountsService {
      * @param password user's password
      * @return created user
      * @throws IOException 
-     * @throws pl.wikihangman.exception.EntityAlreadyExistsException 
+     * @throws pl.wikihangman.exceptions.EntityAlreadyExistsException 
      */
     public User register(String userName, String password) throws
             IOException, EntityAlreadyExistsException {

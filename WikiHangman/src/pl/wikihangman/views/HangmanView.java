@@ -1,7 +1,7 @@
 package pl.wikihangman.views;
 
 import java.util.concurrent.atomic.AtomicBoolean;
-import pl.wikihangman.exception.SessionTerminatedException;
+import pl.wikihangman.exceptions.SessionTerminatedException;
 import pl.wikihangman.models.Letter;
 import pl.wikihangman.models.User;
 import pl.wikihangman.views.input.*;

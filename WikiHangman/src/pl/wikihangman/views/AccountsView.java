@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
-import pl.wikihangman.exception.EntityAlreadyExistsException;
+import pl.wikihangman.exceptions.EntityAlreadyExistsException;
 import pl.wikihangman.models.User;
 import pl.wikihangman.views.input.UserInputReader;
 import pl.wikihangman.views.input.UserInputResult;

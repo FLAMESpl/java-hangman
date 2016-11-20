@@ -3,7 +3,7 @@ package pl.wikihangman.services;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
-import pl.wikihangman.exception.SessionTerminatedException;
+import pl.wikihangman.exceptions.SessionTerminatedException;
 import pl.wikihangman.models.Hangman;
 import pl.wikihangman.views.models.HangmanViewModel;
 

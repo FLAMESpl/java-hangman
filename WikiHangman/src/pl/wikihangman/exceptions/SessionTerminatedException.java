@@ -1,4 +1,4 @@
-package pl.wikihangman.exception;
+package pl.wikihangman.exceptions;
 
 /**
  * Signals that requested session is terminated.
