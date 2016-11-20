@@ -2,6 +2,7 @@ package pl.wikihangman.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Represents actual game state including lost lives, discovered letters
@@ -19,7 +20,7 @@ public class Hangman {
     /**
      * 
      * @param maxLives initial amount of available lives in this riddle
-     * @return 
+     * @return this object
      */
     public Hangman setMaxLives(int maxLives) {
         this.maxLives = maxLives;
@@ -29,31 +30,27 @@ public class Hangman {
     /**
      * 
      * @param actualLives amout of remaining lives in this riddle
-     * @return 
+     * @return this object
      */
-    public Hangman setActualLies(int actualLives) {
+    public Hangman setActualLives(int actualLives) {
         this.actualLives = actualLives;
         return this;
     }
     
     /**
-     * Creates keyword with discovered letters at given indices.
+     * Creates fully undiscovered keyword from given string, but with known
+     * characters.
      * 
      * @param text text of the keyword
-     * @param discoveredLettersIndices indices of already discovered letters in
-     *      keyword
      * @return this object
      * @throws IndexOutOfBoundsException 
      */
-    public Hangman createKeyword(String text, int... discoveredLettersIndices) 
+    public Hangman createKeyword(String text) 
         throws IndexOutOfBoundsException {
         
         keyword = new ArrayList<>();
-        for (int i = 0; i < text.length(); i++) {
-            keyword.add(new Letter().setUndiscovered());
-        }
-        for (int index : discoveredLettersIndices) {
-            keyword.get(index).setDiscovered(text.charAt(index));
+        for (char character : text.toCharArray()) {
+            keyword.add(new Letter().setIfIsDiscovered(false).setCharacter(character));
         }
         return this;
     }
@@ -88,5 +85,36 @@ public class Hangman {
      */
     public List<Letter> getKeyword() {
         return keyword;
+    }
+    
+    /**
+     * Discovers all letters of given character in keyword, if there is none,
+     * one live is lost.
+     * 
+     * @param character character to discover in keyword
+     * @return total letters discovered
+     */
+    public int discover(char character) {
+        AtomicInteger discovered = new AtomicInteger(0);
+        char lowerChar = Character.toLowerCase(character);
+        keyword.stream()
+                .filter((x) -> Character.toLowerCase(x.getCharacter()) == lowerChar)
+                .forEach((x) -> {
+                    x.setIfIsDiscovered(true);
+                    discovered.incrementAndGet();
+                });
+        if (discovered.get() == 0) {
+            actualLives--;
+        }
+        return discovered.get();
+    }
+    
+    /**
+     * Tests if keyword has any undiscovered letters remaining.
+     * 
+     * @return true if keyword has any undiscovred letters, otherwise false
+     */
+    public boolean hasUndiscoveredLetters() {
+        return keyword.stream().anyMatch(x -> !x.isDiscovered());
     }
 }

@@ -13,6 +13,26 @@ public class Letter {
     private char character;
     
     /**
+     * 
+     * @param character character to be set
+     * @return this object
+     */
+    public Letter setCharacter(char character) {
+        this.character = character;
+        return this;
+    }
+    
+    /**
+     * 
+     * @param discovered status of letter's visibility
+     * @return 
+     */
+    public Letter setIfIsDiscovered(boolean discovered) {
+        this.discovered = discovered;
+        return this;
+    }
+    
+    /**
      * Sets {@code Letter} character and its status to discovered.
      * 
      * @param character discovered character

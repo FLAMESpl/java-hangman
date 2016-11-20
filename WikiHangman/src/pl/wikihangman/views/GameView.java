@@ -36,10 +36,9 @@ public class GameView extends ViewBase {
         actionReader.setHeader("Available actions:")
                     .addAction("logout", () -> exit.set(true))
                     .addAction("score", () -> displayScoreBoardView(activeUser))
-                    .addAction("start", () -> new HangmanView(this).start());
+                    .addAction("start", () -> new HangmanView(this).start(activeUser));
         
         while (!exit.get()) {
-            
             actionReader.read();
         }
     }

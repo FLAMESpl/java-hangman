@@ -1,5 +1,7 @@
 package pl.wikihangman.services;
 
+import pl.wikihangman.models.Hangman;
+
 /**
  * Represents game session of single player saved in-memory on the server.
  * 
@@ -9,7 +11,7 @@ package pl.wikihangman.services;
 public class GameSession {
 
     private int userId;
-    private String keywordsText;
+    private Hangman hangman;
     
     /**
      * 
@@ -23,11 +25,11 @@ public class GameSession {
     
     /**
      * 
-     * @param keywordsText text of the keyword user is solving
+     * @param hangman hangman user is solving
      * @return 
      */
-    public GameSession setKeywordsText(String keywordsText) {
-        this.keywordsText = keywordsText;
+    public GameSession setHangman (Hangman hangman) {
+        this.hangman = hangman;
         return this;
     }
     
@@ -41,9 +43,9 @@ public class GameSession {
     
     /**
      * 
-     * @return text of the keyword user is solving
+     * @return hangman user is solving
      */
-    public String getKeywordsText() {
-        return keywordsText;
+    public Hangman getHangman() {
+        return hangman;
     }
 }
