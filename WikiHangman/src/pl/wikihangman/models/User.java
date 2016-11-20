@@ -54,22 +54,6 @@ public class User {
     }
     
     /**
-     * Initializes object using tokens from database's text line.
-     * 
-     * @param line complete line from database file
-     * @return this object
-     */
-    public User initializeFromTextLine(String line) throws 
-            NumberFormatException, IndexOutOfBoundsException {
-        String[] words = line.split(" ");
-        id = Integer.parseInt(words[0]);
-        name = words[1];
-        password = words[2];
-        points = Long.parseLong(words[3]);
-        return this;
-    }
-    
-    /**
      * 
      * @return User's id.
      */
@@ -110,15 +94,5 @@ public class User {
      */
     public boolean authenticate(String name, String password) {
         return this.name.equals(name) && this.password.equals(password);
-    }
-    
-    /**
-     * Creates line of string containing all user information needed for
-     * database entity.
-     * 
-     * @return database text line
-     */
-    public String databaseEntity() {
-        return String.format("%1$d %2$s %3$s %4$s", id, name, password, points);
     }
 }

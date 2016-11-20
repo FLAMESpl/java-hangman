@@ -1,4 +1,6 @@
-package pl.wikihangman.views;
+package pl.wikihangman.views.logging;
+
+import pl.wikihangman.views.logging.ErrorsEnum;
 
 /**
  * {@code Logger} allows displaying error messages based on code names and types.

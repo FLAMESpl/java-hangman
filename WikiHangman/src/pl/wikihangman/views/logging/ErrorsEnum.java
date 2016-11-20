@@ -1,4 +1,4 @@
-package pl.wikihangman.views;
+package pl.wikihangman.views.logging;
 
 /**
  * {@code Enum} containing possible error messages.

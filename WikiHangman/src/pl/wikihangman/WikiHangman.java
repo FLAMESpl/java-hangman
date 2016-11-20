@@ -2,7 +2,7 @@ package pl.wikihangman;
 
 import pl.wikihangman.services.*;
 import pl.wikihangman.views.AccountsView;
-import pl.wikihangman.views.Logger;
+import pl.wikihangman.views.logging.Logger;
 
 
 /**

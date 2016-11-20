@@ -48,7 +48,7 @@ public class AccountsService {
         boolean matched = false;
         
         while((line = reader.readLine()) != null && !matched) {
-            nextUser = new User().initializeFromTextLine(line);
+            nextUser = createUserFromTextLine(line);
             matched = nextUser.authenticate(userName, password);
         } 
         
@@ -74,7 +74,7 @@ public class AccountsService {
                 .setPassword(password)
                 .setPoints(0);
         
-        String databaseLine = System.lineSeparator() + user.databaseEntity();
+        String databaseLine = System.lineSeparator() + createDatabaseTextLine(user);
         Files.write(Paths.get(dbPath), databaseLine.getBytes(), StandardOpenOption.APPEND);
         return user;
     }
@@ -92,7 +92,7 @@ public class AccountsService {
         String line;
         
         while ((line = reader.readLine()) != null) {
-            User user = new User().initializeFromTextLine(line);
+            User user = createUserFromTextLine(line);
             result.add(user);
         }
         
@@ -116,7 +116,7 @@ public class AccountsService {
         int id = 1;
         
         while ((line = reader.readLine()) != null) {
-            User user = new User().initializeFromTextLine(line);
+            User user = createUserFromTextLine(line);
             int nextId = user.getId();
             String nextName = user.getName();
             
@@ -131,6 +131,36 @@ public class AccountsService {
         }
         
         return id;
+    }
+    
+    /**
+     * Creates user class object with parameters from single text line.
+     * 
+     * @param textLine complete line from database file
+     * @return complete user object
+     */
+    private User createUserFromTextLine(String textLine) 
+        throws NumberFormatException, IndexOutOfBoundsException {
+        User user = new User();
+        String[] words = textLine.split(" ");
+        int id = Integer.parseInt(words[0]);
+        String name = words[1];
+        String password = words[2];
+        long points = Long.parseLong(words[3]);
+        user.setId(id).setName(name).setPassword(password).setPoints(points);
+        return user;
+    }
+    
+    /**
+     * Creates string containing all user information needed for
+     * database entity.
+     * 
+     * @param user existing user to be saved in database
+     * @return database text line
+     */
+    private String createDatabaseTextLine(User user) {
+        return String.format("%1$d %2$s %3$s %4$s",
+                user.getId(), user.getName(), user.getPassword(), user.getPoints());
     }
     
     /**

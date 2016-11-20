@@ -1,5 +1,6 @@
 package pl.wikihangman.views;
 
+import pl.wikihangman.views.logging.Logger;
 import java.util.function.Consumer;
 import pl.wikihangman.services.*;
 

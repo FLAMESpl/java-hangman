@@ -1,5 +1,6 @@
 package pl.wikihangman.views;
 
+import pl.wikihangman.views.logging.ErrorsEnum;
 import pl.wikihangman.views.input.UserActionReader;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
