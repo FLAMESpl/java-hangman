@@ -9,6 +9,9 @@ import org.junit.runners.Suite;
  * @version 1.0.0.0
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({GameServiceTests.class})
+@Suite.SuiteClasses({
+    GameServiceTests.class,
+    HangmanTests.class})
+
 public class TestSuite {
 }
