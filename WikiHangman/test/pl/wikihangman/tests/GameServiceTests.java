@@ -46,7 +46,7 @@ public class GameServiceTests {
     }
     
     @Test
-    public void TerminatesSessionOnDemandProperly() {
+    public void terminatesSessionOnDemandProperly() {
         
         GameService service = new GameService();
         int userId = 1;
@@ -61,7 +61,7 @@ public class GameServiceTests {
     }
     
     @Test
-    public void TerminatesSessionOnHangmanComplete() {
+    public void terminatesSessionOnHangmanComplete() {
         
         GameService service = new GameService();
         int userId = 1;
@@ -80,7 +80,7 @@ public class GameServiceTests {
     }
     
     @Test
-    public void TerminatesSessionsWhenAllLivesLost() {
+    public void terminatesSessionsWhenAllLivesLost() {
         
         GameService service = new GameService();
         int userId = 1;

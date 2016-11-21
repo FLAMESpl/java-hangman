@@ -37,7 +37,8 @@ public class AccountsService {
      * @param userName user's name
      * @param password user's password
      * @return user object if successful, otherwise null
-     * @throws java.io.IOException, NumberFormatException
+     * @throws IOException
+     * @throws NumberFormatException
      */
     public User authenticate(String userName, String password) throws 
             IOException, NumberFormatException {
@@ -84,7 +85,8 @@ public class AccountsService {
      * Returns all users from the database.
      * 
      * @return All users list
-     * @throws IOException, NumberFormatException
+     * @throws IOException
+     * @throws NumberFormatException
      */
     public List<User> getPlayersList() throws IOException, NumberFormatException {
         

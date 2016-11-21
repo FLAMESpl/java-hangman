@@ -38,9 +38,9 @@ public class HangmanView extends ViewBase {
      */
     public void start(User activeUser) {
         
-        this.activeUser = activeUser;
         hangman = getGameService().startNewSession(activeUser.getId());
         AtomicBoolean exit = new AtomicBoolean(false);
+        this.activeUser = activeUser;
         UserInputReader reader = new UserInputReader()
             .addQuestion("Type character to discover or " + exitSequence + " to exit");
         

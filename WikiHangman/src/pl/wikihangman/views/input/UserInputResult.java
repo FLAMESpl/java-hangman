@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Results of user input returned from {@code UserInputReader}.
- * Wraps logic of casting items of {@List<Object>} to certain types.
+ * Wraps logic of casting items of {@code List<Object>} to certain types.
  * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
