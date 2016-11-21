@@ -48,6 +48,7 @@ public class AccountsService {
         boolean matched = false;
         
         while((line = reader.readLine()) != null && !matched) {
+            
             nextUser = createUserFromTextLine(line);
             matched = nextUser.authenticate(userName, password);
         } 
@@ -74,7 +75,7 @@ public class AccountsService {
                 .setPassword(password)
                 .setPoints(0);
         
-        String databaseLine = System.lineSeparator() + createDatabaseTextLine(user);
+        String databaseLine = createDatabaseTextLine(user) + System.lineSeparator();
         Files.write(Paths.get(dbPath), databaseLine.getBytes(), StandardOpenOption.APPEND);
         return user;
     }
@@ -92,6 +93,9 @@ public class AccountsService {
         String line;
         
         while ((line = reader.readLine()) != null) {
+            if (endOfDatabseFile(line)) {
+                break;
+            }
             User user = createUserFromTextLine(line);
             result.add(user);
         }
@@ -116,6 +120,10 @@ public class AccountsService {
         int id = 1;
         
         while ((line = reader.readLine()) != null) {
+            if (endOfDatabseFile(line)) {
+                break;
+            }
+            
             User user = createUserFromTextLine(line);
             int nextId = user.getId();
             String nextName = user.getName();
@@ -172,5 +180,14 @@ public class AccountsService {
     private BufferedReader databaseBufferedReader() throws IOException {
         FileInputStream in = new FileInputStream(dbPath);
         return new BufferedReader(new InputStreamReader(in));
+    }
+    
+    /**
+     * Tests if databse file ends with empty file.
+     * 
+     * @return true if it is end of file
+     */
+    private boolean endOfDatabseFile(String line) {
+        return line.equals("");
     }
 }

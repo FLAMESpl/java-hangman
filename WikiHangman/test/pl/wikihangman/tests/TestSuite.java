@@ -11,7 +11,9 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     GameServiceTests.class,
-    HangmanTests.class})
+    HangmanTests.class,
+    UserTests.class,
+    AccountServiceTests.class})
 
 public class TestSuite {
 }
