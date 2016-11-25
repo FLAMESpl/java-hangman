@@ -8,19 +8,29 @@ package pl.wikihangman.views.logging;
  */
 public enum ErrorsEnum {
     
-    DB_IO("Could not read/write to database file."),
-    DB_FORMAT("Could not read from database, data is corrupted."),
-    DB_AUTH("Invalid credentials."),
-    INPUT("Invalid form of an input");
+    DB_IO("Could not read/write to database file.", "IO Error"),
+    DB_FORMAT("Could not read from database, data is corrupted.", "Database Data Error"),
+    DB_AUTH("Invalid credentials.", "Loggin In Error"),
+    INPUT("Invalid form of an input.", "Input Error");
     
     private final String message;
+    private final String title;
     
     /**
      * 
      * @param message error message
      */
-    private ErrorsEnum(String message) {
+    private ErrorsEnum(String message, String title) {
         this.message = message;
+        this.title = title;
+    }
+    
+    /**
+     * 
+     * @return title of error message
+     */
+    public String getTitle() {
+        return title;
     }
     
     /**
