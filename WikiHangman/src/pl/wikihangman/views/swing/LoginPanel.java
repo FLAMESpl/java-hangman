@@ -42,6 +42,13 @@ public class LoginPanel extends javax.swing.JPanel {
     }
     
     /**
+     * @param listener listener for log in attempt event
+     */
+    public void addLogInAttemptListener(LogInAttemptListener listener) {
+        logInAttemptListeners.add(listener);
+    }
+    
+    /**
      * Raises given event by calling each registered listener.
      * 
      * @param event model containing event-related data

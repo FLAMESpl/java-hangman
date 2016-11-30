@@ -1,8 +1,8 @@
 package pl.wikihangman.views.swing;
 
 import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
 import javax.swing.JPanel;
+import pl.wikihangman.models.User;
 import pl.wikihangman.services.AccountsService;
 import pl.wikihangman.views.swing.events.*;
 
@@ -16,7 +16,7 @@ public class HomeFrame extends javax.swing.JFrame
 
     private String wikipediaBaseUrl = null;
     private final String DB_PATH = ".\\db.txt";
-    private JPanel panel;
+    private User activeUser = null;
     
     /**
      * Creates new form HomeFrame
@@ -26,16 +26,43 @@ public class HomeFrame extends javax.swing.JFrame
         init();
     }
     
+    /**
+     * Non-designer initialization part of comoonent.
+     */
     private void init() {
-        
-        panel = new LoginPanel().setAccountsService(new AccountsService(DB_PATH));
-        mainPanel.setLayout(new GridBagLayout());
-        mainPanel.add(panel);
+        setLogInPanel();
     }
     
+    /**
+     * Executed when {@code LogInAttemptEvent} is raised.
+     * 
+     * @param event data associated with event state
+     */
     @Override
     public void attemptedToLogIn(LogInAttemptEvent event) {
-        this.setTitle(event.getUserName());
+        activeUser = event.getLoggedUser();
+        if (activeUser != null) {
+            logOutMenuItem.setEnabled(true);
+        }
+    }
+    
+    private void setLogInPanel() {
+        LoginPanel panel = new LoginPanel().setAccountsService(new AccountsService(DB_PATH));
+        panel.addLogInAttemptListener(this);
+        setMainPanel(panel);
+    }
+    
+    /**
+     * Activates given panel in this frame. Only one panel can be active at time.
+     * 
+     * @param panel panel to activate
+     */
+    private void setMainPanel(JPanel panel) {
+        mainPanel.removeAll();
+        mainPanel.revalidate();
+        mainPanel.repaint();
+        mainPanel.setLayout(new BorderLayout());
+        mainPanel.add(panel);
     }
 
     /**
@@ -48,11 +75,12 @@ public class HomeFrame extends javax.swing.JFrame
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
-        statusBar = new javax.swing.JToolBar();
-        statusLabel = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
+        gameMenu = new javax.swing.JMenu();
+        gameMenuItem = new javax.swing.JMenuItem();
+        logOutMenuItem = new javax.swing.JMenuItem();
+        scoreboardMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
         propertiesMenu = new javax.swing.JMenu();
         helpMenu = new javax.swing.JMenu();
@@ -63,12 +91,6 @@ public class HomeFrame extends javax.swing.JFrame
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar1.setRollover(true);
 
-        statusBar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        statusBar.setRollover(true);
-
-        statusLabel.setText("Status");
-        statusBar.add(statusLabel);
-
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -77,11 +99,31 @@ public class HomeFrame extends javax.swing.JFrame
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 219, Short.MAX_VALUE)
+            .addGap(0, 247, Short.MAX_VALUE)
         );
 
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("File");
+        gameMenu.setMnemonic('f');
+        gameMenu.setText("Game");
+
+        gameMenuItem.setText("New");
+        gameMenu.add(gameMenuItem);
+
+        logOutMenuItem.setText("Log out");
+        logOutMenuItem.setEnabled(false);
+        logOutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutMenuItemActionPerformed(evt);
+            }
+        });
+        gameMenu.add(logOutMenuItem);
+
+        scoreboardMenuItem.setText("Score board");
+        scoreboardMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scoreboardMenuItemActionPerformed(evt);
+            }
+        });
+        gameMenu.add(scoreboardMenuItem);
 
         exitMenuItem.setMnemonic('x');
         exitMenuItem.setText("Exit");
@@ -90,9 +132,9 @@ public class HomeFrame extends javax.swing.JFrame
                 exitMenuItemActionPerformed(evt);
             }
         });
-        fileMenu.add(exitMenuItem);
+        gameMenu.add(exitMenuItem);
 
-        menuBar.add(fileMenu);
+        menuBar.add(gameMenu);
 
         propertiesMenu.setText("Properties");
         menuBar.add(propertiesMenu);
@@ -112,8 +154,7 @@ public class HomeFrame extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(statusBar, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -121,9 +162,7 @@ public class HomeFrame extends javax.swing.JFrame
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(statusBar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,6 +171,23 @@ public class HomeFrame extends javax.swing.JFrame
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void scoreboardMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreboardMenuItemActionPerformed
+        ScoreBoardPanel panel = new ScoreBoardPanel()
+                .setAccountService(new AccountsService(DB_PATH))
+                .displayScoreBoard();
+        
+        if (activeUser != null) {
+            panel.showWithActiveUser(activeUser);
+        }
+        
+        setMainPanel(panel);
+    }//GEN-LAST:event_scoreboardMenuItemActionPerformed
+
+    private void logOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutMenuItemActionPerformed
+        setLogInPanel();
+        logOutMenuItem.setEnabled(false);
+    }//GEN-LAST:event_logOutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,14 +223,15 @@ public class HomeFrame extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenu gameMenu;
+    private javax.swing.JMenuItem gameMenuItem;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JMenuItem logOutMenuItem;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu propertiesMenu;
-    private javax.swing.JToolBar statusBar;
-    private javax.swing.JLabel statusLabel;
+    private javax.swing.JMenuItem scoreboardMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }
