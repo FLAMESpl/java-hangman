@@ -3,9 +3,10 @@ package pl.wikihangman.views.swing;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
+import pl.wikihangman.exceptions.EntityAlreadyExistsException;
 import pl.wikihangman.models.User;
 import pl.wikihangman.services.AccountsService;
+import pl.wikihangman.views.logging.ConfirmationsEnum;
 import pl.wikihangman.views.logging.ErrorsEnum;
 import pl.wikihangman.views.swing.events.LogInAttemptEvent;
 import pl.wikihangman.views.swing.events.LogInAttemptListener;
@@ -89,6 +90,28 @@ public class LoginPanel extends javax.swing.JPanel {
                 
         onLogInAttempt(event);
     }
+    
+    /**
+     * Creates new user in database file from given credentials. Raises
+     * userCreated event no matter if process was successful or not.
+     * 
+     * @param name typed user's name
+     * @param password typed user's password
+     */
+    private void signUp(String name, String password) {
+        
+        try {
+            accountsService.register(name, password);
+        } catch (IOException ioException) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_IO);
+            return;
+        } catch (EntityAlreadyExistsException alreadyExistsException) {
+            OptionPaneHelpers.showErrorMessage(this, alreadyExistsException);
+            return;
+        }
+        
+        OptionPaneHelpers.showInformationMessage(this, ConfirmationsEnum.USER_CREATED);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,8 +127,11 @@ public class LoginPanel extends javax.swing.JPanel {
         passwordLabel = new javax.swing.JLabel();
         logInButton = new javax.swing.JButton();
         passwordTextField = new javax.swing.JPasswordField();
+        signUpButton = new javax.swing.JButton();
 
         userNameLabel.setText("User name");
+
+        userNameTextField.setMaximumSize(new java.awt.Dimension(300, 2147483647));
 
         passwordLabel.setText("Password");
 
@@ -117,6 +143,14 @@ public class LoginPanel extends javax.swing.JPanel {
         });
 
         passwordTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordTextField.setMaximumSize(new java.awt.Dimension(300, 2147483647));
+
+        signUpButton.setText("Sign up");
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUpButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -126,10 +160,11 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(userNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(userNameTextField)
+                    .addComponent(userNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logInButton, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
                     .addComponent(passwordLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(passwordTextField))
+                    .addComponent(passwordTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(signUpButton, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -145,7 +180,9 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(logInButton)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(signUpButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -154,11 +191,16 @@ public class LoginPanel extends javax.swing.JPanel {
         authenticate(userNameTextField.getText(), new String(passwordTextField.getPassword()));
     }//GEN-LAST:event_logInButtonActionPerformed
 
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
+        signUp(userNameTextField.getText(), new String(passwordTextField.getPassword()));
+    }//GEN-LAST:event_signUpButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton logInButton;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JButton signUpButton;
     private javax.swing.JLabel userNameLabel;
     private javax.swing.JTextField userNameTextField;
     // End of variables declaration//GEN-END:variables

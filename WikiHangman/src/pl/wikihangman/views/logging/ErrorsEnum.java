@@ -6,7 +6,7 @@ package pl.wikihangman.views.logging;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public enum ErrorsEnum {
+public enum ErrorsEnum implements INotification {
     
     DB_IO("Could not read/write to database file.", "IO Error"),
     DB_FORMAT("Could not read from database, data is corrupted.", "Database Data Error"),
@@ -19,6 +19,7 @@ public enum ErrorsEnum {
     /**
      * 
      * @param message error message
+     * @param title title of message
      */
     private ErrorsEnum(String message, String title) {
         this.message = message;
@@ -29,6 +30,7 @@ public enum ErrorsEnum {
      * 
      * @return title of error message
      */
+    @Override
     public String getTitle() {
         return title;
     }
@@ -37,6 +39,7 @@ public enum ErrorsEnum {
      * 
      * @return error message
      */
+    @Override
     public String getMessage() {
         return message;
     }
