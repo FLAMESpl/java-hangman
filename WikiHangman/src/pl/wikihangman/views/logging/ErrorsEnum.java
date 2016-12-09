@@ -11,7 +11,8 @@ public enum ErrorsEnum implements INotification {
     DB_IO("Could not read/write to database file.", "IO Error"),
     DB_FORMAT("Could not read from database, data is corrupted.", "Database Data Error"),
     DB_AUTH("Invalid credentials.", "Loggin In Error"),
-    INPUT("Invalid form of an input.", "Input Error");
+    INPUT("Invalid form of an input.", "Input Error"),
+    INPUT_EMPTY("Input value cannot be empty.", "Input Error");
     
     private final String message;
     private final String title;

@@ -1,22 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.wikihangman.views.swing;
+
+import pl.wikihangman.services.GameService;
 
 /**
  *
  * @author Łukasz Szafirski
+ * @version 1.0.0.0
  */
-public class GamePanel extends javax.swing.JPanel {
-
+public class GamePanel extends AppPanel {
+ 
+    private GameService gameService = null;
+    
     /**
      * Creates new form GamePanel
      */
     public GamePanel() {
         initComponents();
     }
+    
+    /**
+     * 
+     * @param service Service responsible for handling game logic.
+     * @return this object
+     */
+    public GamePanel SetGameService(GameService service) {
+        this.gameService = service;
+        return this;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,19 +38,112 @@ public class GamePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        labelMaxLives = new javax.swing.JLabel();
+        labelActualLives = new javax.swing.JLabel();
+        labelMaxLivesAmount = new javax.swing.JLabel();
+        labelActualLivesAmount = new javax.swing.JLabel();
+        panelTextArea = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaKeyword = new javax.swing.JTextArea();
+        labelInputCharacter = new javax.swing.JLabel();
+        textFieldCharacterInput = new javax.swing.JTextField();
+        buttonTryCharacter = new javax.swing.JButton();
+
+        labelMaxLives.setText("Max lives:");
+
+        labelActualLives.setText("Actual lives:");
+
+        labelMaxLivesAmount.setText("0");
+
+        labelActualLivesAmount.setText("0");
+
+        textAreaKeyword.setColumns(20);
+        textAreaKeyword.setLineWrap(true);
+        textAreaKeyword.setRows(5);
+        jScrollPane1.setViewportView(textAreaKeyword);
+
+        javax.swing.GroupLayout panelTextAreaLayout = new javax.swing.GroupLayout(panelTextArea);
+        panelTextArea.setLayout(panelTextAreaLayout);
+        panelTextAreaLayout.setHorizontalGroup(
+            panelTextAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTextAreaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        panelTextAreaLayout.setVerticalGroup(
+            panelTextAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTextAreaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        labelInputCharacter.setText("Input character:");
+
+        textFieldCharacterInput.setText("A");
+
+        buttonTryCharacter.setText("Try");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelMaxLives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelActualLives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelMaxLivesAmount)
+                                    .addComponent(labelActualLivesAmount)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelInputCharacter)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textFieldCharacterInput, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonTryCharacter)))
+                        .addContainerGap(231, Short.MAX_VALUE))
+                    .addComponent(panelTextArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelMaxLives)
+                    .addComponent(labelMaxLivesAmount))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelActualLives)
+                    .addComponent(labelActualLivesAmount))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelTextArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelInputCharacter)
+                    .addComponent(textFieldCharacterInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonTryCharacter))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonTryCharacter;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelActualLives;
+    private javax.swing.JLabel labelActualLivesAmount;
+    private javax.swing.JLabel labelInputCharacter;
+    private javax.swing.JLabel labelMaxLives;
+    private javax.swing.JLabel labelMaxLivesAmount;
+    private javax.swing.JPanel panelTextArea;
+    private javax.swing.JTextArea textAreaKeyword;
+    private javax.swing.JTextField textFieldCharacterInput;
     // End of variables declaration//GEN-END:variables
 }

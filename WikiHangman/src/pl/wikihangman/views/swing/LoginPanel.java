@@ -19,7 +19,7 @@ import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class LoginPanel extends javax.swing.JPanel {
+public class LoginPanel extends AppPanel {
 
     private List<LogInAttemptListener> logInAttemptListeners;
     private AccountsService accountsService = null;
@@ -81,24 +81,31 @@ public class LoginPanel extends javax.swing.JPanel {
         
         if (user == null) {
             OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_AUTH);
+        } else {
+            OptionPaneHelpers.showInformationMessage(this, ConfirmationsEnum.USER_LOGGED);
         }
         
         LogInAttemptEvent event = new LogInAttemptEvent(this)
                 .setSuccess(user != null)
                 .setLoggedUser(user)
                 .setUserName(name);
-                
+               
         onLogInAttempt(event);
     }
     
     /**
-     * Creates new user in database file from given credentials. Raises
-     * userCreated event no matter if process was successful or not.
+     * Creates new user in database file from given credentials.
+     * Credentials cannot be empty strings.
      * 
      * @param name typed user's name
      * @param password typed user's password
      */
     private void signUp(String name, String password) {
+        
+        if (name.isEmpty() || password.isEmpty()) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.INPUT_EMPTY);
+            return;
+        }
         
         try {
             accountsService.register(name, password);

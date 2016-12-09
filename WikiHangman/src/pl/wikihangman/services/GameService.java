@@ -17,6 +17,7 @@ import pl.wikihangman.views.models.HangmanViewModel;
 public class GameService {
     
     private List<GameSession> activeSessions = new ArrayList<>();
+    private List<Character> availableCharacters = new ArrayList<>();
     
     /**
      * Hangman for development purposes since there is no wikipedia service 
@@ -30,7 +31,7 @@ public class GameService {
     /**
      * Starts new session for user of given id and creates new keyword.
      * 
-     * @param userId requesting user's id
+     * @param userId requesting user's ids
      * @return view-model of actual hangman
      */
     public HangmanViewModel startNewSession(int userId) {

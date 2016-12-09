@@ -1,9 +1,9 @@
 package pl.wikihangman.views.swing;
 
 import java.awt.BorderLayout;
-import javax.swing.JPanel;
 import pl.wikihangman.models.User;
 import pl.wikihangman.services.AccountsService;
+import pl.wikihangman.services.GameService;
 import pl.wikihangman.views.swing.events.*;
 
 /**
@@ -17,6 +17,7 @@ public class HomeFrame extends javax.swing.JFrame
     private String wikipediaBaseUrl = null;
     private final String DB_PATH = ".\\db.txt";
     private User activeUser = null;
+    private LogInStatusEnum logInStatus = LogInStatusEnum.LOGGED_OUT;
     
     /**
      * Creates new form HomeFrame
@@ -27,7 +28,7 @@ public class HomeFrame extends javax.swing.JFrame
     }
     
     /**
-     * Non-designer initialization part of comoonent.
+     * Non-designer initialization part of component.
      */
     private void init() {
         setLogInPanel();
@@ -41,11 +42,32 @@ public class HomeFrame extends javax.swing.JFrame
     @Override
     public void attemptedToLogIn(LogInAttemptEvent event) {
         activeUser = event.getLoggedUser();
-        if (activeUser != null) {
-            logOutMenuItem.setEnabled(true);
+        if (event.getSuccess()) {
+            setLogInStatus(LogInStatusEnum.LOGGED_IN);
         }
     }
     
+    /**
+     * Adjusts form's components state to given {@code LogInStatusEnum}
+     * 
+     * @param logInStatusEnum status of logged user
+     */
+    private void setLogInStatus(LogInStatusEnum logInStatusEnum) {
+        logInStatus = logInStatusEnum;
+        switch (logInStatusEnum) {
+            case LOGGED_IN:
+                logInlogOutMenuItem.setText("Log out");
+                break;
+                
+            case LOGGED_OUT:
+                logInlogOutMenuItem.setText("Log in");
+                break;
+        }
+    }
+    
+    /**
+     * Sets log in panel as main panel in this frame.
+     */
     private void setLogInPanel() {
         LoginPanel panel = new LoginPanel().setAccountsService(new AccountsService(DB_PATH));
         panel.addLogInAttemptListener(this);
@@ -57,7 +79,8 @@ public class HomeFrame extends javax.swing.JFrame
      * 
      * @param panel panel to activate
      */
-    private void setMainPanel(JPanel panel) {
+    private void setMainPanel(AppPanel panel) {
+        mainPanel.addContainerListener(panel);
         mainPanel.removeAll();
         mainPanel.revalidate();
         mainPanel.repaint();
@@ -79,7 +102,7 @@ public class HomeFrame extends javax.swing.JFrame
         menuBar = new javax.swing.JMenuBar();
         gameMenu = new javax.swing.JMenu();
         gameMenuItem = new javax.swing.JMenuItem();
-        logOutMenuItem = new javax.swing.JMenuItem();
+        logInlogOutMenuItem = new javax.swing.JMenuItem();
         scoreboardMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
         propertiesMenu = new javax.swing.JMenu();
@@ -106,16 +129,20 @@ public class HomeFrame extends javax.swing.JFrame
         gameMenu.setText("Game");
 
         gameMenuItem.setText("New");
-        gameMenu.add(gameMenuItem);
-
-        logOutMenuItem.setText("Log out");
-        logOutMenuItem.setEnabled(false);
-        logOutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        gameMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logOutMenuItemActionPerformed(evt);
+                gameMenuItemActionPerformed(evt);
             }
         });
-        gameMenu.add(logOutMenuItem);
+        gameMenu.add(gameMenuItem);
+
+        logInlogOutMenuItem.setText("Log in");
+        logInlogOutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logInlogOutMenuItemActionPerformed(evt);
+            }
+        });
+        gameMenu.add(logInlogOutMenuItem);
 
         scoreboardMenuItem.setText("Score board");
         scoreboardMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -184,10 +211,20 @@ public class HomeFrame extends javax.swing.JFrame
         setMainPanel(panel);
     }//GEN-LAST:event_scoreboardMenuItemActionPerformed
 
-    private void logOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutMenuItemActionPerformed
+    private void logInlogOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInlogOutMenuItemActionPerformed
         setLogInPanel();
-        logOutMenuItem.setEnabled(false);
-    }//GEN-LAST:event_logOutMenuItemActionPerformed
+        if (logInStatus == LogInStatusEnum.LOGGED_IN) {
+            setLogInStatus(LogInStatusEnum.LOGGED_OUT);
+            activeUser = null;
+        }
+    }//GEN-LAST:event_logInlogOutMenuItemActionPerformed
+
+    private void gameMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameMenuItemActionPerformed
+        if (logInStatus == LogInStatusEnum.LOGGED_IN) {
+            GamePanel panel = new GamePanel().SetGameService(new GameService());
+            setMainPanel(panel);
+        }
+    }//GEN-LAST:event_gameMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,7 +264,7 @@ public class HomeFrame extends javax.swing.JFrame
     private javax.swing.JMenuItem gameMenuItem;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JMenuItem logOutMenuItem;
+    private javax.swing.JMenuItem logInlogOutMenuItem;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu propertiesMenu;
