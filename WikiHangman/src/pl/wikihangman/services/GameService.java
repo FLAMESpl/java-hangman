@@ -17,7 +17,6 @@ import pl.wikihangman.views.models.HangmanViewModel;
 public class GameService {
     
     private List<GameSession> activeSessions = new ArrayList<>();
-    private List<Character> availableCharacters = new ArrayList<>();
     
     /**
      * Hangman for development purposes since there is no wikipedia service 

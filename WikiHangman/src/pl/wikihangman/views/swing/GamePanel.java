@@ -90,6 +90,15 @@ public class GamePanel extends AppPanel {
         labelMaxLivesAmount.setText(Integer.toString(hangman.getMaxLives()));
     }
     
+    
+    /**
+     * Invoked when parent controller removes this component from panel.
+     * Requests game service to terminate session.
+     */
+    @Override
+    public void removedFromPanel() {
+        gameService.closeSession(activePlayer.getId());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -10,6 +10,8 @@ import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
 
 /**
  *
+ * Main window of the application. Starts with {@code LoginPanel} loaded.
+ * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
@@ -77,6 +79,36 @@ public class HomeFrame extends javax.swing.JFrame
     }
     
     /**
+     * Setups new game controller.
+     */
+    private void requestNewGame() {
+        if (logInStatus == LogInStatusEnum.LOGGED_IN) {
+            GamePanel panel = new GamePanel()
+                    .setGameService(new GameService())
+                    .setActivePlayer(activeUser)
+                    .initHangman();
+            setMainPanel(panel);
+        } else {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.NEED_AUTH);
+        }
+    }
+    
+    /**
+     * Setups score board controller.
+     */
+    private void requestScoreBoard() {
+        ScoreBoardPanel panel = new ScoreBoardPanel()
+                .setAccountService(new AccountsService(DB_PATH))
+                .displayScoreBoard();
+        
+        if (activeUser != null) {
+            panel.showWithActiveUser(activeUser);
+        }
+        
+        setMainPanel(panel);
+    }
+    
+    /**
      * Activates given panel in this frame. Only one panel can be active at time.
      * 
      * @param panel panel to activate
@@ -100,6 +132,8 @@ public class HomeFrame extends javax.swing.JFrame
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
+        toolBarButtonNewHangman = new javax.swing.JButton();
+        toolBarButtonScoreBoard = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         gameMenu = new javax.swing.JMenu();
@@ -115,6 +149,28 @@ public class HomeFrame extends javax.swing.JFrame
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar1.setRollover(true);
+
+        toolBarButtonNewHangman.setText("New hangman");
+        toolBarButtonNewHangman.setFocusable(false);
+        toolBarButtonNewHangman.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        toolBarButtonNewHangman.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        toolBarButtonNewHangman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toolBarButtonNewHangmanActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(toolBarButtonNewHangman);
+
+        toolBarButtonScoreBoard.setText("Score board");
+        toolBarButtonScoreBoard.setFocusable(false);
+        toolBarButtonScoreBoard.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        toolBarButtonScoreBoard.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        toolBarButtonScoreBoard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toolBarButtonScoreBoardActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(toolBarButtonScoreBoard);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -202,15 +258,7 @@ public class HomeFrame extends javax.swing.JFrame
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void scoreboardMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreboardMenuItemActionPerformed
-        ScoreBoardPanel panel = new ScoreBoardPanel()
-                .setAccountService(new AccountsService(DB_PATH))
-                .displayScoreBoard();
-        
-        if (activeUser != null) {
-            panel.showWithActiveUser(activeUser);
-        }
-        
-        setMainPanel(panel);
+        requestScoreBoard();
     }//GEN-LAST:event_scoreboardMenuItemActionPerformed
 
     private void logInlogOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInlogOutMenuItemActionPerformed
@@ -222,16 +270,16 @@ public class HomeFrame extends javax.swing.JFrame
     }//GEN-LAST:event_logInlogOutMenuItemActionPerformed
 
     private void gameMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameMenuItemActionPerformed
-        if (logInStatus == LogInStatusEnum.LOGGED_IN) {
-            GamePanel panel = new GamePanel()
-                    .setGameService(new GameService())
-                    .setActivePlayer(activeUser)
-                    .initHangman();
-            setMainPanel(panel);
-        } else {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.NEED_AUTH);
-        }
+        requestNewGame();
     }//GEN-LAST:event_gameMenuItemActionPerformed
+
+    private void toolBarButtonNewHangmanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toolBarButtonNewHangmanActionPerformed
+        requestNewGame();
+    }//GEN-LAST:event_toolBarButtonNewHangmanActionPerformed
+
+    private void toolBarButtonScoreBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toolBarButtonScoreBoardActionPerformed
+        requestScoreBoard();
+    }//GEN-LAST:event_toolBarButtonScoreBoardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,6 +324,8 @@ public class HomeFrame extends javax.swing.JFrame
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu propertiesMenu;
     private javax.swing.JMenuItem scoreboardMenuItem;
+    private javax.swing.JButton toolBarButtonNewHangman;
+    private javax.swing.JButton toolBarButtonScoreBoard;
     // End of variables declaration//GEN-END:variables
 
 }
