@@ -1,15 +1,24 @@
 package pl.wikihangman.views.swing;
 
+import pl.wikihangman.exceptions.SessionTerminatedException;
+import pl.wikihangman.models.Letter;
+import pl.wikihangman.models.User;
 import pl.wikihangman.services.GameService;
+import pl.wikihangman.views.logging.ErrorsEnum;
+import pl.wikihangman.views.models.HangmanViewModel;
+import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
 
 /**
- *
+ * Presents and controlls hang-man session.
+ * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
 public class GamePanel extends AppPanel {
  
     private GameService gameService = null;
+    private User activePlayer = null;
+    private static final char UNDISCOVERED_CHAR = '_';
     
     /**
      * Creates new form GamePanel
@@ -23,9 +32,62 @@ public class GamePanel extends AppPanel {
      * @param service Service responsible for handling game logic.
      * @return this object
      */
-    public GamePanel SetGameService(GameService service) {
+    public GamePanel setGameService(GameService service) {
         this.gameService = service;
         return this;
+    }
+    
+    /**
+     * 
+     * @param activePlayer user playing hangman
+     * @return this object
+     */
+    public GamePanel setActivePlayer(User activePlayer) {
+        this.activePlayer = activePlayer;
+        return this;
+    }
+    
+    /**
+     * Prepares hangman session and visual components in this panel.
+     * 
+     * @return this object
+     */
+    public GamePanel initHangman() {
+        
+        HangmanViewModel hangman = gameService.startNewSession(activePlayer.getId());
+        formatHangmanView(hangman);
+        return this;
+    }
+    
+    /**
+     * Tries to discover given letter and updates views on this panel.
+     * 
+     * @param character {@code char} to be discovered, case insensitive
+     */
+    private void tryDiscoverLetter(char character) {
+        try {
+            HangmanViewModel hangman = gameService.discoverLetter(
+                activePlayer.getId(), character);
+            formatHangmanView(hangman);
+        } catch (SessionTerminatedException sessionTerminatedException) {
+            OptionPaneHelpers.showErrorMessage(this, sessionTerminatedException);
+        }
+    }
+    
+    /**
+     * Updates components on this panel to current state of hangman.
+     * 
+     * @param hangman source of data for views
+     */
+    private void formatHangmanView(HangmanViewModel hangman) {
+        
+        textAreaKeyword.setText(null);
+        for (Letter letter : hangman.getKeyword()) {
+            textAreaKeyword.append(String.format("%1$s ", 
+                letter.isDiscovered() ? letter.getCharacter() : UNDISCOVERED_CHAR));
+        }
+        labelActualLivesAmount.setText(Integer.toString(hangman.getActualLives()));
+        labelMaxLivesAmount.setText(Integer.toString(hangman.getMaxLives()));
     }
     
 
@@ -84,6 +146,11 @@ public class GamePanel extends AppPanel {
         textFieldCharacterInput.setText("A");
 
         buttonTryCharacter.setText("Try");
+        buttonTryCharacter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTryCharacterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -132,6 +199,15 @@ public class GamePanel extends AppPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonTryCharacterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTryCharacterActionPerformed
+        String input = textFieldCharacterInput.getText();
+        if (input.length() == 1) {
+            tryDiscoverLetter(input.charAt(0));
+        } else {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.INPUT_NEED_SINGLE);
+        }
+    }//GEN-LAST:event_buttonTryCharacterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,7 +4,9 @@ import java.awt.BorderLayout;
 import pl.wikihangman.models.User;
 import pl.wikihangman.services.AccountsService;
 import pl.wikihangman.services.GameService;
+import pl.wikihangman.views.logging.ErrorsEnum;
 import pl.wikihangman.views.swing.events.*;
+import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
 
 /**
  *
@@ -221,8 +223,13 @@ public class HomeFrame extends javax.swing.JFrame
 
     private void gameMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameMenuItemActionPerformed
         if (logInStatus == LogInStatusEnum.LOGGED_IN) {
-            GamePanel panel = new GamePanel().SetGameService(new GameService());
+            GamePanel panel = new GamePanel()
+                    .setGameService(new GameService())
+                    .setActivePlayer(activeUser)
+                    .initHangman();
             setMainPanel(panel);
+        } else {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.NEED_AUTH);
         }
     }//GEN-LAST:event_gameMenuItemActionPerformed
 

@@ -66,7 +66,7 @@ public class HangmanView extends ViewBase {
              if (isExitSequence(input)) {
                  exit.set(areYouSureMessage());
              } else {
-                 getLogger().log(ErrorsEnum.INPUT, "Single character must be provided");
+                 //getLogger().log(ErrorsEnum.INPUT, "Single character must be provided");
              }
         } else {
             try {
