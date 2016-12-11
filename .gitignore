@@ -13,3 +13,5 @@ hs_err_pid*
 /WikiHangman/nbproject/private/
 /WikiHangman/build/
 /WikiHangman/dist/
+
+.~lock*
