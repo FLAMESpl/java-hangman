@@ -138,6 +138,7 @@ public class LoginPanel extends AppPanel {
 
         userNameLabel.setText("User name");
 
+        userNameTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         userNameTextField.setMaximumSize(new java.awt.Dimension(300, 2147483647));
 
         passwordLabel.setText("Password");
