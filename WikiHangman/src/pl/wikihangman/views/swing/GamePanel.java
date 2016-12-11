@@ -113,9 +113,10 @@ public class GamePanel extends AppPanel {
         labelActualLives = new javax.swing.JLabel();
         labelMaxLivesAmount = new javax.swing.JLabel();
         labelActualLivesAmount = new javax.swing.JLabel();
-        panelTextArea = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaKeyword = new javax.swing.JTextArea();
+        panelTextArea = new javax.swing.JPanel();
         labelInputCharacter = new javax.swing.JLabel();
         textFieldCharacterInput = new javax.swing.JTextField();
         buttonTryCharacter = new javax.swing.JButton();
@@ -128,27 +129,15 @@ public class GamePanel extends AppPanel {
 
         labelActualLivesAmount.setText("0");
 
+        jSplitPane1.setDividerLocation(200);
+        jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
         textAreaKeyword.setColumns(20);
         textAreaKeyword.setLineWrap(true);
         textAreaKeyword.setRows(5);
         jScrollPane1.setViewportView(textAreaKeyword);
 
-        javax.swing.GroupLayout panelTextAreaLayout = new javax.swing.GroupLayout(panelTextArea);
-        panelTextArea.setLayout(panelTextAreaLayout);
-        panelTextAreaLayout.setHorizontalGroup(
-            panelTextAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTextAreaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
-        panelTextAreaLayout.setVerticalGroup(
-            panelTextAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTextAreaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jSplitPane1.setTopComponent(jScrollPane1);
 
         labelInputCharacter.setText("Input character:");
 
@@ -161,6 +150,32 @@ public class GamePanel extends AppPanel {
             }
         });
 
+        javax.swing.GroupLayout panelTextAreaLayout = new javax.swing.GroupLayout(panelTextArea);
+        panelTextArea.setLayout(panelTextAreaLayout);
+        panelTextAreaLayout.setHorizontalGroup(
+            panelTextAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTextAreaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelInputCharacter)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(textFieldCharacterInput, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonTryCharacter)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelTextAreaLayout.setVerticalGroup(
+            panelTextAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTextAreaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelTextAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelInputCharacter)
+                    .addComponent(textFieldCharacterInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonTryCharacter))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setRightComponent(panelTextArea);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,24 +183,17 @@ public class GamePanel extends AppPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelMaxLives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelActualLives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(labelMaxLives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(labelActualLives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelMaxLivesAmount)
-                                    .addComponent(labelActualLivesAmount)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelInputCharacter)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textFieldCharacterInput, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonTryCharacter)))
-                        .addContainerGap(231, Short.MAX_VALUE))
-                    .addComponent(panelTextArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(labelMaxLivesAmount)
+                            .addComponent(labelActualLivesAmount))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,13 +207,8 @@ public class GamePanel extends AppPanel {
                     .addComponent(labelActualLives)
                     .addComponent(labelActualLivesAmount))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelTextArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelInputCharacter)
-                    .addComponent(textFieldCharacterInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonTryCharacter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -222,6 +225,7 @@ public class GamePanel extends AppPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonTryCharacter;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel labelActualLives;
     private javax.swing.JLabel labelActualLivesAmount;
     private javax.swing.JLabel labelInputCharacter;
