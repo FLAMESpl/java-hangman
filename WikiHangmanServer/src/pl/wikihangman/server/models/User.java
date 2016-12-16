@@ -1,4 +1,4 @@
-package pl.wikihangman.models;
+package pl.wikihangman.server.models;
 
 /**
  * Entity of single user from database

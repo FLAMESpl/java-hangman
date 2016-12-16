@@ -1,4 +1,4 @@
-package pl.wikihangman.services;
+package pl.wikihangman.server.services;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -9,8 +9,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import pl.wikihangman.exceptions.EntityAlreadyExistsException;
-import pl.wikihangman.models.User;
+import pl.wikihangman.server.exceptions.EntityAlreadyExistsException;
+import pl.wikihangman.server.models.User;
 
 /**
  * {@code AccountsService} allows to read and manipulate existing users in

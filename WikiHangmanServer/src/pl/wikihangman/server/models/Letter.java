@@ -1,4 +1,4 @@
-package pl.wikihangman.models;
+package pl.wikihangman.server.models;
 
 /**
  * Represents state of single letter in keyword

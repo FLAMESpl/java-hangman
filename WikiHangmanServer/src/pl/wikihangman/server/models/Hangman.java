@@ -1,4 +1,4 @@
-package pl.wikihangman.models;
+package pl.wikihangman.server.models;
 
 import java.util.ArrayList;
 import java.util.List;

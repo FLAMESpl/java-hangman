@@ -1,6 +1,4 @@
-package pl.wikihangman.exceptions;
-
-import pl.wikihangman.views.logging.INotification;
+package pl.wikihangman.server.exceptions;
 
 /**
  * Signals that entity of given unique value already exists in database.
@@ -8,7 +6,7 @@ import pl.wikihangman.views.logging.INotification;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class EntityAlreadyExistsException extends Exception implements INotification {
+public class EntityAlreadyExistsException extends Exception {
     
     private final String field;
     
@@ -26,7 +24,6 @@ public class EntityAlreadyExistsException extends Exception implements INotifica
     /**
      * @return title of this notification
      */
-    @Override
     public String getTitle() {
         return field + "must be unique";
     }
