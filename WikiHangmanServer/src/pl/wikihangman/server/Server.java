@@ -15,6 +15,7 @@ import java.util.List;
 public class Server {
 
     private int port;
+    private String dbPath;
     private ServerLogger logger = new ServerLogger(System.err);
     private List<ClientHandler> clientHandlers = new ArrayList<>();
     
@@ -25,6 +26,16 @@ public class Server {
      */
     public Server setDefaultPort(int port) {
         this.port = port;
+        return this;
+    }
+    
+    /**
+     * 
+     * @param dbPath path to user's database file
+     * @return this object
+     */
+    public Server setDatabasePath(String dbPath) {
+        this.dbPath = dbPath;
         return this;
     }
     
@@ -49,16 +60,23 @@ public class Server {
         while (true) {
             try {
                 socket = new ServerSocket(port).accept();
-                logger.log("User has connected.");
                 handleClient(socket);
+                logger.log("User has connected.");
             } catch (IOException ioException) {
                 logger.log("Socket has failed to initialize.");
             }
         }
     }
     
-    private void handleClient(Socket socket) {
-        ClientHandler handler = new ClientHandler();
+    /**
+     * Sets and runs client handler in separate thread.
+     * 
+     * @param socket socket
+     */
+    private void handleClient(Socket socket) throws IOException {
+        ClientHandler handler = new ClientHandler(socket, logger, dbPath);
+        Thread thread = new Thread(handler);
+        thread.start();
         clientHandlers.add(handler);
     }
 }

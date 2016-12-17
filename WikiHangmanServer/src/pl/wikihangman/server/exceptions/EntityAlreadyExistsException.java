@@ -6,7 +6,7 @@ package pl.wikihangman.server.exceptions;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class EntityAlreadyExistsException extends Exception {
+public class EntityAlreadyExistsException extends ServerException {
     
     private final String field;
     

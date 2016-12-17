@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.*;
+import java.util.Date;
 
 /**
  *
@@ -42,6 +43,8 @@ public class ServerLogger {
      * @param message message to be printed
      */
     public void log(String message) {
+        Date date = new Date();
+        message = "[" + date.toString() + "] " + message;
         stream.println(message);
         if (fileLogging) {
             logToFile(message);
@@ -59,7 +62,7 @@ public class ServerLogger {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            Files.write(outputFile, message.getBytes(), StandardOpenOption.APPEND);
+            Files.write(outputFile, (message + System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
         } catch (IOException ioException) {
             stream.println("File logging exception occured : disabling.");
             fileLogging = false;

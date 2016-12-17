@@ -1,0 +1,3 @@
+Fri Dec 16 16:26:35 CET 2016 Server has started.
+[Fri Dec 16 16:27:36 CET 2016] Server has started.
+[Sat Dec 17 17:09:23 CET 2016] Server has started.

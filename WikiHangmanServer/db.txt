@@ -1,0 +1,4 @@
+1 user password 140
+2 alfa omega 120
+3 gamma delta 20
+4 jan kowalski 0
