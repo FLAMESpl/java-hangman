@@ -26,7 +26,7 @@ public class CommandResolver {
      * @return this object
      */
     public CommandResolver addCommand(ICommand command) {
-        commands.put(command.getName(), command);
+        commands.put(command.getName().toUpperCase(), command);
         return this;
     }
     
@@ -34,22 +34,22 @@ public class CommandResolver {
      * Resolves action specified in parameter. Command must be previously added
      * to this class'es object.
      * 
-     * @param commandName text line of command with its options
+     * @param commandString text line of command with its options
      * @return response to the client
      * @throws NotSuchACommandException when command name is not matched
      * @throws CommandOptionsException when command's options are invalid
      * @throws ServiceException when service used by command threw an exception
      */
-    public String resolve(String commandName) throws NotSuchACommandException,
+    public String resolve(String commandString) throws NotSuchACommandException,
             CommandOptionsException, ServiceException {
         
-        String[] tokens = commandName.split(" ");
+        String[] tokens = commandString.split(" ");
         if (tokens.length < 1) {
             return "";
         }
         
-        String baseCommand = tokens[0];
-        ICommand command = commands.get(baseCommand);
+        String commandName = tokens[0].toUpperCase();
+        ICommand command = commands.get(commandName);
         if (command != null) {
             return command.execute(commandsOptions(tokens));
         } else {

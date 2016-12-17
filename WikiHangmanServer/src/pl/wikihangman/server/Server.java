@@ -56,16 +56,22 @@ public class Server {
     public void start() {
         
         logger.log("Server has started.");
-        Socket socket;
-        while (true) {
-            try {
-                socket = new ServerSocket(port).accept();
-                handleClient(socket);
-                logger.log("User has connected.");
-            } catch (IOException ioException) {
-                logger.log("Socket has failed to initialize.");
+        try {
+            ServerSocket serverSocket = new ServerSocket(port);
+            Socket socket;
+            while (true) {
+                try {
+                    socket = serverSocket.accept();
+                    handleClient(socket);
+                    logger.log("User has connected.");
+                } catch (IOException ioException) {
+                    logger.log("Client socket has failed to initialize.");
+                }
             }
+        } catch (IOException ioException) {
+            logger.log("Server has failed to initialize. Closing...");
         }
+        
     }
     
     /**
