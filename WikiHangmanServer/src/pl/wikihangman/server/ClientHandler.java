@@ -70,17 +70,46 @@ public class ClientHandler implements Runnable {
             String request, response;
             while (true) {
                 request = in.readLine();
-                logger.log("Client requests : `" + request + "`");
+                logger.log(logRequest(request));
                 try {
                     response = commandResolver.resolve(request);
                 } catch (ServerException exception) {
                     response = exception.getMessage();
                 }
                 out.println(response);
-                logger.log("Server responses : `" + response + "`");
+                logger.log(logResponse(response));
             }
         } catch (IOException ioException) {
             
         }
+    }
+    
+    /**
+     * Wraps logic of constructing request message for server logger.
+     * 
+     * @param request client request message
+     * @return formatted message to log
+     */
+    private String logRequest(String request) {
+        return String.format("Client requests %1$s `%2$s`", logWithActiveUser(), request);
+    }
+    
+    /**
+     * Wraps logic of constructing response message for server logger.
+     * 
+     * @param response server response message
+     * @return formtted message to log
+     */
+    private String logResponse(String response) {
+        return String.format("Server responses %1$s `%2$s`", logWithActiveUser(), response);
+    }
+    
+    /**
+     * Creates part of formatted message with user name if there is active one.
+     * 
+     * @return part of formatted log message
+     */
+    private String logWithActiveUser() {
+        return activeUser.get() != null ? "(" + activeUser.get().getName() + ") :" : ":";
     }
 }

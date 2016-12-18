@@ -68,8 +68,8 @@ public class CommandResolver {
         
         int newSize = command.length - 1;
         String[] result = new String[newSize];
-        for (int i = 1; i < newSize; i++) {
-            result[i-1] = command[i];
+        for (int i = 0; i < newSize; i++) {
+            result[i] = command[i+1];
         }
         return result;
     }

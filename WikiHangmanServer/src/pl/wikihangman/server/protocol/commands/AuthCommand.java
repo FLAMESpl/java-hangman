@@ -47,7 +47,7 @@ public class AuthCommand implements ICommand {
         if (validate(options)) {
             return authenticate(options) ? "SUCCESS" : "FAIL";
         } else {
-            throw new CommandOptionsException(COMMAND_NAME + "requires two parameters");
+            throw new CommandOptionsException(COMMAND_NAME + " requires two parameters");
         }
     }
     
