@@ -10,6 +10,7 @@ import java.net.Socket;
 import java.util.concurrent.atomic.AtomicReference;
 import pl.wikihangman.server.exceptions.ServerException;
 import pl.wikihangman.server.logging.ServerLogger;
+import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.CommandResolver;
 import pl.wikihangman.server.protocol.Protocol;
@@ -32,6 +33,7 @@ public class ClientHandler implements Runnable {
     private final ServerLogger logger;
     
     private final AtomicReference<User> activeUser;
+    private final AtomicReference<Hangman> activeHangman;
     
     /**
      * 
@@ -56,13 +58,16 @@ public class ClientHandler implements Runnable {
                         socket.getInputStream()));
         
         activeUser = new AtomicReference<>(null);
+        activeHangman = new AtomicReference<>(null);
         
         commandResolver = new CommandResolver();
         
         commandResolver.addCommand(new AuthCommand(activeUser, dbPath))
                 .addCommand(new CreateCommand(dbPath))
                 .addCommand(new ListCommand(dbPath))
-                .addCommand(new HelpCommand(commandResolver::getCommands));
+                .addCommand(new HelpCommand(commandResolver::getCommands))
+                .addCommand(new StartCommand(activeUser, activeHangman))
+                .addCommand(new DiscoverCommand(activeHangman, activeUser));
     }
     
     /**

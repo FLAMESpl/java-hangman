@@ -82,6 +82,7 @@ public class Server {
     private void handleClient(Socket socket) throws IOException {
         ClientHandler handler = new ClientHandler(socket, logger, dbPath);
         Thread thread = new Thread(handler);
+        thread.setDaemon(true);
         thread.start();
         clientHandlers.add(handler);
     }

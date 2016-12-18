@@ -52,3 +52,70 @@
 [Sun Dec 18 17:31:41 CET 2016] Client requests : `help dup`
 [Sun Dec 18 17:31:41 CET 2016] Server responses : `FAIL`
 [Sun Dec 18 17:31:56 CET 2016] Client requests : `null`
+[Sun Dec 18 20:43:11 CET 2016] Server has started.
+[Sun Dec 18 20:43:22 CET 2016] User has connected.
+[Sun Dec 18 20:43:32 CET 2016] Client requests : `hello hello`
+[Sun Dec 18 20:43:32 CET 2016] Server responses : `EXCEPTION HELLO is not recognizable command.`
+[Sun Dec 18 20:43:37 CET 2016] Client requests : `hel`
+[Sun Dec 18 20:43:37 CET 2016] Server responses : `EXCEPTION HEL is not recognizable command.`
+[Sun Dec 18 20:43:41 CET 2016] Client requests : `start`
+[Sun Dec 18 20:43:41 CET 2016] Server responses : `FAIL`
+[Sun Dec 18 20:43:46 CET 2016] Client requests : `help start`
+[Sun Dec 18 20:43:46 CET 2016] Server responses : `SUCCESS Creates new hangman. Usage : START`
+[Sun Dec 18 20:43:59 CET 2016] Client requests : `auth user password`
+[Sun Dec 18 20:43:59 CET 2016] Server responses (user) : `SUCCESS 1 user 140`
+[Sun Dec 18 20:44:05 CET 2016] Client requests (user) : `start`
+[Sun Dec 18 20:44:05 CET 2016] Server responses (user) : `SUCCESS 7 6`
+[Sun Dec 18 22:03:44 CET 2016] Server has started.
+[Sun Dec 18 22:03:51 CET 2016] User has connected.
+[Sun Dec 18 22:03:56 CET 2016] Client requests : `start`
+[Sun Dec 18 22:03:56 CET 2016] Server responses : `FAIL`
+[Sun Dec 18 22:04:01 CET 2016] Client requests : `discover`
+[Sun Dec 18 22:04:01 CET 2016] Server responses : `FAIL`
+[Sun Dec 18 22:04:05 CET 2016] Client requests : `discover 3 4`
+[Sun Dec 18 22:04:05 CET 2016] Server responses : `EXCEPTION DISCOVER can have only one optional parameter`
+[Sun Dec 18 22:04:08 CET 2016] Client requests : `discover`
+[Sun Dec 18 22:04:08 CET 2016] Server responses : `FAIL`
+[Sun Dec 18 22:04:12 CET 2016] Client requests : `help discover`
+[Sun Dec 18 22:04:12 CET 2016] Server responses : `SUCCESS Discovers letter in hangman if one is present, otherwise hangman is left unchanged. Usage : DISCOVER <optional letter>`
+[Sun Dec 18 22:04:21 CET 2016] Client requests : `help`
+[Sun Dec 18 22:04:21 CET 2016] Server responses : `SUCCESS HELP CREATE AUTH DISCOVER START LIST`
+[Sun Dec 18 22:04:28 CET 2016] Client requests : `list`
+[Sun Dec 18 22:04:28 CET 2016] Server responses : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 0 6 expecto 0 `
+[Sun Dec 18 22:04:33 CET 2016] Client requests : `auth alfa omega`
+[Sun Dec 18 22:04:33 CET 2016] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Sun Dec 18 22:04:38 CET 2016] Client requests (alfa) : `discover`
+[Sun Dec 18 22:04:38 CET 2016] Server responses (alfa) : `FAIL`
+[Sun Dec 18 22:04:43 CET 2016] Client requests (alfa) : `start`
+[Sun Dec 18 22:04:43 CET 2016] Server responses (alfa) : `SUCCESS 7 6`
+[Sun Dec 18 22:04:46 CET 2016] Client requests (alfa) : `discover`
+[Sun Dec 18 22:04:46 CET 2016] Server responses (alfa) : `SUCCESS false false false false false false false  6 6`
+[Sun Dec 18 22:04:49 CET 2016] Client requests (alfa) : `discover`
+[Sun Dec 18 22:04:49 CET 2016] Server responses (alfa) : `SUCCESS false false false false false false false  6 6`
+[Sun Dec 18 22:04:53 CET 2016] Client requests (alfa) : `discover x`
+[Sun Dec 18 22:04:53 CET 2016] Server responses (alfa) : `SUCCESS false false false false false false false  6 5`
+[Sun Dec 18 22:04:59 CET 2016] Client requests (alfa) : `discvoer t`
+[Sun Dec 18 22:04:59 CET 2016] Server responses (alfa) : `EXCEPTION DISCVOER is not recognizable command.`
+[Sun Dec 18 22:05:06 CET 2016] Client requests (alfa) : `discover t`
+[Sun Dec 18 22:05:06 CET 2016] Server responses (alfa) : `SUCCESS true T false false true t false false false  6 5`
+[Sun Dec 18 22:05:12 CET 2016] Client requests (alfa) : `discover e`
+[Sun Dec 18 22:05:12 CET 2016] Server responses (alfa) : `SUCCESS true T true e false true t false false false  6 5`
+[Sun Dec 18 22:05:22 CET 2016] Client requests (alfa) : `discover s`
+[Sun Dec 18 22:05:22 CET 2016] Server responses (alfa) : `SUCCESS true T true e true s true t false false false  6 5`
+[Sun Dec 18 22:05:50 CET 2016] Client requests (alfa) : `discover o`
+[Sun Dec 18 22:05:50 CET 2016] Server responses (alfa) : `SUCCESS true T true e true s true t true o false false  6 5`
+[Sun Dec 18 22:05:52 CET 2016] Client requests (alfa) : `discover w`
+[Sun Dec 18 22:05:52 CET 2016] Server responses (alfa) : `SUCCESS true T true e true s true t true o true w false  6 5`
+[Sun Dec 18 22:05:56 CET 2016] Client requests (alfa) : `discover y`
+[Sun Dec 18 22:05:56 CET 2016] Server responses (alfa) : `SUCCESS true T true e true s true t true o true w true y  6 5`
+[Sun Dec 18 22:05:59 CET 2016] Client requests (alfa) : `exit`
+[Sun Dec 18 22:05:59 CET 2016] Server responses (alfa) : `EXCEPTION EXIT is not recognizable command.`
+[Sun Dec 18 22:06:06 CET 2016] Client requests (alfa) : `discover`
+[Sun Dec 18 22:06:06 CET 2016] Server responses (alfa) : `SUCCESS true T true e true s true t true o true w true y  6 5`
+[Sun Dec 18 22:06:11 CET 2016] Client requests (alfa) : `start`
+[Sun Dec 18 22:06:11 CET 2016] Server responses (alfa) : `SUCCESS 7 6`
+[Sun Dec 18 22:06:14 CET 2016] Client requests (alfa) : `discover`
+[Sun Dec 18 22:06:14 CET 2016] Server responses (alfa) : `SUCCESS false false false false false false false  6 6`
+[Sun Dec 18 22:06:37 CET 2016] Client requests (alfa) : `exit`
+[Sun Dec 18 22:06:37 CET 2016] Server responses (alfa) : `EXCEPTION EXIT is not recognizable command.`
+[Sun Dec 18 22:06:40 CET 2016] Client requests (alfa) : `null`
