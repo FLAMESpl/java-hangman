@@ -57,9 +57,12 @@ public class ClientHandler implements Runnable {
         
         activeUser = new AtomicReference<>(null);
         
-        commandResolver = new CommandResolver()
-                .addCommand(new AuthCommand(activeUser, dbPath))
-                .addCommand(new CreateCommand(dbPath));
+        commandResolver = new CommandResolver();
+        
+        commandResolver.addCommand(new AuthCommand(activeUser, dbPath))
+                .addCommand(new CreateCommand(dbPath))
+                .addCommand(new ListCommand(dbPath))
+                .addCommand(new HelpCommand(commandResolver::getCommands));
     }
     
     /**

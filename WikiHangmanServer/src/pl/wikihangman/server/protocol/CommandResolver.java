@@ -31,6 +31,14 @@ public class CommandResolver {
     }
     
     /**
+     * 
+     * @return map of commands in the system
+     */
+    public final Map<String, Command> getCommands() {
+        return commands;
+    }
+    
+    /**
      * Resolves action specified in parameter. Command must be previously added
      * to this class'es object.
      * 

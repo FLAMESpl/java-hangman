@@ -52,6 +52,15 @@ public class CreateCommand extends Command {
     
     /**
      * 
+     * @return datails about usage of this command
+     */
+    @Override
+    public String usage() {
+        return "Creates new user in database. Usage : CREATE <username> <password>";
+    }
+    
+    /**
+     * 
      * @param options options that will be validated
      * @return true if options are valid, otherwise false
      */

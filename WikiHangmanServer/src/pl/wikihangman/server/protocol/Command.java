@@ -35,6 +35,12 @@ public abstract class Command {
     
     /**
      * 
+     * @return datails about usage of this command
+     */
+    public abstract String usage();
+    
+    /**
+     * 
      * @return string that invokes this command
      */
     public String getName() {

@@ -52,6 +52,14 @@ public class AuthCommand extends Command {
         }
     }
     
+    /**
+     * 
+     * @return datails about usage of this command
+     */
+    @Override
+    public String usage() {
+        return "Log user into system. Usage : AUTH <username> <password>";
+    }
     
     /**
      * 
