@@ -12,7 +12,8 @@ import pl.wikihangman.server.exceptions.ServerException;
 import pl.wikihangman.server.logging.ServerLogger;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.CommandResolver;
-import pl.wikihangman.server.protocol.commands.AuthCommand;
+import pl.wikihangman.server.protocol.Protocol;
+import pl.wikihangman.server.protocol.commands.*;
 
 /**
  * Receives and processes command issued by connected client and respondes with
@@ -57,7 +58,8 @@ public class ClientHandler implements Runnable {
         activeUser = new AtomicReference<>(null);
         
         commandResolver = new CommandResolver()
-                .addCommand(new AuthCommand(activeUser, dbPath));
+                .addCommand(new AuthCommand(activeUser, dbPath))
+                .addCommand(new CreateCommand(dbPath));
     }
     
     /**
@@ -74,7 +76,7 @@ public class ClientHandler implements Runnable {
                 try {
                     response = commandResolver.resolve(request);
                 } catch (ServerException exception) {
-                    response = exception.getMessage();
+                    response = Protocol.EXCEPTION.getName() + " " + exception.getMessage();
                 }
                 out.println(response);
                 logger.log(logResponse(response));

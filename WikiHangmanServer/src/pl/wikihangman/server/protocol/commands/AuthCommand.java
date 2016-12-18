@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.User;
-import pl.wikihangman.server.protocol.ICommand;
+import pl.wikihangman.server.protocol.Command;
 import pl.wikihangman.server.services.AccountsService;
 
 /**
@@ -14,7 +14,7 @@ import pl.wikihangman.server.services.AccountsService;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class AuthCommand implements ICommand {
+public class AuthCommand extends Command {
 
     private static final String COMMAND_NAME = "AUTH";
     private final AtomicReference<User> activeUser;
@@ -26,6 +26,7 @@ public class AuthCommand implements ICommand {
      * @param dbPath path to the user's database file
      */
     public AuthCommand(AtomicReference<User> activeUser, String dbPath) {
+        super(COMMAND_NAME);
         this.activeUser = activeUser;
         this.accountsService = new AccountsService(dbPath);
     }
@@ -35,7 +36,7 @@ public class AuthCommand implements ICommand {
      * options that first is user's name and second is user's password. If
      * process was successful, active user is set.
      * 
-     * @param options
+     * @param options requires array of two elements - user name and password
      * @return response to the client
      * @throws CommandOptionsException 
      * @throws ServiceException 
@@ -45,20 +46,12 @@ public class AuthCommand implements ICommand {
             throws CommandOptionsException, ServiceException {
         
         if (validate(options)) {
-            return authenticate(options) ? "SUCCESS" : "FAIL";
+            return authenticate(options) ? success(activeUser.get()) : fail();
         } else {
             throw new CommandOptionsException(COMMAND_NAME + " requires two parameters");
         }
     }
     
-    /**
-     * 
-     * @return string that invokes this command
-     */
-    @Override
-    public String getName() {
-        return COMMAND_NAME;
-    }
     
     /**
      * 
@@ -87,5 +80,16 @@ public class AuthCommand implements ICommand {
             throw new ServiceException(exception);
         }
         return result;
+    }
+    
+    /**
+     * Creates success message with additional information of authenticated user.
+     * 
+     * @param user active user in the system
+     * @return formatted success response message
+     */
+    protected String success(User user) {
+        return String.format("%1$s %2$d %3$s %4$d", 
+                success(), user.getId(), user.getName(), user.getPoints());
     }
 }

@@ -10,8 +10,18 @@ import pl.wikihangman.server.exceptions.ServiceException;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public interface ICommand {
+public abstract class Command {
 
+    private final String name;
+    
+    /**
+     * 
+     * @param name invokable name of this command
+     */
+    public Command(String name) {
+        this.name = name;
+    }
+    
     /**
      * Executes this command with given options.
      * 
@@ -20,12 +30,30 @@ public interface ICommand {
      * @throws CommandOptionsException when commands are invalid
      * @throws ServiceException when service used by this command throws an exception
      */
-    public String execute(String[] options) 
+    public abstract String execute(String[] options) 
             throws CommandOptionsException, ServiceException;
     
     /**
      * 
      * @return string that invokes this command
      */
-    public String getName();
+    public String getName() {
+        return name;
+    }
+    
+    /**
+     * 
+     * @return success protocol keyword
+     */
+    protected String success() {
+        return Protocol.SUCCESS.getName();
+    }
+    
+    /**
+     * 
+     * @return fail protocol keyword
+     */
+    protected String fail() {
+        return Protocol.FAIL.getName();
+    }
 }

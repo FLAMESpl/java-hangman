@@ -17,7 +17,7 @@ public class CommandResolver {
     /**
      * Recognizable commands in system.
      */
-    private final Map<String, ICommand> commands = new HashMap<>();
+    private final Map<String, Command> commands = new HashMap<>();
     
     /**
      * Registers recognizable command into system.
@@ -25,7 +25,7 @@ public class CommandResolver {
      * @param command command to add to the system
      * @return this object
      */
-    public CommandResolver addCommand(ICommand command) {
+    public CommandResolver addCommand(Command command) {
         commands.put(command.getName().toUpperCase(), command);
         return this;
     }
@@ -49,7 +49,7 @@ public class CommandResolver {
         }
         
         String commandName = tokens[0].toUpperCase();
-        ICommand command = commands.get(commandName);
+        Command command = commands.get(commandName);
         if (command != null) {
             return command.execute(commandsOptions(tokens));
         } else {
