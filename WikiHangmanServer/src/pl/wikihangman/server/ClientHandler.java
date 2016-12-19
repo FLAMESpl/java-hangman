@@ -17,8 +17,8 @@ import pl.wikihangman.server.protocol.Protocol;
 import pl.wikihangman.server.protocol.commands.*;
 
 /**
- * Receives and processes command issued by connected client and respondes with
- * computated results.
+ * Receives and processes command issued by connected client and responds with
+ * computed results.
  * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
@@ -67,7 +67,8 @@ public class ClientHandler implements Runnable {
                 .addCommand(new ListCommand(dbPath))
                 .addCommand(new HelpCommand(commandResolver::getCommands))
                 .addCommand(new StartCommand(activeUser, activeHangman))
-                .addCommand(new DiscoverCommand(activeHangman, activeUser));
+                .addCommand(new DiscoverCommand(activeHangman, activeUser))
+                .addCommand(new LogoutCommand(activeUser, activeHangman));
     }
     
     /**
@@ -108,7 +109,7 @@ public class ClientHandler implements Runnable {
      * Wraps logic of constructing response message for server logger.
      * 
      * @param response server response message
-     * @return formtted message to log
+     * @return formatted message to log
      */
     private String logResponse(String response) {
         return String.format("Server responses %1$s `%2$s`", logWithActiveUser(), response);

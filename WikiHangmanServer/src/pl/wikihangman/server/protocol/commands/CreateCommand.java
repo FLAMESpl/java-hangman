@@ -1,10 +1,10 @@
 package pl.wikihangman.server.protocol.commands;
 
 import java.io.IOException;
-import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.exceptions.EntityAlreadyExistsException;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.protocol.Command;
+import pl.wikihangman.server.protocol.ValidationResult;
 import pl.wikihangman.server.services.AccountsService;
 
 /**
@@ -35,24 +35,22 @@ public class CreateCommand extends Command {
      * 
      * @param options requires array of two elements - user name and password
      * @return response to the client
-     * @throws CommandOptionsException when command options are invalid
      * @throws ServiceException when internal service exception is thrown
      */
     @Override
-    public String execute(String[] options) 
-            throws CommandOptionsException, ServiceException {
+    public String execute(String[] options) throws ServiceException {
         
-        if (validate(options)) {
-            register(options);
-            return "SUCCESS";
-        } else {
-            throw new CommandOptionsException(COMMAND_NAME + " requires two parameters");
+        try {
+            accountService.register(options[0], options[1]);
+        } catch (EntityAlreadyExistsException | IOException exception) {
+            throw new ServiceException(exception);
         }
+        return success();
     }
     
     /**
      * 
-     * @return datails about usage of this command
+     * @return details about usage of this command
      */
     @Override
     public String usage() {
@@ -62,23 +60,12 @@ public class CreateCommand extends Command {
     /**
      * 
      * @param options options that will be validated
-     * @return true if options are valid, otherwise false
+     * @return validation result indicating if options are correct
      */
-    private boolean validate(String[] options) {
-        return options.length == 2;
-    }
-    
-    /**
-     * Creates new user in database file.
-     * 
-     * @param options array of two elements - user's name and user's password
-     */
-    private void register(String[] options) throws ServiceException {
-        
-        try {
-            accountService.register(options[0], options[1]);
-        } catch (EntityAlreadyExistsException | IOException exception) {
-            throw new ServiceException(exception);
-        }
+    @Override
+    public ValidationResult validate(String[] options) {
+        return options.length == 2 ?
+            ValidationResult.success() :
+            ValidationResult.fail(getName() + " must have 2 parameters.");
     }
 }

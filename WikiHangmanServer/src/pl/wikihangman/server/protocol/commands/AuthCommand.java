@@ -2,10 +2,10 @@ package pl.wikihangman.server.protocol.commands;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
-import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.Command;
+import pl.wikihangman.server.protocol.ValidationResult;
 import pl.wikihangman.server.services.AccountsService;
 
 /**
@@ -38,45 +38,11 @@ public class AuthCommand extends Command {
      * 
      * @param options requires array of two elements - user name and password
      * @return response to the client
-     * @throws CommandOptionsException 
      * @throws ServiceException 
      */
     @Override
-    public String execute(String[] options) 
-            throws CommandOptionsException, ServiceException {
+    public String execute(String[] options) throws ServiceException {
         
-        if (validate(options)) {
-            return authenticate(options) ? success(activeUser.get()) : fail();
-        } else {
-            throw new CommandOptionsException(COMMAND_NAME + " requires two parameters");
-        }
-    }
-    
-    /**
-     * 
-     * @return datails about usage of this command
-     */
-    @Override
-    public String usage() {
-        return "Log user into system. Usage : AUTH <username> <password>";
-    }
-    
-    /**
-     * 
-     * @param options options that will be validated
-     * @return true if options are valid, otherwise false
-     */
-    private boolean validate(String[] options) {
-        return options.length == 2;
-    }
-    
-    /**
-     * Calls authentication service.
-     * 
-     * @param options authentication arguments
-     * @return true if user has been logged in, otherwise false
-     */
-    private boolean authenticate(String[] options) throws ServiceException {
         boolean result = false;
         try {
             User user = accountsService.authenticate(options[0], options[1]);
@@ -87,7 +53,27 @@ public class AuthCommand extends Command {
         } catch (IOException | NumberFormatException exception) {
             throw new ServiceException(exception);
         }
-        return result;
+        return result ? success(activeUser.get()) : fail();
+    }
+    
+    /**
+     * 
+     * @return details about usage of this command
+     */
+    @Override
+    public String usage() {
+        return "Log user into system. Usage : AUTH <username> <password>";
+    }
+    
+    /**
+     * @param options options that will be validated
+     * @return validation result indicating if options are correct
+     */
+    @Override
+    public ValidationResult validate(String[] options) {
+        return options.length == 2 ?
+            ValidationResult.success() :
+            ValidationResult.fail(getName() + " must have 2 parameters.");
     }
     
     /**

@@ -2,9 +2,9 @@ package pl.wikihangman.server.protocol.commands;
 
 import java.util.Map;
 import java.util.function.Supplier;
-import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.protocol.Command;
+import pl.wikihangman.server.protocol.ValidationResult;
 
 /**
  * Handles help requests by printing all available commands in the system.
@@ -34,20 +34,21 @@ public class HelpCommand extends Command {
      * otherwise returns list of all available commands.
      * 
      * @param options no arguments or name of command in the system
-     * @return response contining list of all available commands
-     * @throws CommandOptionsException when command options are not valid
+     * @return response containing list of all available commands
      * @throws ServiceException when internal service has thrown an exception
      */
     @Override
-    public String execute(String[] options) 
-            throws CommandOptionsException, ServiceException {
+    public String execute(String[] options) throws ServiceException {
         
-        if (validate(options)) {
-            String info = helpInformation(options);
-            return info != null ? success(info) : fail();
+        String info;
+        Map<String, Command> commands = commandsSource.get();
+        if (options.length == 0) {
+            info = String.join(" ", commands.keySet());
         } else {
-            throw new CommandOptionsException(COMMAND_NAME + " can have only one optional parameter.");
+            Command command = commands.get(options[0].toUpperCase());
+            info = command != null ? command.usage() : null;
         }
+        return info != null ? success(info) : fail();
     }
     
     /**
@@ -62,29 +63,13 @@ public class HelpCommand extends Command {
     /**
      * 
      * @param options options to validate
-     * @return true if options are valid, otherwise false
+     * @return validation result indicating if options are correct
      */
-    private boolean validate(String[] options) {
-        return options.length <= 1;
-    }
-    
-    /**
-     * Returns information about usage of command of namge given in paramter if
-     * there is any, otherwise returns list of all available commands. If command
-     * is not matched returns null.
-     * 
-     * @return help information based on paramters
-     */
-    private String helpInformation(String[] options) {
-        String info;
-        Map<String, Command> commands = commandsSource.get();
-        if (options.length == 0) {
-            info = String.join(" ", commands.keySet());
-        } else {
-            Command command = commands.get(options[0].toUpperCase());
-            info = command != null ? command.usage() : null;
-        }
-        return info;
+    @Override
+    public ValidationResult validate(String[] options) {
+        return options.length <= 1 ?
+            ValidationResult.success() :
+            ValidationResult.fail(getName() + " can have only one optional parameter.");
     }
     
     /**

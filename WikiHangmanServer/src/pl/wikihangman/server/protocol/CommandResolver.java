@@ -59,7 +59,7 @@ public class CommandResolver {
         String commandName = tokens[0].toUpperCase();
         Command command = commands.get(commandName);
         if (command != null) {
-            return command.execute(commandsOptions(tokens));
+            return command.resolve(commandsOptions(tokens));
         } else {
             throw new NotSuchACommandException(commandName);
         }
@@ -69,7 +69,7 @@ public class CommandResolver {
      * Streams command's options from user input form, what means it skips first
      * element as it is command's name.
      * 
-     * @param command tokens of full commnd text line
+     * @param command tokens of full command text line
      * @return command's options array
      */
     private String[] commandsOptions(String[] command) {

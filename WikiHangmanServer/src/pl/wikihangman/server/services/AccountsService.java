@@ -64,7 +64,7 @@ public class AccountsService {
      * @param password user's password
      * @return created user
      * @throws IOException 
-     * @throws pl.wikihangman.exceptions.EntityAlreadyExistsException 
+     * @throws EntityAlreadyExistsException 
      */
     public User register(String userName, String password) throws
             IOException, EntityAlreadyExistsException {
