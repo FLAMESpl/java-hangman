@@ -51,7 +51,7 @@ public class LogoutCommand extends Command {
     /**
      * 
      * @param options options to validate
-     * @return true if options are valid, otherwise false
+     * @return validation result indicating if options are correct
      */
     @Override
     public ValidationResult validate(String[] options) {

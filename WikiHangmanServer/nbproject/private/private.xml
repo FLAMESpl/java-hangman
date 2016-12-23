@@ -4,9 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/ListCommand.java</file>
+            <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/DiscoverCommand.java</file>
+            <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/Protocol.java</file>
             <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/LogoutCommand.java</file>
+            <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/CreateCommand.java</file>
             <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/ClientHandler.java</file>
+            <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/AuthCommand.java</file>
             <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/Command.java</file>
+            <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/HelpCommand.java</file>
             <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/StartCommand.java</file>
             <file>file:/D:/java/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/ValidationResult.java</file>
         </group>
