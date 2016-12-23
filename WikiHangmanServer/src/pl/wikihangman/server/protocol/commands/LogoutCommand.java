@@ -1,10 +1,10 @@
 package pl.wikihangman.server.protocol.commands;
 
 import java.util.concurrent.atomic.AtomicReference;
-import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.Command;
+import pl.wikihangman.server.protocol.ValidationResult;
 
 /**
  * Handles logout command, sets active user and active hangman to nulls.
@@ -30,17 +30,13 @@ public class LogoutCommand extends Command {
      * 
      * @param options 
      * @return response to the client
-     * @throws CommandOptionsException when command options are invalid
      */
     @Override
-    public String execute(String[] options) throws CommandOptionsException {
-        if (validate(options)) {
-            activeHangman.set(null);
-            activeUser.set(null);
-            return success();
-        } else {
-            throw new CommandOptionsException(COMMAND_NAME + " has no parameters");
-        }
+    public String execute(String[] options) {
+        
+        activeHangman.set(null);
+        activeUser.set(null);
+        return success();
     }
     
     /**
@@ -57,7 +53,10 @@ public class LogoutCommand extends Command {
      * @param options options to validate
      * @return true if options are valid, otherwise false
      */
-    private boolean validate(String[] options) {
-       return options.length == 0; 
+    @Override
+    public ValidationResult validate(String[] options) {
+       return options.length == 0 ?
+            ValidationResult.success() :
+            ValidationResult.fail(getName() + " has no parameters."); 
     }
 }

@@ -43,17 +43,21 @@ public class AuthCommand extends Command {
     @Override
     public String execute(String[] options) throws ServiceException {
         
-        boolean result = false;
+        if (activeUser.get() != null) {
+            return fail("Active user must log out first.");
+        }
+        
         try {
             User user = accountsService.authenticate(options[0], options[1]);
             if (user != null) {
-                result = true;
                 activeUser.set(user);
+                return success();
+            } else {
+                return fail("Incorrect credentials.");
             }
         } catch (IOException | NumberFormatException exception) {
             throw new ServiceException(exception);
         }
-        return result ? success(activeUser.get()) : fail();
     }
     
     /**
@@ -79,11 +83,12 @@ public class AuthCommand extends Command {
     /**
      * Creates success message with additional information of authenticated user.
      * 
-     * @param user active user in the system
      * @return formatted success response message
      */
-    protected String success(User user) {
-        return String.format("%1$s %2$d %3$s %4$d", 
-                success(), user.getId(), user.getName(), user.getPoints());
+    @Override
+    protected String success() {
+        User user = activeUser.get();
+        return success(Integer.toString(user.getId()), user.getName(),
+                Long.toString(user.getPoints()));
     }
 }

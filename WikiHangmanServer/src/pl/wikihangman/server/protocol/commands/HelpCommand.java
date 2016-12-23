@@ -48,7 +48,9 @@ public class HelpCommand extends Command {
             Command command = commands.get(options[0].toUpperCase());
             info = command != null ? command.usage() : null;
         }
-        return info != null ? success(info) : fail();
+        return info != null ? 
+                success(info) : 
+                fail(getName(), " is not recognizable command name.");
     }
     
     /**
@@ -70,14 +72,5 @@ public class HelpCommand extends Command {
         return options.length <= 1 ?
             ValidationResult.success() :
             ValidationResult.fail(getName() + " can have only one optional parameter.");
-    }
-    
-    /**
-     * 
-     * @param helpInformation information based on help command paramter
-     * @return formatted success response with helpInformation as its parameter
-     */
-    protected String success(String helpInformation) {
-        return success() + " " + helpInformation;
     }
 }

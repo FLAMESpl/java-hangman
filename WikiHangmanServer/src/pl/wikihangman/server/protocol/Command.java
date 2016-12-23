@@ -1,5 +1,6 @@
 package pl.wikihangman.server.protocol;
 
+import java.util.Arrays;
 import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.exceptions.ServiceException;
 
@@ -74,7 +75,7 @@ public abstract class Command {
     
     /**
      * 
-     * @return success protocol keyword
+     * @return `success` protocol keyword
      */
     protected String success() {
         return Protocol.SUCCESS.getName();
@@ -82,9 +83,42 @@ public abstract class Command {
     
     /**
      * 
-     * @return fail protocol keyword
+     * @return `fail` protocol keyword
      */
     protected String fail() {
         return Protocol.FAIL.getName();
+    }
+    
+    /**
+     * Generates `success` response with additional text information specified
+     * by list of strings. Each argument is separated by space.
+     * 
+     * @param arguments arguments to be added to `success` message
+     * @return `success` response with concatenated information
+     */
+    protected String success(String... arguments) {
+        return formatArguments(Protocol.SUCCESS, arguments);
+    }
+    
+    /**
+     * Generates `fail` response with additional text information specified
+     * by list of strings. Each argument is separated by space.
+     * 
+     * @param arguments arguments to be added to `fail` message
+     * @return `fail` response with concatenated information
+     */
+    protected String fail(String... arguments) {
+        return formatArguments(Protocol.FAIL, arguments);
+    }
+    
+    /**
+     * Formats array of strings to single response string.
+     * 
+     * @param responseType type {@code Protocol} response
+     * @param arguments arguments to be joined
+     * @return array joined with response type name to single string
+     */
+    private String formatArguments(Protocol responseType, String... arguments) {
+        return responseType.getName() + " " + String.join(" ", arguments);
     }
 }

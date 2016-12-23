@@ -1,11 +1,12 @@
 package pl.wikihangman.server.protocol.commands;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.Command;
+import pl.wikihangman.server.protocol.ValidationResult;
 import pl.wikihangman.server.services.AccountsService;
 
 /**
@@ -35,17 +36,15 @@ public class ListCommand extends Command {
      * @param options empty array
      * @return players' scores
      * @throws ServiceException when inner service throws an exception
-     * @throws CommandOptionsException when command's options are not valid
      */
     @Override
-    public String execute(String[] options) 
-        throws ServiceException, CommandOptionsException {
+    public String execute(String[] options) throws ServiceException {
         
-        if (validate(options)) {
-            List<User> users = getList();
+        try {
+            List<User> users = accountsService.getPlayersList();
             return success(users);
-        } else {
-            throw new CommandOptionsException(COMMAND_NAME + " has no parameters.");
+        } catch (IOException | NumberFormatException exception) {
+            throw new ServiceException(exception);
         }
     }
     
@@ -61,10 +60,13 @@ public class ListCommand extends Command {
     /**
      * 
      * @param options command's options to validate
-     * @return true if options are valid, otherwise false
+     * @return validation result indicating if options are correct
      */
-    private boolean validate(String[] options) {
-        return options.length == 0;
+    @Override
+    public ValidationResult validate(String[] options) {
+        return options.length == 0 ?
+            ValidationResult.success() :
+            ValidationResult.fail(getName() + " has no paramters."); 
     }
     
     /**
@@ -82,17 +84,19 @@ public class ListCommand extends Command {
     }
     
     /**
-     * Formats players list to single reponse string.
+     * Formats players list to single response string.
      * 
      * @param users players list
      * @return success protocol's keyword with additional parameter of players list
      */
     private String success(List<User> users) {
-        String response = success() + " ";
+        String[] usersLines = new String[users.size()];
+        int i = 0;
         for (User user : users) {
-            response += String.format("%1$d %2$s %3$d ", 
+            usersLines[i] = String.format("%1$d %2$s %3$d", 
                     user.getId(),user.getName(), user.getPoints());
+            i++;
         }
-        return response;
+        return success(usersLines);
     }
 }

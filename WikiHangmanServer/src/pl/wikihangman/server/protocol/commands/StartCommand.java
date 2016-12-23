@@ -1,11 +1,10 @@
 package pl.wikihangman.server.protocol.commands;
 
 import java.util.concurrent.atomic.AtomicReference;
-import pl.wikihangman.server.exceptions.CommandOptionsException;
-import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.Command;
+import pl.wikihangman.server.protocol.ValidationResult;
 
 /**
  * Handles new game requests. Returns new hangman to play and saves user's
@@ -38,19 +37,19 @@ public class StartCommand extends Command {
      * 
      * @param options empty array
      * @return response message
-     * @throws CommandOptionsException when command's options are not valid
-     * @throws ServiceException when internal service has thrown an exception
      */
     @Override
-    public String execute(String[] options) 
-            throws CommandOptionsException, ServiceException {
+    public String execute(String[] options) {
         
-        if (validate(options)) {
-            Hangman hangman = startHangman();
-            return hangman != null ? success(hangman) : fail();
-        } else {
-            throw new CommandOptionsException(COMMAND_NAME + " has no parameters");
+        if (activeUser.get() == null) {
+            return fail("Previous user authentication is needed to perform this action");
         }
+        Hangman hangman = new Hangman()
+                    .createKeyword("Testowy")
+                    .setActualLives(6)
+                    .setMaxLives(6);
+            activeHangman.set(hangman);
+        return success(hangman);
     }
     
     /**
@@ -65,41 +64,24 @@ public class StartCommand extends Command {
     /**
      * 
      * @param options command options to validate
-     * @return true if options are valid, otherwise false
+     * @return validation result indicating if options are correct
      */
-    private boolean validate(String[] options) {
-        return options.length == 0;
+    @Override
+    public ValidationResult validate(String[] options) {
+        return options.length == 0 ?
+            ValidationResult.success() :
+            ValidationResult.fail(getName() + " has no arguments");
     }
     
     /**
-     * Creates new hangman if there is active user in client handler.
-     * 
-     * @return new hangman if client is active, otherwise null
-     */
-    private Hangman startHangman() {
-        
-        Hangman hangman;
-        if (activeUser.get() != null) {
-            hangman = new Hangman()
-                    .createKeyword("Testowy")
-                    .setActualLives(6)
-                    .setMaxLives(6);
-            activeHangman.set(hangman);
-        } else {
-            hangman = null;
-        }
-        return hangman;
-    }
-    
-    /**
-     * Creates success response with hangman paramters as single string formatted
+     * Creates success response with hangman parameters as single string formatted
      * as: SUCCESS [keyword's length] [max lives].
      * 
      * @param hangman hangman to response
      * @return formatted success string
      */
     protected String success(Hangman hangman) {
-        return String.format("%1$s %2$d %3$d", 
-                success(), hangman.getKeywordsLength(), hangman.getMaxLives());
+        return success(Integer.toString(hangman.getKeywordsLength()), 
+                       Integer.toString(hangman.getMaxLives()));
     }
 }

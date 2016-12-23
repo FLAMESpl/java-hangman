@@ -18,8 +18,8 @@ import pl.wikihangman.server.protocol.ValidationResult;
 public class DiscoverCommand extends Command {
 
     private static final String COMMAND_NAME = "DISCOVER";
-    private static AtomicReference<Hangman> activeHangman;
-    private static AtomicReference<User> activeUser;
+    private final AtomicReference<Hangman> activeHangman;
+    private final AtomicReference<User> activeUser;
     
     public DiscoverCommand(AtomicReference<Hangman> activeHangman,
             AtomicReference<User> activeUser) {
@@ -41,13 +41,19 @@ public class DiscoverCommand extends Command {
     @Override
     public String execute(String[] options) throws ServiceException {
         
-        boolean success = activeUser.get() != null && activeHangman.get() != null;
-        if (success) {
-            if (options.length == 1) {
-                activeHangman.get().discover(options[0].charAt(0));
-            }
+        if (activeUser.get() == null) {
+            return fail("Previous user authentication is needed to perform this action.");
         }
-        return success ? success() : fail();
+        
+        if (activeHangman.get() == null) {
+            return fail("Hangman must be started first to perform this action");
+        }
+            
+        if (options.length == 1) {
+                activeHangman.get().discover(options[0].charAt(0));
+        }
+        
+        return success();
     }
     
     /**
@@ -64,7 +70,7 @@ public class DiscoverCommand extends Command {
     /**
      * 
      * @param options options to validate
-     * @return true if options are valid, otherwise false
+     * @return validation result indicating if options are correct
      */
     @Override
     public ValidationResult validate(String[] options) {
