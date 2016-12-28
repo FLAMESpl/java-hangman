@@ -6,6 +6,7 @@ import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.Letter;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.Command;
+import pl.wikihangman.server.protocol.ProtocolCode;
 import pl.wikihangman.server.protocol.ValidationResult;
 
 /**
@@ -88,11 +89,11 @@ public class DiscoverCommand extends Command {
     @Override
     protected String success() {
         Hangman hangman = activeHangman.get();
-        String encryptedKeyword = "";
+        StringBuilder encryptedKeyword = new StringBuilder();
         for (Letter letter : hangman.getKeyword()) {
-            encryptedKeyword += letter.isDiscovered() ?
-                    "true " + Character.toString(letter.getCharacter()) + " " :
-                    "false ";
+            encryptedKeyword.append(letter.isDiscovered() ? 
+                    letter.getCharacter() : ProtocolCode.ofBoolean(false));
+            encryptedKeyword.append(" ");
         }
         return String.format("%1$s %2$s %3$d %4$d", super.success(), 
                 encryptedKeyword, hangman.getMaxLives(), hangman.getActualLives());

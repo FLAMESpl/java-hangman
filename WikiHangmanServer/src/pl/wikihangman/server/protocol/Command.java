@@ -39,7 +39,7 @@ public abstract class Command {
             return execute(options);
         } else {
             throw new CommandOptionsException(
-                    Protocol.EXCEPTION.getName() + " " + result.getReason());
+                    ProtocolResponse.EXCEPTION.getName() + " " + result.getReason());
         }
     }
     
@@ -78,7 +78,7 @@ public abstract class Command {
      * @return `success` protocol keyword
      */
     protected String success() {
-        return Protocol.SUCCESS.getName();
+        return ProtocolResponse.SUCCESS.getName();
     }
     
     /**
@@ -86,7 +86,7 @@ public abstract class Command {
      * @return `fail` protocol keyword
      */
     protected String fail() {
-        return Protocol.FAIL.getName();
+        return ProtocolResponse.FAIL.getName();
     }
     
     /**
@@ -97,7 +97,7 @@ public abstract class Command {
      * @return `success` response with concatenated information
      */
     protected String success(String... arguments) {
-        return formatArguments(Protocol.SUCCESS, arguments);
+        return formatArguments(ProtocolResponse.SUCCESS, arguments);
     }
     
     /**
@@ -108,7 +108,7 @@ public abstract class Command {
      * @return `fail` response with concatenated information
      */
     protected String fail(String... arguments) {
-        return formatArguments(Protocol.FAIL, arguments);
+        return formatArguments(ProtocolResponse.FAIL, arguments);
     }
     
     /**
@@ -118,7 +118,7 @@ public abstract class Command {
      * @param arguments arguments to be joined
      * @return array joined with response type name to single string
      */
-    private String formatArguments(Protocol responseType, String... arguments) {
+    private String formatArguments(ProtocolResponse responseType, String... arguments) {
         return responseType.getName() + " " + String.join(" ", arguments);
     }
 }

@@ -175,3 +175,258 @@
 [Mon Dec 19 13:22:21 CET 2016] Server responses (alfa) : `EXCEPTION EXIT is not recognizable command.`
 [Mon Dec 19 13:22:24 CET 2016] Client requests (alfa) : `lgoout`
 [Mon Dec 19 13:22:24 CET 2016] Server responses (alfa) : `EXCEPTION LGOOUT is not recognizable command.`
+[Fri Dec 23 19:30:07 CET 2016] Server has started.
+[Fri Dec 23 19:30:16 CET 2016] User has connected.
+[Fri Dec 23 19:30:20 CET 2016] Client requests : `logout`
+[Fri Dec 23 19:30:20 CET 2016] Server responses : `SUCCESS`
+[Fri Dec 23 19:30:24 CET 2016] Client requests : `logout`
+[Fri Dec 23 19:30:24 CET 2016] Server responses : `SUCCESS`
+[Fri Dec 23 19:30:26 CET 2016] Client requests : `start`
+[Fri Dec 23 19:30:26 CET 2016] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Fri Dec 23 19:30:30 CET 2016] Client requests : `discover`
+[Fri Dec 23 19:30:30 CET 2016] Server responses : `FAIL Previous user authentication is needed to perform this action.`
+[Fri Dec 23 19:30:32 CET 2016] Client requests : `discover g`
+[Fri Dec 23 19:30:32 CET 2016] Server responses : `FAIL Previous user authentication is needed to perform this action.`
+[Fri Dec 23 19:30:35 CET 2016] Client requests : `discover g h`
+[Fri Dec 23 19:30:35 CET 2016] Server responses : `EXCEPTION EXCEPTION DISCOVER can have only one optional parameter.`
+[Fri Dec 23 19:30:51 CET 2016] Client requests : `discvover G H g`
+[Fri Dec 23 19:30:51 CET 2016] Server responses : `EXCEPTION DISCVOVER is not recognizable command.`
+[Fri Dec 23 19:30:54 CET 2016] Client requests : `asd`
+[Fri Dec 23 19:30:54 CET 2016] Server responses : `EXCEPTION ASD is not recognizable command.`
+[Fri Dec 23 19:31:06 CET 2016] Client requests : `help`
+[Fri Dec 23 19:31:06 CET 2016] Server responses : `SUCCESS HELP LOGOUT CREATE AUTH DISCOVER START LIST`
+[Fri Dec 23 19:31:09 CET 2016] Client requests : `help list`
+[Fri Dec 23 19:31:09 CET 2016] Server responses : `SUCCESS Returns all players list from database. Usage : LIST`
+[Fri Dec 23 19:31:11 CET 2016] Client requests : `list`
+[Fri Dec 23 19:31:11 CET 2016] Server responses : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 0 6 expecto 0`
+[Fri Dec 23 19:31:15 CET 2016] Client requests : `list `
+[Fri Dec 23 19:31:15 CET 2016] Server responses : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 0 6 expecto 0`
+[Fri Dec 23 19:31:17 CET 2016] Client requests : `list t`
+[Fri Dec 23 19:31:17 CET 2016] Server responses : `EXCEPTION EXCEPTION LIST has no paramters.`
+[Fri Dec 23 19:31:21 CET 2016] Client requests : `IO`
+[Fri Dec 23 19:31:21 CET 2016] Server responses : `EXCEPTION IO is not recognizable command.`
+[Fri Dec 23 19:31:22 CET 2016] Client requests : `IO`
+[Fri Dec 23 19:31:22 CET 2016] Server responses : `EXCEPTION IO is not recognizable command.`
+[Fri Dec 23 19:31:26 CET 2016] Client requests : `elementar`
+[Fri Dec 23 19:31:26 CET 2016] Server responses : `EXCEPTION ELEMENTAR is not recognizable command.`
+[Fri Dec 23 19:31:28 CET 2016] Client requests : `auth`
+[Fri Dec 23 19:31:28 CET 2016] Server responses : `EXCEPTION EXCEPTION AUTH must have 2 parameters.`
+[Fri Dec 23 19:31:30 CET 2016] Client requests : `auth ELO`
+[Fri Dec 23 19:31:30 CET 2016] Server responses : `EXCEPTION EXCEPTION AUTH must have 2 parameters.`
+[Fri Dec 23 19:31:33 CET 2016] Client requests : `auth ELO ZIOM`
+[Fri Dec 23 19:31:33 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Fri Dec 23 19:31:37 CET 2016] Client requests : `auth elo ziom`
+[Fri Dec 23 19:31:37 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Fri Dec 23 19:31:40 CET 2016] Client requests (elo) : `discover`
+[Fri Dec 23 19:31:40 CET 2016] Server responses (elo) : `FAIL Hangman must be started first to perform this action`
+[Fri Dec 23 19:31:47 CET 2016] Client requests (elo) : `help discover`
+[Fri Dec 23 19:31:47 CET 2016] Server responses (elo) : `SUCCESS Discovers letter in hangman if one is present, otherwise hangman is left unchanged. Usage : DISCOVER <optional letter>`
+[Fri Dec 23 19:31:56 CET 2016] Client requests (elo) : `help`
+[Fri Dec 23 19:31:56 CET 2016] Server responses (elo) : `SUCCESS HELP LOGOUT CREATE AUTH DISCOVER START LIST`
+[Fri Dec 23 19:32:09 CET 2016] Client requests (elo) : `AUTH`
+[Fri Dec 23 19:32:09 CET 2016] Server responses (elo) : `EXCEPTION EXCEPTION AUTH must have 2 parameters.`
+[Fri Dec 23 19:32:14 CET 2016] Client requests (elo) : `AUTH user password`
+[Fri Dec 23 19:32:14 CET 2016] Server responses (elo) : `FAIL Active user must log out first.`
+[Fri Dec 23 19:32:19 CET 2016] Client requests (elo) : `START`
+[Fri Dec 23 19:32:19 CET 2016] Server responses (elo) : `SUCCESS 7 6`
+[Fri Dec 23 19:32:22 CET 2016] Client requests (elo) : `DISCOVER 6`
+[Fri Dec 23 19:32:22 CET 2016] Server responses (elo) : `SUCCESS false false false false false false false  6 5`
+[Fri Dec 23 19:32:30 CET 2016] Client requests (elo) : `LOGOUT`
+[Fri Dec 23 19:32:30 CET 2016] Server responses : `SUCCESS`
+[Fri Dec 23 19:32:34 CET 2016] Client requests : `EXIT`
+[Fri Dec 23 19:32:34 CET 2016] Server responses : `EXCEPTION EXIT is not recognizable command.`
+[Sat Dec 24 16:17:37 CET 2016] Server has started.
+[Sat Dec 24 16:18:45 CET 2016] User has connected.
+[Sat Dec 24 16:22:46 CET 2016] Server has started.
+[Sat Dec 24 16:23:01 CET 2016] User has connected.
+[Sat Dec 24 16:23:10 CET 2016] Client requests : `START 6`
+[Sat Dec 24 16:23:10 CET 2016] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Sat Dec 24 16:23:13 CET 2016] Client requests : `AUTH elo ziom`
+[Sat Dec 24 16:23:13 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 16:23:15 CET 2016] Client requests (elo) : `START 6`
+[Sat Dec 24 16:44:33 CET 2016] Server has started.
+[Sat Dec 24 16:45:39 CET 2016] User has connected.
+[Sat Dec 24 16:45:43 CET 2016] Client requests : `AUTH elo ziom`
+[Sat Dec 24 16:45:43 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 16:45:50 CET 2016] Client requests (elo) : `START 6`
+[Sat Dec 24 16:51:19 CET 2016] Server has started.
+[Sat Dec 24 16:51:32 CET 2016] User has connected.
+[Sat Dec 24 16:51:37 CET 2016] Client requests : `auth elo ziom`
+[Sat Dec 24 16:51:37 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 16:51:41 CET 2016] Client requests (elo) : `START 6`
+[Sat Dec 24 16:52:46 CET 2016] User has connected.
+[Sat Dec 24 16:52:55 CET 2016] Client requests : `auth elo ziom`
+[Sat Dec 24 16:52:55 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 16:53:00 CET 2016] Client requests (elo) : `START 5`
+[Sat Dec 24 16:55:52 CET 2016] User has connected.
+[Sat Dec 24 16:55:56 CET 2016] Client requests : `AUTH ELO ZIOM`
+[Sat Dec 24 16:55:56 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Sat Dec 24 16:56:01 CET 2016] Client requests : `AUTH elo ziom`
+[Sat Dec 24 16:56:01 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 16:56:06 CET 2016] Client requests (elo) : `elo ziom`
+[Sat Dec 24 16:56:06 CET 2016] Server responses (elo) : `EXCEPTION ELO is not recognizable command.`
+[Sat Dec 24 16:56:13 CET 2016] Client requests (elo) : `START 6`
+[Sat Dec 24 16:57:12 CET 2016] Server has started.
+[Sat Dec 24 16:57:20 CET 2016] User has connected.
+[Sat Dec 24 16:57:25 CET 2016] Client requests : `AUTH elo ziom`
+[Sat Dec 24 16:57:25 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 16:57:29 CET 2016] Client requests (elo) : `START 5`
+[Sat Dec 24 16:58:37 CET 2016] Server has started.
+[Sat Dec 24 16:58:58 CET 2016] User has connected.
+[Sat Dec 24 16:59:04 CET 2016] Client requests : `AUTH ELO ZIOM`
+[Sat Dec 24 16:59:04 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Sat Dec 24 16:59:09 CET 2016] Client requests : `AUTH elo ziom`
+[Sat Dec 24 16:59:09 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 16:59:13 CET 2016] Client requests (elo) : `START 5`
+[Sat Dec 24 17:00:57 CET 2016] Server has started.
+[Sat Dec 24 17:01:07 CET 2016] User has connected.
+[Sat Dec 24 17:01:12 CET 2016] Client requests : `AUTH elo ziom`
+[Sat Dec 24 17:01:12 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 17:01:14 CET 2016] Client requests (elo) : `START 5`
+[Sat Dec 24 17:02:11 CET 2016] Server has started.
+[Sat Dec 24 17:02:18 CET 2016] User has connected.
+[Sat Dec 24 17:02:21 CET 2016] Client requests : `ELO ZIOM`
+[Sat Dec 24 17:02:21 CET 2016] Server responses : `EXCEPTION ELO is not recognizable command.`
+[Sat Dec 24 17:02:24 CET 2016] Client requests : `AUTH elo ziom`
+[Sat Dec 24 17:02:24 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 17:02:26 CET 2016] Client requests (elo) : `START 5`
+[Sat Dec 24 17:17:38 CET 2016] Server has started.
+[Sat Dec 24 17:17:47 CET 2016] User has connected.
+[Sat Dec 24 17:17:51 CET 2016] Client requests : `auth elo ziom`
+[Sat Dec 24 17:17:51 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sat Dec 24 17:17:52 CET 2016] Client requests (elo) : `start 5`
+[Sun Dec 25 15:24:46 CET 2016] Server has started.
+[Sun Dec 25 15:24:58 CET 2016] User has connected.
+[Sun Dec 25 15:25:01 CET 2016] Client requests : `AUTH ELO ZIOM`
+[Sun Dec 25 15:25:01 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Sun Dec 25 15:25:06 CET 2016] Client requests : `Auth elo ziom`
+[Sun Dec 25 15:25:06 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sun Dec 25 15:25:22 CET 2016] Client requests (elo) : `START`
+[Sun Dec 25 15:25:22 CET 2016] Server responses (elo) : `EXCEPTION EXCEPTION START must have one argument.`
+[Sun Dec 25 15:25:27 CET 2016] Client requests (elo) : `START ee`
+[Sun Dec 25 15:25:27 CET 2016] Server responses (elo) : `EXCEPTION EXCEPTION START argument must be integer.`
+[Sun Dec 25 15:25:33 CET 2016] Client requests (elo) : `START 10`
+[Sun Dec 25 15:27:00 CET 2016] Server has started.
+[Sun Dec 25 15:27:07 CET 2016] Server has started.
+[Sun Dec 25 15:27:16 CET 2016] User has connected.
+[Sun Dec 25 15:27:20 CET 2016] Client requests : `AUTH elo ziom`
+[Sun Dec 25 15:27:20 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Sun Dec 25 15:27:21 CET 2016] Client requests (elo) : `START 5`
+[Wed Dec 28 15:59:59 CET 2016] Server has started.
+[Wed Dec 28 16:00:12 CET 2016] User has connected.
+[Wed Dec 28 16:00:19 CET 2016] Client requests : `AUTH alfa omega`
+[Wed Dec 28 16:00:19 CET 2016] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Wed Dec 28 16:00:22 CET 2016] Client requests (alfa) : `START 5`
+[Wed Dec 28 16:00:23 CET 2016] Server responses (alfa) : `EXCEPTION Connect to pl.wikipedia.org:443 [pl.wikipedia.org/91.198.174.192] timed out`
+[Wed Dec 28 16:01:09 CET 2016] Server has started.
+[Wed Dec 28 16:01:12 CET 2016] User has connected.
+[Wed Dec 28 16:01:20 CET 2016] Client requests : `auth alfa omega`
+[Wed Dec 28 16:01:20 CET 2016] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Wed Dec 28 16:01:21 CET 2016] Client requests (alfa) : `start 1`
+[Wed Dec 28 16:01:21 CET 2016] Server responses (alfa) : `EXCEPTION Connect to pl.wikipedia.org:443 [pl.wikipedia.org/91.198.174.192] failed: connect timed out`
+[Wed Dec 28 16:04:32 CET 2016] Client requests (alfa) : `exit`
+[Wed Dec 28 16:04:32 CET 2016] Server responses (alfa) : `EXCEPTION EXIT is not recognizable command.`
+[Wed Dec 28 16:04:35 CET 2016] Client requests (alfa) : `logout`
+[Wed Dec 28 16:04:35 CET 2016] Server responses : `SUCCESS`
+[Wed Dec 28 16:04:57 CET 2016] Server has started.
+[Wed Dec 28 16:05:14 CET 2016] User has connected.
+[Wed Dec 28 16:05:19 CET 2016] Client requests : `AUTH alfa omega`
+[Wed Dec 28 16:05:19 CET 2016] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Wed Dec 28 16:05:22 CET 2016] Client requests (alfa) : `START 4`
+[Wed Dec 28 16:05:24 CET 2016] Server responses (alfa) : `SUCCESS 11 4`
+[Wed Dec 28 16:06:08 CET 2016] Client requests (alfa) : `DISCOVER`
+[Wed Dec 28 16:06:08 CET 2016] Server responses (alfa) : `FAIL Hangman must be started first to perform this action`
+[Wed Dec 28 16:06:47 CET 2016] Server has started.
+[Wed Dec 28 16:06:53 CET 2016] User has connected.
+[Wed Dec 28 16:07:00 CET 2016] Client requests : `AUTH alfa omega`
+[Wed Dec 28 16:07:00 CET 2016] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Wed Dec 28 16:07:02 CET 2016] Client requests (alfa) : `START 5`
+[Wed Dec 28 16:07:58 CET 2016] Server has started.
+[Wed Dec 28 16:08:02 CET 2016] Server has started.
+[Wed Dec 28 16:08:09 CET 2016] User has connected.
+[Wed Dec 28 16:08:22 CET 2016] Client requests : `AUTH alfa omega`
+[Wed Dec 28 16:08:22 CET 2016] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Wed Dec 28 16:08:34 CET 2016] Client requests (alfa) : `START 5`
+[Wed Dec 28 16:58:40 CET 2016] Server has started.
+[Wed Dec 28 16:58:44 CET 2016] User has connected.
+[Wed Dec 28 16:58:49 CET 2016] Client requests : `auth elo ziom`
+[Wed Dec 28 16:58:49 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Wed Dec 28 16:58:53 CET 2016] Client requests (elo) : `discover 5`
+[Wed Dec 28 16:58:53 CET 2016] Server responses (elo) : `FAIL Hangman must be started first to perform this action`
+[Wed Dec 28 16:58:59 CET 2016] Client requests (elo) : `start 5`
+[Wed Dec 28 16:59:00 CET 2016] Server responses (elo) : `SUCCESS 9 5`
+[Wed Dec 28 16:59:06 CET 2016] Client requests (elo) : `discover`
+[Wed Dec 28 16:59:06 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  5 5`
+[Wed Dec 28 16:59:13 CET 2016] Client requests (elo) : `discover`
+[Wed Dec 28 16:59:13 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  5 5`
+[Wed Dec 28 16:59:29 CET 2016] Client requests (elo) : `discover a`
+[Wed Dec 28 16:59:29 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  5 4`
+[Wed Dec 28 16:59:31 CET 2016] Client requests (elo) : `discover e`
+[Wed Dec 28 16:59:31 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE e  5 4`
+[Wed Dec 28 16:59:36 CET 2016] Client requests (elo) : `discover t`
+[Wed Dec 28 16:59:36 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE e  5 3`
+[Wed Dec 28 16:59:39 CET 2016] Client requests (elo) : `discover o`
+[Wed Dec 28 16:59:39 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 3`
+[Wed Dec 28 16:59:44 CET 2016] Client requests (elo) : `discover i`
+[Wed Dec 28 16:59:44 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 2`
+[Wed Dec 28 16:59:48 CET 2016] Client requests (elo) : `discover u`
+[Wed Dec 28 16:59:48 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 1`
+[Wed Dec 28 16:59:58 CET 2016] Client requests (elo) : `discover m`
+[Wed Dec 28 16:59:58 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 0`
+[Wed Dec 28 17:00:02 CET 2016] Client requests (elo) : `discover`
+[Wed Dec 28 17:00:02 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 0`
+[Wed Dec 28 17:00:07 CET 2016] Client requests (elo) : `discover n`
+[Wed Dec 28 17:00:07 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 -1`
+[Wed Dec 28 17:00:10 CET 2016] Client requests (elo) : `discover a`
+[Wed Dec 28 17:00:10 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 -2`
+[Wed Dec 28 17:00:14 CET 2016] Client requests (elo) : `discover i`
+[Wed Dec 28 17:00:14 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 -3`
+[Wed Dec 28 17:00:16 CET 2016] Client requests (elo) : `discover f`
+[Wed Dec 28 17:00:16 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 -4`
+[Wed Dec 28 17:00:21 CET 2016] Client requests (elo) : `discover ó`
+[Wed Dec 28 17:00:21 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE FALSE FALSE FALSE FALSE e  5 -5`
+[Wed Dec 28 17:00:24 CET 2016] Client requests (elo) : `discover ą`
+[Wed Dec 28 17:00:24 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE ą FALSE FALSE FALSE e  5 -5`
+[Wed Dec 28 17:00:27 CET 2016] Client requests (elo) : `discvoer j`
+[Wed Dec 28 17:00:27 CET 2016] Server responses (elo) : `EXCEPTION DISCVOER is not recognizable command.`
+[Wed Dec 28 17:00:29 CET 2016] Client requests (elo) : `discover j`
+[Wed Dec 28 17:00:29 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE ą FALSE FALSE FALSE e  5 -6`
+[Wed Dec 28 17:00:33 CET 2016] Client requests (elo) : `discover b`
+[Wed Dec 28 17:00:33 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o FALSE ą FALSE FALSE FALSE e  5 -7`
+[Wed Dec 28 17:00:39 CET 2016] Client requests (elo) : `discover r`
+[Wed Dec 28 17:00:39 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o r ą FALSE FALSE FALSE e  5 -7`
+[Wed Dec 28 17:00:43 CET 2016] Client requests (elo) : `discover p`
+[Wed Dec 28 17:00:43 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o r ą FALSE FALSE FALSE e  5 -8`
+[Wed Dec 28 17:00:45 CET 2016] Client requests (elo) : `discover g`
+[Wed Dec 28 17:00:45 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE o r ą FALSE FALSE FALSE e  5 -9`
+[Wed Dec 28 17:00:52 CET 2016] Client requests (elo) : `discover c`
+[Wed Dec 28 17:00:52 CET 2016] Server responses (elo) : `SUCCESS C FALSE o r ą FALSE FALSE c e  5 -9`
+[Wed Dec 28 17:00:54 CET 2016] Client requests (elo) : `discover h`
+[Wed Dec 28 17:00:54 CET 2016] Server responses (elo) : `SUCCESS C h o r ą FALSE FALSE c e  5 -9`
+[Wed Dec 28 17:01:00 CET 2016] Client requests (elo) : `discover ż`
+[Wed Dec 28 17:01:00 CET 2016] Server responses (elo) : `SUCCESS C h o r ą ż FALSE c e  5 -9`
+[Wed Dec 28 17:01:03 CET 2016] Client requests (elo) : `discover y`
+[Wed Dec 28 17:01:03 CET 2016] Server responses (elo) : `SUCCESS C h o r ą ż y c e  5 -9`
+[Wed Dec 28 17:01:16 CET 2016] Client requests (elo) : `exit`
+[Wed Dec 28 17:01:16 CET 2016] Server responses (elo) : `EXCEPTION EXIT is not recognizable command.`
+[Wed Dec 28 17:46:14 CET 2016] Server has started.
+[Wed Dec 28 17:46:18 CET 2016] User has connected.
+[Wed Dec 28 17:46:23 CET 2016] Client requests : `auth elo`
+[Wed Dec 28 17:46:23 CET 2016] Server responses : `EXCEPTION EXCEPTION AUTH must have 2 parameters.`
+[Wed Dec 28 17:46:28 CET 2016] Client requests : `auth elo ziom`
+[Wed Dec 28 17:46:28 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Wed Dec 28 17:46:33 CET 2016] Client requests (elo) : `info`
+[Wed Dec 28 17:46:33 CET 2016] Server responses (elo) : `EXCEPTION INFO is not recognizable command.`
+[Wed Dec 28 17:46:35 CET 2016] Client requests (elo) : `help info`
+[Wed Dec 28 17:46:35 CET 2016] Server responses (elo) : `FAIL HELP  is not recognizable command name.`
+[Wed Dec 28 17:51:11 CET 2016] Server has started.
+[Wed Dec 28 17:51:18 CET 2016] User has connected.
+[Wed Dec 28 17:51:21 CET 2016] Client requests : `AUTH elo ziom`
+[Wed Dec 28 17:51:21 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Wed Dec 28 17:51:25 CET 2016] Client requests (elo) : `START 6`
+[Wed Dec 28 17:51:26 CET 2016] Server responses (elo) : `SUCCESS 6 6`
+[Wed Dec 28 17:51:35 CET 2016] Client requests (elo) : `INFO`
+[Wed Dec 28 17:51:36 CET 2016] Server responses (elo) : `SUCCESS Nocebo (łac. będę szkodzić) – negatywne, niepożądane objawy zjawiska zwanego placebo. Efekt nocebo, czyli różne objawy uboczne (np. nudności, wymioty, bóle głowy, senność, bezsenność, drętwienia, świąd skóry, tachykardię, biegunkę, wysypkę czy obrzęki) najczęściej wywołane są przez negatywne nastawienie pacjenta do terapii, czy też nieakceptowany przez niego wygląd leku. Po raz pierwszy terminu reakcja nocebo użył Walter Kennedy w 1961 roku. Niektórzy badacze uważają, że śmierć w wyniku magii voodoo może być przypadkiem efektu nocebo.
+Efekt nocebo jest również odwrotnością placebo – jak przekonanie o pozytywnym działaniu specyfiku może pomóc tak negatywne nastawienie (czy uleganie negatywnej sugestii) może zwiększać czy powodować objawy chorobowe np. doktor Arthur Barsky wykazał , że w 97 procentach objawy alergii na penicylinę okazywały się w rzeczywistości efektem nocebo. Na efekt nocebo bardziej narażone są osoby ze skłonnością do depresji, lęków i hipochondrii oraz podatne na wpływ negatywnej sugestii.
+
+`

@@ -1,10 +1,18 @@
 package pl.wikihangman.server.protocol.commands;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
+import org.apache.http.client.ClientProtocolException;
+import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.Command;
 import pl.wikihangman.server.protocol.ValidationResult;
+import pl.wikihangman.server.services.WikipediaService;
 
 /**
  * Handles new game requests. Returns new hangman to play and saves user's
@@ -15,20 +23,23 @@ import pl.wikihangman.server.protocol.ValidationResult;
  */
 public class StartCommand extends Command {
 
-    private static final String COMMAND_NAME = "START";
+    private final static String COMMAND_NAME = "START";
     private final AtomicReference<User> activeUser;
     private final AtomicReference<Hangman> activeHangman;
+    private final WikipediaService wikipediaService;
     
     /**
      * 
      * @param activeUser reference to active user
      * @param activeHangman reference to active hangman
+     * @param wikipediaService service communicating with wikipedia's api
      */
     public StartCommand(AtomicReference<User> activeUser, 
-            AtomicReference<Hangman> activeHangman) {
+            AtomicReference<Hangman> activeHangman, WikipediaService wikipediaService) {
         super(COMMAND_NAME);
         this.activeHangman = activeHangman;
         this.activeUser = activeUser;
+        this.wikipediaService = wikipediaService;
     }
     
     /**
@@ -37,18 +48,23 @@ public class StartCommand extends Command {
      * 
      * @param options empty array
      * @return response message
+     * @throws ServiceException if internal service has thrown exception
      */
     @Override
-    public String execute(String[] options) {
+    public String execute(String[] options) throws ServiceException {
         
         if (activeUser.get() == null) {
             return fail("Previous user authentication is needed to perform this action");
         }
-        Hangman hangman = new Hangman()
-                    .createKeyword("Testowy")
-                    .setActualLives(6)
-                    .setMaxLives(6);
+        int lives = Integer.parseInt(options[0]);
+        Hangman hangman;
+        try {
+            hangman = wikipediaService.createHangman(lives);
             activeHangman.set(hangman);
+        } catch (URISyntaxException | TimeoutException | InterruptedException | 
+                 IOException exception) {
+            throw new ServiceException(exception);
+        }
         return success(hangman);
     }
     
@@ -58,7 +74,9 @@ public class StartCommand extends Command {
      */
     @Override
     public String usage() {
-        return "Creates new hangman if user has logged in. Usage : " + COMMAND_NAME;
+        return String.format(
+            "Creates new hangman if user has logged in. Usage : %1$s <amount of lives>",
+            getName());
     }
     
     /**
@@ -68,9 +86,15 @@ public class StartCommand extends Command {
      */
     @Override
     public ValidationResult validate(String[] options) {
-        return options.length == 0 ?
-            ValidationResult.success() :
-            ValidationResult.fail(getName() + " has no arguments");
+        if (options.length != 1) {
+            return ValidationResult.fail(getName() + " must have one argument.");
+        }
+        try {
+            Integer.parseInt(options[0]);
+        } catch (NumberFormatException exception) {
+            return ValidationResult.fail(getName() + " argument must be integer.");
+        }
+        return ValidationResult.success();
     }
     
     /**

@@ -15,6 +15,7 @@ public class Hangman {
     
     private int maxLives;
     private int actualLives;
+    private long pageId; 
     private List<Letter> keyword;
     
     /**
@@ -34,6 +35,16 @@ public class Hangman {
      */
     public Hangman setActualLives(int actualLives) {
         this.actualLives = actualLives;
+        return this;
+    }
+    
+    /**
+     * 
+     * @param pageId wikipedia's page id of this keyword 
+     * @return this object
+     */
+    public Hangman setPageId(long pageId) {
+        this.pageId = pageId;
         return this;
     }
     
@@ -77,6 +88,14 @@ public class Hangman {
      */
     public int getActualLives() {
         return actualLives;
+    }
+    
+    /**
+     * 
+     * @return wikipedia's page id of this keyword 
+     */
+    public long getPageId() {
+        return pageId;
     }
     
     /**

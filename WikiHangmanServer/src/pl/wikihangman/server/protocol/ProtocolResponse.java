@@ -1,12 +1,12 @@
 package pl.wikihangman.server.protocol;
 
 /**
- * Contains keywords of server protocol messages.
+ * Contains keywords of server protocol response headers.
  * 
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public enum Protocol {
+public enum ProtocolResponse {
 
     SUCCESS("SUCCESS"),
     FAIL("FAIL"),
@@ -14,7 +14,7 @@ public enum Protocol {
     
     private final String keyword;
     
-    private Protocol(String keyword) {
+    private ProtocolResponse(String keyword) {
         this.keyword = keyword;
     }
     
