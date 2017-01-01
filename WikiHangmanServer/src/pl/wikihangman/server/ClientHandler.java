@@ -15,7 +15,7 @@ import pl.wikihangman.server.logging.ServerLogger;
 import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.CommandResolver;
-import pl.wikihangman.server.protocol.ProtocolResponse;
+import pl.wikihangman.protocol.ProtocolResponse;
 import pl.wikihangman.server.protocol.commands.*;
 import pl.wikihangman.server.services.WikipediaService;
 
@@ -89,9 +89,9 @@ public class ClientHandler implements Runnable {
                 .addCommand(new ListCommand(dbPath))
                 .addCommand(new HelpCommand(commandResolver::getCommands))
                 .addCommand(new StartCommand(activeUser, activeHangman, wikiService))
-                .addCommand(new DiscoverCommand(activeHangman, activeUser))
+                .addCommand(new DiscoverCommand(activeHangman, activeUser, dbPath))
                 .addCommand(new LogoutCommand(activeUser, activeHangman))
-                .addCommand(new InfoCommand(wikiService, activeHangman));
+                .addCommand(new InfoCommand(activeHangman));
     }
     
     /**
@@ -104,6 +104,9 @@ public class ClientHandler implements Runnable {
             String request, response;
             while (true) {
                 request = in.readLine();
+                if (request == null) {
+                    break;
+                }
                 logger.log(logRequest(request));
                 try {
                     response = commandResolver.resolve(request);
@@ -116,6 +119,7 @@ public class ClientHandler implements Runnable {
         } catch (IOException ioException) {
             
         }
+        logger.log("User has disconnected.");
     }
     
     /**

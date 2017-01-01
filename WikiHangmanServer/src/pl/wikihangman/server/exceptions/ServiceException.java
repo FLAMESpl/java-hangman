@@ -15,6 +15,4 @@ public class ServiceException extends ServerException {
     public ServiceException(Exception exception) {
         super(exception.getMessage(), exception);
     }
-    
-    
 }

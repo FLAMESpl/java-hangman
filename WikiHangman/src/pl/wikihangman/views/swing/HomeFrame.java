@@ -1,11 +1,16 @@
 package pl.wikihangman.views.swing;
 
 import java.awt.BorderLayout;
-import pl.wikihangman.models.User;
-import pl.wikihangman.services.AccountsService;
-import pl.wikihangman.services.GameService;
+import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import javax.swing.JSlider;
+import pl.wikihangman.client.ServerCommand;
+import pl.wikihangman.client.ServerResponse;
+import pl.wikihangman.client.TcpClient;
+import pl.wikihangman.protocol.ProtocolParseException;
+import pl.wikihangman.views.logging.ConfirmationsEnum;
 import pl.wikihangman.views.logging.ErrorsEnum;
-import pl.wikihangman.views.swing.events.*;
 import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
 
 /**
@@ -15,18 +20,27 @@ import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
  * @author Łukasz Szafirski
  * @version 1.0.0.0
  */
-public class HomeFrame extends javax.swing.JFrame 
-                       implements LogInAttemptListener {
+public class HomeFrame extends javax.swing.JFrame {
 
-    private String wikipediaBaseUrl = null;
-    private final String DB_PATH = ".\\db.txt";
-    private User activeUser = null;
-    private LogInStatusEnum logInStatus = LogInStatusEnum.LOGGED_OUT;
+    private final static String DEFAULT_IP = "localhost";
+    private final static int DEFAULT_PORT = 8888;
+    private final static String FRAME_TITLE = "WikiHangman";
+    private TcpClient client;
     
     /**
      * Creates new form HomeFrame
+     * 
+     * @param ip tcp server's ip
+     * @param port tcp server's port
      */
-    public HomeFrame() {
+    public HomeFrame(String ip, int port) {
+        setTitle(FRAME_TITLE);
+        try {
+            client = new TcpClient(ip, port);
+        } catch (IOException exception) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.SOCKET_INIT);
+            System.exit(-1);
+        }
         initComponents();
         init();
     }
@@ -35,77 +49,8 @@ public class HomeFrame extends javax.swing.JFrame
      * Non-designer initialization part of component.
      */
     private void init() {
-        setLogInPanel();
-    }
-    
-    /**
-     * Executed when {@code LogInAttemptEvent} is raised.
-     * 
-     * @param event data associated with event state
-     */
-    @Override
-    public void attemptedToLogIn(LogInAttemptEvent event) {
-        activeUser = event.getLoggedUser();
-        if (event.getSuccess()) {
-            setLogInStatus(LogInStatusEnum.LOGGED_IN);
-        }
-    }
-    
-    /**
-     * Adjusts form's components state to given {@code LogInStatusEnum}
-     * 
-     * @param logInStatusEnum status of logged user
-     */
-    private void setLogInStatus(LogInStatusEnum logInStatusEnum) {
-        logInStatus = logInStatusEnum;
-        switch (logInStatusEnum) {
-            case LOGGED_IN:
-                logInlogOutMenuItem.setText("Log out");
-                break;
-                
-            case LOGGED_OUT:
-                logInlogOutMenuItem.setText("Log in");
-                break;
-        }
-    }
-    
-    /**
-     * Sets log in panel as main panel in this frame.
-     */
-    private void setLogInPanel() {
-        LoginPanel panel = new LoginPanel().setAccountsService(new AccountsService(DB_PATH));
-        panel.addLogInAttemptListener(this);
-        setMainPanel(panel);
-    }
-    
-    /**
-     * Setups new game controller.
-     */
-    private void requestNewGame() {
-        if (logInStatus == LogInStatusEnum.LOGGED_IN) {
-            GamePanel panel = new GamePanel()
-                    .setGameService(new GameService())
-                    .setActivePlayer(activeUser)
-                    .initHangman();
-            setMainPanel(panel);
-        } else {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.NEED_AUTH);
-        }
-    }
-    
-    /**
-     * Setups score board controller.
-     */
-    private void requestScoreBoard() {
-        ScoreBoardPanel panel = new ScoreBoardPanel()
-                .setAccountService(new AccountsService(DB_PATH))
-                .displayScoreBoard();
-        
-        if (activeUser != null) {
-            panel.showWithActiveUser(activeUser);
-        }
-        
-        setMainPanel(panel);
+        LoginPanel loginPanel = new LoginPanel(client);
+        setMainPanel(loginPanel);
     }
     
     /**
@@ -121,6 +66,20 @@ public class HomeFrame extends javax.swing.JFrame
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(panel);
     }
+    
+    /**
+     * Log outs actvie user cached in server socket.
+     */
+    private void logOut() {
+        
+        try {
+            client.send(ServerCommand.LOGOUT);
+            ServerResponse response = client.receive();
+            OptionPaneHelpers.showResponseMessage(null, response, ConfirmationsEnum.USER_LOGGED_OUT);
+        } catch(IOException | ProtocolParseException exception) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.COMMUNICATION);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,17 +92,18 @@ public class HomeFrame extends javax.swing.JFrame
 
         jToolBar1 = new javax.swing.JToolBar();
         toolBarButtonNewHangman = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        livesLabel = new javax.swing.JLabel();
+        livesSlider = new javax.swing.JSlider();
         toolBarButtonScoreBoard = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         gameMenu = new javax.swing.JMenu();
         gameMenuItem = new javax.swing.JMenuItem();
         logInlogOutMenuItem = new javax.swing.JMenuItem();
+        logOutMenuItem = new javax.swing.JMenuItem();
         scoreboardMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
-        propertiesMenu = new javax.swing.JMenu();
-        helpMenu = new javax.swing.JMenu();
-        aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -161,6 +121,28 @@ public class HomeFrame extends javax.swing.JFrame
         });
         jToolBar1.add(toolBarButtonNewHangman);
 
+        jLabel1.setText("Amount of lives:");
+        jToolBar1.add(jLabel1);
+
+        livesLabel.setText("10");
+        livesLabel.setMaximumSize(new java.awt.Dimension(20, 14));
+        livesLabel.setMinimumSize(new java.awt.Dimension(20, 14));
+        livesLabel.setPreferredSize(new java.awt.Dimension(20, 14));
+        jToolBar1.add(livesLabel);
+
+        livesSlider.setMajorTickSpacing(1);
+        livesSlider.setMaximum(10);
+        livesSlider.setMinimum(1);
+        livesSlider.setSnapToTicks(true);
+        livesSlider.setMaximumSize(new java.awt.Dimension(120, 26));
+        livesSlider.setPreferredSize(new java.awt.Dimension(120, 26));
+        livesSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                livesSliderStateChanged(evt);
+            }
+        });
+        jToolBar1.add(livesSlider);
+
         toolBarButtonScoreBoard.setText("Score board");
         toolBarButtonScoreBoard.setFocusable(false);
         toolBarButtonScoreBoard.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -171,6 +153,9 @@ public class HomeFrame extends javax.swing.JFrame
             }
         });
         jToolBar1.add(toolBarButtonScoreBoard);
+
+        mainPanel.setToolTipText("WikiHangman");
+        mainPanel.setName("WikiHangman"); // NOI18N
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -202,6 +187,14 @@ public class HomeFrame extends javax.swing.JFrame
         });
         gameMenu.add(logInlogOutMenuItem);
 
+        logOutMenuItem.setText("Log out");
+        logOutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutMenuItemActionPerformed(evt);
+            }
+        });
+        gameMenu.add(logOutMenuItem);
+
         scoreboardMenuItem.setText("Score board");
         scoreboardMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,25 +214,13 @@ public class HomeFrame extends javax.swing.JFrame
 
         menuBar.add(gameMenu);
 
-        propertiesMenu.setText("Properties");
-        menuBar.add(propertiesMenu);
-
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Help");
-
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
-
-        menuBar.add(helpMenu);
-
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
             .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -258,28 +239,34 @@ public class HomeFrame extends javax.swing.JFrame
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void scoreboardMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreboardMenuItemActionPerformed
-        requestScoreBoard();
+        setMainPanel(new ScoreBoardPanel(client).displayScoreBoard());
     }//GEN-LAST:event_scoreboardMenuItemActionPerformed
 
     private void logInlogOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInlogOutMenuItemActionPerformed
-        setLogInPanel();
-        if (logInStatus == LogInStatusEnum.LOGGED_IN) {
-            setLogInStatus(LogInStatusEnum.LOGGED_OUT);
-            activeUser = null;
-        }
+        setMainPanel(new LoginPanel(client));
     }//GEN-LAST:event_logInlogOutMenuItemActionPerformed
 
     private void gameMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameMenuItemActionPerformed
-        requestNewGame();
+        setMainPanel(new GamePanel(client).startHangman(livesSlider.getValue()));
     }//GEN-LAST:event_gameMenuItemActionPerformed
 
     private void toolBarButtonNewHangmanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toolBarButtonNewHangmanActionPerformed
-        requestNewGame();
+        setMainPanel(new GamePanel(client).startHangman(livesSlider.getValue()));
     }//GEN-LAST:event_toolBarButtonNewHangmanActionPerformed
 
     private void toolBarButtonScoreBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toolBarButtonScoreBoardActionPerformed
-        requestScoreBoard();
+        setMainPanel(new ScoreBoardPanel(client).displayScoreBoard());
     }//GEN-LAST:event_toolBarButtonScoreBoardActionPerformed
+
+    private void logOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutMenuItemActionPerformed
+        logOut();
+        setMainPanel(new LoginPanel(client));
+    }//GEN-LAST:event_logOutMenuItemActionPerformed
+
+    private void livesSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_livesSliderStateChanged
+        JSlider slider = (JSlider)evt.getSource();
+        livesLabel.setText(Integer.toString(slider.getValue()));
+    }//GEN-LAST:event_livesSliderStateChanged
 
     /**
      * @param args the command line arguments
@@ -308,21 +295,35 @@ public class HomeFrame extends javax.swing.JFrame
         }
         //</editor-fold>
 
+        AtomicReference<String> ip = new AtomicReference<>(DEFAULT_IP);
+        AtomicInteger port = new AtomicInteger(DEFAULT_PORT);
+        
+        if (args.length >= 2) {
+            try {
+                ip.set(args[0]);
+                port.set(Integer.parseInt(args[1]));
+            } catch (Exception ex) {
+                OptionPaneHelpers.showErrorMessage(null, ErrorsEnum.APP_ARGS);
+                System.exit(-1);
+            }
+        }
+        
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new HomeFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new HomeFrame(ip.get(), port.get()).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu gameMenu;
     private javax.swing.JMenuItem gameMenuItem;
-    private javax.swing.JMenu helpMenu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel livesLabel;
+    private javax.swing.JSlider livesSlider;
     private javax.swing.JMenuItem logInlogOutMenuItem;
+    private javax.swing.JMenuItem logOutMenuItem;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenu propertiesMenu;
     private javax.swing.JMenuItem scoreboardMenuItem;
     private javax.swing.JButton toolBarButtonNewHangman;
     private javax.swing.JButton toolBarButtonScoreBoard;

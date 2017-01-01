@@ -2,14 +2,19 @@ package pl.wikihangman.server.services;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import pl.wikihangman.server.exceptions.EntityAlreadyExistsException;
+import pl.wikihangman.server.exceptions.EntityDoesNotExistException;
 import pl.wikihangman.server.models.User;
 
 /**
@@ -79,6 +84,50 @@ public class AccountsService {
         String databaseLine = createDatabaseTextLine(user) + System.lineSeparator();
         Files.write(Paths.get(dbPath), databaseLine.getBytes(), StandardOpenOption.APPEND);
         return user;
+    }
+    
+    /**
+     * Updates database record of given user. If user is not found, exception
+     * is thrown.
+     * 
+     * @param user user data to be updated
+     * @throws IOException
+     * @throws EntityDoesNotExistException 
+     */
+    public void update(User user) 
+            throws IOException, EntityDoesNotExistException {
+        
+        ArrayList<String> lines;
+        int userId;
+        
+        try (BufferedReader file = new BufferedReader(new FileReader(dbPath))) {
+            String fileLine;
+            lines = new ArrayList<>();
+            userId = user.getId();
+            while ((fileLine = file.readLine()) != null) {
+                lines.add(fileLine);
+            }
+        }
+        
+        boolean found = false;
+        ListIterator it = lines.listIterator();
+        while (it.hasNext()) {
+            String[] words = ((String)it.next()).split(" ");
+            if (words.length != 0 && Integer.parseInt(words[0]) == userId) {
+                found = true;
+                break;
+            }
+        }
+        
+        if (!found) {
+            throw new EntityDoesNotExistException("Id", Integer.toString(userId));
+        }
+        it.set(createDatabaseTextLine(user));
+        
+        try (FileOutputStream fileOut = new FileOutputStream(dbPath)) {
+            String input = String.join(System.lineSeparator(), lines) + System.lineSeparator();
+            fileOut.write(input.getBytes());
+        }
     }
     
     /**

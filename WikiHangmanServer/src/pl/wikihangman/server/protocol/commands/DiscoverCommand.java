@@ -1,13 +1,16 @@
 package pl.wikihangman.server.protocol.commands;
 
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
+import pl.wikihangman.server.exceptions.EntityDoesNotExistException;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.Letter;
 import pl.wikihangman.server.models.User;
 import pl.wikihangman.server.protocol.Command;
-import pl.wikihangman.server.protocol.ProtocolCode;
+import pl.wikihangman.protocol.ProtocolCode;
 import pl.wikihangman.server.protocol.ValidationResult;
+import pl.wikihangman.server.services.AccountsService;
 
 /**
  * Handles requests to discover new letter in hangman and responses with
@@ -21,12 +24,14 @@ public class DiscoverCommand extends Command {
     private static final String COMMAND_NAME = "DISCOVER";
     private final AtomicReference<Hangman> activeHangman;
     private final AtomicReference<User> activeUser;
+    private final AccountsService accountService;
     
     public DiscoverCommand(AtomicReference<Hangman> activeHangman,
-            AtomicReference<User> activeUser) {
+            AtomicReference<User> activeUser, String dbPath) {
         super(COMMAND_NAME);
         this.activeHangman = activeHangman;
         this.activeUser = activeUser;
+        this.accountService = new AccountsService(dbPath);
     }
     
     /**
@@ -42,16 +47,33 @@ public class DiscoverCommand extends Command {
     @Override
     public String execute(String[] options) throws ServiceException {
         
+        Hangman hangman = activeHangman.get();
+        User user = activeUser.get();
+        
         if (activeUser.get() == null) {
             return fail("Previous user authentication is needed to perform this action.");
         }
         
-        if (activeHangman.get() == null) {
-            return fail("Hangman must be started first to perform this action");
+        if (hangman == null) {
+            return fail("Hangman must be started first to perform this action.");
         }
             
         if (options.length == 1) {
-                activeHangman.get().discover(options[0].charAt(0));
+            if (!hangman.hasAnyLivesLeft()) {
+                return fail("Hangman ran out of lives.");
+            }
+            if (!hangman.hasUndiscoveredLetters()) {
+                return fail("All leters have been discovered already.");
+            }
+            activeHangman.get().discover(options[0].charAt(0));
+            if (hangman.hasAnyLivesLeft() && !hangman.hasUndiscoveredLetters()) {
+                user.score(hangman.getMaxLives());
+                try {
+                    accountService.update(user);
+                } catch (EntityDoesNotExistException | IOException exception) {
+                    throw new ServiceException(exception);
+                }
+            }
         }
         
         return success();
@@ -95,7 +117,9 @@ public class DiscoverCommand extends Command {
                     letter.getCharacter() : ProtocolCode.ofBoolean(false));
             encryptedKeyword.append(" ");
         }
-        return String.format("%1$s %2$s %3$d %4$d", super.success(), 
-                encryptedKeyword, hangman.getMaxLives(), hangman.getActualLives());
+        boolean gameOver = !hangman.hasAnyLivesLeft() || !hangman.hasUndiscoveredLetters();
+        return String.format("%1$s %2$s %3$d %4$d %5$s", 
+                super.success(), ProtocolCode.ofBoolean(gameOver),
+                hangman.getMaxLives(), hangman.getActualLives(), encryptedKeyword);
     }
 }

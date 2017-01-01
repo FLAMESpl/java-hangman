@@ -43,12 +43,25 @@ public class AuthCommand extends Command {
     @Override
     public String execute(String[] options) throws ServiceException {
         
-        if (activeUser.get() != null) {
-            return fail("Active user must log out first.");
+        if (options.length == 0) {
+            return activeUser.get() == null ?
+                    fail("No active user.") :
+                    success();
+        } else {
+            return activeUser.get() != null ?
+                    fail("Active user must log out first.") :
+                    authenticate(options[0], options[1]);
         }
-        
+    }
+    
+    /**
+     * Performs user authentication on the active user object.
+     * 
+     * @throws ServiceException 
+     */
+    private String authenticate(String userName, String password) throws ServiceException {
         try {
-            User user = accountsService.authenticate(options[0], options[1]);
+            User user = accountsService.authenticate(userName, password);
             if (user != null) {
                 activeUser.set(user);
                 return success();
@@ -66,7 +79,8 @@ public class AuthCommand extends Command {
      */
     @Override
     public String usage() {
-        return "Log user into system. Usage : AUTH <username> <password>";
+        return "Log user into system. Usage : AUTH <username> <password>. " +
+               "With no arguments specified logged user is returned.";
     }
     
     /**
@@ -75,9 +89,9 @@ public class AuthCommand extends Command {
      */
     @Override
     public ValidationResult validate(String[] options) {
-        return options.length == 2 ?
+        return options.length == 2 || options.length == 0 ?
             ValidationResult.success() :
-            ValidationResult.fail(getName() + " must have 2 parameters.");
+            ValidationResult.fail(getName() + " must have 2 parameters or none.");
     }
     
     /**

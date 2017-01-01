@@ -18,32 +18,36 @@ import pl.wikihangman.server.services.WikipediaService;
 public class InfoCommand extends Command {
 
     private final static String COMMAND_NAME = "INFO";
-    private final WikipediaService wikiService;
     private final AtomicReference<Hangman> activeHangman;
     
     /**
      * 
-     * @param wikiService service communicating with wikipedia's api
      * @param activeHangman reference to the active hangman
      */
-    public InfoCommand(WikipediaService wikiService, AtomicReference<Hangman> activeHangman) {
+    public InfoCommand(AtomicReference<Hangman> activeHangman) {
         super(COMMAND_NAME);
-        this.wikiService = wikiService;
         this.activeHangman = activeHangman;
     }
 
+    /**
+     * Returns information about hangman keyword if game is over.
+     * 
+     * @param options command's options
+     * @return information about hangman keyword
+     */
     @Override
-    protected String execute(String[] options) throws ServiceException {
+    protected String execute(String[] options) {
         
-        try {
-            if (activeHangman.get() != null) {
-                String info = wikiService.getInfromationFromArticle(activeHangman.get());
-                return success(info);
-            } else {
-                return fail();
+        Hangman hangman = activeHangman.get();
+        if (hangman != null) {
+            if (hangman.hasUndiscoveredLetters() && hangman.hasAnyLivesLeft()) {
+                return fail("Hangman must be completed first or all lives lost.");
             }
-        } catch (URISyntaxException | IOException  exception) {
-            throw new ServiceException(exception);
+            String info = hangman.getArticleInformation();
+            info = info.replace("\n", " ");
+            return success(info);
+        } else {
+            return fail("Hangman must be started first.");
         }
     }
 

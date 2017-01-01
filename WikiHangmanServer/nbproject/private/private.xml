@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/DiscoverCommand.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/models/User.java</file>
+            <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/ValidationResult.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/InfoCommand.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/services/AccountsService.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/services/WikipediaService.java</file>
@@ -13,10 +14,8 @@
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/WikiHangmanServer.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/exceptions/ServerException.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/exceptions/EntityAlreadyExistsException.java</file>
-            <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/ProtocolResponse.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/exceptions/NotSuchACommandException.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/models/Hangman.java</file>
-            <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/ProtocolCode.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/ClientHandler.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/HelpCommand.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/CommandResolver.java</file>
@@ -25,6 +24,7 @@
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/LogoutCommand.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/StartCommand.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/models/Letter.java</file>
+            <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/exceptions/EntityDoesNotExistException.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/exceptions/CommandOptionsException.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/logging/ServerLogger.java</file>
             <file>file:/C:/Users/Łukasz/Documents/Repos/java-hangman/WikiHangmanServer/src/pl/wikihangman/server/protocol/commands/ListCommand.java</file>

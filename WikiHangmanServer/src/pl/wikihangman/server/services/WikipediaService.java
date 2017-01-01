@@ -108,27 +108,28 @@ public class WikipediaService {
             ClientProtocolException, IOException {
         
         JSONObject page = queryRandomPage();
-        return new Hangman()
+        Hangman hangman = new Hangman()
                 .createKeyword(page.getString("title"))
                 .setActualLives(lives)
-                .setMaxLives(lives)
-                .setPageId(page.getLong("id"));
+                .setMaxLives(lives);
+        setArticleProperties(hangman, page.getLong("id"));
+        return hangman;
     }
     
     /**
      * Creates query to wikipedia's api in order to obtain information from
      * article about keyword from given hangman.
      * 
-     * @param hangman hangman about whiches keyword information is obtained
-     * @return information about hangman's keyword
+     * @param hangman target hangman to assign article information
+     * @param pageId id of queried article
      * @throws URISyntaxException if constructed wikipedia URI is invalid
      * @throws ClientProtocolException if http client protocol is invalid
      * @throws IOException if reading from response buffer encountered an error
      */
-    public String getInfromationFromArticle(Hangman hangman) throws
+    private void setArticleProperties(Hangman hangman, Long pageId) throws
             URISyntaxException, ClientProtocolException, IOException {
         
-        String pageId = Long.toString(hangman.getPageId());
+        String id = Long.toString(pageId);
         
         URI uri = new URIBuilder()
                 .setScheme("https")
@@ -136,8 +137,9 @@ public class WikipediaService {
                 .setPath("/w/api.php")
                 .setParameter("action", "query")
                 .setParameter("format", "json")
-                .setParameter("prop", "extracts")
-                .setParameter("pageids", pageId)
+                .setParameter("prop", "categories|extracts")
+                .setParameter("pageids", id)
+                .setParameter("clshow", "!hidden")
                 .setParameter("exintro", "1")
                 .setParameter("explaintext", "1")
                 .build();
@@ -149,11 +151,19 @@ public class WikipediaService {
                 .execute()
                 .returnContent();
         
-        return new JSONObject(content.asString())
+        JSONObject json = new JSONObject(content.asString())
                 .getJSONObject("query")
                 .getJSONObject("pages")
-                .getJSONObject(pageId)
-                .getString("extract");
+                .getJSONObject(id);
+        
+        JSONArray categories = json.getJSONArray("categories");
+        String category = categories.length() == 0 ? "No category" : categories
+                .getJSONObject(0)
+                .getString("title")
+                .replaceFirst(".*(?=:):", ""); // only characters after `:` character
+        
+        hangman.setArticleInformation(json.getString("extract"));
+        hangman.setArticleCategory(category);
     }
     
     /**

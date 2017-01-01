@@ -430,3 +430,2047 @@
 Efekt nocebo jest również odwrotnością placebo – jak przekonanie o pozytywnym działaniu specyfiku może pomóc tak negatywne nastawienie (czy uleganie negatywnej sugestii) może zwiększać czy powodować objawy chorobowe np. doktor Arthur Barsky wykazał , że w 97 procentach objawy alergii na penicylinę okazywały się w rzeczywistości efektem nocebo. Na efekt nocebo bardziej narażone są osoby ze skłonnością do depresji, lęków i hipochondrii oraz podatne na wpływ negatywnej sugestii.
 
 `
+[Thu Dec 29 18:23:43 CET 2016] Server has started.
+[Thu Dec 29 18:23:50 CET 2016] User has connected.
+[Thu Dec 29 18:23:55 CET 2016] Client requests : `LIST`
+[Thu Dec 29 18:23:55 CET 2016] Server responses : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 0 6 expecto 0`
+[Thu Dec 29 18:24:07 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 18:24:07 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Thu Dec 29 18:24:09 CET 2016] Client requests (elo) : `start 5`
+[Thu Dec 29 18:24:10 CET 2016] Server responses (elo) : `SUCCESS 9 5`
+[Thu Dec 29 18:24:14 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 18:24:14 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  5 4`
+[Thu Dec 29 18:24:17 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 18:24:17 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE a FALSE FALSE FALSE FALSE FALSE  5 4`
+[Thu Dec 29 18:24:24 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 18:24:24 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE a FALSE FALSE FALSE FALSE FALSE  5 3`
+[Thu Dec 29 18:24:28 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 18:24:28 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE a FALSE FALSE FALSE FALSE i  5 3`
+[Thu Dec 29 18:24:42 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 18:24:42 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE a FALSE FALSE o FALSE i  5 3`
+[Thu Dec 29 18:24:47 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 18:24:47 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE a FALSE FALSE o FALSE i  5 2`
+[Thu Dec 29 18:24:49 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 18:24:49 CET 2016] Server responses (elo) : `SUCCESS P a FALSE a FALSE FALSE o FALSE i  5 2`
+[Thu Dec 29 18:24:54 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 18:24:54 CET 2016] Server responses (elo) : `SUCCESS P a FALSE a FALSE FALSE o FALSE i  5 1`
+[Thu Dec 29 18:25:08 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 18:25:08 CET 2016] Server responses (elo) : `SUCCESS P a FALSE a FALSE FALSE o FALSE i  5 0`
+[Thu Dec 29 18:25:12 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 18:25:12 CET 2016] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Thu Dec 29 18:25:17 CET 2016] Client requests (elo) : `START 5`
+[Thu Dec 29 18:25:17 CET 2016] Server responses (elo) : `SUCCESS 13 5`
+[Thu Dec 29 18:25:21 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 18:25:21 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE e FALSE FALSE FALSE FALSE FALSE e FALSE FALSE  5 5`
+[Thu Dec 29 18:25:24 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 18:25:24 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE e FALSE FALSE FALSE FALSE FALSE e FALSE FALSE  5 4`
+[Thu Dec 29 18:25:30 CET 2016] Client requests (elo) : `discover ą`
+[Thu Dec 29 18:25:30 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE e FALSE FALSE FALSE FALSE FALSE e FALSE FALSE  5 3`
+[Thu Dec 29 18:25:32 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 18:25:32 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o e FALSE FALSE FALSE o FALSE e FALSE FALSE  5 3`
+[Thu Dec 29 18:25:37 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 18:25:37 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o e FALSE FALSE FALSE o FALSE e FALSE FALSE  5 2`
+[Thu Dec 29 18:25:38 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 18:25:39 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o e FALSE FALSE FALSE o FALSE e n FALSE  5 2`
+[Thu Dec 29 18:25:46 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 18:25:46 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE o e FALSE FALSE FALSE o FALSE e n FALSE  5 2`
+[Thu Dec 29 18:25:49 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 18:25:50 CET 2016] Server responses (elo) : `SUCCESS F i FALSE o e FALSE FALSE FALSE o FALSE e n FALSE  5 2`
+[Thu Dec 29 18:25:55 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 18:25:55 CET 2016] Server responses (elo) : `SUCCESS F i FALSE o e FALSE FALSE FALSE o FALSE e n FALSE  5 1`
+[Thu Dec 29 18:25:58 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 18:25:58 CET 2016] Server responses (elo) : `SUCCESS F i FALSE o e s FALSE FALSE o FALSE e n FALSE  5 1`
+[Thu Dec 29 18:26:04 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 18:26:04 CET 2016] Server responses (elo) : `SUCCESS F i FALSE o e s FALSE FALSE o FALSE e n FALSE  5 0`
+[Thu Dec 29 18:26:09 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 18:26:09 CET 2016] Server responses (elo) : `SUCCESS Fitoestrogeny – związki organiczne zawarte w roślinach, działające w organizmie ludzkim na podobieństwo estrogenów. Siłę ich działania ocenia się na 1-2‰ 17-β-estradiolu.
+Najczęstszym źródłem fitoestrogenów są produkty sojowe zawierające flawonoidy, głównie izoflawony genisteinę i daidzeinę. Dieta „zachodnia” (np. Stany Zjednoczone, Wielka Brytania) dostarcza ok. 1 mg izoflawonów dziennie, azjatycka: ok. 50–100 mg dziennie. Niemowlęta żywione odżywkami sojowymi przyjmują 22–45 mg izoflawonów dziennie.`
+[Thu Dec 29 19:07:18 CET 2016] Client requests (elo) : `git pull`
+[Thu Dec 29 19:07:18 CET 2016] Server responses (elo) : `EXCEPTION GIT is not recognizable command.`
+[Thu Dec 29 19:08:13 CET 2016] Client requests (elo) : `start 5`
+[Thu Dec 29 19:08:14 CET 2016] Server responses (elo) : `SUCCESS 7 5`
+[Thu Dec 29 19:08:16 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:08:16 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE FALSE FALSE FALSE  5 5`
+[Thu Dec 29 19:08:19 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:08:19 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE FALSE FALSE e  5 5`
+[Thu Dec 29 19:08:21 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:08:21 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE FALSE FALSE e  5 4`
+[Thu Dec 29 19:08:23 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:08:23 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE i FALSE e  5 4`
+[Thu Dec 29 19:08:28 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:08:28 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE i FALSE e  5 3`
+[Thu Dec 29 19:08:31 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:08:31 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE i FALSE e  5 2`
+[Thu Dec 29 19:08:32 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:08:32 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE i FALSE e  5 1`
+[Thu Dec 29 19:08:34 CET 2016] Client requests (elo) : `iscover p`
+[Thu Dec 29 19:08:34 CET 2016] Server responses (elo) : `EXCEPTION ISCOVER is not recognizable command.`
+[Thu Dec 29 19:08:36 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:08:36 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE a FALSE i FALSE e  5 0`
+[Thu Dec 29 19:08:38 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:08:39 CET 2016] Server responses (elo) : `SUCCESS Charice, właściwie Charmaine Clarice Relucio Pempengco (ur. 10 maja 1992 w San Pedro na Filipinach) – filipińska piosenkarka. Pierwsza Azjatka w historii, której album znalazł się w pierwszej dziesiątce amerykańskiej listy Billboard. Do jej popularności w Stanach Zjednoczonych przyczyniły się klipy umieszczone przez fana na YouTube.`
+[Thu Dec 29 19:09:06 CET 2016] Client requests (elo) : `start`
+[Thu Dec 29 19:09:06 CET 2016] Server responses (elo) : `EXCEPTION EXCEPTION START must have one argument.`
+[Thu Dec 29 19:09:09 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 19:09:09 CET 2016] Server responses (elo) : `SUCCESS 8 10`
+[Thu Dec 29 19:09:24 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:09:24 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:09:26 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:09:26 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:09:27 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:09:27 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e FALSE FALSE i FALSE  10 9`
+[Thu Dec 29 19:09:29 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:09:29 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e FALSE FALSE i FALSE  10 8`
+[Thu Dec 29 19:09:46 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:09:46 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e FALSE FALSE i FALSE  10 7`
+[Thu Dec 29 19:09:49 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:09:49 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e FALSE FALSE i FALSE  10 6`
+[Thu Dec 29 19:09:53 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:09:53 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE e FALSE FALSE i FALSE  10 6`
+[Thu Dec 29 19:09:56 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:09:56 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE e FALSE FALSE i FALSE  10 5`
+[Thu Dec 29 19:10:00 CET 2016] Client requests (elo) : `discuver p`
+[Thu Dec 29 19:10:00 CET 2016] Server responses (elo) : `EXCEPTION DISCUVER is not recognizable command.`
+[Thu Dec 29 19:10:02 CET 2016] Client requests (elo) : `discvoer p`
+[Thu Dec 29 19:10:02 CET 2016] Server responses (elo) : `EXCEPTION DISCVOER is not recognizable command.`
+[Thu Dec 29 19:10:04 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:10:04 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE e FALSE FALSE i FALSE  10 4`
+[Thu Dec 29 19:10:06 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:10:06 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE e FALSE FALSE i k  10 4`
+[Thu Dec 29 19:10:10 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:10:10 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE e FALSE FALSE i k  10 3`
+[Thu Dec 29 19:10:13 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 19:10:13 CET 2016] Server responses (elo) : `SUCCESS FALSE u l e FALSE FALSE i k  10 3`
+[Thu Dec 29 19:10:15 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:10:15 CET 2016] Server responses (elo) : `SUCCESS FALSE u l e FALSE n i k  10 3`
+[Thu Dec 29 19:10:19 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:10:19 CET 2016] Server responses (elo) : `SUCCESS FALSE u l e FALSE n i k  10 2`
+[Thu Dec 29 19:10:34 CET 2016] Client requests (elo) : `discover ż`
+[Thu Dec 29 19:10:34 CET 2016] Server responses (elo) : `SUCCESS FALSE u l e FALSE n i k  10 1`
+[Thu Dec 29 19:11:02 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:11:02 CET 2016] Server responses (elo) : `SUCCESS FALSE u l e FALSE n i k  10 0`
+[Thu Dec 29 19:11:04 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:11:05 CET 2016] Server responses (elo) : `SUCCESS Tulejnik, żmijownik (Lysichiton Schott) – rodzaj roślin z rodziny obrazkowatych, obejmujący 2 gatunki: tulejnik amerykański (Lysichiton americanus Hultén & H.St.John) i tulejnik kamczacki (Lysichiton camtschatcensis (L.) Schott). Nazwa naukowa rodzaju pochodzi od greckich słów λύσης (lysis – upadek) i χιτών (chiton – szata) i odnosi się do szybko odpadającej po przekwitnięciu pochwy kwiatostanu.`
+[Thu Dec 29 19:11:15 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 19:11:15 CET 2016] Server responses (elo) : `SUCCESS 5 10`
+[Thu Dec 29 19:11:18 CET 2016] Client requests (elo) : `discover A`
+[Thu Dec 29 19:11:18 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:11:20 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:11:20 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:11:25 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:11:25 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 7`
+[Thu Dec 29 19:11:27 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:11:27 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 6`
+[Thu Dec 29 19:11:28 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:11:28 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 5`
+[Thu Dec 29 19:11:31 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:11:31 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 4`
+[Thu Dec 29 19:11:40 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:11:40 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 3`
+[Thu Dec 29 19:11:48 CET 2016] Client requests (elo) : `discover ą`
+[Thu Dec 29 19:11:48 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 2`
+[Thu Dec 29 19:11:50 CET 2016] Client requests (elo) : `discover ę`
+[Thu Dec 29 19:11:50 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 1`
+[Thu Dec 29 19:11:52 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:11:52 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE  10 0`
+[Thu Dec 29 19:11:55 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:11:55 CET 2016] Server responses (elo) : `SUCCESS QQRyQ (czyt. Kukuryku) – polski punkowy fanzin, zainicjowany w Warszawie przez Piotra "Pietię" Wierzbickiego w 1985 r.
+QQRyQ był opiniotwórczym fanzinem w środowisku prlowskich punków związanych ze sceną HC punk. Początkowo był wydawany w podziemiu w nakładzie od kilkudziesięciu do kilkuset egzemplarzy. Tworzony był przez autora metodą kolażu oraz powielany techniką kserograficzną. W połowie roku 90. zaczął być drukowany w drukarni. Na łamach tego czasopisma recenzowano płyty, publikowano wywiady z zespołami oraz artykuły poświęcone historii punk rocka. Pismo podejmowało także problemy społeczne i polityczne. Po upadku PRL, w końcu lat 80., "Pietia" zalegalizował działalność undergroundową, a tytuł QQRyQ przekształcił w firmę wydawniczą pod nazwą QQRyQ Productions, która oprócz gazety wydawała także kasety z muzyką oraz zajmowała się organizacją koncertów. W ciągu kilku lat działalności QQRyQ wydało kilkadziesiąt kaset z muzyką zagraniczną oraz muzyką polskich wykonawców sceny hc punk. QQRyQ zakończyło działalność w 1999.`
+[Thu Dec 29 19:12:18 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:12:18 CET 2016] Server responses (elo) : `SUCCESS 14 10`
+[Thu Dec 29 19:12:20 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:12:20 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:12:22 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:12:22 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE FALSE FALSE e FALSE FALSE e FALSE e FALSE FALSE  10 9`
+[Thu Dec 29 19:12:23 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:12:23 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE FALSE FALSE e FALSE FALSE e FALSE e FALSE FALSE  10 8`
+[Thu Dec 29 19:12:25 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:12:25 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE i FALSE e FALSE FALSE e FALSE e i FALSE  10 8`
+[Thu Dec 29 19:12:26 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:12:26 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE i FALSE e FALSE FALSE e FALSE e i FALSE  10 7`
+[Thu Dec 29 19:12:28 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:12:28 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE i FALSE e n FALSE e FALSE e i n  10 7`
+[Thu Dec 29 19:12:31 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:12:31 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE i FALSE e n FALSE e FALSE e i n  10 6`
+[Thu Dec 29 19:12:32 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:12:32 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE i FALSE e n FALSE e FALSE e i n  10 5`
+[Thu Dec 29 19:12:34 CET 2016] Client requests (elo) : `discvoer h`
+[Thu Dec 29 19:12:34 CET 2016] Server responses (elo) : `EXCEPTION DISCVOER is not recognizable command.`
+[Thu Dec 29 19:12:42 CET 2016] Client requests (elo) : `discvoer z`
+[Thu Dec 29 19:12:42 CET 2016] Server responses (elo) : `EXCEPTION DISCVOER is not recognizable command.`
+[Thu Dec 29 19:12:44 CET 2016] Client requests (elo) : `discover z`
+[Thu Dec 29 19:12:44 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE i FALSE e n FALSE e FALSE e i n  10 4`
+[Thu Dec 29 19:12:49 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 19:12:49 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE FALSE i FALSE e n FALSE e FALSE e i n  10 3`
+[Thu Dec 29 19:12:53 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:12:53 CET 2016] Server responses (elo) : `SUCCESS FALSE e FALSE k i FALSE e n FALSE e FALSE e i n  10 3`
+[Thu Dec 29 19:13:04 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 19:13:04 CET 2016] Server responses (elo) : `SUCCESS FALSE e s k i FALSE e n FALSE e FALSE e i n  10 3`
+[Thu Dec 29 19:13:08 CET 2016] Client requests (elo) : `discover b`
+[Thu Dec 29 19:13:08 CET 2016] Server responses (elo) : `SUCCESS B e s k i FALSE e n FALSE e FALSE e i n  10 3`
+[Thu Dec 29 19:13:14 CET 2016] Client requests (elo) : `discover d`
+[Thu Dec 29 19:13:14 CET 2016] Server responses (elo) : `SUCCESS B e s k i d e n FALSE e FALSE e i n  10 3`
+[Thu Dec 29 19:13:28 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:13:28 CET 2016] Server responses (elo) : `SUCCESS B e s k i d e n FALSE e r e i n  10 3`
+[Thu Dec 29 19:13:44 CET 2016] Client requests (elo) : `discover h`
+[Thu Dec 29 19:13:44 CET 2016] Server responses (elo) : `SUCCESS B e s k i d e n FALSE e r e i n  10 2`
+[Thu Dec 29 19:13:50 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:13:50 CET 2016] Server responses (elo) : `SUCCESS B e s k i d e n FALSE e r e i n  10 1`
+[Thu Dec 29 19:13:53 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:13:53 CET 2016] Server responses (elo) : `SUCCESS B e s k i d e n FALSE e r e i n  10 0`
+[Thu Dec 29 19:13:55 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:13:55 CET 2016] Server responses (elo) : `SUCCESS Beskidenverein, Beskiden-Verein, Beskiden Verein (pol. Towarzystwo Beskidzkie) – niemiecka organizacja turystyki górskiej założona w 1893. Była pierwszą organizacją działająca na terenie Beskidów należących obecnie do Polski; Polskie Towarzystwo Tatrzańskie założono w 1873, ale długo ograniczało swoją działalność do Tatr oraz do pasm beskidzkich położonych dzisiaj na Ukrainie, a czeska Pohorská jednota „Radhošť” aktywna była w Beskidach należących obecnie do Czech.
+Beskidenverein prowadziło szeroko zakrojoną działalność na rzecz propagowania turystyki masowej; było pionierem turystyki beskidzkiej w wielu dziedzinach. Działało oficjalnie do 1945 roku.
+
+`
+[Thu Dec 29 19:14:04 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:14:04 CET 2016] Server responses (elo) : `SUCCESS 13 10`
+[Thu Dec 29 19:14:07 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:14:07 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE a FALSE FALSE FALSE FALSE a FALSE FALSE FALSE FALSE  10 10`
+[Thu Dec 29 19:14:09 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:14:09 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE a FALSE FALSE FALSE FALSE a FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:14:10 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:14:10 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE a FALSE FALSE FALSE FALSE a FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:14:13 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:14:13 CET 2016] Server responses (elo) : `SUCCESS FALSE o FALSE a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:14:17 CET 2016] Client requests (elo) : `discover ą`
+[Thu Dec 29 19:14:17 CET 2016] Server responses (elo) : `SUCCESS FALSE o FALSE a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 7`
+[Thu Dec 29 19:14:20 CET 2016] Client requests (elo) : `discover ę`
+[Thu Dec 29 19:14:20 CET 2016] Server responses (elo) : `SUCCESS FALSE o FALSE a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 6`
+[Thu Dec 29 19:14:24 CET 2016] Client requests (elo) : `discover j`
+[Thu Dec 29 19:14:24 CET 2016] Server responses (elo) : `SUCCESS FALSE o FALSE a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 5`
+[Thu Dec 29 19:14:26 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:14:26 CET 2016] Server responses (elo) : `SUCCESS FALSE o FALSE a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 4`
+[Thu Dec 29 19:14:28 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:14:28 CET 2016] Server responses (elo) : `SUCCESS FALSE o FALSE a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 3`
+[Thu Dec 29 19:14:32 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:14:32 CET 2016] Server responses (elo) : `SUCCESS FALSE o FALSE a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 2`
+[Thu Dec 29 19:14:37 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 19:14:37 CET 2016] Server responses (elo) : `SUCCESS FALSE o l a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 2`
+[Thu Dec 29 19:14:45 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:14:45 CET 2016] Server responses (elo) : `SUCCESS FALSE o l a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 1`
+[Thu Dec 29 19:14:48 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:14:48 CET 2016] Server responses (elo) : `SUCCESS FALSE o l a FALSE FALSE o FALSE a FALSE FALSE FALSE FALSE  10 0`
+[Thu Dec 29 19:14:50 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:14:50 CET 2016] Server responses (elo) : `SUCCESS Dolabrosaurus – rodzaj wymarłego gada należącego do grupy Avicephala. Żył w późnym triasie na terenach Nowego Meksyku. Był spokrewniony z drepanozaurem i megalankozaurem. Znany jest bardzo niekompletny materiał. Był nieco większy od megalankozaura i miał dłuższe wyrostki kręgów ogonowych, co skłoniło naukowców do wysunięcia hipotezy, że był zwierzęciem wodnym. Dolabrosaurus znany jest z formacji Chinle na terenie stanów Arizona i Montana. Niektóre skamieniałości odnalezione w Ghost Ranch również mogą należeć do przedstawicieli tego rodzaju.`
+[Thu Dec 29 19:15:34 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:15:34 CET 2016] Server responses (elo) : `SUCCESS 8 10`
+[Thu Dec 29 19:15:37 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:15:37 CET 2016] Server responses (elo) : `SUCCESS A FALSE FALSE FALSE a FALSE FALSE FALSE  10 10`
+[Thu Dec 29 19:15:40 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:15:40 CET 2016] Server responses (elo) : `SUCCESS A FALSE FALSE FALSE a FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:15:41 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:15:41 CET 2016] Server responses (elo) : `SUCCESS A m FALSE FALSE a FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:15:45 CET 2016] Client requests (elo) : `discver o`
+[Thu Dec 29 19:15:45 CET 2016] Server responses (elo) : `EXCEPTION DISCVER is not recognizable command.`
+[Thu Dec 29 19:15:47 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:15:47 CET 2016] Server responses (elo) : `SUCCESS A m FALSE FALSE a FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:15:52 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:15:52 CET 2016] Server responses (elo) : `SUCCESS A m FALSE FALSE a FALSE e FALSE  10 8`
+[Thu Dec 29 19:15:55 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:15:55 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a FALSE e FALSE  10 8`
+[Thu Dec 29 19:16:03 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:16:03 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a FALSE e FALSE  10 7`
+[Thu Dec 29 19:16:05 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:16:05 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a FALSE e FALSE  10 6`
+[Thu Dec 29 19:16:08 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:16:08 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a FALSE e FALSE  10 5`
+[Thu Dec 29 19:16:11 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:16:11 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a FALSE e t  10 5`
+[Thu Dec 29 19:16:18 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:16:18 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a FALSE e t  10 4`
+[Thu Dec 29 19:16:31 CET 2016] Client requests (elo) : `disover l`
+[Thu Dec 29 19:16:31 CET 2016] Server responses (elo) : `EXCEPTION DISOVER is not recognizable command.`
+[Thu Dec 29 19:16:34 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 19:16:34 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a l e t  10 4`
+[Thu Dec 29 19:16:45 CET 2016] Client requests (elo) : `v`
+[Thu Dec 29 19:16:45 CET 2016] Server responses (elo) : `EXCEPTION V is not recognizable command.`
+[Thu Dec 29 19:16:47 CET 2016] Client requests (elo) : `discover v`
+[Thu Dec 29 19:16:47 CET 2016] Server responses (elo) : `SUCCESS A m FALSE i a l e t  10 3`
+[Thu Dec 29 19:17:01 CET 2016] Client requests (elo) : `discover b`
+[Thu Dec 29 19:17:01 CET 2016] Server responses (elo) : `SUCCESS A m b i a l e t  10 3`
+[Thu Dec 29 19:17:06 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:17:06 CET 2016] Server responses (elo) : `FAIL All leters have been discovered already.`
+[Thu Dec 29 19:17:08 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:17:08 CET 2016] Server responses (elo) : `SUCCESS Ambialet – miejscowość i gmina we Francji, w regionie Oksytania, w departamencie Tarn.
+Według danych na rok 1990 gminę zamieszkiwało 386 osób, a gęstość zaludnienia wynosiła 13 osób/km² (wśród 3020 gmin regionu Midi-Pyrénées Ambialet plasuje się na 687. miejscu pod względem liczby ludności, natomiast pod względem powierzchni na miejscu 312.).`
+[Thu Dec 29 19:17:17 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:17:17 CET 2016] Server responses (elo) : `SUCCESS Ambialet – miejscowość i gmina we Francji, w regionie Oksytania, w departamencie Tarn.
+Według danych na rok 1990 gminę zamieszkiwało 386 osób, a gęstość zaludnienia wynosiła 13 osób/km² (wśród 3020 gmin regionu Midi-Pyrénées Ambialet plasuje się na 687. miejscu pod względem liczby ludności, natomiast pod względem powierzchni na miejscu 312.).`
+[Thu Dec 29 19:17:18 CET 2016] Client requests (elo) : `start`
+[Thu Dec 29 19:17:18 CET 2016] Server responses (elo) : `EXCEPTION EXCEPTION START must have one argument.`
+[Thu Dec 29 19:17:19 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:17:20 CET 2016] Server responses (elo) : `SUCCESS 9 10`
+[Thu Dec 29 19:17:20 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:17:20 CET 2016] Server responses (elo) : `FAIL Hangman must be completed first or all lives lost.`
+[Thu Dec 29 19:19:55 CET 2016] Server has started.
+[Thu Dec 29 19:20:04 CET 2016] User has connected.
+[Thu Dec 29 19:20:06 CET 2016] Client requests : `auth`
+[Thu Dec 29 19:20:06 CET 2016] Server responses : `EXCEPTION EXCEPTION AUTH must have 2 parameters.`
+[Thu Dec 29 19:20:08 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:20:09 CET 2016] Server responses : `EXCEPTION For input string: ""`
+[Thu Dec 29 19:20:27 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:20:27 CET 2016] Server responses : `EXCEPTION For input string: ""`
+[Thu Dec 29 19:20:54 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:20:54 CET 2016] Server responses : `EXCEPTION For input string: ""`
+[Thu Dec 29 19:21:39 CET 2016] Server has started.
+[Thu Dec 29 19:24:18 CET 2016] User has connected.
+[Thu Dec 29 19:24:21 CET 2016] Client requests : `AUTH elo ziom`
+[Thu Dec 29 19:24:28 CET 2016] Server responses : `EXCEPTION For input string: ""`
+[Thu Dec 29 19:25:16 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:25:48 CET 2016] Server responses : `EXCEPTION For input string: ""`
+[Thu Dec 29 19:25:53 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:26:30 CET 2016] Server responses : `EXCEPTION For input string: ""`
+[Thu Dec 29 19:27:40 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:30:14 CET 2016] Server has started.
+[Thu Dec 29 19:30:20 CET 2016] User has connected.
+[Thu Dec 29 19:30:23 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:30:30 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Thu Dec 29 19:30:38 CET 2016] Client requests : `signup`
+[Thu Dec 29 19:30:38 CET 2016] Server responses : `EXCEPTION SIGNUP is not recognizable command.`
+[Thu Dec 29 19:30:41 CET 2016] Client requests : `help`
+[Thu Dec 29 19:30:41 CET 2016] Server responses : `SUCCESS HELP LOGOUT CREATE AUTH DISCOVER START INFO LIST`
+[Thu Dec 29 19:30:44 CET 2016] Client requests : `create elo ziom`
+[Thu Dec 29 19:30:44 CET 2016] Server responses : `SUCCESS`
+[Thu Dec 29 19:30:48 CET 2016] Client requests : `auth elo zim`
+[Thu Dec 29 19:30:48 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Thu Dec 29 19:30:50 CET 2016] Client requests : `elo ziom`
+[Thu Dec 29 19:30:50 CET 2016] Server responses : `EXCEPTION ELO is not recognizable command.`
+[Thu Dec 29 19:30:54 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:30:54 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Thu Dec 29 19:30:57 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:30:58 CET 2016] Server responses (elo) : `SUCCESS 4 10`
+[Thu Dec 29 19:31:13 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:31:14 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE  10 10`
+[Thu Dec 29 19:31:15 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:31:15 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE  10 9`
+[Thu Dec 29 19:31:17 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:31:17 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE  10 8`
+[Thu Dec 29 19:31:22 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:31:22 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 8`
+[Thu Dec 29 19:31:28 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:31:28 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 7`
+[Thu Dec 29 19:31:33 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:31:33 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 6`
+[Thu Dec 29 19:31:37 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:31:37 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 5`
+[Thu Dec 29 19:31:42 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:31:42 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 4`
+[Thu Dec 29 19:31:47 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:31:47 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 3`
+[Thu Dec 29 19:31:51 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:31:51 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 2`
+[Thu Dec 29 19:31:55 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:31:55 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 1`
+[Thu Dec 29 19:31:57 CET 2016] Client requests (elo) : `discover j`
+[Thu Dec 29 19:31:57 CET 2016] Server responses (elo) : `SUCCESS N a FALSE FALSE  10 0`
+[Thu Dec 29 19:32:00 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:32:00 CET 2016] Server responses (elo) : `SUCCESS Naos (gr. ναός naós – okręt, nawa; łac. cella – izba) – najważniejsze pomieszczenie w świątyni.
+W starożytnej Grecji i Rzymie w pomieszczeniu tym umieszczano posąg bóstwa. Była to zamknięta przestrzeń sanktuarium, zazwyczaj prostokątna, przeważnie poprzedzona przedsionkiem zwanym pronaos. W większych świątyniach naos był dzielony na trzy części (nawy) i poprzedzony pronaosem w postaci portyku. W jego tylnej części symetrycznie do pronaosu znajdował się często opistodomos, a pomiędzy opistodomosem a naosem bywał umieszczany adyton.
+W architekturze bizantyńskiej naosem zwano środkową część i sanktuarium kościoła zbudowanego na planie centralnym, czyli tę część, w której odbywały się czynności liturgiczne.
+W starożytnym Egipcie naos był rodzajem relikwiarza względnie pomniejszonej kaplicy z umieszczanym w niej posążkiem lub symbolem bóstwa, zazwyczaj lokowanej w najdalszej głębi sanktuarium. Dostęp do niego miał jedynie kapłan, a wyobrażenie bóstwa opuszczało to miejsce jedynie podczas codziennej porannej pielęgnacji lub z okazji uroczystych procesji.
+Początkowo wykonywane tylko z drewna, naosy pojawiają się w okresie Średniego Państwa. Rzadkie jeszcze w czasach Nowego Państwa, w Epoce Późnej na ogół spotykane jako kamienne (z granitu). Nazwą tą określano również wolnostojące kapliczki (na ogół wysokości 1-1,5 m) poświęcone nie tylko bóstwom znacznym (np. Hathor, Neith), lecz i pomniejszym (np. domowym, jak Bes lub Toeris). Częste w Okresie Ptolemejskim, wykonywane były z taniego i łatwego w obróbce piaskowca.
+Włączony do systemu znaków pisarskich, naos przedstawiany był też w postaci hieroglifu, występującego w dwóch postaciach: starszej i uproszczonej nowszej (prostokąt). Nazwę wywodzi się od per-ur („wielki dom”); może ona nawiązywać do tradycji pierwszych świątyń Górnego Egiptu. Spotykana w sztuce staroegipskiej postać niosąca niewielki (procesyjny) naos określana jest greckim mianem naoforos (najwcześniejsze przedstawienia pochodzą z czasów XVIII dynastii).`
+[Thu Dec 29 19:32:11 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:32:11 CET 2016] Server responses (elo) : `SUCCESS 8 10`
+[Thu Dec 29 19:32:16 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:32:16 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:32:18 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:32:18 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:32:21 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:32:21 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e FALSE FALSE e e  10 8`
+[Thu Dec 29 19:32:24 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:32:24 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e m FALSE e e  10 8`
+[Thu Dec 29 19:32:26 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:32:26 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE e m FALSE e e  10 7`
+[Thu Dec 29 19:32:30 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:32:30 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE i e m FALSE e e  10 7`
+[Thu Dec 29 19:32:36 CET 2016] Client requests (elo) : `discover v`
+[Thu Dec 29 19:32:36 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE i e m FALSE e e  10 6`
+[Thu Dec 29 19:32:38 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:32:38 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE i e m FALSE e e  10 5`
+[Thu Dec 29 19:32:39 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:32:39 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE i e m FALSE e e  10 4`
+[Thu Dec 29 19:32:47 CET 2016] Client requests (elo) : `discover h`
+[Thu Dec 29 19:32:47 CET 2016] Server responses (elo) : `SUCCESS FALSE h i e m FALSE e e  10 4`
+[Thu Dec 29 19:32:49 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:32:49 CET 2016] Server responses (elo) : `SUCCESS C h i e m FALSE e e  10 4`
+[Thu Dec 29 19:33:00 CET 2016] Client requests (elo) : `discover j`
+[Thu Dec 29 19:33:00 CET 2016] Server responses (elo) : `SUCCESS C h i e m FALSE e e  10 3`
+[Thu Dec 29 19:33:26 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:33:26 CET 2016] Server responses (elo) : `SUCCESS C h i e m FALSE e e  10 2`
+[Thu Dec 29 19:33:34 CET 2016] Client requests (elo) : `discover q`
+[Thu Dec 29 19:33:34 CET 2016] Server responses (elo) : `SUCCESS C h i e m FALSE e e  10 1`
+[Thu Dec 29 19:33:38 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:33:38 CET 2016] Server responses (elo) : `SUCCESS C h i e m FALSE e e  10 0`
+[Thu Dec 29 19:33:40 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:33:41 CET 2016] Server responses (elo) : `SUCCESS Chiemsee - jezioro oraz obszar wolny administracyjnie (obszar niemunicypalny, niem. gemeindefreies Gebiet) w południowo-wschodnich Niemczech, w rejencji Górna Bawaria, w powiatach Rosenheim oraz Traunstein, na Wyżynie Bawarskiej, u północnego podnóża Alp Salzburskich. Powierzchnia jeziora wynosi 79,9 km², maksymalna głębokość - 73,4 m, długość linii brzegowej - 63,96 km (83 km z wyspami). Nazywane jest "bawarskim morzem".
+Chiemsee jest polodowcowym jeziorem piedmontowym, powstałym podczas ostatniej epoki lodowcowej przed ok. 10 000 lat. Pierwotnie miało ono znacznie większą powierzchnię, sięgającą ok. 300 km². Od północy zamyka je wał moren czołowych. Do jeziora Chiemsee wpływają rzeki Tiroler Achen i Prien, natomiast wypływa z niego jedynie rzeka Alz.
+Obszar niemunicypalny, jako teren niezamieszkany, należy do powiatu Traunstein.
+Na jeziorze Chiemsee znajdują się cztery wyspy (z których jednak trzy pierwsze nie należą do obszaru niemunicypalnego!):
+Frauenchiemsee (również Fraueninsel) - z żeńskim klasztorem katolickim;
+Herrenchiemsee (również Herreninsel) - największa z nich, z parkiem krajobrazowym, w którym stoją 2 zamki: Altes Schloss (Stary Zamek), dawny katolicki klasztor męski, oraz Neues Schloss (Nowy Pałac), zbudowany przez króla Ludwika II Bawarskiego na wzór pałacu w Wersalu;
+Krautinsel - niezamieszkana;
+Schalch - niezamieszkana.
+Nad jeziorem Chiemsee, zwanym też "bawarskim morzem", znajdują się liczne ośrodki wypoczynkowe. Ważniejsze miejscowości nad jeziorem: Seeon-Seebruck, Gstadt am Chiemsee. Wzdłuż południowego brzegu biegnie autostrada A8: Monachium – Salzburg.`
+[Thu Dec 29 19:33:47 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:33:47 CET 2016] Server responses (elo) : `SUCCESS 4 10`
+[Thu Dec 29 19:33:48 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:33:48 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:33:51 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:33:51 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:33:53 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:33:53 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE  10 7`
+[Thu Dec 29 19:33:55 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:33:55 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE  10 6`
+[Thu Dec 29 19:33:57 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:33:57 CET 2016] Server responses (elo) : `SUCCESS I FALSE I FALSE  10 6`
+[Thu Dec 29 19:33:59 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:33:59 CET 2016] Server responses (elo) : `SUCCESS I FALSE I FALSE  10 5`
+[Thu Dec 29 19:34:01 CET 2016] Client requests (elo) : `discover v`
+[Thu Dec 29 19:34:01 CET 2016] Server responses (elo) : `SUCCESS I FALSE I FALSE  10 4`
+[Thu Dec 29 19:34:03 CET 2016] Client requests (elo) : `discover g`
+[Thu Dec 29 19:34:03 CET 2016] Server responses (elo) : `SUCCESS I FALSE I FALSE  10 3`
+[Thu Dec 29 19:34:06 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:34:06 CET 2016] Server responses (elo) : `SUCCESS I FALSE I FALSE  10 2`
+[Thu Dec 29 19:34:07 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:34:07 CET 2016] Server responses (elo) : `SUCCESS I FALSE I FALSE  10 1`
+[Thu Dec 29 19:34:11 CET 2016] Client requests (elo) : `discver f`
+[Thu Dec 29 19:34:11 CET 2016] Server responses (elo) : `EXCEPTION DISCVER is not recognizable command.`
+[Thu Dec 29 19:34:13 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:34:14 CET 2016] Server responses (elo) : `SUCCESS I FALSE I FALSE  10 0`
+[Thu Dec 29 19:34:15 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:34:15 CET 2016] Server responses (elo) : `SUCCESS Akronim ISIC może oznaczać:
+ISIC (legitymacja) - International Student Identity Card - międzynarodową legitymację studencką
+ISIC (statystyka) - International Standard Industrial Classification of all economic activities - system klasyfikacji działalności gospodarczej stosowany przez ONZ`
+[Thu Dec 29 19:34:21 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:34:21 CET 2016] Server responses (elo) : `SUCCESS 10 10`
+[Thu Dec 29 19:34:24 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:34:24 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:34:26 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:34:26 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:34:29 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:34:29 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE e FALSE FALSE e FALSE FALSE  10 8`
+[Thu Dec 29 19:34:31 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:34:31 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e FALSE i e FALSE FALSE  10 8`
+[Thu Dec 29 19:34:33 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:34:33 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e FALSE i e FALSE FALSE  10 7`
+[Thu Dec 29 19:34:35 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:34:35 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e FALSE i e FALSE FALSE  10 6`
+[Thu Dec 29 19:34:42 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:34:42 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e FALSE i e FALSE FALSE  10 5`
+[Thu Dec 29 19:34:45 CET 2016] Client requests (elo) : `discover j`
+[Thu Dec 29 19:34:45 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e FALSE i e FALSE FALSE  10 4`
+[Thu Dec 29 19:34:47 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:34:47 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e FALSE i e FALSE FALSE  10 3`
+[Thu Dec 29 19:34:51 CET 2016] Client requests (elo) : `discover z`
+[Thu Dec 29 19:34:51 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e FALSE i e FALSE FALSE  10 2`
+[Thu Dec 29 19:34:53 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:34:53 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e f i e FALSE FALSE  10 2`
+[Thu Dec 29 19:34:59 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 19:34:59 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e f i e FALSE FALSE  10 1`
+[Thu Dec 29 19:35:02 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:35:02 CET 2016] Server responses (elo) : `SUCCESS FALSE i FALSE FALSE e f i e FALSE FALSE  10 0`
+[Thu Dec 29 19:35:03 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:35:04 CET 2016] Server responses (elo) : `SUCCESS Miejscowości w USA:
+Ridgefield – miasto w stanie Connecticut, w hrabstwie Fairfield
+Ridgefield – miasto w stanie New Jersey, w hrabstwie Bergen
+Ridgefield – miasto w stanie Waszyngton, w hrabstwie Clark
+Gminy w USA:
+Ridgefield (ang. Ridgefield Town) – gmina w stanie Connecticut, w hrabstwie Fairfield
+Ridgefield (ang. Ridgefield Township) – gmina w stanie Ohio, w hrabstwie Huron`
+[Thu Dec 29 19:35:15 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:35:15 CET 2016] Server responses (elo) : `SUCCESS 8 10`
+[Thu Dec 29 19:35:17 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:35:17 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:35:19 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:35:19 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE o  10 9`
+[Thu Dec 29 19:35:20 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:35:20 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i FALSE FALSE FALSE o  10 9`
+[Thu Dec 29 19:35:25 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:35:25 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e FALSE FALSE o  10 9`
+[Thu Dec 29 19:35:27 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:35:27 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 9`
+[Thu Dec 29 19:35:33 CET 2016] Client requests (elo) : `discover j`
+[Thu Dec 29 19:35:33 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 8`
+[Thu Dec 29 19:35:34 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:35:34 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 7`
+[Thu Dec 29 19:35:37 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:35:37 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 6`
+[Thu Dec 29 19:35:39 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 19:35:39 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 5`
+[Thu Dec 29 19:35:41 CET 2016] Client requests (elo) : `discover v`
+[Thu Dec 29 19:35:41 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 4`
+[Thu Dec 29 19:35:42 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 19:35:42 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 3`
+[Thu Dec 29 19:35:43 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:35:43 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 2`
+[Thu Dec 29 19:35:46 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:35:46 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 1`
+[Thu Dec 29 19:36:05 CET 2016] Client requests (elo) : `discover g`
+[Thu Dec 29 19:36:05 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE i e n FALSE o  10 0`
+[Thu Dec 29 19:36:07 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:36:07 CET 2016] Server responses (elo) : `SUCCESS Dębienko – wieś w Polsce położona w województwie wielkopolskim, w powiecie poznańskim, w gminie Stęszew. W pobliżu miejscowości znajduje się Wielkopolski Park Narodowy.
+W latach 1939-1940 w okolicznych lasach niemieckie gestapo i SS dokonało egzekucji masowych 1 700 Polaków przetransportowanych z Poznania. Prochy ofiar mordów umieszczono w 7 mogiłach zbiorowych.
+W latach 1975–1998 miejscowość należała administracyjnie do województwa poznańskiego.
+
+`
+[Thu Dec 29 19:36:11 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:36:11 CET 2016] Server responses (elo) : `SUCCESS 6 10`
+[Thu Dec 29 19:36:14 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:36:14 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:36:16 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:36:16 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 9`
+[Thu Dec 29 19:36:19 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:36:19 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 8`
+[Thu Dec 29 19:36:21 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:36:21 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 7`
+[Thu Dec 29 19:36:22 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 19:36:22 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 6`
+[Thu Dec 29 19:36:24 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:36:24 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 5`
+[Thu Dec 29 19:36:26 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:36:26 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 4`
+[Thu Dec 29 19:36:28 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:36:28 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 3`
+[Thu Dec 29 19:36:31 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:36:31 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE o FALSE o  10 2`
+[Thu Dec 29 19:36:37 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:36:37 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE o FALSE o  10 2`
+[Thu Dec 29 19:36:40 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:36:40 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE o FALSE o  10 1`
+[Thu Dec 29 19:36:42 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:36:42 CET 2016] Server responses (elo) : `SUCCESS FALSE u FALSE o FALSE o  10 0`
+[Thu Dec 29 19:36:43 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:36:43 CET 2016] Server responses (elo) : `SUCCESS Dubowo - wieś w woj. podlaskim, w pow. sejneńskim, w gminie Sejny.
+Dubowo - wieś w woj. pomorskim, w pow. kartuskim, w gminie Stężyca`
+[Thu Dec 29 19:36:48 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:36:48 CET 2016] Server responses (elo) : `SUCCESS 7 10`
+[Thu Dec 29 19:36:56 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:36:56 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE FALSE FALSE FALSE  10 10`
+[Thu Dec 29 19:36:57 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:36:57 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:36:59 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:36:59 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:37:00 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:37:00 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE o FALSE o  10 8`
+[Thu Dec 29 19:37:06 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:37:06 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE o FALSE o  10 7`
+[Thu Dec 29 19:37:09 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:37:09 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE o FALSE o  10 6`
+[Thu Dec 29 19:37:10 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:37:10 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE o FALSE o  10 5`
+[Thu Dec 29 19:37:13 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:37:13 CET 2016] Server responses (elo) : `SUCCESS K a FALSE FALSE o FALSE o  10 5`
+[Thu Dec 29 19:37:18 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:37:18 CET 2016] Server responses (elo) : `SUCCESS K a FALSE p o FALSE o  10 5`
+[Thu Dec 29 19:37:22 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:37:22 CET 2016] Server responses (elo) : `SUCCESS K a r p o FALSE o  10 5`
+[Thu Dec 29 19:37:25 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 19:37:25 CET 2016] Server responses (elo) : `EXCEPTION Entity with field `Id` of value `5` does not exists`
+[Thu Dec 29 19:37:29 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 19:37:29 CET 2016] Server responses (elo) : `FAIL All leters have been discovered already.`
+[Thu Dec 29 19:37:48 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:37:48 CET 2016] Server responses (elo) : `SUCCESS Karpowo (niem. Kerpen) – wieś w Polsce położona w województwie warmińsko-mazurskim, w powiecie iławskim, w gminie Zalewo.
+W latach 1975–1998 miejscowość administracyjnie należała do województwa olsztyńskiego.
+Wieś wzmiankowana w dokumentach z roku 1286, jako wieś pruska na 9 włókach. Pierwotna nazwa Kerpow najprawdopodobniej wywodzi się z języka pruskiego (w litewskim "krepe" oznacza mech). W roku 1782 we wsi odnotowano 11 domów (dymów), natomiast w 1858 w 17 gospodarstwach domowych było 184 mieszkańców. W latach 1937–39 było 218 mieszkańców. W roku 1973 jako przysiółek Bagnity należały do powiatu morąskiego, gmina Zalewo, poczta Boreczno.`
+[Thu Dec 29 19:39:48 CET 2016] Server has started.
+[Thu Dec 29 19:39:53 CET 2016] User has connected.
+[Thu Dec 29 19:39:56 CET 2016] Client requests : `start 10`
+[Thu Dec 29 19:39:56 CET 2016] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Thu Dec 29 19:40:01 CET 2016] Client requests : `auth elo zio`
+[Thu Dec 29 19:40:01 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Thu Dec 29 19:40:04 CET 2016] Client requests : `discover elo ziom`
+[Thu Dec 29 19:40:04 CET 2016] Server responses : `EXCEPTION EXCEPTION DISCOVER can have only one optional parameter.`
+[Thu Dec 29 19:40:11 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 19:40:11 CET 2016] Server responses (elo) : `SUCCESS 5 elo 0`
+[Thu Dec 29 19:40:13 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:40:15 CET 2016] Server responses (elo) : `SUCCESS 7 10`
+[Thu Dec 29 19:40:25 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:40:25 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:40:28 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:40:28 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 8`
+[Thu Dec 29 19:40:31 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:40:31 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 7`
+[Thu Dec 29 19:40:33 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:40:33 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE e  10 7`
+[Thu Dec 29 19:40:39 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:40:39 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE FALSE e  10 7`
+[Thu Dec 29 19:40:43 CET 2016] Client requests (elo) : `discover ó`
+[Thu Dec 29 19:40:43 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE FALSE e  10 6`
+[Thu Dec 29 19:40:47 CET 2016] Client requests (elo) : `discover y`
+[Thu Dec 29 19:40:47 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE FALSE e  10 5`
+[Thu Dec 29 19:40:50 CET 2016] Client requests (elo) : `discover ą`
+[Thu Dec 29 19:40:50 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE FALSE e  10 4`
+[Thu Dec 29 19:40:52 CET 2016] Client requests (elo) : `discover ę`
+[Thu Dec 29 19:40:52 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE FALSE e  10 3`
+[Thu Dec 29 19:40:58 CET 2016] Client requests (elo) : `discover j`
+[Thu Dec 29 19:40:58 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE FALSE e  10 2`
+[Thu Dec 29 19:41:03 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:41:03 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE FALSE e  10 1`
+[Thu Dec 29 19:41:06 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 19:41:06 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE l e  10 1`
+[Thu Dec 29 19:41:12 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 19:41:12 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE u FALSE FALSE l e  10 0`
+[Thu Dec 29 19:41:13 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:41:14 CET 2016] Server responses (elo) : `SUCCESS Spurgle (do 1945 r. niem. Sporgeln) – wieś w Polsce położona w województwie warmińsko-mazurskim, w powiecie bartoszyckim, w gminie Bartoszyce. W latach 1975-1998 miejscowość administracyjnie należała do województwa olsztyńskiego.`
+[Thu Dec 29 19:41:21 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:41:21 CET 2016] Server responses (elo) : `SUCCESS 12 10`
+[Thu Dec 29 19:41:23 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:41:23 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:41:24 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:41:24 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:41:26 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:41:26 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE FALSE o FALSE o FALSE o FALSE o  10 9`
+[Thu Dec 29 19:41:28 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:41:28 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE FALSE o FALSE o FALSE o FALSE o  10 9`
+[Thu Dec 29 19:41:32 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:41:32 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE FALSE o FALSE o FALSE o FALSE o  10 8`
+[Thu Dec 29 19:41:38 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:41:38 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE FALSE o FALSE o FALSE o FALSE o  10 7`
+[Thu Dec 29 19:41:40 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:41:40 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE FALSE o FALSE o FALSE o FALSE o  10 6`
+[Thu Dec 29 19:41:42 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:41:42 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE n o FALSE o FALSE o FALSE o  10 6`
+[Thu Dec 29 19:41:47 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:41:47 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE n o FALSE o FALSE o FALSE o  10 5`
+[Thu Dec 29 19:41:48 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:41:48 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE n o FALSE o FALSE o FALSE o  10 4`
+[Thu Dec 29 19:41:51 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:41:51 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE n o FALSE o FALSE o FALSE o  10 3`
+[Thu Dec 29 19:41:58 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 19:41:58 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE n o FALSE o FALSE o w o  10 3`
+[Thu Dec 29 19:42:02 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:42:02 CET 2016] Server responses (elo) : `SUCCESS FALSE r e FALSE n o FALSE o r o w o  10 3`
+[Thu Dec 29 19:42:14 CET 2016] Client requests (elo) : `discover z`
+[Thu Dec 29 19:42:14 CET 2016] Server responses (elo) : `SUCCESS FALSE r e FALSE n o FALSE o r o w o  10 2`
+[Thu Dec 29 19:42:30 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:42:30 CET 2016] Server responses (elo) : `SUCCESS FALSE r e FALSE n o FALSE o r o w o  10 1`
+[Thu Dec 29 19:42:46 CET 2016] Client requests (elo) : `discover d`
+[Thu Dec 29 19:42:46 CET 2016] Server responses (elo) : `SUCCESS FALSE r e d n o FALSE o r o w o  10 1`
+[Thu Dec 29 19:43:06 CET 2016] Client requests (elo) : `discover b`
+[Thu Dec 29 19:43:06 CET 2016] Server responses (elo) : `SUCCESS FALSE r e d n o FALSE o r o w o  10 0`
+[Thu Dec 29 19:43:07 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:43:07 CET 2016] Server responses (elo) : `SUCCESS Srednogorowo (bułg. Средногорово) – wieś w południowo-środkowej Bułgarii, w obwodzie Stara Zagora, w gminie Kazanłyk. Według danych Narodowego Instytutu Statystycznego, 31 grudnia 2011 roku wieś liczyła 206 mieszkańców. Co roku 6 maja odbywa się sobór.`
+[Thu Dec 29 19:43:14 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:43:15 CET 2016] Server responses (elo) : `SUCCESS 9 10`
+[Thu Dec 29 19:43:16 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:43:16 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:43:19 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:43:19 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE o FALSE FALSE FALSE  10 9`
+[Thu Dec 29 19:43:20 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:43:20 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE o FALSE FALSE e  10 9`
+[Thu Dec 29 19:43:22 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:43:22 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE o FALSE i e  10 9`
+[Thu Dec 29 19:43:25 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:43:25 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE u FALSE o FALSE i e  10 9`
+[Thu Dec 29 19:43:31 CET 2016] Client requests (elo) : `discover y`
+[Thu Dec 29 19:43:31 CET 2016] Server responses (elo) : `SUCCESS FALSE y FALSE u FALSE o FALSE i e  10 9`
+[Thu Dec 29 19:43:37 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 19:43:37 CET 2016] Server responses (elo) : `SUCCESS S y FALSE u FALSE o FALSE i e  10 9`
+[Thu Dec 29 19:43:42 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:43:42 CET 2016] Server responses (elo) : `SUCCESS S y FALSE u FALSE o FALSE i e  10 8`
+[Thu Dec 29 19:43:44 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 19:43:44 CET 2016] Server responses (elo) : `SUCCESS S y FALSE u FALSE o w i e  10 8`
+[Thu Dec 29 19:43:47 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:43:47 CET 2016] Server responses (elo) : `SUCCESS S y FALSE u FALSE o w i e  10 7`
+[Thu Dec 29 19:43:50 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:43:50 CET 2016] Server responses (elo) : `SUCCESS S y FALSE u FALSE o w i e  10 6`
+[Thu Dec 29 19:43:52 CET 2016] Client requests (elo) : `discover g`
+[Thu Dec 29 19:43:52 CET 2016] Server responses (elo) : `SUCCESS S y FALSE u FALSE o w i e  10 5`
+[Thu Dec 29 19:43:56 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:43:56 CET 2016] Server responses (elo) : `SUCCESS S y FALSE u FALSE o w i e  10 4`
+[Thu Dec 29 19:44:04 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 19:44:04 CET 2016] Server responses (elo) : `SUCCESS S y k u FALSE o w i e  10 4`
+[Thu Dec 29 19:44:11 CET 2016] Client requests (elo) : `discover ż`
+[Thu Dec 29 19:44:11 CET 2016] Server responses (elo) : `SUCCESS S y k u FALSE o w i e  10 3`
+[Thu Dec 29 19:44:33 CET 2016] Client requests (elo) : `discover b`
+[Thu Dec 29 19:44:33 CET 2016] Server responses (elo) : `SUCCESS S y k u FALSE o w i e  10 2`
+[Thu Dec 29 19:44:39 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:44:39 CET 2016] Server responses (elo) : `SUCCESS S y k u FALSE o w i e  10 1`
+[Thu Dec 29 19:45:04 CET 2016] Client requests (elo) : `discover z`
+[Thu Dec 29 19:45:04 CET 2016] Server responses (elo) : `SUCCESS S y k u FALSE o w i e  10 0`
+[Thu Dec 29 19:45:06 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:45:07 CET 2016] Server responses (elo) : `SUCCESS Sykulowie (łac.: Siculi; klas. gr.: Σικελοί) – jedno z trzech wielkich plemion zamieszkujących Sycylię w okresie przed kolonizacją fenicką i grecką. Ich pochodzenie jest sporne, ale z całą pewnością byli ludem indoeuropejskim, zapewne Italikami, w przeciwieństwie do innych mieszkańców ówczesnej Sycylii - Elymian i Sykanów. Jedna z hipotez mówi, że przybyli na wyspę około 1400 p.n.e. z południowej Italii. Tukidydes twierdzi, że przed zasiedleniem Sycylii Sykulowie zamieszkiwali tereny środkowej i południowej Italii (Lacjum, Liguria, Kampania, Kalabria), z których zostali wyparci przez Sabinów i Umbrów. Na terenie Włoch Sykulowie identyfikowani są z archeologiczną kulturą Fossa Grave. Osiedlili się we wschodniej Sycylii, sąsiadując od zachodu z Sykanami. Granicą między plemiennymi ziemiami była rzeka Salso. Przez część badaczy Sykulowie są identyfikowani z ludem Szekelesz, jednym z Ludów Morza, które atakowały Egipt Ramzesa III.`
+[Thu Dec 29 19:45:12 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 19:45:14 CET 2016] Server responses (elo) : `SUCCESS 6 10`
+[Thu Dec 29 19:45:16 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 19:45:16 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE FALSE FALSE A  10 10`
+[Thu Dec 29 19:45:18 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 19:45:18 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE FALSE FALSE A  10 9`
+[Thu Dec 29 19:45:21 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 19:45:21 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE E FALSE A  10 9`
+[Thu Dec 29 19:45:22 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 19:45:22 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE E FALSE A  10 8`
+[Thu Dec 29 19:45:30 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 19:45:30 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE E FALSE A  10 7`
+[Thu Dec 29 19:45:35 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 19:45:35 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE E FALSE A  10 6`
+[Thu Dec 29 19:45:36 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 19:45:36 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE E FALSE A  10 5`
+[Thu Dec 29 19:45:38 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 19:45:38 CET 2016] Server responses (elo) : `SUCCESS FALSE A FALSE E FALSE A  10 4`
+[Thu Dec 29 19:45:40 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 19:45:40 CET 2016] Server responses (elo) : `SUCCESS S A FALSE E FALSE A  10 4`
+[Thu Dec 29 19:45:43 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 19:45:43 CET 2016] Server responses (elo) : `SUCCESS S A FALSE E FALSE A  10 3`
+[Thu Dec 29 19:45:48 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 19:45:48 CET 2016] Server responses (elo) : `SUCCESS S A FALSE E FALSE A  10 2`
+[Thu Dec 29 19:45:52 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 19:45:52 CET 2016] Server responses (elo) : `SUCCESS S A FALSE E N A  10 2`
+[Thu Dec 29 19:45:56 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 19:45:56 CET 2016] Server responses (elo) : `SUCCESS S A FALSE E N A  10 1`
+[Thu Dec 29 19:46:04 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 19:46:04 CET 2016] Server responses (elo) : `SUCCESS S A T E N A  10 1`
+[Thu Dec 29 19:46:08 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 19:46:08 CET 2016] Server responses (elo) : `SUCCESS SATENA - kolumbijska linia lotnicza z siedzibą w Bogocie. Obsługuje połączenia krajowe i międzynarodowe.`
+[Thu Dec 29 19:46:28 CET 2016] Client requests (elo) : `auth 10`
+[Thu Dec 29 19:46:28 CET 2016] Server responses (elo) : `EXCEPTION EXCEPTION AUTH must have 2 parameters.`
+[Thu Dec 29 19:46:32 CET 2016] Client requests (elo) : `auth user pass`
+[Thu Dec 29 19:46:32 CET 2016] Server responses (elo) : `FAIL Active user must log out first.`
+[Thu Dec 29 19:46:36 CET 2016] Client requests (elo) : `logout`
+[Thu Dec 29 19:46:36 CET 2016] Server responses : `SUCCESS`
+[Thu Dec 29 19:46:39 CET 2016] Client requests : `auth user pass`
+[Thu Dec 29 19:46:39 CET 2016] Server responses : `FAIL Incorrect credentials.`
+[Thu Dec 29 19:46:45 CET 2016] Client requests : `auth user password`
+[Thu Dec 29 19:46:45 CET 2016] Server responses (user) : `SUCCESS 1 user 140`
+[Thu Dec 29 19:46:52 CET 2016] Client requests (user) : `null`
+[Thu Dec 29 22:21:25 CET 2016] Server has started.
+[Thu Dec 29 22:21:40 CET 2016] User has connected.
+[Thu Dec 29 22:21:44 CET 2016] Client requests : `AUTH`
+[Thu Dec 29 22:21:44 CET 2016] Server responses : `EXCEPTION EXCEPTION AUTH must have 2 parameters.`
+[Thu Dec 29 22:21:47 CET 2016] Client requests : `AUTH elo ziom`
+[Thu Dec 29 22:21:47 CET 2016] Server responses (elo) : `SUCCESS 5 elo 10`
+[Thu Dec 29 22:21:54 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 22:23:31 CET 2016] Server has started.
+[Thu Dec 29 22:23:47 CET 2016] User has connected.
+[Thu Dec 29 22:23:54 CET 2016] Client requests : `AUTH elo ziom`
+[Thu Dec 29 22:23:54 CET 2016] Server responses (elo) : `SUCCESS 5 elo 10`
+[Thu Dec 29 22:23:57 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 22:31:32 CET 2016] Server has started.
+[Thu Dec 29 22:31:37 CET 2016] User has connected.
+[Thu Dec 29 22:31:40 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 22:31:40 CET 2016] Server responses (elo) : `SUCCESS 5 elo 10`
+[Thu Dec 29 22:31:43 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 22:40:26 CET 2016] Server has started.
+[Thu Dec 29 22:40:33 CET 2016] User has connected.
+[Thu Dec 29 22:40:35 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 22:40:35 CET 2016] Server responses (elo) : `SUCCESS 5 elo 10`
+[Thu Dec 29 22:40:36 CET 2016] Client requests (elo) : `start 10`
+[Thu Dec 29 22:41:21 CET 2016] Server has started.
+[Thu Dec 29 22:41:28 CET 2016] User has connected.
+[Thu Dec 29 22:41:34 CET 2016] Client requests : `auth elo ziom`
+[Thu Dec 29 22:41:34 CET 2016] Server responses (elo) : `SUCCESS 5 elo 10`
+[Thu Dec 29 22:41:36 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 22:42:16 CET 2016] Server has started.
+[Thu Dec 29 22:42:16 CET 2016] Server has failed to initialize. Closing...
+[Thu Dec 29 22:42:25 CET 2016] Server responses (elo) : `SUCCESS Rudawkowate 11 10`
+[Thu Dec 29 22:42:41 CET 2016] Client requests (elo) : `discover 1`
+[Thu Dec 29 22:42:41 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  10 9`
+[Thu Dec 29 22:42:58 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 22:42:59 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE e FALSE  10 9`
+[Thu Dec 29 22:43:01 CET 2016] Client requests (elo) : `discover 1`
+[Thu Dec 29 22:43:01 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE e FALSE  10 8`
+[Thu Dec 29 22:43:07 CET 2016] Client requests (elo) : `discover @`
+[Thu Dec 29 22:43:07 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE e FALSE  10 7`
+[Thu Dec 29 22:43:13 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 22:43:13 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE e FALSE  10 6`
+[Thu Dec 29 22:43:14 CET 2016] Client requests (elo) : `discover o`
+[Thu Dec 29 22:43:14 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE o FALSE o FALSE e FALSE  10 6`
+[Thu Dec 29 22:43:15 CET 2016] Client requests (elo) : `discover u`
+[Thu Dec 29 22:43:15 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE FALSE o FALSE o FALSE e FALSE  10 5`
+[Thu Dec 29 22:43:17 CET 2016] Client requests (elo) : `discover r`
+[Thu Dec 29 22:43:17 CET 2016] Server responses (elo) : `SUCCESS FALSE r FALSE FALSE FALSE o FALSE o FALSE e FALSE  10 5`
+[Thu Dec 29 22:43:21 CET 2016] Client requests (elo) : `discover d`
+[Thu Dec 29 22:43:21 CET 2016] Server responses (elo) : `SUCCESS FALSE r FALSE FALSE FALSE o FALSE o FALSE e FALSE  10 4`
+[Thu Dec 29 22:43:24 CET 2016] Client requests (elo) : `discover b`
+[Thu Dec 29 22:43:24 CET 2016] Server responses (elo) : `SUCCESS FALSE r FALSE FALSE FALSE o FALSE o FALSE e FALSE  10 3`
+[Thu Dec 29 22:43:27 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 22:43:27 CET 2016] Server responses (elo) : `SUCCESS FALSE r FALSE FALSE FALSE o FALSE o FALSE e FALSE  10 2`
+[Thu Dec 29 22:43:32 CET 2016] Client requests (elo) : `discover z`
+[Thu Dec 29 22:43:32 CET 2016] Server responses (elo) : `SUCCESS FALSE r FALSE FALSE FALSE o FALSE o FALSE e FALSE  10 1`
+[Thu Dec 29 22:43:35 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 22:43:35 CET 2016] Server responses (elo) : `SUCCESS FALSE r FALSE FALSE FALSE o n o FALSE e FALSE  10 1`
+[Thu Dec 29 22:43:38 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 22:43:38 CET 2016] Server responses (elo) : `SUCCESS FALSE r FALSE FALSE FALSE o n o FALSE e FALSE  10 0`
+[Thu Dec 29 22:43:41 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 22:43:41 CET 2016] Server responses (elo) : `SUCCESS Krótkonosek (Cynopterus) – rodzaj nietoperza z rodziny rudawkowatych (Pteropodidae).`
+[Thu Dec 29 22:44:03 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 22:44:04 CET 2016] Server responses (elo) : `SUCCESS Gatunki literackie 5 10`
+[Thu Dec 29 22:44:11 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 22:44:11 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE FALSE  10 10`
+[Thu Dec 29 22:44:13 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 22:44:13 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE FALSE  10 9`
+[Thu Dec 29 22:44:17 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 22:44:17 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE FALSE FALSE  10 8`
+[Thu Dec 29 22:44:21 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 22:44:21 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE s FALSE  10 8`
+[Thu Dec 29 22:44:24 CET 2016] Client requests (elo) : `discover z`
+[Thu Dec 29 22:44:24 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE s FALSE  10 7`
+[Thu Dec 29 22:45:21 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 22:45:21 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE s FALSE  10 6`
+[Thu Dec 29 22:45:30 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 22:45:30 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE s FALSE  10 5`
+[Thu Dec 29 22:45:50 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 22:45:50 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE s FALSE  10 4`
+[Thu Dec 29 22:45:51 CET 2016] Client requests (elo) : `discover m`
+[Thu Dec 29 22:45:51 CET 2016] Server responses (elo) : `SUCCESS FALSE a FALSE s FALSE  10 3`
+[Thu Dec 29 22:46:00 CET 2016] Client requests (elo) : `discover n`
+[Thu Dec 29 22:46:00 CET 2016] Server responses (elo) : `SUCCESS FALSE a n s FALSE  10 3`
+[Thu Dec 29 22:46:29 CET 2016] Client requests (elo) : `discover k`
+[Thu Dec 29 22:46:29 CET 2016] Server responses (elo) : `SUCCESS FALSE a n s FALSE  10 2`
+[Thu Dec 29 22:46:46 CET 2016] Client requests (elo) : `discover y`
+[Thu Dec 29 22:46:46 CET 2016] Server responses (elo) : `SUCCESS FALSE a n s FALSE  10 1`
+[Thu Dec 29 22:46:58 CET 2016] Client requests (elo) : `discover d`
+[Thu Dec 29 22:46:58 CET 2016] Server responses (elo) : `SUCCESS FALSE a n s FALSE  10 0`
+[Thu Dec 29 22:47:00 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 22:47:00 CET 2016] Server responses (elo) : `SUCCESS Canso, canzo, canço – gatunek uprawiany od końca XII wieku przez trubadurów, posiadający budowę stroficzną, opowiadający o dworskiej miłości – w przeciwieństwie do politycznych lub moralizujących pieśni znanych jako sirventes. Te dwa terminy stopniowo zastępowały słowo vers, które używane było przez najwcześniejszych trubadurów na określenie stroficznej pieśni o dowolnej tematyce. Wydaje się, że najważniejszą różnicą pomiędzy canso a vers była tematyka: canso musiało opowiadać o dworskiej miłości. Vida Peire d'Alvernhe zauważa, że "...nie napisał on żadnej canson, ponieważ w tym czasie żadnych pieśni nie zwano cansos, lecz vers; to Giraut de Bornelh stworzył pierwszą canson". Trubadurzy okresu przejściowego (np. Bernart de Ventadorn i Peire Vidal) stosowali oba terminy na określenie bardzo podobnych w formie i tematyce pieśni.
+Jakkolwiek canso posiadało stroficzną budowę, każdy utwór miał być inny: oryginalność w tworzeniu układów rymów oraz form metrycznych była szczególnie ceniona.
+Canso jest najbardziej prestiżowym spośród wszystkich gatunków uprawianych przez trubadurów[potrzebny przypis], dlatego też określa się je jako grande chanson courtoise. Zarówno język, jak i tematyka są ściśle określone; według średniowiecznych traktatów, każde canso powinno posiadać oryginalną melodię w przeciwieństwie do sirventes, które zazwyczaj pisano do melodii już istniejących. Analiza porównawcza zachowanych utworów potwierdza, że na ogół tej reguły przestrzegano.`
+[Thu Dec 29 22:50:55 CET 2016] Client requests (elo) : `START 10`
+[Thu Dec 29 22:50:55 CET 2016] Server responses (elo) : `SUCCESS Kadłub (żeglarstwo) 5 10`
+[Thu Dec 29 22:51:20 CET 2016] Client requests (elo) : `discover a`
+[Thu Dec 29 22:51:20 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE FALSE FALSE a  10 10`
+[Thu Dec 29 22:51:22 CET 2016] Client requests (elo) : `discover e`
+[Thu Dec 29 22:51:22 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE a  10 10`
+[Thu Dec 29 22:51:27 CET 2016] Client requests (elo) : `discover i`
+[Thu Dec 29 22:51:27 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE a  10 9`
+[Thu Dec 29 22:51:30 CET 2016] Client requests (elo) : `discover p`
+[Thu Dec 29 22:51:30 CET 2016] Server responses (elo) : `SUCCESS FALSE FALSE e FALSE a  10 8`
+[Thu Dec 29 22:51:32 CET 2016] Client requests (elo) : `discvoer k`
+[Thu Dec 29 22:51:32 CET 2016] Server responses (elo) : `EXCEPTION DISCVOER is not recognizable command.`
+[Thu Dec 29 22:52:36 CET 2016] Client requests (elo) : `discover s`
+[Thu Dec 29 22:52:36 CET 2016] Server responses (elo) : `SUCCESS S FALSE e FALSE a  10 8`
+[Thu Dec 29 22:53:33 CET 2016] Client requests (elo) : `discover z`
+[Thu Dec 29 22:53:33 CET 2016] Server responses (elo) : `SUCCESS S FALSE e FALSE a  10 7`
+[Thu Dec 29 22:53:37 CET 2016] Client requests (elo) : `discover l`
+[Thu Dec 29 22:53:37 CET 2016] Server responses (elo) : `SUCCESS S FALSE e FALSE a  10 6`
+[Thu Dec 29 22:53:42 CET 2016] Client requests (elo) : `discover t`
+[Thu Dec 29 22:53:42 CET 2016] Server responses (elo) : `SUCCESS S t e FALSE a  10 6`
+[Thu Dec 29 22:53:51 CET 2016] Client requests (elo) : `discover g`
+[Thu Dec 29 22:53:51 CET 2016] Server responses (elo) : `SUCCESS S t e FALSE a  10 5`
+[Thu Dec 29 22:53:54 CET 2016] Client requests (elo) : `discover c`
+[Thu Dec 29 22:53:54 CET 2016] Server responses (elo) : `SUCCESS S t e FALSE a  10 4`
+[Thu Dec 29 22:54:01 CET 2016] Client requests (elo) : `discover f`
+[Thu Dec 29 22:54:01 CET 2016] Server responses (elo) : `SUCCESS S t e FALSE a  10 3`
+[Thu Dec 29 22:54:39 CET 2016] Client requests (elo) : `discover j`
+[Thu Dec 29 22:54:39 CET 2016] Server responses (elo) : `SUCCESS S t e FALSE a  10 2`
+[Thu Dec 29 22:54:48 CET 2016] Client requests (elo) : `discover w`
+[Thu Dec 29 22:54:48 CET 2016] Server responses (elo) : `SUCCESS S t e w a  10 2`
+[Thu Dec 29 22:54:52 CET 2016] Client requests (elo) : `info`
+[Thu Dec 29 22:54:52 CET 2016] Server responses (elo) : `SUCCESS Stewa – część szkieletu statku lub łodzi. Przedłużenie stępki w kierunku dziobu (stewa dziobowa, dziobnica) albo rufy (stewa rufowa, tylnica).
+Stewa rufowa kończy rufową część kadłuba statku, łącząc poszycie burt. W przypadku statków wykonana jest zwykle jako staliwny odlew lub stalowa konstrukcja spawana, zawierająca wyjście okrętowego wału napędowego i zawieszenie steru.`
+[Thu Dec 29 22:54:59 CET 2016] Client requests (elo) : `Stewa – część szkieletu statku lub łodzi. Przedłużenie stępki w kierunku dziobu (stewa dziobowa, dziobnica) albo rufy (stewa rufowa, tylnica).`
+[Thu Dec 29 22:54:59 CET 2016] Server responses (elo) : `EXCEPTION STEWA is not recognizable command.`
+[Thu Dec 29 22:54:59 CET 2016] Client requests (elo) : `                                                                      Stewa rufowa kończy rufową część kadłuba statku, łącząc poszycie burt. W przypadku statków wykonana jest zwykle jako staliwny odlew lub stalowa konstrukcja spawana, zawierająca wyjście okrętowego wału napędowego i zawieszenie steru.`
+[Thu Dec 29 22:54:59 CET 2016] Server responses (elo) : `EXCEPTION  is not recognizable command.`
+[Thu Dec 29 22:56:10 CET 2016] Client requests (elo) : `list`
+[Thu Dec 29 22:56:10 CET 2016] Server responses (elo) : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Fri Dec 30 12:57:49 CET 2016] Server has started.
+[Fri Dec 30 12:57:50 CET 2016] User has connected.
+[Fri Dec 30 12:57:52 CET 2016] Client requests : `auth`
+[Fri Dec 30 12:57:52 CET 2016] Server responses : `FAIL No active user.`
+[Fri Dec 30 12:57:56 CET 2016] Client requests : `help auth`
+[Fri Dec 30 12:57:56 CET 2016] Server responses : `SUCCESS Log user into system. Usage : AUTH <username> <password>. With no arguments specified logged user is returned.`
+[Fri Dec 30 12:58:03 CET 2016] Client requests : `help`
+[Fri Dec 30 12:58:03 CET 2016] Server responses : `SUCCESS HELP LOGOUT CREATE AUTH DISCOVER START INFO LIST`
+[Fri Dec 30 12:58:06 CET 2016] Client requests : `help list`
+[Fri Dec 30 12:58:06 CET 2016] Server responses : `SUCCESS Returns all players list from database. Usage : LIST`
+[Fri Dec 30 12:58:19 CET 2016] Client requests : `help discover`
+[Fri Dec 30 12:58:19 CET 2016] Server responses : `SUCCESS Discovers letter in hangman if one is present, otherwise hangman is left unchanged. Usage : DISCOVER <optional letter>`
+[Fri Dec 30 12:58:25 CET 2016] Client requests : `auth elo ziom`
+[Fri Dec 30 12:58:25 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Fri Dec 30 12:58:27 CET 2016] Client requests (elo) : `auth`
+[Fri Dec 30 12:58:27 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Fri Dec 30 12:58:33 CET 2016] Client requests (elo) : `auth alfa omega`
+[Fri Dec 30 12:58:33 CET 2016] Server responses (elo) : `FAIL Active user must log out first.`
+[Fri Dec 30 12:58:35 CET 2016] Client requests (elo) : `logout`
+[Fri Dec 30 12:58:35 CET 2016] Server responses : `SUCCESS`
+[Fri Dec 30 12:58:37 CET 2016] Client requests : `logout`
+[Fri Dec 30 12:58:37 CET 2016] Server responses : `SUCCESS`
+[Fri Dec 30 12:58:39 CET 2016] Client requests : `logout`
+[Fri Dec 30 12:58:39 CET 2016] Server responses : `SUCCESS`
+[Fri Dec 30 12:58:40 CET 2016] Client requests : `exit`
+[Fri Dec 30 12:58:40 CET 2016] Server responses : `EXCEPTION EXIT is not recognizable command.`
+[Fri Dec 30 12:58:51 CET 2016] Client requests : `null`
+[Fri Dec 30 13:04:28 CET 2016] Server has started.
+[Fri Dec 30 13:04:28 CET 2016] Server has failed to initialize. Closing...
+[Fri Dec 30 13:04:31 CET 2016] User has connected.
+[Fri Dec 30 13:04:44 CET 2016] Server has started.
+[Fri Dec 30 13:04:50 CET 2016] User has connected.
+[Fri Dec 30 13:04:55 CET 2016] User has disconnected
+[Sat Dec 31 14:43:09 CET 2016] Server has started.
+[Sat Dec 31 14:43:59 CET 2016] Server has started.
+[Sat Dec 31 14:44:38 CET 2016] Server has started.
+[Sat Dec 31 14:45:11 CET 2016] Server has started.
+[Sat Dec 31 14:47:38 CET 2016] Server has started.
+[Sat Dec 31 15:06:16 CET 2016] Server has started.
+[Sat Dec 31 15:06:21 CET 2016] User has connected.
+[Sat Dec 31 15:06:24 CET 2016] Client requests : `auth`
+[Sat Dec 31 15:06:24 CET 2016] Server responses : `FAIL No active user.`
+[Sat Dec 31 15:06:30 CET 2016] Client requests : `auth elo ziom`
+[Sat Dec 31 15:06:30 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sat Dec 31 15:06:36 CET 2016] User has disconnected.
+[Sat Dec 31 15:06:49 CET 2016] User has connected.
+[Sat Dec 31 15:07:03 CET 2016] Client requests : `AUTH elo ziom `
+[Sat Dec 31 15:07:03 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sat Dec 31 15:07:45 CET 2016] Client requests (elo) : `AUTH elo ziom `
+[Sat Dec 31 15:07:45 CET 2016] Server responses (elo) : `FAIL Active user must log out first.`
+[Sat Dec 31 15:07:54 CET 2016] Client requests (elo) : `AUTH  `
+[Sat Dec 31 15:07:54 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sat Dec 31 15:08:03 CET 2016] Client requests (elo) : `AUTH  `
+[Sat Dec 31 15:08:03 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sat Dec 31 15:08:12 CET 2016] User has disconnected.
+[Sat Dec 31 15:10:08 CET 2016] User has connected.
+[Sat Dec 31 15:10:14 CET 2016] Client requests : `AUTH elo ziom `
+[Sat Dec 31 15:10:14 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sat Dec 31 15:10:17 CET 2016] Client requests (elo) : `AUTH  `
+[Sat Dec 31 15:10:17 CET 2016] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sat Dec 31 15:10:17 CET 2016] Client requests (elo) : `LIST  `
+[Sat Dec 31 15:10:17 CET 2016] Server responses (elo) : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Sun Jan 01 16:26:01 CET 2017] Server has started.
+[Sun Jan 01 16:26:10 CET 2017] User has connected.
+[Sun Jan 01 16:26:20 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 16:26:20 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 16:26:22 CET 2017] Client requests (elo) : `AUTH  `
+[Sun Jan 01 16:26:22 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 16:26:22 CET 2017] Client requests (elo) : `LIST  `
+[Sun Jan 01 16:26:22 CET 2017] Server responses (elo) : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Sun Jan 01 16:26:24 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 16:26:26 CET 2017] Server responses (elo) : `SUCCESS Miejscowości departamentu Gers 11 10`
+[Sun Jan 01 16:27:12 CET 2017] User has disconnected.
+[Sun Jan 01 16:27:28 CET 2017] User has connected.
+[Sun Jan 01 16:27:33 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 16:27:33 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 16:27:36 CET 2017] Client requests (elo) : `START 19`
+[Sun Jan 01 16:27:38 CET 2017] Server responses (elo) : `SUCCESS Powiat Rhein-Lahn 10 19`
+[Sun Jan 01 16:27:46 CET 2017] User has disconnected.
+[Sun Jan 01 16:28:33 CET 2017] Server has started.
+[Sun Jan 01 16:28:37 CET 2017] Server has started.
+[Sun Jan 01 16:28:37 CET 2017] Server has failed to initialize. Closing...
+[Sun Jan 01 16:38:43 CET 2017] User has connected.
+[Sun Jan 01 16:38:46 CET 2017] Client requests : `auth elo ziom`
+[Sun Jan 01 16:38:46 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 16:38:48 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 16:38:49 CET 2017] Server responses (elo) : `SUCCESS 9 10 Miejscowości w regionie Emilia-Romania`
+[Sun Jan 01 16:39:05 CET 2017] User has disconnected.
+[Sun Jan 01 16:39:12 CET 2017] User has connected.
+[Sun Jan 01 16:39:19 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 16:39:19 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 16:39:22 CET 2017] Client requests (elo) : `AUTH  `
+[Sun Jan 01 16:39:22 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 16:39:22 CET 2017] Client requests (elo) : `LIST  `
+[Sun Jan 01 16:39:22 CET 2017] Server responses (elo) : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Sun Jan 01 16:39:23 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 16:39:24 CET 2017] Server responses (elo) : `SUCCESS 6 10 Miejscowości w regionie Wenecja Euganejska`
+[Sun Jan 01 16:39:47 CET 2017] User has disconnected.
+[Sun Jan 01 16:49:46 CET 2017] User has connected.
+[Sun Jan 01 16:49:50 CET 2017] Client requests : `auth alfa omega`
+[Sun Jan 01 16:49:50 CET 2017] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Sun Jan 01 16:49:51 CET 2017] Client requests (alfa) : `start 1`
+[Sun Jan 01 16:49:52 CET 2017] Server responses (alfa) : `SUCCESS 10 1 Strony ujednoznaczniające`
+[Sun Jan 01 16:49:52 CET 2017] Client requests (alfa) : `e`
+[Sun Jan 01 16:49:52 CET 2017] Server responses (alfa) : `EXCEPTION E is not recognizable command.`
+[Sun Jan 01 16:49:55 CET 2017] Client requests (alfa) : `discover e`
+[Sun Jan 01 16:50:52 CET 2017] Server has started.
+[Sun Jan 01 16:50:54 CET 2017] User has connected.
+[Sun Jan 01 16:50:58 CET 2017] Client requests : `auth alfa omega`
+[Sun Jan 01 16:50:58 CET 2017] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Sun Jan 01 16:51:04 CET 2017] Client requests (alfa) : `start 1`
+[Sun Jan 01 16:51:05 CET 2017] Server responses (alfa) : `SUCCESS 8 1 Miejscowości departamentu Finistère`
+[Sun Jan 01 16:51:06 CET 2017] Client requests (alfa) : `discover e`
+[Sun Jan 01 16:51:06 CET 2017] Server responses (alfa) : `SUCCESS 1 1 FALSE FALSE FALSE FALSE e FALSE FALSE FALSE `
+[Sun Jan 01 16:51:11 CET 2017] Client requests (alfa) : `discover a`
+[Sun Jan 01 16:51:11 CET 2017] Server responses (alfa) : `SUCCESS 1 0 FALSE FALSE FALSE FALSE e FALSE FALSE FALSE `
+[Sun Jan 01 16:51:18 CET 2017] Client requests (alfa) : `info`
+[Sun Jan 01 16:51:18 CET 2017] Server responses (alfa) : `SUCCESS Primelin (bret. Prevel) – miejscowość i gmina we Francji, w regionie Bretania, w departamencie Finistère.
+Według danych na rok 1990 gminę zamieszkiwało 931 osób, a gęstość zaludnienia wynosiła 107 osób/km² (wśród 1269 gmin Bretanii Primelin plasuje się na 601. miejscu pod względem liczby ludności, natomiast pod względem powierzchni na miejscu 882.).`
+[Sun Jan 01 17:02:49 CET 2017] Server has started.
+[Sun Jan 01 17:02:52 CET 2017] User has connected.
+[Sun Jan 01 17:02:59 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:02:59 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:03:03 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:03:04 CET 2017] Server responses (elo) : `SUCCESS 9 10 Granie i grzbiety Tatr Zachodnich`
+[Sun Jan 01 17:03:17 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:03:17 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 17:03:22 CET 2017] Client requests (elo) : `DISCOVER e `
+[Sun Jan 01 17:03:22 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 17:03:24 CET 2017] User has disconnected.
+[Sun Jan 01 17:03:51 CET 2017] User has connected.
+[Sun Jan 01 17:03:58 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:03:58 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:04:00 CET 2017] Client requests (elo) : `AUTH  `
+[Sun Jan 01 17:04:00 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:04:00 CET 2017] Client requests (elo) : `LIST  `
+[Sun Jan 01 17:04:00 CET 2017] Server responses (elo) : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Sun Jan 01 17:04:06 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:04:07 CET 2017] Server responses (elo) : `SUCCESS 5 10 Bohaterowie Rycerzy Zodiaku`
+[Sun Jan 01 17:04:12 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:04:12 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:04:15 CET 2017] Client requests (elo) : `DISCOVER s `
+[Sun Jan 01 17:04:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 S FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:04:18 CET 2017] Client requests (elo) : `DISCOVER k `
+[Sun Jan 01 17:04:18 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 S FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:04:19 CET 2017] Client requests (elo) : `DISCOVER c `
+[Sun Jan 01 17:04:19 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 S FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:04:21 CET 2017] Client requests (elo) : `DISCOVER o `
+[Sun Jan 01 17:04:21 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 S FALSE FALSE o FALSE `
+[Sun Jan 01 17:04:26 CET 2017] Client requests (elo) : `DISCOVER a `
+[Sun Jan 01 17:04:26 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 S FALSE FALSE o FALSE `
+[Sun Jan 01 17:04:27 CET 2017] Client requests (elo) : `DISCOVER e `
+[Sun Jan 01 17:04:27 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 S FALSE FALSE o FALSE `
+[Sun Jan 01 17:04:30 CET 2017] Client requests (elo) : `DISCOVER u `
+[Sun Jan 01 17:04:30 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 S FALSE FALSE o FALSE `
+[Sun Jan 01 17:04:33 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:04:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 S FALSE i o FALSE `
+[Sun Jan 01 17:04:37 CET 2017] Client requests (elo) : `DISCOVER t `
+[Sun Jan 01 17:04:37 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 S FALSE i o FALSE `
+[Sun Jan 01 17:04:42 CET 2017] Client requests (elo) : `DISCOVER n `
+[Sun Jan 01 17:04:42 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 S FALSE i o n `
+[Sun Jan 01 17:04:53 CET 2017] Client requests (elo) : `DISCOVER p `
+[Sun Jan 01 17:04:53 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 S FALSE i o n `
+[Sun Jan 01 17:04:58 CET 2017] Client requests (elo) : `DISCOVER k `
+[Sun Jan 01 17:04:58 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 S FALSE i o n `
+[Sun Jan 01 17:05:14 CET 2017] Client requests (elo) : `DISCOVER z `
+[Sun Jan 01 17:05:14 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 S FALSE i o n `
+[Sun Jan 01 17:05:14 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:05:14 CET 2017] Server responses (elo) : `SUCCESS Shion (oryg. Aries no Shion) – postać z Rycerzy Zodiaku.
+Jest on Złotym Rycerzem Barana i Wielkim Mistrzem z czasów przed odrodzeniem się Ateny w ciele Saori Kido. Był też mistrzem Mu. Jest to wysoki blondyn, z dwiema kropkami na czole. Liczy ponad 230 lat, bowiem razem z Dohko walczył w Świętej Wojnie przeciwko Posejdonowi i Hadesowi.`
+[Sun Jan 01 17:06:16 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:06:16 CET 2017] Server responses (elo) : `SUCCESS 14 10 ATC-N02`
+[Sun Jan 01 17:06:21 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:06:21 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE a `
+[Sun Jan 01 17:06:24 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:06:24 CET 2017] Server responses (elo) : `SUCCESS 6 10 Wola Krzysztoporska (gmina)`
+[Sun Jan 01 17:06:31 CET 2017] User has disconnected.
+[Sun Jan 01 17:07:22 CET 2017] User has connected.
+[Sun Jan 01 17:07:27 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:07:27 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:07:29 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:07:30 CET 2017] Server responses (elo) : `SUCCESS 7 10 Fiordy`
+[Sun Jan 01 17:07:33 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:07:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 17:07:36 CET 2017] Client requests (elo) : `DISCOVER e `
+[Sun Jan 01 17:07:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 17:07:38 CET 2017] Client requests (elo) : `DISCOVER o `
+[Sun Jan 01 17:07:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 17:07:40 CET 2017] Client requests (elo) : `DISCOVER u `
+[Sun Jan 01 17:07:40 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE u FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 17:07:44 CET 2017] Client requests (elo) : `DISCOVER y `
+[Sun Jan 01 17:07:44 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE u FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 17:07:46 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:07:46 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE u FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 17:07:51 CET 2017] Client requests (elo) : `DISCOVER s `
+[Sun Jan 01 17:07:51 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE u FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 17:07:53 CET 2017] Client requests (elo) : `DISCOVER d `
+[Sun Jan 01 17:07:53 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE u FALSE FALSE a FALSE d `
+[Sun Jan 01 17:07:56 CET 2017] Client requests (elo) : `DISCOVER j `
+[Sun Jan 01 17:07:56 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE u FALSE FALSE a FALSE d `
+[Sun Jan 01 17:07:58 CET 2017] Client requests (elo) : `DISCOVER n `
+[Sun Jan 01 17:07:58 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE u FALSE FALSE a FALSE d `
+[Sun Jan 01 17:08:00 CET 2017] Client requests (elo) : `DISCOVER m `
+[Sun Jan 01 17:08:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE u FALSE FALSE a FALSE d `
+[Sun Jan 01 17:08:04 CET 2017] Client requests (elo) : `DISCOVER w `
+[Sun Jan 01 17:08:04 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE u FALSE FALSE a FALSE d `
+[Sun Jan 01 17:08:05 CET 2017] Client requests (elo) : `DISCOVER v `
+[Sun Jan 01 17:08:05 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE u FALSE FALSE a FALSE d `
+[Sun Jan 01 17:08:05 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:08:05 CET 2017] Server responses (elo) : `SUCCESS Burrard (ang. Burrard Inlet, fr. Baie Burrard) – niewielka zatoka w formie fiordu o stosunkowo niskich brzegach, niedaleko miasta Vancouver, w południowo-zachodniej części prowincji Kolumbia Brytyjska, w Kanadzie.`
+[Sun Jan 01 17:08:10 CET 2017] Client requests (elo) : `AUTH  `
+[Sun Jan 01 17:08:10 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:08:10 CET 2017] Client requests (elo) : `LIST  `
+[Sun Jan 01 17:08:10 CET 2017] Server responses (elo) : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Sun Jan 01 17:08:12 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:08:14 CET 2017] Server responses (elo) : `SUCCESS 9 10 Miejscowości w regionie Basilicata`
+[Sun Jan 01 17:08:32 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:08:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 17:08:34 CET 2017] Client requests (elo) : `DISCOVER e `
+[Sun Jan 01 17:08:34 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 17:08:35 CET 2017] Client requests (elo) : `DISCOVER o `
+[Sun Jan 01 17:08:35 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE o FALSE FALSE a FALSE o FALSE a `
+[Sun Jan 01 17:08:39 CET 2017] Client requests (elo) : `DISCOVER b `
+[Sun Jan 01 17:08:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE o FALSE FALSE a FALSE o FALSE a `
+[Sun Jan 01 17:08:40 CET 2017] Client requests (elo) : `DISCOVER m `
+[Sun Jan 01 17:08:40 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE o FALSE FALSE a FALSE o FALSE a `
+[Sun Jan 01 17:08:41 CET 2017] Client requests (elo) : `DISCOVER n `
+[Sun Jan 01 17:08:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE o FALSE FALSE a n o FALSE a `
+[Sun Jan 01 17:08:43 CET 2017] Client requests (elo) : `DISCOVER d `
+[Sun Jan 01 17:08:43 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE o FALSE FALSE a n o FALSE a `
+[Sun Jan 01 17:08:44 CET 2017] Client requests (elo) : `DISCOVER s `
+[Sun Jan 01 17:08:44 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE o FALSE FALSE a n o FALSE a `
+[Sun Jan 01 17:08:50 CET 2017] Client requests (elo) : `DISCOVER k `
+[Sun Jan 01 17:08:50 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE o FALSE FALSE a n o FALSE a `
+[Sun Jan 01 17:08:51 CET 2017] Client requests (elo) : `DISCOVER l `
+[Sun Jan 01 17:08:51 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE o FALSE FALSE a n o FALSE a `
+[Sun Jan 01 17:08:53 CET 2017] Client requests (elo) : `DISCOVER g `
+[Sun Jan 01 17:08:53 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE o FALSE FALSE a n o FALSE a `
+[Sun Jan 01 17:08:57 CET 2017] Client requests (elo) : `DISCOVER t `
+[Sun Jan 01 17:08:57 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE o FALSE FALSE a n o FALSE a `
+[Sun Jan 01 17:08:58 CET 2017] Client requests (elo) : `DISCOVER c `
+[Sun Jan 01 17:08:58 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE o c c a n o FALSE a `
+[Sun Jan 01 17:09:12 CET 2017] Client requests (elo) : `DISCOVER r `
+[Sun Jan 01 17:09:12 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 R o c c a n o FALSE a `
+[Sun Jan 01 17:09:30 CET 2017] Client requests (elo) : `DISCOVER p `
+[Sun Jan 01 17:09:30 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 R o c c a n o FALSE a `
+[Sun Jan 01 17:09:30 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:09:30 CET 2017] Server responses (elo) : `SUCCESS Roccanova – miejscowość i gmina we Włoszech, w regionie Basilicata, w prowincji Potenza.
+Według danych na rok 2004 gminę zamieszkuje 1756 osób, 28,8 os./km².`
+[Sun Jan 01 17:09:36 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:09:36 CET 2017] Server responses (elo) : `SUCCESS 14 10 Szczyty Austrii`
+[Sun Jan 01 17:09:49 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:09:49 CET 2017] Server responses (elo) : `SUCCESS 4 10 Diabły i demony`
+[Sun Jan 01 17:10:08 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:10:08 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE `
+[Sun Jan 01 17:10:10 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:10:10 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE `
+[Sun Jan 01 17:10:42 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:10:42 CET 2017] Server responses (elo) : `SUCCESS 7 10 Tuplice (gmina)`
+[Sun Jan 01 17:11:50 CET 2017] Server has started.
+[Sun Jan 01 17:11:55 CET 2017] User has connected.
+[Sun Jan 01 17:12:08 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:12:08 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:12:10 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:12:11 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miejscowości w regionie Piemont`
+[Sun Jan 01 17:12:36 CET 2017] User has connected.
+[Sun Jan 01 17:12:38 CET 2017] User has disconnected.
+[Sun Jan 01 17:12:42 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:12:42 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miasta w okręgu kowieńskim`
+[Sun Jan 01 17:13:48 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:13:49 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miejscowości departamentu Ardeny`
+[Sun Jan 01 17:14:36 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:37 CET 2017] Server responses (elo) : `SUCCESS 9 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:14:44 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:44 CET 2017] Server responses (elo) : `SUCCESS 5 10 Miasta w stanie Chuuk`
+[Sun Jan 01 17:14:45 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:46 CET 2017] Server responses (elo) : `SUCCESS 4 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:14:46 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:47 CET 2017] Server responses (elo) : `SUCCESS 4 10 Herby szlacheckie`
+[Sun Jan 01 17:14:47 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:48 CET 2017] Server responses (elo) : `SUCCESS 6 10 Miasta w prowincji Liège`
+[Sun Jan 01 17:14:49 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:49 CET 2017] Server responses (elo) : `SUCCESS 9 10 Drohiczyn (gmina)`
+[Sun Jan 01 17:14:50 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:50 CET 2017] Server responses (elo) : `SUCCESS 14 10 Albumy Elektra Records`
+[Sun Jan 01 17:14:51 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:51 CET 2017] Server responses (elo) : `SUCCESS 10 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:14:51 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:52 CET 2017] Server responses (elo) : `SUCCESS 5 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:14:58 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:58 CET 2017] Server responses (elo) : `SUCCESS 10 10 Kłobuck (gmina)`
+[Sun Jan 01 17:14:59 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:14:59 CET 2017] Server responses (elo) : `SUCCESS 6 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:15:00 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:00 CET 2017] Server responses (elo) : `SUCCESS 9 10 Uzurpatorzy i samozwańczy cesarze rzymscy`
+[Sun Jan 01 17:15:03 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:03 CET 2017] Server responses (elo) : `SUCCESS 8 10 Żeńskie imiona łacińskie`
+[Sun Jan 01 17:15:04 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:04 CET 2017] Server responses (elo) : `SUCCESS 5 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:15:07 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:07 CET 2017] Server responses (elo) : `SUCCESS 7 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:15:08 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:08 CET 2017] Server responses (elo) : `SUCCESS 9 10 Goniądz (gmina)`
+[Sun Jan 01 17:15:09 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:09 CET 2017] Server responses (elo) : `SUCCESS 5 10 Moszawy`
+[Sun Jan 01 17:15:10 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:10 CET 2017] Server responses (elo) : `SUCCESS 10 10 Tolkmicko (gmina)`
+[Sun Jan 01 17:15:18 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:15:18 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:15:23 CET 2017] Client requests (elo) : `DISCOVER t `
+[Sun Jan 01 17:15:23 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:15:28 CET 2017] Client requests (elo) : `DISCOVER o `
+[Sun Jan 01 17:15:28 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:32 CET 2017] Client requests (elo) : `DISCOVER c `
+[Sun Jan 01 17:15:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:35 CET 2017] Client requests (elo) : `DISCOVER m `
+[Sun Jan 01 17:15:35 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:37 CET 2017] Client requests (elo) : `DISCOVER c `
+[Sun Jan 01 17:15:37 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:44 CET 2017] Client requests (elo) : `DISCOVER a `
+[Sun Jan 01 17:15:44 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:44 CET 2017] Client requests (elo) : `DISCOVER a `
+[Sun Jan 01 17:15:44 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:45 CET 2017] Client requests (elo) : `DISCOVER a `
+[Sun Jan 01 17:15:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:45 CET 2017] Client requests (elo) : `DISCOVER a `
+[Sun Jan 01 17:15:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:46 CET 2017] Client requests (elo) : `DISCOVER a `
+[Sun Jan 01 17:15:46 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE FALSE FALSE FALSE FALSE FALSE o FALSE o `
+[Sun Jan 01 17:15:46 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:15:46 CET 2017] Server responses (elo) : `SUCCESS Przybyłowo – wieś w Polsce położona w województwie warmińsko-mazurskim, w powiecie elbląskim, w gminie Tolkmicko na Wysoczyźnie Elbląskiej.
+W latach 1975–1998 miejscowość administracyjnie należała do województwa elbląskiego.
+
+`
+[Sun Jan 01 17:15:54 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:15:54 CET 2017] Server responses (elo) : `SUCCESS 6 10 Miejscowości departamentu Côte-d'Or`
+[Sun Jan 01 17:16:07 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:16:07 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:16:17 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:16:19 CET 2017] Server responses (elo) : `SUCCESS 9 10 Dzielnice i osiedla Grodziska Wielkopolskiego`
+[Sun Jan 01 17:17:03 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:17:03 CET 2017] Server responses (elo) : `SUCCESS 10 10 Narzędzia skrawające`
+[Sun Jan 01 17:17:51 CET 2017] User has disconnected.
+[Sun Jan 01 17:18:00 CET 2017] User has connected.
+[Sun Jan 01 17:18:06 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:18:06 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:18:26 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:18:26 CET 2017] Server responses (elo) : `SUCCESS 2 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:18:34 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:34 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE `
+[Sun Jan 01 17:18:35 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:35 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE `
+[Sun Jan 01 17:18:36 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE `
+[Sun Jan 01 17:18:36 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE `
+[Sun Jan 01 17:18:36 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE `
+[Sun Jan 01 17:18:36 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE `
+[Sun Jan 01 17:18:36 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE `
+[Sun Jan 01 17:18:36 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE `
+[Sun Jan 01 17:18:37 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:37 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE `
+[Sun Jan 01 17:18:37 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:18:37 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE `
+[Sun Jan 01 17:18:37 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:18:37 CET 2017] Server responses (elo) : `SUCCESS Interactive Glide
+przeciwciało
+nagroda Ig Nobla
+iGoogle
+Ig`
+[Sun Jan 01 17:19:56 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:19:56 CET 2017] Server responses (elo) : `SUCCESS 9 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:20:42 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:20:42 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miejscowości departamentu Lot`
+[Sun Jan 01 17:23:36 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:23:38 CET 2017] Server responses (elo) : `SUCCESS 14 10 Podział administracyjny Południowej Afryki`
+[Sun Jan 01 17:26:36 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:26:37 CET 2017] Server responses (elo) : `SUCCESS 8 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:27:40 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:27:40 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miejscowości departamentu Hérault`
+[Sun Jan 01 17:28:00 CET 2017] User has disconnected.
+[Sun Jan 01 17:28:12 CET 2017] User has connected.
+[Sun Jan 01 17:28:18 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:28:18 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:28:37 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:37 CET 2017] Server responses (elo) : `SUCCESS 8 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:28:41 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:42 CET 2017] Server responses (elo) : `SUCCESS 11 10 Miejscowości departamentu Nièvre`
+[Sun Jan 01 17:28:43 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:43 CET 2017] Server responses (elo) : `SUCCESS 8 10 Cichorioideae`
+[Sun Jan 01 17:28:44 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:44 CET 2017] Server responses (elo) : `SUCCESS 7 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:28:45 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:45 CET 2017] Server responses (elo) : `SUCCESS 9 10 Ubrania męskie`
+[Sun Jan 01 17:28:45 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:46 CET 2017] Server responses (elo) : `SUCCESS 3 10 Bóstwa afrykańskie`
+[Sun Jan 01 17:28:46 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:47 CET 2017] Server responses (elo) : `SUCCESS 8 10 Boryspol`
+[Sun Jan 01 17:28:47 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:48 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miejscowości w regionie Basilicata`
+[Sun Jan 01 17:28:48 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:50 CET 2017] Server responses (elo) : `SUCCESS 9 10 Miasta królewskie I Rzeczypospolitej (województwo sandomierskie)`
+[Sun Jan 01 17:28:53 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:53 CET 2017] Server responses (elo) : `SUCCESS 7 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:28:54 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:54 CET 2017] Server responses (elo) : `SUCCESS 9 10 Ludy Afryki`
+[Sun Jan 01 17:28:55 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:55 CET 2017] Server responses (elo) : `SUCCESS 11 10 Miejscowości w prowincji Groningen`
+[Sun Jan 01 17:28:56 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:56 CET 2017] Server responses (elo) : `SUCCESS 4 10 Choroby bakteryjne`
+[Sun Jan 01 17:28:57 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:57 CET 2017] Server responses (elo) : `SUCCESS 8 10 Wsie w obwodzie rówieńskim`
+[Sun Jan 01 17:28:58 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:58 CET 2017] Server responses (elo) : `SUCCESS 7 10 Podział administracyjny Tuvalu`
+[Sun Jan 01 17:28:59 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:28:59 CET 2017] Server responses (elo) : `SUCCESS 10 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:29:00 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:00 CET 2017] Server responses (elo) : `SUCCESS 12 10 Gminy Gwatemali`
+[Sun Jan 01 17:29:01 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:03 CET 2017] Server responses (elo) : `SUCCESS 6 10 Miejscowości w regionie Kampania`
+[Sun Jan 01 17:29:04 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:05 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miasta w prefekturze Hokkaido`
+[Sun Jan 01 17:29:06 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:06 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miejscowości w regionie Piemont`
+[Sun Jan 01 17:29:07 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:07 CET 2017] Server responses (elo) : `SUCCESS 9 10 Bieliny (gmina)`
+[Sun Jan 01 17:29:08 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:08 CET 2017] Server responses (elo) : `SUCCESS 6 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:29:09 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:09 CET 2017] Server responses (elo) : `SUCCESS 9 10 Twórcy i wykonawcy muzyki elektronicznej`
+[Sun Jan 01 17:29:10 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:10 CET 2017] Server responses (elo) : `SUCCESS 8 10 Apple`
+[Sun Jan 01 17:29:11 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:11 CET 2017] Server responses (elo) : `SUCCESS 7 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:29:11 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:12 CET 2017] Server responses (elo) : `SUCCESS 5 10 Zintegrowane środowisko programistyczne`
+[Sun Jan 01 17:29:12 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:12 CET 2017] Server responses (elo) : `SUCCESS 11 10 Muzycy house`
+[Sun Jan 01 17:29:13 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:13 CET 2017] Server responses (elo) : `SUCCESS 12 10 Zakony katolickie`
+[Sun Jan 01 17:29:14 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:14 CET 2017] Server responses (elo) : `SUCCESS 7 10 Lotnicze przeciwokrętowe pociski rakietowe`
+[Sun Jan 01 17:29:14 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:16 CET 2017] Server responses (elo) : `SUCCESS 12 10 Wargaczowate`
+[Sun Jan 01 17:29:17 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:18 CET 2017] Server responses (elo) : `SUCCESS 5 10 Lamnowate`
+[Sun Jan 01 17:29:19 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:20 CET 2017] Server responses (elo) : `SUCCESS 5 10 Miejscowości w gminie Aseri`
+[Sun Jan 01 17:29:21 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:21 CET 2017] Server responses (elo) : `SUCCESS 8 10 Facje`
+[Sun Jan 01 17:29:22 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:23 CET 2017] Server responses (elo) : `SUCCESS 8 10 Powiat Bernkastel-Wittlich`
+[Sun Jan 01 17:29:23 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:24 CET 2017] Server responses (elo) : `SUCCESS 9 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:29:26 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:26 CET 2017] Server responses (elo) : `SUCCESS 10 10 Mirosławiec (gmina)`
+[Sun Jan 01 17:29:28 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:29:28 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:29:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:29:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:29:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:29:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:32 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:33 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:33 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:33 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:33 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:33 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:33 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:34 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:34 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:34 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:34 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:34 CET 2017] Client requests (elo) : `DISCOVER i `
+[Sun Jan 01 17:29:34 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:29:34 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:29:34 CET 2017] Server responses (elo) : `SUCCESS Jabłonkowo – niewielka osada w Polsce położona w województwie zachodniopomorskim, w powiecie wałeckim, w gminie Mirosławiec.
+W latach 1975–1998 miejscowość administracyjnie należała do województwa pilskiego.`
+[Sun Jan 01 17:29:36 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:36 CET 2017] Server responses (elo) : `SUCCESS 5 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:29:37 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:38 CET 2017] Server responses (elo) : `SUCCESS 8 10 Wsie w hrabstwie Lincolnshire`
+[Sun Jan 01 17:29:38 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:38 CET 2017] Server responses (elo) : `SUCCESS 12 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:29:39 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:39 CET 2017] Server responses (elo) : `SUCCESS 16 10 Powiat Leer`
+[Sun Jan 01 17:29:39 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:41 CET 2017] Server responses (elo) : `SUCCESS 9 10 Okresy godowe`
+[Sun Jan 01 17:29:41 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:41 CET 2017] Server responses (elo) : `SUCCESS 6 10 Single Björk`
+[Sun Jan 01 17:29:41 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:41 CET 2017] Server responses (elo) : `SUCCESS 7 10 Łoniów (gmina)`
+[Sun Jan 01 17:29:41 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:42 CET 2017] Server responses (elo) : `SUCCESS 7 10 Lubawa (gmina wiejska)`
+[Sun Jan 01 17:29:42 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:43 CET 2017] Server responses (elo) : `SUCCESS 8 10 Grajewo (gmina wiejska)`
+[Sun Jan 01 17:29:43 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:43 CET 2017] Server responses (elo) : `SUCCESS 6 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:29:44 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:44 CET 2017] Server responses (elo) : `SUCCESS 5 10 Alternatywne klienty sieci Gadu-Gadu`
+[Sun Jan 01 17:29:44 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:45 CET 2017] Server responses (elo) : `SUCCESS 6 10 Bóstwa mikronezyjskie`
+[Sun Jan 01 17:29:45 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:45 CET 2017] Server responses (elo) : `SUCCESS 10 10 Żytno (gmina)`
+[Sun Jan 01 17:29:45 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:46 CET 2017] Server responses (elo) : `SUCCESS 7 10 Obrazkowate`
+[Sun Jan 01 17:29:46 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:47 CET 2017] Server responses (elo) : `SUCCESS 5 10 Miejscowości w regionie Lombardia`
+[Sun Jan 01 17:29:47 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:48 CET 2017] Server responses (elo) : `SUCCESS 10 10 Dokumenty`
+[Sun Jan 01 17:29:48 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:29:48 CET 2017] Server responses (elo) : `SUCCESS 7 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:30:26 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:26 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:28 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:28 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:28 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:28 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:29 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:29 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:30 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:30 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:30 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:30 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:30 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:30 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:30:31 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:30:31 CET 2017] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Sun Jan 01 17:30:31 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:30:31 CET 2017] Server responses (elo) : `SUCCESS skoczki (owady) – owady z rzędu pluskwiaków
+skoczki (ssaki) (Dipodinae) – podrodzina ssaków z rzędu gryzoni`
+[Sun Jan 01 17:30:48 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:30:50 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miejscowości departamentu Indre`
+[Sun Jan 01 17:45:47 CET 2017] User has connected.
+[Sun Jan 01 17:45:50 CET 2017] Client requests : `auth elo ziom`
+[Sun Jan 01 17:45:50 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:45:51 CET 2017] Client requests (elo) : `start`
+[Sun Jan 01 17:45:51 CET 2017] Server responses (elo) : `EXCEPTION EXCEPTION START must have one argument.`
+[Sun Jan 01 17:45:55 CET 2017] Client requests (elo) : `start 1`
+[Sun Jan 01 17:45:56 CET 2017] Server responses (elo) : `SUCCESS 8 1 Powiat Märkisch-Oderland`
+[Sun Jan 01 17:45:57 CET 2017] Client requests (elo) : `e`
+[Sun Jan 01 17:45:57 CET 2017] Server responses (elo) : `EXCEPTION E is not recognizable command.`
+[Sun Jan 01 17:45:59 CET 2017] Client requests (elo) : `discover e`
+[Sun Jan 01 17:45:59 CET 2017] Server responses (elo) : `SUCCESS FALSE 1 1 FALSE e FALSE FALSE e FALSE FALSE e `
+[Sun Jan 01 17:46:12 CET 2017] Client requests (elo) : `discover a`
+[Sun Jan 01 17:46:12 CET 2017] Server responses (elo) : `SUCCESS TRUE 1 0 FALSE e FALSE FALSE e FALSE FALSE e `
+[Sun Jan 01 17:46:18 CET 2017] Client requests (elo) : `discover a`
+[Sun Jan 01 17:46:18 CET 2017] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Sun Jan 01 17:46:23 CET 2017] Client requests (elo) : `discover o`
+[Sun Jan 01 17:46:23 CET 2017] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Sun Jan 01 17:46:25 CET 2017] Client requests (elo) : `discover e`
+[Sun Jan 01 17:46:25 CET 2017] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Sun Jan 01 17:46:26 CET 2017] Client requests (elo) : `discover i`
+[Sun Jan 01 17:46:26 CET 2017] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Sun Jan 01 17:46:28 CET 2017] Client requests (elo) : `stop`
+[Sun Jan 01 17:46:28 CET 2017] Server responses (elo) : `EXCEPTION STOP is not recognizable command.`
+[Sun Jan 01 17:46:38 CET 2017] Client requests (elo) : `start 1`
+[Sun Jan 01 17:46:38 CET 2017] Server responses (elo) : `SUCCESS 10 1 Bilbile`
+[Sun Jan 01 17:46:42 CET 2017] Client requests (elo) : `g`
+[Sun Jan 01 17:46:42 CET 2017] Server responses (elo) : `EXCEPTION G is not recognizable command.`
+[Sun Jan 01 17:46:50 CET 2017] Client requests (elo) : `discover g`
+[Sun Jan 01 17:46:50 CET 2017] Server responses (elo) : `SUCCESS TRUE 1 0 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:46:53 CET 2017] Client requests (elo) : `start 10`
+[Sun Jan 01 17:46:54 CET 2017] Server responses (elo) : `SUCCESS 10 10 Herby szlacheckie o niewiadomych barwach`
+[Sun Jan 01 17:47:33 CET 2017] User has disconnected.
+[Sun Jan 01 17:48:43 CET 2017] User has connected.
+[Sun Jan 01 17:48:53 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:48:53 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 17:48:58 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:48:59 CET 2017] Server responses (elo) : `SUCCESS 8 10 Wsie w hrabstwie Hampshire`
+[Sun Jan 01 17:49:01 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:01 CET 2017] Server responses (elo) : `SUCCESS 5 10 Kibuce`
+[Sun Jan 01 17:49:03 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:03 CET 2017] Server responses (elo) : `SUCCESS 5 10 Historia techniki`
+[Sun Jan 01 17:49:04 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:06 CET 2017] Server responses (elo) : `SUCCESS 6 10 Airbus`
+[Sun Jan 01 17:49:07 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:07 CET 2017] Server responses (elo) : `SUCCESS 5 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:49:08 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:09 CET 2017] Server responses (elo) : `SUCCESS 12 10 Amerykańskie telewizyjne seriale sensacyjne`
+[Sun Jan 01 17:49:10 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:10 CET 2017] Server responses (elo) : `SUCCESS 8 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:49:11 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:11 CET 2017] Server responses (elo) : `SUCCESS 5 10 Tomsk`
+[Sun Jan 01 17:49:12 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:13 CET 2017] Server responses (elo) : `SUCCESS 9 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:49:13 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:16 CET 2017] Server responses (elo) : `SUCCESS 7 10 Aminy aromatyczne`
+[Sun Jan 01 17:49:18 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:18 CET 2017] Server responses (elo) : `SUCCESS 9 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:49:19 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:20 CET 2017] Server responses (elo) : `SUCCESS 8 10 Bóstwa celtyckie`
+[Sun Jan 01 17:49:21 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:22 CET 2017] Server responses (elo) : `SUCCESS 8 10 Granowo (gmina)`
+[Sun Jan 01 17:49:22 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:23 CET 2017] Server responses (elo) : `SUCCESS 10 10 Formy ukształtowania terenu`
+[Sun Jan 01 17:49:24 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:24 CET 2017] Server responses (elo) : `SUCCESS 8 10 Powiat Westerwald`
+[Sun Jan 01 17:49:25 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:49:26 CET 2017] Server responses (elo) : `SUCCESS 8 10 Strony ujednoznaczniające`
+[Sun Jan 01 17:49:30 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:30 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:30 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:30 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:31 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:31 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:31 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:31 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:31 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:31 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:31 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:31 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:31 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:31 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:33 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:34 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:34 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:35 CET 2017] Client requests (elo) : `DISCOVER A `
+[Sun Jan 01 17:49:35 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 17:49:35 CET 2017] Client requests (elo) : `INFO  `
+[Sun Jan 01 17:49:35 CET 2017] Server responses (elo) : `SUCCESS 2 miejscowości w Polsce:
+Wężowiec - wieś w woj. mazowieckim, w pow. grójeckim, w gminie Mogielnica
+Wężowiec - wieś w woj. pomorskim, w pow. nowodworskim, w gminie Nowy Dwór Gdański
+1 część miejscowości w Polsce:
+Wężowiec - część miasta Niepołomice w województwie małopolskim, w powiecie wielickim, w gminie Niepołomice`
+[Sun Jan 01 17:50:13 CET 2017] Client requests (elo) : `START 10 `
+[Sun Jan 01 17:50:13 CET 2017] Server responses (elo) : `SUCCESS 7 10 Pałecznica (gmina)`
+[Sun Jan 01 17:51:02 CET 2017] User has disconnected.
+[Sun Jan 01 17:54:45 CET 2017] User has connected.
+[Sun Jan 01 17:54:50 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 17:54:50 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:01:47 CET 2017] Server has started.
+[Sun Jan 01 18:01:50 CET 2017] User has connected.
+[Sun Jan 01 18:01:55 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 18:01:55 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:02:07 CET 2017] User has disconnected.
+[Sun Jan 01 18:17:24 CET 2017] User has connected.
+[Sun Jan 01 18:17:29 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 18:17:29 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:17:47 CET 2017] User has disconnected.
+[Sun Jan 01 18:17:55 CET 2017] User has connected.
+[Sun Jan 01 18:18:11 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 18:18:11 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:19:44 CET 2017] User has disconnected.
+[Sun Jan 01 18:19:47 CET 2017] User has connected.
+[Sun Jan 01 18:19:51 CET 2017] Client requests : `AUTH elo ziom `
+[Sun Jan 01 18:19:51 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:26:37 CET 2017] Server has started.
+[Sun Jan 01 18:26:41 CET 2017] User has connected.
+[Sun Jan 01 18:27:27 CET 2017] User has disconnected.
+[Sun Jan 01 18:27:54 CET 2017] User has connected.
+[Sun Jan 01 18:27:59 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 18:27:59 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:28:01 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:28:03 CET 2017] Server responses (elo) : `SUCCESS 8 10 Azja Centralna`
+[Sun Jan 01 18:28:08 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:28:08 CET 2017] Server responses (elo) : `SUCCESS 6 10 Andaluzja`
+[Sun Jan 01 18:28:09 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:28:10 CET 2017] Server responses (elo) : `SUCCESS 9 10 Geografia historyczna starożytności`
+[Sun Jan 01 18:28:14 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:14 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:14 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:14 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:15 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:15 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:15 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:15 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:16 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:16 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:16 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:16 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:16 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:28:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:21 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:28:21 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:23 CET 2017] Client requests (elo) : `DISCOVER o`
+[Sun Jan 01 18:28:23 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE a FALSE FALSE FALSE a `
+[Sun Jan 01 18:28:24 CET 2017] Client requests (elo) : `DISCOVER i`
+[Sun Jan 01 18:28:24 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE i FALSE a FALSE FALSE i a `
+[Sun Jan 01 18:28:27 CET 2017] Client requests (elo) : `DISCOVER u`
+[Sun Jan 01 18:28:27 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE i FALSE a FALSE FALSE i a `
+[Sun Jan 01 18:28:32 CET 2017] Client requests (elo) : `DISCOVER l`
+[Sun Jan 01 18:28:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE i FALSE a FALSE FALSE i a `
+[Sun Jan 01 18:28:35 CET 2017] Client requests (elo) : `DISCOVER d`
+[Sun Jan 01 18:28:35 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE i FALSE a FALSE FALSE i a `
+[Sun Jan 01 18:28:36 CET 2017] Client requests (elo) : `DISCOVER n`
+[Sun Jan 01 18:28:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE i n a FALSE FALSE i a `
+[Sun Jan 01 18:28:38 CET 2017] Client requests (elo) : `DISCOVER m`
+[Sun Jan 01 18:28:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE i n a FALSE FALSE i a `
+[Sun Jan 01 18:28:40 CET 2017] Client requests (elo) : `DISCOVER t`
+[Sun Jan 01 18:28:40 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 T FALSE i n a FALSE FALSE i a `
+[Sun Jan 01 18:28:44 CET 2017] Client requests (elo) : `DISCOVER r`
+[Sun Jan 01 18:28:44 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 T r i n a FALSE r i a `
+[Sun Jan 01 18:28:50 CET 2017] Client requests (elo) : `DISCOVER d`
+[Sun Jan 01 18:28:50 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 T r i n a FALSE r i a `
+[Sun Jan 01 18:28:57 CET 2017] Client requests (elo) : `DISCOVER p`
+[Sun Jan 01 18:28:57 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 T r i n a FALSE r i a `
+[Sun Jan 01 18:29:04 CET 2017] Client requests (elo) : `DISCOVER b`
+[Sun Jan 01 18:29:04 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 T r i n a FALSE r i a `
+[Sun Jan 01 18:29:11 CET 2017] Client requests (elo) : `DISCOVER g`
+[Sun Jan 01 18:29:11 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 T r i n a FALSE r i a `
+[Sun Jan 01 18:29:11 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 18:29:11 CET 2017] Server responses (elo) : `SUCCESS Trinacria – alternatywna nazwa Sycylii używana od czasów antycznych. Pochodzi od nazwy wyspy Thrinacia, na którą zawędrował Odyseusz, a którą identyfikuje się z Sycylią. Może również pochodzić od Triskelionu, godła wyspy znanego od czasów antycznych. Rdzeń nazwy tri może również nawiązywać do trzech półwyspów wyspy: Peloro, Passero i Lilibelo (zarys Sycylii geometrycznie jest wpisany w trójkąt) lub od liczby trzech plemion zamieszkujących wyspę przed grecką kolonizacją.`
+[Sun Jan 01 18:29:32 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:33 CET 2017] Server responses (elo) : `SUCCESS 9 10 Metro w Tbilisi`
+[Sun Jan 01 18:29:34 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:34 CET 2017] Server responses (elo) : `SUCCESS 6 10 Dawne prowincje Chin`
+[Sun Jan 01 18:29:34 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:36 CET 2017] Server responses (elo) : `SUCCESS 7 10 Lubiewo (gmina)`
+[Sun Jan 01 18:29:38 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:38 CET 2017] Server responses (elo) : `SUCCESS 9 10 Wsie w Botswanie`
+[Sun Jan 01 18:29:38 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:39 CET 2017] Server responses (elo) : `SUCCESS 12 10 Obrazkowate`
+[Sun Jan 01 18:29:39 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:39 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miasta w regionie Waikato`
+[Sun Jan 01 18:29:40 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:40 CET 2017] Server responses (elo) : `SUCCESS 5 10 Arytmetyka`
+[Sun Jan 01 18:29:41 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:41 CET 2017] Server responses (elo) : `SUCCESS 6 10 Polskie nazwiska`
+[Sun Jan 01 18:29:42 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:42 CET 2017] Server responses (elo) : `SUCCESS 9 10 Konstruktorzy Formuły 1 (tylko Indianapolis 500)`
+[Sun Jan 01 18:29:43 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:43 CET 2017] Server responses (elo) : `SUCCESS 6 10 Izbica Kujawska (gmina)`
+[Sun Jan 01 18:29:44 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:44 CET 2017] Server responses (elo) : `SUCCESS 8 10 Choroby narządów zmysłów`
+[Sun Jan 01 18:29:45 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:45 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miejscowości Iranu`
+[Sun Jan 01 18:29:46 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:47 CET 2017] Server responses (elo) : `SUCCESS 9 10 Dzielnice i osiedla Poznania`
+[Sun Jan 01 18:29:48 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:49 CET 2017] Server responses (elo) : `SUCCESS 7 10 Kłoczew (gmina)`
+[Sun Jan 01 18:29:49 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:50 CET 2017] Server responses (elo) : `SUCCESS 9 10 Wiżajny (gmina)`
+[Sun Jan 01 18:29:50 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:50 CET 2017] Server responses (elo) : `SUCCESS 7 10 Leki przeciwbólowe`
+[Sun Jan 01 18:29:51 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:51 CET 2017] Server responses (elo) : `SUCCESS 8 10 Chęciny (gmina)`
+[Sun Jan 01 18:29:52 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:53 CET 2017] Server responses (elo) : `SUCCESS 11 10 Miejscowości departamentu Aude`
+[Sun Jan 01 18:29:54 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:56 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miasta w stanie Connecticut`
+[Sun Jan 01 18:29:57 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:57 CET 2017] Server responses (elo) : `SUCCESS 6 10 Miasta w Kenii`
+[Sun Jan 01 18:29:59 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:29:59 CET 2017] Server responses (elo) : `SUCCESS 6 10 Postacie z serii Opowieści z Narnii`
+[Sun Jan 01 18:30:00 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:01 CET 2017] Server responses (elo) : `EXCEPTION Read timed out`
+[Sun Jan 01 18:30:06 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:07 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miejscowości w gminie Ridala`
+[Sun Jan 01 18:30:25 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:25 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miejscowości w regionie Basilicata`
+[Sun Jan 01 18:30:28 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:29 CET 2017] Server responses (elo) : `SUCCESS 14 10 Melodia i harmonia`
+[Sun Jan 01 18:30:30 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:31 CET 2017] Server responses (elo) : `SUCCESS 10 10 Style wzornictwa`
+[Sun Jan 01 18:30:32 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:32 CET 2017] Server responses (elo) : `SUCCESS 8 10 Rejon trembowelski`
+[Sun Jan 01 18:30:33 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:34 CET 2017] Server responses (elo) : `SUCCESS 11 10 Sienno (gmina)`
+[Sun Jan 01 18:30:35 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:35 CET 2017] Server responses (elo) : `SUCCESS 11 10 Kreodonty`
+[Sun Jan 01 18:30:36 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:36 CET 2017] Server responses (elo) : `SUCCESS 6 10 Miejscowości departamentu Ain`
+[Sun Jan 01 18:30:37 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:37 CET 2017] Server responses (elo) : `SUCCESS 6 10 Miejscowości w powiecie Kieżmark`
+[Sun Jan 01 18:30:38 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:38 CET 2017] Server responses (elo) : `SUCCESS 4 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:30:41 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:41 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:41 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:41 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:41 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:42 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:42 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:42 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:42 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:42 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:42 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:43 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:43 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:43 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:43 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:30:43 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 18:30:43 CET 2017] Server responses (elo) : `SUCCESS Dżos – miasto w Nigerii
+Dżos – wyżyna w Nigerii`
+[Sun Jan 01 18:30:48 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:30:48 CET 2017] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Sun Jan 01 18:30:50 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:30:52 CET 2017] Server responses (elo) : `SUCCESS 9 10 Wieżowce`
+[Sun Jan 01 18:31:18 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:31:20 CET 2017] Server responses (elo) : `EXCEPTION Read timed out`
+[Sun Jan 01 18:31:25 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:31:25 CET 2017] Server responses (elo) : `SUCCESS 10 10 Ustrzyki Dolne (gmina)`
+[Sun Jan 01 18:31:28 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:31:28 CET 2017] Server responses (elo) : `SUCCESS 7 10 Mechanika`
+[Sun Jan 01 18:31:29 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:31:29 CET 2017] Server responses (elo) : `SUCCESS 6 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:31:33 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:31:33 CET 2017] Server responses (elo) : `SUCCESS 11 10 Ceratozaury`
+[Sun Jan 01 18:31:35 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:31:35 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE a FALSE FALSE FALSE a FALSE FALSE FALSE `
+[Sun Jan 01 18:32:46 CET 2017] Server has started.
+[Sun Jan 01 18:32:49 CET 2017] User has connected.
+[Sun Jan 01 18:32:52 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 18:32:52 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:32:57 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:32:58 CET 2017] Server responses (elo) : `SUCCESS 12 10 Postępowanie administracyjne`
+[Sun Jan 01 18:33:00 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:01 CET 2017] Server responses (elo) : `SUCCESS 7 10 Dzieła sztuki użytkowej`
+[Sun Jan 01 18:33:01 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:02 CET 2017] Server responses (elo) : `SUCCESS 8 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:33:05 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:33:05 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 18:33:05 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:33:05 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 18:33:05 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:33:05 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 18:33:05 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:33:05 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 18:33:10 CET 2017] Client requests (elo) : `DISCOVER l`
+[Sun Jan 01 18:33:10 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:10 CET 2017] Client requests (elo) : `DISCOVER l`
+[Sun Jan 01 18:33:10 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:15 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:15 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:15 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:15 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:16 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:16 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:16 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:17 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:17 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:17 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:17 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:18 CET 2017] Client requests (elo) : `DISCOVER w`
+[Sun Jan 01 18:33:18 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE FALSE FALSE l a FALSE FALSE `
+[Sun Jan 01 18:33:18 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 18:33:18 CET 2017] Server responses (elo) : `SUCCESS Everlast – amerykański raper, członek grupy House of Pain
+Everlast – marka sprzętu bokserskiego`
+[Sun Jan 01 18:33:21 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:21 CET 2017] Server responses (elo) : `SUCCESS 5 10 Buddyzm tybetański`
+[Sun Jan 01 18:33:23 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:24 CET 2017] Server responses (elo) : `SUCCESS 7 10 Teatr`
+[Sun Jan 01 18:33:27 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:27 CET 2017] Server responses (elo) : `SUCCESS 6 10 Wsie w hrabstwie Warwickshire`
+[Sun Jan 01 18:33:28 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:28 CET 2017] Server responses (elo) : `SUCCESS 7 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:33:28 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:29 CET 2017] Server responses (elo) : `SUCCESS 6 10 Argonauci`
+[Sun Jan 01 18:33:29 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:29 CET 2017] Server responses (elo) : `SUCCESS 9 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:33:29 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:30 CET 2017] Server responses (elo) : `SUCCESS 5 10 Pasłęk (gmina)`
+[Sun Jan 01 18:33:30 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:31 CET 2017] Server responses (elo) : `SUCCESS 9 10 Lesznowola (gmina)`
+[Sun Jan 01 18:33:31 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:33:32 CET 2017] Server responses (elo) : `SUCCESS 8 10 Gminy Andaluzji`
+[Sun Jan 01 18:33:36 CET 2017] User has disconnected.
+[Sun Jan 01 18:34:14 CET 2017] Server has started.
+[Sun Jan 01 18:34:19 CET 2017] User has connected.
+[Sun Jan 01 18:34:23 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 18:34:23 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:34:27 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:34:28 CET 2017] Server responses (elo) : `SUCCESS 7 10 Seks grupowy`
+[Sun Jan 01 18:35:46 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:35:46 CET 2017] Server responses (elo) : `SUCCESS 10 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:35:57 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:35:57 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:35:59 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:35:59 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:35:59 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:35:59 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:35:59 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:35:59 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:35:59 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:35:59 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:36:00 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:36:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:36:00 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:36:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:36:00 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:36:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:36:00 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:36:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:36:00 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:36:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:36:01 CET 2017] Client requests (elo) : `DISCOVER y`
+[Sun Jan 01 18:36:01 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:36:01 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 18:36:01 CET 2017] Server responses (elo) : `SUCCESS Miejscowości w Polsce:
+Białebłoto-Kobyla
+Białebłoto-Kurza
+Białebłoto-Stara Wieś
+Białe Błoto
+Białe Błota`
+[Sun Jan 01 18:36:09 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:09 CET 2017] Server responses (elo) : `SUCCESS 7 10 Trzebinia (gmina)`
+[Sun Jan 01 18:36:10 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:10 CET 2017] Server responses (elo) : `SUCCESS 10 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:36:11 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:11 CET 2017] Server responses (elo) : `SUCCESS 5 10 Miejscowości departamentu Sekwana i Marna`
+[Sun Jan 01 18:36:11 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:12 CET 2017] Server responses (elo) : `SUCCESS 6 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:36:12 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:12 CET 2017] Server responses (elo) : `SUCCESS 11 10 Nurzec-Stacja (gmina)`
+[Sun Jan 01 18:36:13 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:14 CET 2017] Server responses (elo) : `SUCCESS 11 10 Teropody`
+[Sun Jan 01 18:36:14 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:14 CET 2017] Server responses (elo) : `SUCCESS 11 10 Michałowice (gmina w województwie małopolskim)`
+[Sun Jan 01 18:36:14 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:36:16 CET 2017] Server responses (elo) : `SUCCESS 3 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:36:34 CET 2017] User has disconnected.
+[Sun Jan 01 18:37:14 CET 2017] Server has started.
+[Sun Jan 01 18:37:14 CET 2017] Server has failed to initialize. Closing...
+[Sun Jan 01 18:37:20 CET 2017] User has connected.
+[Sun Jan 01 18:37:24 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 18:37:24 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:37:26 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:37:26 CET 2017] Server responses (elo) : `SUCCESS 10 10 Miejscowości w regionie Kampania`
+[Sun Jan 01 18:37:28 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:37:28 CET 2017] Server responses (elo) : `SUCCESS 6 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:37:31 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:31 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:32 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:32 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:32 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:33 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:33 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:33 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:33 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:33 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:33 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:33 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:37:33 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:37:33 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 18:37:33 CET 2017] Server responses (elo) : `SUCCESS Eiffel - język programowania
+Gustave Eiffel - francuski inżynier
+Podobne:
+Eifel - pasmo górskie i historyczna kraina w Niemczech
+Jean Effel - francuski rysownik`
+[Sun Jan 01 18:39:14 CET 2017] User has disconnected.
+[Sun Jan 01 18:39:22 CET 2017] Server has started.
+[Sun Jan 01 18:39:28 CET 2017] User has connected.
+[Sun Jan 01 18:39:32 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 18:39:32 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:39:34 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:39:35 CET 2017] Server responses (elo) : `SUCCESS 9 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:39:36 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:39:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:38 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:38 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:38 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:38 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:38 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:39 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:39 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:39 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:39 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:40 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 18:39:40 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:39:40 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 18:40:22 CET 2017] Server has started.
+[Sun Jan 01 18:40:26 CET 2017] User has connected.
+[Sun Jan 01 18:40:30 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 18:40:30 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 18:40:40 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:40:41 CET 2017] Server responses (elo) : `SUCCESS 9 10 Miejscowości departamentu Allier`
+[Sun Jan 01 18:40:42 CET 2017] Client requests (elo) : `START 10`
+[Sun Jan 01 18:40:42 CET 2017] Server responses (elo) : `SUCCESS 4 10 Strony ujednoznaczniające`
+[Sun Jan 01 18:40:45 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:45 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:45 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:45 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:46 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:46 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:46 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:46 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:46 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:46 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:46 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:46 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:46 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:46 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:47 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 18:40:47 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE FALSE FALSE FALSE `
+[Sun Jan 01 18:40:47 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 18:40:47 CET 2017] Server responses (elo) : `SUCCESS orły – nazwa kilkunastu gatunków ptaków drapieżnych z rodzaju Aquila i Hieraaetus, z rodziny jastrzębiowatych Miejscowości w Polsce Orły – wieś w woj. łódzkim, w pow. sieradzkim, w gminie Brąszewice Orły – wieś w woj. mazowieckim, w pow. warszawski zachodnim, w gminie Ożarów Mazowiecki Orły – wieś w woj. podkarpackim, w pow. przemyskim, w gminie Orły Nagrody Orły – Polskie Nagrody Filmowe Orły – nagroda dziennika „Rzeczpospolita”`
+[Sun Jan 01 18:42:01 CET 2017] User has disconnected.
+[Sun Jan 01 21:10:58 CET 2017] User has connected.
+[Sun Jan 01 21:11:10 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 21:11:10 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 21:11:59 CET 2017] Server has started.
+[Sun Jan 01 21:12:33 CET 2017] User has connected.
+[Sun Jan 01 21:12:37 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 21:12:37 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 21:12:39 CET 2017] Client requests (elo) : `AUTH elo ziom`
+[Sun Jan 01 21:12:39 CET 2017] Server responses (elo) : `FAIL Active user must log out first.`
+[Sun Jan 01 21:12:40 CET 2017] Client requests (elo) : `LOGOUT `
+[Sun Jan 01 21:12:40 CET 2017] Server responses : `SUCCESS`
+[Sun Jan 01 21:12:42 CET 2017] Client requests : `AUTH  `
+[Sun Jan 01 21:12:42 CET 2017] Server responses : `FAIL No active user.`
+[Sun Jan 01 21:12:48 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 21:12:48 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 21:12:51 CET 2017] Client requests (elo) : `AUTH  `
+[Sun Jan 01 21:12:51 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 21:12:54 CET 2017] Client requests (elo) : `LOGOUT `
+[Sun Jan 01 21:12:54 CET 2017] Server responses : `SUCCESS`
+[Sun Jan 01 21:12:55 CET 2017] Client requests : `AUTH  `
+[Sun Jan 01 21:12:55 CET 2017] Server responses : `FAIL No active user.`
+[Sun Jan 01 21:12:57 CET 2017] Client requests : `AUTH  `
+[Sun Jan 01 21:12:57 CET 2017] Server responses : `FAIL No active user.`
+[Sun Jan 01 21:12:59 CET 2017] Client requests : `CREATE  `
+[Sun Jan 01 21:12:59 CET 2017] Server responses : `EXCEPTION EXCEPTION CREATE must have 2 parameters.`
+[Sun Jan 01 21:13:18 CET 2017] Client requests : `AUTH `
+[Sun Jan 01 21:13:18 CET 2017] Server responses : `FAIL No active user.`
+[Sun Jan 01 21:13:18 CET 2017] Client requests : `LIST `
+[Sun Jan 01 21:13:18 CET 2017] Server responses : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Sun Jan 01 21:13:19 CET 2017] Client requests : `START 10`
+[Sun Jan 01 21:13:19 CET 2017] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Sun Jan 01 21:13:22 CET 2017] Client requests : `AUTH `
+[Sun Jan 01 21:13:22 CET 2017] Server responses : `FAIL No active user.`
+[Sun Jan 01 21:13:22 CET 2017] Client requests : `LIST `
+[Sun Jan 01 21:13:22 CET 2017] Server responses : `SUCCESS 1 user 140 2 alfa 120 3 gamma 20 4 jan 0 5 elo 20`
+[Sun Jan 01 21:13:23 CET 2017] Client requests : `START 10`
+[Sun Jan 01 21:13:23 CET 2017] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Sun Jan 01 21:13:31 CET 2017] Client requests : `START 10`
+[Sun Jan 01 21:13:31 CET 2017] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Sun Jan 01 21:13:40 CET 2017] User has disconnected.
+[Sun Jan 01 21:21:57 CET 2017] User has connected.
+[Sun Jan 01 21:22:05 CET 2017] User has disconnected.
+[Sun Jan 01 21:23:00 CET 2017] User has connected.
+[Sun Jan 01 21:23:12 CET 2017] User has disconnected.
+[Sun Jan 01 21:23:29 CET 2017] User has connected.
+[Sun Jan 01 21:23:31 CET 2017] User has disconnected.
+[Sun Jan 01 21:23:46 CET 2017] User has connected.
+[Sun Jan 01 21:23:50 CET 2017] Client requests : `START 1`
+[Sun Jan 01 21:23:50 CET 2017] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Sun Jan 01 21:23:52 CET 2017] Client requests : `START 1`
+[Sun Jan 01 21:23:52 CET 2017] Server responses : `FAIL Previous user authentication is needed to perform this action`
+[Sun Jan 01 21:23:57 CET 2017] Client requests : `LOGOUT `
+[Sun Jan 01 21:23:57 CET 2017] Server responses : `SUCCESS`
+[Sun Jan 01 21:24:04 CET 2017] Client requests : `AUTH elo ziom`
+[Sun Jan 01 21:24:04 CET 2017] Server responses (elo) : `SUCCESS 5 elo 20`
+[Sun Jan 01 21:24:07 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:10 CET 2017] Server responses (elo) : `SUCCESS 5 1 Sztabin (gmina)`
+[Sun Jan 01 21:24:14 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:14 CET 2017] Server responses (elo) : `SUCCESS 7 1 Gminy w dystrykcie Santarém`
+[Sun Jan 01 21:24:16 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:16 CET 2017] Server responses (elo) : `SUCCESS 7 1 Miejscowości departamentu Korsyka Południowa`
+[Sun Jan 01 21:24:19 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:21 CET 2017] Server responses (elo) : `SUCCESS 5 1 Barczewo (gmina)`
+[Sun Jan 01 21:24:23 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:26 CET 2017] Server responses (elo) : `SUCCESS 8 1 Wsie w hrabstwie North Yorkshire`
+[Sun Jan 01 21:24:27 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:27 CET 2017] Server responses (elo) : `SUCCESS 3 1 Strony ujednoznaczniające`
+[Sun Jan 01 21:24:29 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:29 CET 2017] Server responses (elo) : `SUCCESS 11 1 Epistemologia`
+[Sun Jan 01 21:24:30 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:32 CET 2017] Server responses (elo) : `SUCCESS 5 1 Strony ujednoznaczniające`
+[Sun Jan 01 21:24:33 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:33 CET 2017] Server responses (elo) : `SUCCESS 6 1 Emocje i motywacja`
+[Sun Jan 01 21:24:34 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:35 CET 2017] Server responses (elo) : `SUCCESS 8 1 Królowie Zachodniej Dynastii Zhou`
+[Sun Jan 01 21:24:36 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:36 CET 2017] Server responses (elo) : `SUCCESS 9 1 Powiat Greiz`
+[Sun Jan 01 21:24:37 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:37 CET 2017] Server responses (elo) : `SUCCESS 6 1 Programy narzędziowe`
+[Sun Jan 01 21:24:40 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:40 CET 2017] Server responses (elo) : `SUCCESS 9 1 Miasta w Górnej Austrii`
+[Sun Jan 01 21:24:43 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:43 CET 2017] Server responses (elo) : `SUCCESS 9 1 Miasta w stanie Indiana`
+[Sun Jan 01 21:24:45 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:46 CET 2017] Server responses (elo) : `SUCCESS 7 1 Miasta w prowincji Heilongjiang`
+[Sun Jan 01 21:24:47 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:48 CET 2017] Server responses (elo) : `SUCCESS 6 1 Gminy Galicji`
+[Sun Jan 01 21:24:49 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:50 CET 2017] Server responses (elo) : `SUCCESS 5 1 Miasta w Brandenburgii`
+[Sun Jan 01 21:24:50 CET 2017] Client requests (elo) : `START 1`
+[Sun Jan 01 21:24:51 CET 2017] Server responses (elo) : `SUCCESS 14 1 Dinozaury Indii i Madagaskaru`
+[Sun Jan 01 21:24:54 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 21:24:54 CET 2017] Server responses (elo) : `SUCCESS FALSE 1 1 FALSE FALSE FALSE FALSE a FALSE FALSE a FALSE FALSE FALSE a FALSE FALSE `
+[Sun Jan 01 21:24:56 CET 2017] Client requests (elo) : `DISCOVER z`
+[Sun Jan 01 21:24:56 CET 2017] Server responses (elo) : `SUCCESS FALSE 1 1 FALSE FALSE FALSE FALSE a FALSE FALSE a FALSE FALSE z a FALSE FALSE `
+[Sun Jan 01 21:24:59 CET 2017] Client requests (elo) : `DISCOVER u`
+[Sun Jan 01 21:24:59 CET 2017] Server responses (elo) : `SUCCESS FALSE 1 1 FALSE FALSE u FALSE a FALSE FALSE a FALSE FALSE z a u FALSE `
+[Sun Jan 01 21:25:01 CET 2017] Client requests (elo) : `DISCOVER r`
+[Sun Jan 01 21:25:01 CET 2017] Server responses (elo) : `SUCCESS FALSE 1 1 FALSE r u FALSE a FALSE FALSE a FALSE FALSE z a u r `
+[Sun Jan 01 21:25:05 CET 2017] Client requests (elo) : `DISCOVER o`
+[Sun Jan 01 21:25:05 CET 2017] Server responses (elo) : `SUCCESS FALSE 1 1 FALSE r u FALSE a FALSE FALSE a FALSE o z a u r `
+[Sun Jan 01 21:25:08 CET 2017] Client requests (elo) : `DISCOVER n`
+[Sun Jan 01 21:25:08 CET 2017] Server responses (elo) : `SUCCESS TRUE 1 0 FALSE r u FALSE a FALSE FALSE a FALSE o z a u r `
+[Sun Jan 01 21:25:08 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 21:25:08 CET 2017] Server responses (elo) : `SUCCESS Bruhatkajozaur (Bruhathkayosaurus matleyi) – zauropod z rodziny tytanozaurów (Titanosauridae); jego nazwa oznacza "jaszczura o ciężkim cielsku". Żył w epoce późnej kredy (ok. 70–65 mln lat temu) na terenach subkontynentu indyjskiego. Był to prawdopodobnie największy dinozaur. Mierzył on od 26 m do 34 m, a ważył 70-130 t. Rozmiary bruhatkajozaura szacuje się na podstawie kości piszczelowej o długości 200 cm oraz 75-centymetrowego biodra, a także olbrzymiej kości przedramienia o długości aż 234 cm, wydobytej z Formacji Kallamedu w Indiach (w stanie Tamil Nadu). Niektórzy paleontolodzy uważają, że jego rzekome skamieliny to po prostu kawałki drewna. Z tego powodu jest on obecnie uważany za nomen dubium - rodzaj niepewny.`
+[Sun Jan 01 21:25:27 CET 2017] Client requests (elo) : `DISCOVER n`
+[Sun Jan 01 21:25:27 CET 2017] Server responses (elo) : `FAIL Hangman ran out of lives.`
+[Sun Jan 01 21:26:13 CET 2017] Client requests (elo) : `START 5`
+[Sun Jan 01 21:26:14 CET 2017] Server responses (elo) : `SUCCESS 6 5 Ścinawa (gmina)`
+[Sun Jan 01 21:26:15 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 21:26:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 4 FALSE FALSE FALSE FALSE FALSE FALSE `
+[Sun Jan 01 21:26:18 CET 2017] Client requests (elo) : `START 5`
+[Sun Jan 01 21:26:19 CET 2017] Server responses (elo) : `SUCCESS 9 5 Miejscowości departamentu Moza`
+[Sun Jan 01 21:26:20 CET 2017] Client requests (elo) : `START 5`
+[Sun Jan 01 21:26:20 CET 2017] Server responses (elo) : `SUCCESS 10 5 Twardogóra (gmina)`
+[Sun Jan 01 21:26:21 CET 2017] Client requests (elo) : `START 5`
+[Sun Jan 01 21:26:22 CET 2017] Server responses (elo) : `SUCCESS 3 5 Strony ujednoznaczniające`
+[Sun Jan 01 21:26:22 CET 2017] Client requests (elo) : `START 5`
+[Sun Jan 01 21:26:23 CET 2017] Server responses (elo) : `SUCCESS 6 5 Miejscowości departamentu Górna Saona`
+[Sun Jan 01 21:26:24 CET 2017] Client requests (elo) : `START 5`
+[Sun Jan 01 21:26:24 CET 2017] Server responses (elo) : `SUCCESS 12 5 Polityka ZSRR`
+[Sun Jan 01 21:26:27 CET 2017] Client requests (elo) : `DISCOVER A`
+[Sun Jan 01 21:26:27 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 5 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE a FALSE FALSE a `
+[Sun Jan 01 21:26:34 CET 2017] Client requests (elo) : `DISCOVER d`
+[Sun Jan 01 21:26:34 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 4 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE a FALSE FALSE a `
+[Sun Jan 01 21:26:38 CET 2017] Client requests (elo) : `DISCOVER i`
+[Sun Jan 01 21:26:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 4 FALSE FALSE FALSE i FALSE FALSE i FALSE a FALSE FALSE a `
+[Sun Jan 01 21:26:39 CET 2017] Client requests (elo) : `DISCOVER e`
+[Sun Jan 01 21:26:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 4 FALSE FALSE FALSE i e FALSE i FALSE a FALSE FALSE a `
+[Sun Jan 01 21:26:41 CET 2017] Client requests (elo) : `DISCOVER n`
+[Sun Jan 01 21:26:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 4 FALSE FALSE FALSE i e n i FALSE a FALSE FALSE a `
+[Sun Jan 01 21:26:47 CET 2017] Client requests (elo) : `DISCOVER r`
+[Sun Jan 01 21:26:47 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 4 FALSE FALSE r i e n i FALSE a FALSE FALSE a `
+[Sun Jan 01 21:26:49 CET 2017] Client requests (elo) : `DISCOVER p`
+[Sun Jan 01 21:26:49 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 3 FALSE FALSE r i e n i FALSE a FALSE FALSE a `
+[Sun Jan 01 21:26:51 CET 2017] Client requests (elo) : `DISCOVER z`
+[Sun Jan 01 21:26:51 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 3 FALSE FALSE r i e n i z a FALSE FALSE a `
+[Sun Jan 01 21:26:54 CET 2017] Client requests (elo) : `DISCOVER k`
+[Sun Jan 01 21:26:54 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 3 K FALSE r i e n i z a FALSE FALSE a `
+[Sun Jan 01 21:26:59 CET 2017] Client requests (elo) : `DISCOVER u`
+[Sun Jan 01 21:26:59 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 2 K FALSE r i e n i z a FALSE FALSE a `
+[Sun Jan 01 21:27:12 CET 2017] Client requests (elo) : `DISCOVER o`
+[Sun Jan 01 21:27:12 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 2 K o r i e n i z a FALSE FALSE a `
+[Sun Jan 01 21:27:16 CET 2017] Client requests (elo) : `DISCOVER c`
+[Sun Jan 01 21:27:16 CET 2017] Server responses (elo) : `SUCCESS FALSE 5 2 K o r i e n i z a c FALSE a `
+[Sun Jan 01 21:27:18 CET 2017] Client requests (elo) : `DISCOVER j`
+[Sun Jan 01 21:27:18 CET 2017] Server responses (elo) : `SUCCESS TRUE 5 2 K o r i e n i z a c j a `
+[Sun Jan 01 21:27:18 CET 2017] Client requests (elo) : `INFO `
+[Sun Jan 01 21:27:18 CET 2017] Server responses (elo) : `SUCCESS Korienizacja (ros. коренизация) - narodowościowa polityka Związku Radzieckiego na początku lat 20. XX wieku. Polityka korienizacji została sformułowana w 1913 przez Józefa Stalina. Wprowadzanie jej w życie rozpoczęto po rewolucji październikowej. Korienizacja zakładała podział terytorialny wedle kryteriów narodowościowych, troskę o rozwój kultur poszczególnych narodów wchodzących uprzednio w skład Imperium Rosyjskiego, tworzenie lokalnych partii komunistycznych. Owocami korienizacji były m.in. utworzenie w Azji Środkowej republik narodowościowych (Uzbeckiej, Tadżyckiej, Kazachskiej, Kirgiskiej i Turkmeńskiej), wprowadzenie alfabetów do języków ałtajskich, a przede wszystkim polityka ukrainizacji w USRR w latach 1923-1929.`
+[Sun Jan 01 21:27:30 CET 2017] User has disconnected.
+[Sun Jan 01 21:28:01 CET 2017] User has connected.
+[Sun Jan 01 21:28:03 CET 2017] User has disconnected.
+[Sun Jan 01 21:28:29 CET 2017] User has connected.
+[Sun Jan 01 21:28:37 CET 2017] User has disconnected.
+[Sun Jan 01 21:28:53 CET 2017] User has connected.
+[Sun Jan 01 21:29:00 CET 2017] User has disconnected.
+[Sun Jan 01 21:30:53 CET 2017] User has connected.
+[Sun Jan 01 21:30:55 CET 2017] User has disconnected.

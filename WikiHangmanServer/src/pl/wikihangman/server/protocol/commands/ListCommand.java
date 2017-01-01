@@ -1,7 +1,6 @@
 package pl.wikihangman.server.protocol.commands;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.User;

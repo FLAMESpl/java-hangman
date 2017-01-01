@@ -8,10 +8,10 @@ package pl.wikihangman.server.models;
  */
 public class User {
     
-    int id;
-    String name;
-    String password;
-    long points;
+    private int id;
+    private String name;
+    private String password;
+    private long points;
     
     /**
      * 
@@ -94,5 +94,19 @@ public class User {
      */
     public boolean authenticate(String name, String password) {
         return this.name.equals(name) && this.password.equals(password);
+    }
+    
+    /**
+     * Grants user points for completed hangman based on amount of initial lives
+     * available. Formula is {@code 100/<initialLives>} where initialLives is
+     * from 1 to 10. Any other value will be ignored.
+     * 
+     * @param initialLives amount of lives available to solve keyword
+     */
+    public void score(int initialLives) {
+        
+        if (1 <= initialLives && initialLives <= 10) {
+            points += 100 / initialLives;
+        }
     }
 }

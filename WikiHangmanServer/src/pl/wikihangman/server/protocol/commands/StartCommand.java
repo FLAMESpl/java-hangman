@@ -2,11 +2,8 @@ package pl.wikihangman.server.protocol.commands;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-import org.apache.http.client.ClientProtocolException;
 import pl.wikihangman.server.exceptions.ServiceException;
 import pl.wikihangman.server.models.Hangman;
 import pl.wikihangman.server.models.User;
@@ -99,13 +96,14 @@ public class StartCommand extends Command {
     
     /**
      * Creates success response with hangman parameters as single string formatted
-     * as: SUCCESS [keyword's length] [max lives].
+     * as: SUCCESS [keyword's category] [keyword's length] [max lives].
      * 
      * @param hangman hangman to response
      * @return formatted success string
      */
     protected String success(Hangman hangman) {
         return success(Integer.toString(hangman.getKeywordsLength()), 
-                       Integer.toString(hangman.getMaxLives()));
+                       Integer.toString(hangman.getMaxLives()),
+                       hangman.getArticleCategory());
     }
 }

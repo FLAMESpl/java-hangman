@@ -8,12 +8,15 @@ package pl.wikihangman.views.logging;
  */
 public enum ErrorsEnum implements INotification {
     
+    APP_ARGS("Could not parse application arguments to ip address and port", "Startup Error"),
+    COMMUNICATION("Error has occured while sending / receiving data", "Network Error"),
     DB_IO("Could not read/write to database file.", "IO Error"),
     DB_FORMAT("Could not read from database, data is corrupted.", "Database Data Error"),
     DB_AUTH("Invalid credentials.", "Loggin In Error"),
     INPUT_NEED_SINGLE("Only single character is valid.", "Input Error"),
     INPUT_EMPTY("Input value cannot be empty.", "Input Error"),
-    NEED_AUTH("Log in first to perform requested action.", "Authorization failure");
+    NEED_AUTH("Log in first to perform requested action.", "Authorization failure"),
+    SOCKET_INIT("Could not establish communication with server.", "Tcp Socket Failure");
     
     private final String message;
     private final String title;

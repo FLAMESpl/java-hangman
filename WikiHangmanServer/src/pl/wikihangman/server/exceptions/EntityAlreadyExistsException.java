@@ -8,8 +8,6 @@ package pl.wikihangman.server.exceptions;
  */
 public class EntityAlreadyExistsException extends ServerException {
     
-    private final String field;
-    
     /**
      * 
      * @param field field on which duplication occurred, displayed in title 
@@ -18,13 +16,5 @@ public class EntityAlreadyExistsException extends ServerException {
      */
     public EntityAlreadyExistsException(String field, String value) {
         super(String.format("Entity with field `%1$s` of value `%2$s` already exists", field, value));
-        this.field = field;
-    }
-    
-    /**
-     * @return title of this notification
-     */
-    public String getTitle() {
-        return field + "must be unique";
     }
 }

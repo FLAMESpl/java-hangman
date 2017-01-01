@@ -8,7 +8,8 @@ package pl.wikihangman.views.logging;
 public enum ConfirmationsEnum implements INotification {
 
     USER_CREATED("User has been successfully created", "Success"),
-    USER_LOGGED("Successfully logged in", "Success");
+    USER_LOGGED_IN("Successfully logged in", "Success"),
+    USER_LOGGED_OUT("Successfully logged out", "Success");
     
     private final String message;
     private final String title;

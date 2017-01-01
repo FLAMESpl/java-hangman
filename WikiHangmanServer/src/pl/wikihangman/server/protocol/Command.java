@@ -1,6 +1,6 @@
 package pl.wikihangman.server.protocol;
 
-import java.util.Arrays;
+import pl.wikihangman.protocol.ProtocolResponse;
 import pl.wikihangman.server.exceptions.CommandOptionsException;
 import pl.wikihangman.server.exceptions.ServiceException;
 

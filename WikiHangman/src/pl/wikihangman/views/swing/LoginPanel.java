@@ -1,15 +1,12 @@
 package pl.wikihangman.views.swing;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import pl.wikihangman.exceptions.EntityAlreadyExistsException;
-import pl.wikihangman.models.User;
-import pl.wikihangman.services.AccountsService;
+import pl.wikihangman.client.ServerCommand;
+import pl.wikihangman.client.ServerResponse;
+import pl.wikihangman.client.TcpClient;
+import pl.wikihangman.protocol.ProtocolParseException;
 import pl.wikihangman.views.logging.ConfirmationsEnum;
 import pl.wikihangman.views.logging.ErrorsEnum;
-import pl.wikihangman.views.swing.events.LogInAttemptEvent;
-import pl.wikihangman.views.swing.events.LogInAttemptListener;
 import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
 
 /**
@@ -21,76 +18,32 @@ import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
  */
 public class LoginPanel extends AppPanel {
 
-    private List<LogInAttemptListener> logInAttemptListeners;
-    private AccountsService accountsService = null;
+    private TcpClient client;
             
     /**
      * Creates new form LoginPanel
+     * @param client tcp client to communicate with server
      */
-    public LoginPanel() {
+    public LoginPanel(TcpClient client) {
         initComponents();
-        logInAttemptListeners = new ArrayList<>();
+        this.client = client;
     }
     
     /**
-     * 
-     * @param accountsService service that will be used to authenticate users
-     * @return  this object
-     */
-    public LoginPanel setAccountsService(AccountsService accountsService) {
-        this.accountsService = accountsService;
-        return this;
-    }
-    
-    /**
-     * @param listener listener for log in attempt event
-     */
-    public void addLogInAttemptListener(LogInAttemptListener listener) {
-        logInAttemptListeners.add(listener);
-    }
-    
-    /**
-     * Raises given event by calling each registered listener.
-     * 
-     * @param event model containing event-related data
-     */
-    public void onLogInAttempt(LogInAttemptEvent event) {
-        
-        logInAttemptListeners.forEach(listener -> listener.attemptedToLogIn(event));
-    }
-    
-    /**
-     * Authenticates user using given credentials. Raises LogInAttempted event
-     * no matter if logging in was successful or not.
+     * Authenticates user using given credentials. 
      * 
      * @param name typed user's name
      * @param password typed user's password
      */
     private void authenticate(String name, String password) {
         
-        User user = null;
         try {
-            user = accountsService.authenticate(name, password);
-        } catch(IOException ioException) {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_IO);
-            return;
-        } catch(NumberFormatException numberFormatException) {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_FORMAT);
-            return;
+            client.send(ServerCommand.AUTH, name, password);
+            ServerResponse response = client.receive();
+            OptionPaneHelpers.showResponseMessage(this, response, ConfirmationsEnum.USER_LOGGED_IN);
+        } catch (IOException | ProtocolParseException exception) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.COMMUNICATION);
         }
-        
-        if (user == null) {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_AUTH);
-        } else {
-            OptionPaneHelpers.showInformationMessage(this, ConfirmationsEnum.USER_LOGGED);
-        }
-        
-        LogInAttemptEvent event = new LogInAttemptEvent(this)
-                .setSuccess(user != null)
-                .setLoggedUser(user)
-                .setUserName(name);
-               
-        onLogInAttempt(event);
     }
     
     /**
@@ -102,22 +55,13 @@ public class LoginPanel extends AppPanel {
      */
     private void signUp(String name, String password) {
         
-        if (name.isEmpty() || password.isEmpty()) {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.INPUT_EMPTY);
-            return;
-        }
-        
         try {
-            accountsService.register(name, password);
-        } catch (IOException ioException) {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_IO);
-            return;
-        } catch (EntityAlreadyExistsException alreadyExistsException) {
-            OptionPaneHelpers.showErrorMessage(this, alreadyExistsException);
-            return;
+            client.send(ServerCommand.CREATE, name, password);
+            ServerResponse response = client.receive();
+            OptionPaneHelpers.showResponseMessage(this, response, ConfirmationsEnum.USER_CREATED);
+        } catch (IOException | ProtocolParseException exception) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.COMMUNICATION);
         }
-        
-        OptionPaneHelpers.showInformationMessage(this, ConfirmationsEnum.USER_CREATED);
     }
 
     /**

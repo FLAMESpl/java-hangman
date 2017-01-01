@@ -3,8 +3,11 @@ package pl.wikihangman.views.swing;
 import java.io.IOException;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import pl.wikihangman.models.User;
-import pl.wikihangman.services.AccountsService;
+import pl.wikihangman.client.ServerCommand;
+import pl.wikihangman.client.ServerResponse;
+import pl.wikihangman.client.TcpClient;
+import pl.wikihangman.protocol.ProtocolParseException;
+import pl.wikihangman.protocol.ProtocolResponse;
 import pl.wikihangman.views.logging.ErrorsEnum;
 import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
 
@@ -14,35 +17,16 @@ import pl.wikihangman.views.swing.helpers.OptionPaneHelpers;
  * @version 1.0.0.0
  */
 public class ScoreBoardPanel extends AppPanel {
-
-    AccountsService accountService = null;
+    
+    private final TcpClient client;
     
     /**
      * Creates new form ScoreBoardPanel
+     * @param client tcp client to communicate with server
      */
-    public ScoreBoardPanel() {
+    public ScoreBoardPanel(TcpClient client) {
+        this.client = client;
         initComponents();
-    }
-    
-    /**
-     * 
-     * @param accountsService accounts service used to get user's list
-     * @return this object
-     */
-    public ScoreBoardPanel setAccountService(AccountsService accountsService) {
-        this.accountService = accountsService;
-        return this;
-    }
-    
-    /**
-     * Displays active's user score above score board.
-     * 
-     * @param user currently logged user
-     * @return this object
-     */
-    public ScoreBoardPanel showWithActiveUser(User user) {
-        userScoreLabel.setText(String.format("%1$s: %2$d", user.getName(), user.getPoints()));
-        return this;
     }
     
     /**
@@ -50,20 +34,59 @@ public class ScoreBoardPanel extends AppPanel {
      * @return this object
      */
     public ScoreBoardPanel displayScoreBoard() {
-        List<User> users = null;
+        
+        ServerResponse activeUser = null;
+        ServerResponse response = null;
+        
         try {
-            users = accountService.getPlayersList();
-        } catch (IOException ioException) {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_IO);
-            return this;
-        } catch (NumberFormatException numberFormatException) {
-            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.DB_FORMAT);
-            return this;
+            client.send(ServerCommand.AUTH);
+            response = client.receive();
+            ProtocolResponse type = response.getResponseType();
+            switch (type) {
+                default:
+                case EXCEPTION:
+                    OptionPaneHelpers.showResponseMessage(this, response);
+                    return this;
+                case FAIL:
+                    activeUser = null;
+                    break;
+                case SUCCESS:
+                    activeUser = response;
+                    break;
+            }
+            
+            client.send(ServerCommand.LIST);
+            response = client.receive();
+            if (response.getResponseType() != ProtocolResponse.SUCCESS) {
+                OptionPaneHelpers.showResponseMessage(this, response);
+                return this;
+            }
+        } catch (IOException | ProtocolParseException exception) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.COMMUNICATION);
         }
         
-        DefaultTableModel tableModel = (DefaultTableModel)scoreBoardTable.getModel();
-        users.forEach(u -> tableModel.addRow(new Object[]{u.getName(), u.getPoints()})); 
+        try {
+            fillTable(activeUser, response);
+        } catch (IndexOutOfBoundsException exception) {
+            OptionPaneHelpers.showErrorMessage(this, ErrorsEnum.COMMUNICATION);
+        }
         return this;
+    }
+    
+    private void fillTable(ServerResponse activeUser, ServerResponse usersList) 
+        throws IndexOutOfBoundsException {
+        
+        if (activeUser != null) {
+            userScoreLabel.setText(activeUser.getStringToken(2));
+        }
+        DefaultTableModel model = (DefaultTableModel)scoreBoardTable.getModel();
+        int i = 0;
+        while (i < usersList.getLength()) {
+            i++; // skip user's id
+            Object[] row = new Object[]{ usersList.getStringToken(i++), 
+                                         usersList.getLongToken(i++) };
+            model.addRow(row);
+        }
     }
 
     /**

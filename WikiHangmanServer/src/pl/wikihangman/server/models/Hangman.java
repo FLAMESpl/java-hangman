@@ -15,7 +15,8 @@ public class Hangman {
     
     private int maxLives;
     private int actualLives;
-    private long pageId; 
+    private String articleInformation;
+    private String articleCategory;
     private List<Letter> keyword;
     
     /**
@@ -40,11 +41,21 @@ public class Hangman {
     
     /**
      * 
-     * @param pageId wikipedia's page id of this keyword 
+     * @param articleCategory category information about keyword
      * @return this object
      */
-    public Hangman setPageId(long pageId) {
-        this.pageId = pageId;
+    public Hangman setArticleCategory(String articleCategory) {
+        this.articleCategory = articleCategory;
+        return this;
+    }
+    
+    /**
+     * 
+     * @param articleInformation article information about keyword
+     * @return this object
+     */
+    public Hangman setArticleInformation(String articleInformation) {
+        this.articleInformation = articleInformation;
         return this;
     }
     
@@ -92,18 +103,26 @@ public class Hangman {
     
     /**
      * 
-     * @return wikipedia's page id of this keyword 
-     */
-    public long getPageId() {
-        return pageId;
-    }
-    
-    /**
-     * 
      * @return current state of keyword in this riddle
      */
     public List<Letter> getKeyword() {
         return keyword;
+    }
+    
+    /**
+     * 
+     * @return article information about keyword
+     */
+    public String getArticleInformation() {
+        return articleInformation;
+    }
+    
+    /**
+     * 
+     * @return article category of this keyword
+     */
+    public String getArticleCategory() {
+        return articleCategory;
     }
     
     /**
@@ -135,5 +154,14 @@ public class Hangman {
      */
     public boolean hasUndiscoveredLetters() {
         return keyword.stream().anyMatch(x -> !x.isDiscovered());
+    }
+    
+    /**
+     * Tests if number of actual lives is higher than zero.
+     * 
+     * @return true if actual lives > 0
+     */
+    public boolean hasAnyLivesLeft() {
+        return actualLives > 0;
     }
 }

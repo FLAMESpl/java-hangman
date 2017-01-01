@@ -2,5 +2,4 @@
 2 alfa omega 120
 3 gamma delta 20
 4 jan kowalski 0
-5 elo ziom 0
-6 expecto patronus 0
+5 elo ziom 40
