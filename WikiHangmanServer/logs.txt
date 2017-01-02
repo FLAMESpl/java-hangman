@@ -2474,3 +2474,4 @@ Jean Effel - francuski rysownik`
 [Sun Jan 01 21:29:00 CET 2017] User has disconnected.
 [Sun Jan 01 21:30:53 CET 2017] User has connected.
 [Sun Jan 01 21:30:55 CET 2017] User has disconnected.
+[Mon Jan 02 09:57:25 CET 2017] Server has started.

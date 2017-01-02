@@ -8,7 +8,6 @@ package pl.wikihangman.server.models;
  */
 public class Letter {
     
-    private final static char NULL_CHAR = '\0';
     private boolean discovered;
     private char character;
     
@@ -29,29 +28,6 @@ public class Letter {
      */
     public Letter setIfIsDiscovered(boolean discovered) {
         this.discovered = discovered;
-        return this;
-    }
-    
-    /**
-     * Sets {@code Letter} character and its status to discovered.
-     * 
-     * @param character discovered character
-     * @return this object
-     */
-    public Letter setDiscovered(char character) {
-        this.discovered = true;
-        this.character = character;
-        return this;
-    }
-    
-    /**
-     * Sets {@code Letter} status to undiscovered.
-     * 
-     * @return this object
-     */
-    public Letter setUndiscovered() {
-        discovered = false;
-        character = NULL_CHAR;
         return this;
     }
     
