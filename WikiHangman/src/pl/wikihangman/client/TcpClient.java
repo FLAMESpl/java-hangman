@@ -59,9 +59,7 @@ public class TcpClient {
     public ServerResponse receive() throws 
             IOException, ProtocolParseException, IndexOutOfBoundsException {
         
-        String line = in.readLine();
-        System.err.println(line);
-        return new ServerResponse(line);
+        return new ServerResponse(in.readLine());
     }
     
     /**

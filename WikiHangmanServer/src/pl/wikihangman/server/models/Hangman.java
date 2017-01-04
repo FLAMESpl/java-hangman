@@ -159,7 +159,7 @@ public class Hangman {
     /**
      * Tests if number of actual lives is higher than zero.
      * 
-     * @return true if actual lives > 0
+     * @return true if actual lives are greater than zero
      */
     public boolean hasAnyLivesLeft() {
         return actualLives > 0;

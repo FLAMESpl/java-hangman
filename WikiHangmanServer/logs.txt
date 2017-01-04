@@ -2475,3 +2475,221 @@ Jean Effel - francuski rysownik`
 [Sun Jan 01 21:30:53 CET 2017] User has connected.
 [Sun Jan 01 21:30:55 CET 2017] User has disconnected.
 [Mon Jan 02 09:57:25 CET 2017] Server has started.
+[Mon Jan 02 11:07:25 CET 2017] Server has started.
+[Mon Jan 02 11:07:54 CET 2017] Server has started.
+[Mon Jan 02 11:07:54 CET 2017] Server has failed to initialize. Closing...
+[Mon Jan 02 11:07:59 CET 2017] User has connected.
+[Mon Jan 02 11:08:14 CET 2017] Client requests : `AUTH elo ziom`
+[Mon Jan 02 11:08:14 CET 2017] Server responses (elo) : `SUCCESS 5 elo 40`
+[Mon Jan 02 11:08:17 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:21 CET 2017] Server responses (elo) : `SUCCESS 11 10 Strony ujednoznaczniające`
+[Mon Jan 02 11:08:23 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:25 CET 2017] Server responses (elo) : `SUCCESS 10 10 Miejscowości w powiecie Nowa Wieś Spiska`
+[Mon Jan 02 11:08:28 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:29 CET 2017] Server responses (elo) : `SUCCESS 7 10 Miasta w Korei Północnej`
+[Mon Jan 02 11:08:30 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:30 CET 2017] Server responses (elo) : `SUCCESS 6 10 Strony ujednoznaczniające`
+[Mon Jan 02 11:08:31 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:32 CET 2017] Server responses (elo) : `SUCCESS 10 10 Australijskie przedsiębiorstwa odzieżowe`
+[Mon Jan 02 11:08:33 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:34 CET 2017] Server responses (elo) : `SUCCESS 7 10 Gminy w prowincji Holandia Północna`
+[Mon Jan 02 11:08:36 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:37 CET 2017] Server responses (elo) : `SUCCESS 8 10 Miejscowości departamentu Côte-d'Or`
+[Mon Jan 02 11:08:38 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:08:39 CET 2017] Server responses (elo) : `SUCCESS 5 10 Miasta starożytne`
+[Mon Jan 02 11:08:43 CET 2017] Client requests (elo) : `DISCOVER A`
+[Mon Jan 02 11:08:43 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 11:08:45 CET 2017] Client requests (elo) : `DISCOVER k`
+[Mon Jan 02 11:08:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 11:08:46 CET 2017] Client requests (elo) : `DISCOVER s`
+[Mon Jan 02 11:08:46 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 11:08:48 CET 2017] Client requests (elo) : `DISCOVER o`
+[Mon Jan 02 11:08:48 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 O FALSE o FALSE a `
+[Mon Jan 02 11:09:01 CET 2017] Client requests (elo) : `DISCOVER r`
+[Mon Jan 02 11:09:01 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 O FALSE o FALSE a `
+[Mon Jan 02 11:09:02 CET 2017] Client requests (elo) : `DISCOVER t`
+[Mon Jan 02 11:09:02 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 O FALSE o FALSE a `
+[Mon Jan 02 11:09:04 CET 2017] Client requests (elo) : `DISCOVER m`
+[Mon Jan 02 11:09:04 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 O FALSE o FALSE a `
+[Mon Jan 02 11:09:06 CET 2017] Client requests (elo) : `DISCOVER p`
+[Mon Jan 02 11:09:06 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 O FALSE o FALSE a `
+[Mon Jan 02 11:09:10 CET 2017] Client requests (elo) : `DISCOVER v`
+[Mon Jan 02 11:09:10 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 O FALSE o FALSE a `
+[Mon Jan 02 11:09:11 CET 2017] Client requests (elo) : `DISCOVER z`
+[Mon Jan 02 11:09:11 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 O FALSE o FALSE a `
+[Mon Jan 02 11:09:13 CET 2017] Client requests (elo) : `DISCOVER c`
+[Mon Jan 02 11:09:13 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 O FALSE o FALSE a `
+[Mon Jan 02 11:09:25 CET 2017] Client requests (elo) : `DISCOVER h`
+[Mon Jan 02 11:09:25 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 O FALSE o FALSE a `
+[Mon Jan 02 11:09:25 CET 2017] Client requests (elo) : `INFO `
+[Mon Jan 02 11:09:25 CET 2017] Server responses (elo) : `SUCCESS Oboda, znana także jako: Awdat, Agdad (hebr. עבדת, Awedat, arab. عبدة, Abda) – starożytne miasto nabatejskie położone na pustyni Negew w Izraelu, ok. 60 km na południe od Beer Szewy, przy drodze wiodącej z Mitzpe Ramon do Ejlatu. W 2005 izraelski fragment Szlaku kadzidlanego, wraz z położonymi na nim nabatejskimi miastami: Oboda, Sobota, Elusa i Mampsis, został wpisany przez UNESCO na Listę Światowego Dziedzictwa Kulturowego i Przyrodniczego Ludzkości.`
+[Mon Jan 02 11:09:30 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:09:31 CET 2017] Server responses (elo) : `SUCCESS 9 10 Geografia Malty`
+[Mon Jan 02 11:09:32 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:09:32 CET 2017] Server responses (elo) : `SUCCESS 10 10 Rejon jarmoliniecki`
+[Mon Jan 02 11:09:33 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:09:34 CET 2017] Server responses (elo) : `SUCCESS 10 10 Miejscowości departamentu Marna`
+[Mon Jan 02 11:09:34 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:09:35 CET 2017] Server responses (elo) : `SUCCESS 7 10 Strony ujednoznaczniające`
+[Mon Jan 02 11:09:35 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:09:36 CET 2017] Server responses (elo) : `SUCCESS 11 10 Psy pasterskie`
+[Mon Jan 02 11:09:39 CET 2017] Client requests (elo) : `DISCOVER A`
+[Mon Jan 02 11:09:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE a FALSE FALSE FALSE FALSE FALSE FALSE FALSE `
+[Mon Jan 02 11:09:41 CET 2017] Client requests (elo) : `DISCOVER e`
+[Mon Jan 02 11:09:41 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE FALSE a FALSE e FALSE FALSE FALSE e FALSE `
+[Mon Jan 02 11:09:42 CET 2017] Client requests (elo) : `DISCOVER i`
+[Mon Jan 02 11:09:42 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE a FALSE e FALSE FALSE FALSE e FALSE `
+[Mon Jan 02 11:09:44 CET 2017] Client requests (elo) : `DISCOVER w`
+[Mon Jan 02 11:09:44 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE a FALSE e FALSE FALSE FALSE e FALSE `
+[Mon Jan 02 11:09:45 CET 2017] Client requests (elo) : `DISCOVER s`
+[Mon Jan 02 11:09:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 S FALSE FALSE a FALSE e FALSE FALSE FALSE e s `
+[Mon Jan 02 11:09:48 CET 2017] Client requests (elo) : `DISCOVER y`
+[Mon Jan 02 11:09:48 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 S FALSE FALSE a FALSE e FALSE FALSE FALSE e s `
+[Mon Jan 02 11:09:52 CET 2017] Client requests (elo) : `DISCOVER u`
+[Mon Jan 02 11:09:52 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 S FALSE FALSE a FALSE e FALSE FALSE FALSE e s `
+[Mon Jan 02 11:09:53 CET 2017] Client requests (elo) : `DISCOVER o`
+[Mon Jan 02 11:09:53 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 S FALSE FALSE a FALSE e FALSE FALSE o e s `
+[Mon Jan 02 11:09:57 CET 2017] Client requests (elo) : `DISCOVER h`
+[Mon Jan 02 11:09:57 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 S FALSE h a FALSE e FALSE FALSE o e s `
+[Mon Jan 02 11:10:00 CET 2017] Client requests (elo) : `DISCOVER c`
+[Mon Jan 02 11:10:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 S c h a FALSE e FALSE FALSE o e s `
+[Mon Jan 02 11:10:03 CET 2017] Client requests (elo) : `DISCOVER w`
+[Mon Jan 02 11:10:03 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 S c h a FALSE e FALSE FALSE o e s `
+[Mon Jan 02 11:10:09 CET 2017] Client requests (elo) : `DISCOVER m`
+[Mon Jan 02 11:10:09 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 S c h a FALSE e FALSE FALSE o e s `
+[Mon Jan 02 11:10:12 CET 2017] Client requests (elo) : `DISCOVER n`
+[Mon Jan 02 11:10:12 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 S c h a FALSE e n FALSE o e s `
+[Mon Jan 02 11:10:18 CET 2017] Client requests (elo) : `DISCOVER c`
+[Mon Jan 02 11:10:18 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 S c h a FALSE e n FALSE o e s `
+[Mon Jan 02 11:10:35 CET 2017] Client requests (elo) : `DISCOVER t`
+[Mon Jan 02 11:10:35 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 S c h a FALSE e n FALSE o e s `
+[Mon Jan 02 11:10:37 CET 2017] Client requests (elo) : `DISCOVER r`
+[Mon Jan 02 11:10:37 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 S c h a FALSE e n FALSE o e s `
+[Mon Jan 02 11:10:54 CET 2017] Client requests (elo) : `DISCOVER d`
+[Mon Jan 02 11:10:54 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 S c h a FALSE e n d o e s `
+[Mon Jan 02 11:11:02 CET 2017] Client requests (elo) : `DISCOVER v`
+[Mon Jan 02 11:11:02 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 S c h a FALSE e n d o e s `
+[Mon Jan 02 11:11:19 CET 2017] Client requests (elo) : `DISCOVER g`
+[Mon Jan 02 11:11:19 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 S c h a FALSE e n d o e s `
+[Mon Jan 02 11:11:19 CET 2017] Client requests (elo) : `INFO `
+[Mon Jan 02 11:11:19 CET 2017] Server responses (elo) : `SUCCESS Schapendoes – jedna z ras psów należących do psów pasterskich i zaganiających, zaklasyfikowana do sekcji psów pasterskich (owczarskich). Nie podlega próbom pracy`
+[Mon Jan 02 11:11:24 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:11:25 CET 2017] Server responses (elo) : `SUCCESS 7 10 Południowokoreańskie telewizyjne seriale animowane`
+[Mon Jan 02 11:11:26 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:11:26 CET 2017] Server responses (elo) : `SUCCESS 12 10 Historia społeczna`
+[Mon Jan 02 11:11:28 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 11:11:29 CET 2017] Server responses (elo) : `SUCCESS 6 10 Lelkowo (gmina)`
+[Mon Jan 02 11:11:31 CET 2017] User has disconnected.
+[Mon Jan 02 12:23:10 CET 2017] Server has started.
+[Mon Jan 02 14:15:14 CET 2017] Server has started.
+[Mon Jan 02 14:15:47 CET 2017] User has connected.
+[Mon Jan 02 14:15:47 CET 2017] User has connected.
+[Mon Jan 02 14:15:59 CET 2017] Client requests : `AUTH elo ziom`
+[Mon Jan 02 14:15:59 CET 2017] Server responses (elo) : `SUCCESS 5 elo 40`
+[Mon Jan 02 14:16:07 CET 2017] Client requests (elo) : `LOGOUT `
+[Mon Jan 02 14:16:07 CET 2017] Server responses : `SUCCESS`
+[Mon Jan 02 14:16:12 CET 2017] Client requests : `AUTH elo ziom`
+[Mon Jan 02 14:16:12 CET 2017] Server responses (elo) : `SUCCESS 5 elo 40`
+[Mon Jan 02 14:16:14 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 14:16:19 CET 2017] Server responses (elo) : `SUCCESS 11 10 Strony ujednoznaczniające`
+[Mon Jan 02 14:16:22 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 14:16:22 CET 2017] Server responses (elo) : `SUCCESS 13 10 Brodawnicowate`
+[Mon Jan 02 14:16:25 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 14:16:25 CET 2017] Server responses (elo) : `SUCCESS 5 10 Meblarstwo`
+[Mon Jan 02 14:16:32 CET 2017] Client requests (elo) : `DISCOVER A`
+[Mon Jan 02 14:16:32 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:34 CET 2017] Client requests (elo) : `DISCOVER s`
+[Mon Jan 02 14:16:34 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:36 CET 2017] Client requests (elo) : `DISCOVER t`
+[Mon Jan 02 14:16:36 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:38 CET 2017] Client requests (elo) : `DISCOVER e`
+[Mon Jan 02 14:16:38 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:39 CET 2017] Client requests (elo) : `DISCOVER i`
+[Mon Jan 02 14:16:39 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:40 CET 2017] Client requests (elo) : `DISCOVER o`
+[Mon Jan 02 14:16:40 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 O FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:42 CET 2017] Client requests (elo) : `DISCOVER u`
+[Mon Jan 02 14:16:42 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 O FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:45 CET 2017] Client requests (elo) : `DISCOVER ą`
+[Mon Jan 02 14:16:45 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 O FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:47 CET 2017] Client requests (elo) : `DISCOVER ę`
+[Mon Jan 02 14:16:47 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 O FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:52 CET 2017] Client requests (elo) : `DISCOVER y`
+[Mon Jan 02 14:16:52 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 O FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:56 CET 2017] Client requests (elo) : `DISCOVER s`
+[Mon Jan 02 14:16:56 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 O FALSE FALSE FALSE FALSE `
+[Mon Jan 02 14:16:56 CET 2017] Client requests (elo) : `INFO `
+[Mon Jan 02 14:16:56 CET 2017] Server responses (elo) : `SUCCESS Obłóg – cienki płat drewna (rodzaj forniru) używany przy produkcji płyt stolarskich. Używa się go także jako podkład pod okleinę przy produkcji mebli oraz do profilowania dużych powierzchni drewnianych, które pod wpływem „pracy” drewna odkształcają się. Kładzie się go wtedy poprzecznie do słoi drewna lub, jeżeli płyta jest klejona z kilku desek, to poprzecznie do miejsc klejonych, a następnie pokrywa estetycznym fornirem. Obłóg powstaje najczęściej w wyniku skrawania obwodowego. Wytwarza się go z drewna miękkiego. Grubość obłogów to najczęściej od 1 do 3 mm. Obłóg jest wykorzystywany m.in. do budowania jachtów żaglowych. W tej technologii były budowane m.in. jachty klasy korsar.`
+[Mon Jan 02 14:17:04 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 14:17:06 CET 2017] Server responses (elo) : `SUCCESS 4 10 Instrumenty pochodne`
+[Mon Jan 02 14:19:49 CET 2017] User has connected.
+[Mon Jan 02 14:19:49 CET 2017] User has disconnected.
+[Mon Jan 02 14:19:53 CET 2017] User has disconnected.
+[Mon Jan 02 14:23:39 CET 2017] User has connected.
+[Mon Jan 02 14:24:39 CET 2017] User has disconnected.
+[Mon Jan 02 14:35:55 CET 2017] Client requests (elo) : `DISCOVER A`
+[Mon Jan 02 14:35:55 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 10 FALSE FALSE a FALSE `
+[Mon Jan 02 14:35:58 CET 2017] Client requests (elo) : `DISCOVER o`
+[Mon Jan 02 14:35:58 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 9 FALSE FALSE a FALSE `
+[Mon Jan 02 14:36:00 CET 2017] Client requests (elo) : `DISCOVER e`
+[Mon Jan 02 14:36:00 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 8 FALSE FALSE a FALSE `
+[Mon Jan 02 14:36:09 CET 2017] Client requests (elo) : `DISCOVER t`
+[Mon Jan 02 14:36:09 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 7 FALSE FALSE a FALSE `
+[Mon Jan 02 14:36:15 CET 2017] Client requests (elo) : `DISCOVER n`
+[Mon Jan 02 14:36:15 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE a FALSE `
+[Mon Jan 02 14:36:18 CET 2017] Client requests (elo) : `DISCOVER p`
+[Mon Jan 02 14:36:18 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 6 FALSE FALSE a p `
+[Mon Jan 02 14:36:22 CET 2017] Client requests (elo) : `DISCOVER k`
+[Mon Jan 02 14:36:22 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 5 FALSE FALSE a p `
+[Mon Jan 02 14:36:24 CET 2017] Client requests (elo) : `DISCOVER l`
+[Mon Jan 02 14:36:24 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE FALSE a p `
+[Mon Jan 02 14:36:27 CET 2017] Client requests (elo) : `DISCOVER w`
+[Mon Jan 02 14:36:27 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 4 FALSE w a p `
+[Mon Jan 02 14:36:40 CET 2017] Client requests (elo) : `DISCOVER z`
+[Mon Jan 02 14:36:40 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 3 FALSE w a p `
+[Mon Jan 02 14:36:44 CET 2017] Client requests (elo) : `DISCOVER u`
+[Mon Jan 02 14:36:44 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 2 FALSE w a p `
+[Mon Jan 02 14:36:49 CET 2017] Client requests (elo) : `DISCOVER o`
+[Mon Jan 02 14:36:49 CET 2017] Server responses (elo) : `SUCCESS FALSE 10 1 FALSE w a p `
+[Mon Jan 02 14:37:01 CET 2017] Client requests (elo) : `DISCOVER ż`
+[Mon Jan 02 14:37:01 CET 2017] Server responses (elo) : `SUCCESS TRUE 10 0 FALSE w a p `
+[Mon Jan 02 14:37:01 CET 2017] Client requests (elo) : `INFO `
+[Mon Jan 02 14:37:01 CET 2017] Server responses (elo) : `SUCCESS Swap – umowa pomiędzy dwoma podmiotami polegająca na wymianie przyszłych strumieni płatności, które kontrahenci postrzegają w momencie transakcji jako równoważne. W ramach transakcji swapowej określane są zasady oraz terminy rozliczenia wspomnianych płatności. Swap może w szczególności polegać na umowie między dwoma podmiotami, w której płatności naliczane według oprocentowania zmiennego zamieniane są na płatności naliczane według oprocentowania stałego (swap stopy procentowej).`
+[Mon Jan 02 14:37:26 CET 2017] Client requests (elo) : `START 10`
+[Mon Jan 02 14:37:26 CET 2017] Server responses (elo) : `SUCCESS 12 10 Miejscowości w regionie Kalabria`
+[Mon Jan 02 14:45:11 CET 2017] Server has started.
+[Mon Jan 02 14:45:18 CET 2017] User has connected.
+[Mon Jan 02 14:45:28 CET 2017] Client requests : `AUTH alfa omega`
+[Mon Jan 02 14:45:28 CET 2017] Server responses (alfa) : `SUCCESS 2 alfa 120`
+[Mon Jan 02 14:45:36 CET 2017] Client requests (alfa) : `START 10`
+[Mon Jan 02 14:45:38 CET 2017] Server responses (alfa) : `SUCCESS 8 10 Strony ujednoznaczniające`
+[Mon Jan 02 14:45:40 CET 2017] Client requests (alfa) : `START 10`
+[Mon Jan 02 14:45:40 CET 2017] Server responses (alfa) : `SUCCESS 11 10 Miasta w stanie Rio Grande do Sul`
+[Mon Jan 02 14:45:48 CET 2017] Client requests (alfa) : `DISCOVER A`
+[Mon Jan 02 14:45:48 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 10 A FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:51 CET 2017] Client requests (alfa) : `DISCOVER e`
+[Mon Jan 02 14:45:51 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 10 A FALSE FALSE FALSE FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:52 CET 2017] Client requests (alfa) : `DISCOVER o`
+[Mon Jan 02 14:45:52 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 10 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:54 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:54 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 9 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:57 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:57 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 8 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:57 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:57 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 7 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:57 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:57 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 6 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:57 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:57 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 5 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:58 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:58 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 4 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:58 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:58 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 3 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:58 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:58 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 2 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:58 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:58 CET 2017] Server responses (alfa) : `SUCCESS FALSE 10 1 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:59 CET 2017] Client requests (alfa) : `DISCOVER l`
+[Mon Jan 02 14:45:59 CET 2017] Server responses (alfa) : `SUCCESS TRUE 10 0 A FALSE FALSE o FALSE e FALSE FALSE FALSE FALSE a `
+[Mon Jan 02 14:45:59 CET 2017] Client requests (alfa) : `INFO `
+[Mon Jan 02 14:45:59 CET 2017] Server responses (alfa) : `SUCCESS Arvorezinha – miasto i gmina w Brazylii, w stanie Rio Grande do Sul. Znajduje się w mezoregionie Nordeste Rio-Grandense i mikroregionie Guaporé.`
