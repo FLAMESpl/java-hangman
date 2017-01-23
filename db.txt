@@ -1,0 +1,5 @@
+1 user password 100
+2 alfa omega 60
+3 elo ziom 10
+4   0
+5 delta gamma 0

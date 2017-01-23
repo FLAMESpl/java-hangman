@@ -22,3 +22,5 @@ hs_err_pid*
 /WikiHangmanProtocol/dist/
 /WikiHangmanProtocol/build/
 /WikiHangmanServer/dist/
+/WikiHangmanWeb/nbproject/private/
+/WikiHangmanWeb/build/
