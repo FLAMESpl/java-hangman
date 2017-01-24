@@ -90,7 +90,7 @@ public class User {
      * 
      * @param name user's name
      * @param password user's password
-     * @return 
+     * @return returns true if given parameters matches ones in this object
      */
     public boolean authenticate(String name, String password) {
         return this.name.equals(name) && this.password.equals(password);

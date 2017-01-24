@@ -1,10 +1,10 @@
-package pl.wikihangman.server.tests;
+package pl.wikihangman.web.tests;
 
 import java.util.List;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import pl.wikihangman.server.models.Hangman;
-import pl.wikihangman.server.models.Letter;
+import pl.wikihangman.web.models.Hangman;
+import pl.wikihangman.web.models.Letter;
 
 /**
  *

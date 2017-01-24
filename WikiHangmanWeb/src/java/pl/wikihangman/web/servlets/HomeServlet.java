@@ -46,7 +46,9 @@ public class HomeServlet extends HttpServlet {
                     .addInput(i -> i.setType("submit").setValue("Scoreboard")))
                 .insertForm(f -> f.setAction("hangman").setMethod("get")
                     .addInput(i -> i.setType("text").setName("lives").setValue("10"))
-                    .addInput(i -> i.setType("submit").setValue("Play")))
+                    .addInput(i -> i.setType("submit").setValue("Start game")))
+                .insertForm(f -> f.setAction("hangman").setMethod("get")
+                    .addInput(i -> i.setType("submit").setValue("Resume game")))
                 .build();
         }
     }

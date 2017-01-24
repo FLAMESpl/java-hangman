@@ -1,8 +1,8 @@
-package pl.wikihangman.server.tests;
+package pl.wikihangman.web.tests;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pl.wikihangman.server.models.User;
+import pl.wikihangman.web.models.User;
 
 /**
  *

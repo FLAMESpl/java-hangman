@@ -54,7 +54,7 @@ public class ScoreboardServlet extends HttpServlet {
                             .setModelBinder(x -> x.getName()))
                         .addColumn("Points", c -> c
                             .setModelBinder(x -> Long.toString(x.getPoints()))))
-                    .includeBackToHomeButton()
+                    .includeBackButton("home")
                     .build();
         }
     }

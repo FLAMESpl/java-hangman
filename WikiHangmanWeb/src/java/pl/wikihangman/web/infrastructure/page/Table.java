@@ -25,7 +25,7 @@ public class Table<T> {
      * 
      * @param name column's name
      * @param columnBuilder fluent pipeline to build column
-     * @return 
+     * @return this object
      */
     public Table<T> addColumn(String name, Consumer<Column<T>> columnBuilder) {
         Column column = new Column(name);

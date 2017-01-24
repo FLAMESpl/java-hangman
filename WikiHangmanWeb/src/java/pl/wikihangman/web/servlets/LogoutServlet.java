@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import pl.wikihangman.web.infrastructure.AuthToken;
 import pl.wikihangman.web.infrastructure.page.PageBuilder;
 
@@ -34,9 +35,13 @@ public class LogoutServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             PageBuilder page = new PageBuilder(out);
             AuthToken token = new AuthToken().delete();
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                session.invalidate();
+            }
             response.addCookie(token);
             page.insertText("Logged out")
-                .includeBackToHomeButton()
+                .includeBackButton("home")
                 .build();
         }
     }

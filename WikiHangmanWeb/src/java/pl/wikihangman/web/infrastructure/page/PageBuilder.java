@@ -17,7 +17,7 @@ public class PageBuilder {
     private final PrintWriter out;
     private final List<String> body = new ArrayList<>();
     private String title = "";
-    private String backToHome = "";
+    private String backButton = "";
     
     /**
      * 
@@ -77,13 +77,15 @@ public class PageBuilder {
     }
     
     /**
-     * Includes html button allowing moving to home page.
+     * Includes html button allowing moving to previous page.
      * 
+     * @param path path to previous page
      * @return this object
      */
-    public PageBuilder includeBackToHomeButton() {
-        backToHome = new Form()
-            .setAction("home")
+    public PageBuilder includeBackButton(String path) {
+        backButton = new Form()
+            .setAction(path)
+            .setMethod("get")
             .addInput(i -> i
                 .setType("submit")
                 .setValue("Back"))
@@ -105,7 +107,7 @@ public class PageBuilder {
         out.println("</head>");
         out.println("<body>");
         body.forEach(s -> out.println(s));
-        out.println(backToHome);
+        out.println(backButton);
         out.println("</body>");
         out.println("</html>");
     }

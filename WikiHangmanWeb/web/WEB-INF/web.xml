@@ -5,7 +5,7 @@
         <servlet-class>pl.wikihangman.web.servlets.AccountsServlet</servlet-class>
         <init-param>
             <param-name>dbPath</param-name>
-            <param-value>D:\\java\\java-hangman\\db.txt</param-value>
+            <param-value>D:\java\java-hangman\db.txt</param-value>
         </init-param>
     </servlet>
     <servlet>
@@ -13,7 +13,7 @@
         <servlet-class>pl.wikihangman.web.servlets.ScoreboardServlet</servlet-class>
         <init-param>
             <param-name>dbPath</param-name>
-            <param-value>D:\\java\\java-hangman\\db.txt</param-value>
+            <param-value>D:\java\java-hangman\db.txt</param-value>
         </init-param>
     </servlet>
     <servlet>
@@ -21,7 +21,7 @@
         <servlet-class>pl.wikihangman.web.servlets.HangmanServlet</servlet-class>
         <init-param>
             <param-name>dbPath</param-name>
-            <param-value>D:\\java\\java-hangman\\db.txt</param-value>
+            <param-value>D:\java\java-hangman\db.txt</param-value>
         </init-param>
         <init-param>
             <param-name>wikiHost</param-name>

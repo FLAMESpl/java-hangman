@@ -1,4 +1,4 @@
-package pl.wikihangman.server.tests;
+package pl.wikihangman.web.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

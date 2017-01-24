@@ -28,7 +28,7 @@ public class Column<T> {
      * it is {@code toString} method.
      * 
      * @param modelBinder new modelBinder value
-     * @return 
+     * @return this object
      */
     public Column<T> setModelBinder(Function<T, String> modelBinder) {
         this.modelBinder = modelBinder;

@@ -24,7 +24,7 @@ public class Letter {
     /**
      * 
      * @param discovered status of letter's visibility
-     * @return 
+     * @return this object
      */
     public Letter setIfIsDiscovered(boolean discovered) {
         this.discovered = discovered;

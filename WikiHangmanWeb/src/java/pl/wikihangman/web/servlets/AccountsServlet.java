@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import pl.wikihangman.web.exceptions.EntityAlreadyExistsException;
 import pl.wikihangman.web.infrastructure.AuthToken;
 import pl.wikihangman.web.infrastructure.validation.Validator;
@@ -71,13 +72,17 @@ public class AccountsServlet extends HttpServlet {
                 if (user != null) {
                     AuthToken token = new AuthToken(user);
                     response.addCookie(token);
+                    HttpSession session = request.getSession(false);
+                    if (session != null) {
+                        session.invalidate();
+                    }
                     page.insertText("Logged as " + user.getName());
                 } else {
                     page.insertText("Invalid credentials");
                 }
             }
             
-            page.includeBackToHomeButton().build();
+            page.includeBackButton("home").build();
         }
     }
 
@@ -113,7 +118,7 @@ public class AccountsServlet extends HttpServlet {
                     page.insertText("User of " + name + " name already exists");
                 }
             }
-            page.includeBackToHomeButton().build();
+            page.includeBackButton("home").build();
         }
     }
 

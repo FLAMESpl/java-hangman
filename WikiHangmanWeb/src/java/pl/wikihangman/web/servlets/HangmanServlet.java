@@ -4,14 +4,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +25,8 @@ import pl.wikihangman.web.models.Letter;
 import pl.wikihangman.web.models.User;
 import pl.wikihangman.web.services.AccountsService;
 import pl.wikihangman.web.services.WikipediaService;
+import pl.wikihangman.web.views.UsedLettersHashMap;
+import pl.wikihangman.web.views.UsedLettersMap;
 
 /**
  * Handles requests to create new hangman and discover its letters.
@@ -42,6 +42,11 @@ public class HangmanServlet extends HttpServlet {
         'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U',
         'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż'
     };
+    
+    private final String parameterLives = "lives";
+    private final String parameterCharacter = "character";
+    private final String attributeHangman = "hangman";
+    private final String attributeLetters = "letters";
     
     private WikipediaService wikiService = null;
     private AccountsService accountsService = null;
@@ -65,28 +70,48 @@ public class HangmanServlet extends HttpServlet {
         
         getValidator = new Validator()
             .addRule(r -> r
-                .setPredicate(p -> p.getParameterMap().containsKey("lives"))
-                .setErrorMessage(e -> "`lives` parameter is required")
-                .addSubsequent(sr -> sr
-                    .setPredicate(p -> isInteger(p.getParameter("lives")))
+                .addCondition(c -> !c.getParameterMap().containsKey(parameterLives))
+                .setPredicate(p -> {
+                    HttpSession session = p.getSession();
+                    return session.getAttribute(attributeHangman) != null &&
+                           session.getAttribute(attributeLetters) != null;
+                })
+                .setErrorMessage(p -> "There is no active hangman session"))
+            .addRule(r -> r
+                .addCondition(c -> c.getParameterMap().containsKey(parameterLives))
+                .setPredicate(p -> isInteger(p.getParameter(parameterLives)))
+                .setErrorMessage(e -> String.format(
+                    "Parameter `%2$s` must be integer but is `%1$s`",
+                    e.getParameter(parameterLives), parameterLives))
+                .addSubsequentRule(sr -> sr
+                    .setPredicate(p -> isAllowedLivesAmount(Integer.parseInt(p.getParameter(parameterLives))))
                     .setErrorMessage(e -> String.format(
-                        "Parameter `lives` must be integer but is `%1$s`",
-                        e.getParameter("lives")))));
+                        "Paramter `%2$s` must be a number between 0 and 10 but is `%1$s`",
+                        e.getParameter(parameterLives), parameterLives))));
         
         postValidator = new Validator()
             .addRule(r -> r
-                .setPredicate(p -> p.getParameterMap().containsKey("character"))
-                .setErrorMessage(e -> "`character` parameter is required")
-                .addSubsequent(sr -> sr
-                    .setPredicate(p -> p.getParameter("character").length() == 1)
+                .setPredicate(p -> {
+                    HttpSession session = p.getSession();
+                    return session.getAttribute(attributeHangman) != null &&
+                           session.getAttribute(attributeLetters) != null;
+                })
+                .setErrorMessage(p -> "There is no active hangman session"))
+            .addRule(r -> r
+                .setPredicate(p -> p.getParameterMap().containsKey(parameterCharacter))
+                .setErrorMessage(e -> String.format(
+                        "`%1$s` parameter is required",
+                        parameterCharacter))
+                .addSubsequentRule(sr -> sr
+                    .setPredicate(p -> p.getParameter(parameterCharacter).length() == 1)
                     .setErrorMessage(e -> String.format(
-                        "Paramter `character` must be one character long but is `%1$s`",
-                        e.getParameter("character")))
-                    .addSubsequent(ssr -> ssr
-                        .setPredicate(p -> isAllowed(p.getParameter("character").charAt(0)))
+                        "Paramter `%2$s` must be one character long but is `%1$s`",
+                        e.getParameter(parameterCharacter), parameterCharacter))
+                    .addSubsequentRule(ssr -> ssr
+                        .setPredicate(p -> isAllowed(p.getParameter(parameterCharacter).charAt(0)))
                         .setErrorMessage(e -> String.format(
-                            "Value of paramter `character` (%1$s) is not allowed",
-                            e.getParameter("character"))))));
+                            "Value `%1$s`of paramter `%2$s` is not allowed",
+                            e.getParameter(parameterCharacter), parameterCharacter)))));
     }
     
     /**
@@ -119,6 +144,16 @@ public class HangmanServlet extends HttpServlet {
         }
         return AVAILABLE_CHARS.length > i;
     }
+    
+    /**
+     * Tests number if it is valid amount of lives for the hangman.
+     * 
+     * @param number number to test
+     * @return true if is valid, otherwise false
+     */
+    private boolean isAllowedLivesAmount(int number) {
+        return number > 0 && number <= 10;
+    }
                         
     /**
      * Creates common page content for both requests.
@@ -127,7 +162,7 @@ public class HangmanServlet extends HttpServlet {
      * @param hangman model of current hangman
      * @param usedLetters letters already used in this hangman
      */
-    private void createPageContent(PageBuilder page, Hangman hangman, Map<Character, Boolean> usedLetters) {
+    private void createPageContent(PageBuilder page, Hangman hangman, UsedLettersMap usedLetters) {
         
         String[] keyword = new String[hangman.getKeywordsLength()];
         for (int i = 0; i < keyword.length; i++) {
@@ -177,11 +212,21 @@ public class HangmanServlet extends HttpServlet {
                 } else {
 
                     try {
-                        Hangman hangman = wikiService.createHangman(10);
-                        HttpSession session = request.getSession();
-                        Map<Character, Boolean> usedLetters = new HashMap<>();
-                        session.setAttribute("hangman", hangman);
-                        session.setAttribute("letters", usedLetters);
+                        Hangman hangman = null;
+                        UsedLettersMap usedLetters = null;
+                            HttpSession session = request.getSession();
+                        
+                        if (request.getParameterMap().containsKey(parameterLives)) {
+                            int lives = Integer.parseInt(request.getParameter(parameterLives));
+                            hangman = wikiService.createHangman(lives);
+                            usedLetters = new UsedLettersHashMap();
+                            session.setAttribute(attributeHangman, hangman);
+                            session.setAttribute(attributeLetters, usedLetters);
+                        } else {
+                            hangman = (Hangman)session.getAttribute(attributeHangman);
+                            usedLetters = (UsedLettersMap)session.getAttribute(attributeLetters);
+                        }
+                        
                         createPageContent(page, hangman, usedLetters);
 
                     } catch (URISyntaxException | ClientProtocolException ex) {
@@ -195,7 +240,7 @@ public class HangmanServlet extends HttpServlet {
                 }
             }
             
-            page.includeBackToHomeButton().build();
+            page.includeBackButton("home").build();
         }
     }
 
@@ -216,25 +261,29 @@ public class HangmanServlet extends HttpServlet {
             
             PageBuilder page = new PageBuilder(out);
             ValidationResult validationResult = postValidator.test(request);
+            String backButtonPath;
             
             if (!validationResult.isValid()) {
                 validationResult.getErrors().forEach(e -> page.insertText(e));
+                backButtonPath = "hangman";
                 
             } else {
                 AuthToken token = AuthToken.getFrom(request.getCookies());
+                backButtonPath = "home";
 
                 if (token == null) {
                     page.insertText("Log in first to play a game");
                 } else {
-                    Character character = request.getParameter("character").charAt(0);
+                    Character character = request.getParameter(parameterCharacter).charAt(0);
                     HttpSession session = request.getSession();
-                    Hangman hangman = (Hangman)session.getAttribute("hangman");
-                    Map<Character, Boolean> usedLetters = (Map<Character, Boolean>)session.getAttribute("letters");
-
-                    int result = hangman.discover(character);
-                    usedLetters.put(character, result > 0);
-
-                    createPageContent(page, hangman, usedLetters);
+                    Hangman hangman = (Hangman)session.getAttribute(attributeHangman);
+                    UsedLettersMap usedLetters = (UsedLettersMap)session.getAttribute(attributeLetters);
+                    
+                    if (!hangman.isGameOver()) {
+                        int result = hangman.discover(character);
+                        usedLetters.put(character, result > 0);
+                    }
+                    
                     if (hangman.isGameOver()) {
                         page.insertText("Game is over");
                         if (hangman.hasAnyLivesLeft()) {
@@ -252,14 +301,14 @@ public class HangmanServlet extends HttpServlet {
                             page.insertText("You lost");
                         }
                     }
-
-                    session.setAttribute("hangman", hangman);
-                    session.setAttribute("letters", usedLetters);
+                    
+                    createPageContent(page, hangman, usedLetters);
+                    session.setAttribute(attributeHangman, hangman);
+                    session.setAttribute(attributeLetters, usedLetters);
                 }
             }
             
-            
-            page.includeBackToHomeButton().build();
+            page.includeBackButton(backButtonPath).build();
         }
     }
 
