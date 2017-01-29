@@ -2,6 +2,7 @@ package pl.wikihangman.web.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,9 +34,13 @@ public class AccountsServlet extends HttpServlet {
      */
     @Override
     public void init() {
-       accountsService = new AccountsService(getInitParameter("dbPath"));
-       validator = new Validator();
-       validator.addRule(r -> r
+        try {
+            accountsService = AccountsService.getInstance(getInitParameter("dbPath"));
+        } catch (ClassNotFoundException | SQLException ex) {
+           System.err.println(ex.getMessage());
+        }
+        validator = new Validator();
+        validator.addRule(r -> r
                     .setPredicate(p -> p.getParameterMap().containsKey("user"))
                     .setErrorMessage(e -> "`user` parameter is required"))
                 .addRule(r -> r
@@ -67,18 +72,23 @@ public class AccountsServlet extends HttpServlet {
             } else {
                 String name = request.getParameter("user");
                 String password = request.getParameter("password");
-
-                User user = accountsService.authenticate(name, password);
-                if (user != null) {
-                    AuthToken token = new AuthToken(user);
-                    response.addCookie(token);
-                    HttpSession session = request.getSession(false);
-                    if (session != null) {
-                        session.invalidate();
+                    
+                try {
+                    User user = accountsService.authenticate(name, password);
+                    if (user != null) {
+                        AuthToken token = new AuthToken(user);
+                        response.addCookie(token);
+                        HttpSession session = request.getSession(false);
+                        if (session != null) {
+                            session.invalidate();
+                        }
+                        page.insertText("Logged as " + user.getName());
+                    } else {
+                        page.insertText("Invalid credentials");
                     }
-                    page.insertText("Logged as " + user.getName());
-                } else {
-                    page.insertText("Invalid credentials");
+                } catch (SQLException | NullPointerException exception) {
+                    page.insertText("Unexpected error has occured:")
+                        .insertText(exception.getMessage());
                 }
             }
             
@@ -116,6 +126,9 @@ public class AccountsServlet extends HttpServlet {
                     page.insertText("Successfully created " + name + " user");
                 } catch (EntityAlreadyExistsException exception) {
                     page.insertText("User of " + name + " name already exists");
+                } catch (SQLException | NullPointerException exception) {
+                    page.insertText("Unexpected error has occured:")
+                        .insertText(exception.getMessage());
                 }
             }
             page.includeBackButton("home").build();

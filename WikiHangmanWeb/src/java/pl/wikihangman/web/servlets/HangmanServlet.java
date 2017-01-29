@@ -3,6 +3,7 @@ package pl.wikihangman.web.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -47,6 +48,7 @@ public class HangmanServlet extends HttpServlet {
     private final String parameterCharacter = "character";
     private final String attributeHangman = "hangman";
     private final String attributeLetters = "letters";
+    private final String attributeScored = "scored";
     
     private WikipediaService wikiService = null;
     private AccountsService accountsService = null;
@@ -58,7 +60,11 @@ public class HangmanServlet extends HttpServlet {
      */
     @Override
     public void init() {
-        accountsService = new AccountsService(getInitParameter("dbPath"));
+        try {
+            accountsService = AccountsService.getInstance(getInitParameter("dbPath"));
+        } catch (ClassNotFoundException | SQLException ex) {
+           System.err.println(ex.getMessage());
+        }
         
         wikiService = new WikipediaService()
             .setAvaliableChars(new HashSet<>(Arrays.asList(AVAILABLE_CHARS)))
@@ -94,7 +100,8 @@ public class HangmanServlet extends HttpServlet {
                 .setPredicate(p -> {
                     HttpSession session = p.getSession();
                     return session.getAttribute(attributeHangman) != null &&
-                           session.getAttribute(attributeLetters) != null;
+                           session.getAttribute(attributeLetters) != null &&
+                           session.getAttribute(attributeScored) != null;
                 })
                 .setErrorMessage(p -> "There is no active hangman session"))
             .addRule(r -> r
@@ -164,6 +171,11 @@ public class HangmanServlet extends HttpServlet {
      */
     private void createPageContent(PageBuilder page, Hangman hangman, UsedLettersMap usedLetters) {
         
+        if (hangman.isGameOver()) {
+            page.insertText("Game is over");
+            page.insertText(hangman.hasAnyLivesLeft() ? "You won" : "You lost");
+        }
+        
         String[] keyword = new String[hangman.getKeywordsLength()];
         for (int i = 0; i < keyword.length; i++) {
             Letter letter = hangman.getKeyword().get(i);
@@ -181,6 +193,10 @@ public class HangmanServlet extends HttpServlet {
                 .sortOn("Letter")
                 .addColumn("Letter", c -> c.setModelBinder(x -> x.getKey().toString()))
                 .addColumn("Succeded", c -> c.setModelBinder(x -> x.getValue().toString())));
+        
+        if (hangman.isGameOver()) {
+            page.insertText(hangman.getArticleInformation());
+        }
     }
     
     /**
@@ -222,6 +238,7 @@ public class HangmanServlet extends HttpServlet {
                             usedLetters = new UsedLettersHashMap();
                             session.setAttribute(attributeHangman, hangman);
                             session.setAttribute(attributeLetters, usedLetters);
+                            session.setAttribute(attributeScored, false);
                         } else {
                             hangman = (Hangman)session.getAttribute(attributeHangman);
                             usedLetters = (UsedLettersMap)session.getAttribute(attributeLetters);
@@ -284,21 +301,18 @@ public class HangmanServlet extends HttpServlet {
                         usedLetters.put(character, result > 0);
                     }
                     
-                    if (hangman.isGameOver()) {
-                        page.insertText("Game is over");
-                        if (hangman.hasAnyLivesLeft()) {
-                            page.insertText("You won");
+                    if (hangman.isGameOver() && hangman.hasAnyLivesLeft() && 
+                        (boolean)session.getAttribute(attributeScored)) {
+                        
+                        try {
                             List<User> users = accountsService.getPlayersList();
                             int id = Integer.parseInt(token.getValue());
                             User user = users.stream().filter(u -> u.getId() == id).findFirst().get();
                             user.score(hangman.getMaxLives());
-                            try {
-                                accountsService.update(user);
-                            } catch (EntityDoesNotExistException ex) {
-                                page.insertText("Failed to update player status");
-                            }
-                        } else {
-                            page.insertText("You lost");
+                            accountsService.update(user);
+                            session.setAttribute(attributeScored, true);
+                        } catch (EntityDoesNotExistException | SQLException | NullPointerException ex) {
+                            page.insertText("Failed to update player status");
                         }
                     }
                     

@@ -1,3 +1,0 @@
-1 user password 100
-2 alfa omega 70
-3 delta gamma 10

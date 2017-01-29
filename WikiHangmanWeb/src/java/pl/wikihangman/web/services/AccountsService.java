@@ -1,21 +1,17 @@
 package pl.wikihangman.web.services;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import pl.wikihangman.web.exceptions.EntityAlreadyExistsException;
 import pl.wikihangman.web.exceptions.EntityDoesNotExistException;
 import pl.wikihangman.web.models.User;
+import pl.wikihangman.web.services.sql.InsertStatement;
+import pl.wikihangman.web.services.sql.SelectStatement;
 
 /**
  * {@code AccountsService} allows to read and manipulate existing users in
@@ -26,13 +22,43 @@ import pl.wikihangman.web.models.User;
  */
 public class AccountsService {
     
+    private static AccountsService instance = null;
+    
+    private final String TABLE_NAME = "USERS";
+    private final String COLUMN_USER_NAME = "USERNAME";
+    private final String COLUMN_PASS_NAME = "PASSWORD";
+    private final String COLUMN_ID_NAME = "ID";
+    private final String COLUMN_POINTS_NAME = "POINTS";
+    private final String USER = "hangman";
+    private final String PASS = "pass"; 
     private final String dbPath;
+    private final Connection connection;
+    
+    /**
+     * Gets singleton value. If it has not been created yet, it is initialized
+     * with value given in getter's parameter.
+     * 
+     * @param dbPath path to jdbc database
+     * @return singleton instance
+     * @throws ClassNotFoundException 
+     * @throws java.sql.SQLException 
+     */
+    public static AccountsService getInstance(String dbPath) 
+            throws ClassNotFoundException, SQLException {
+        if (instance == null) {
+            instance = new AccountsService(dbPath);
+        }
+        return instance;
+    }
     
     /**
      * 
      * @param dbPath path to database file
+     * @throws java.lang.ClassNotFoundException
      */
-    public AccountsService(String dbPath) {
+    private AccountsService(String dbPath) throws ClassNotFoundException, SQLException {
+        Class.forName("org.apache.derby.jdbc.ClientDriver");
+        this.connection = DriverManager.getConnection(dbPath, USER, PASS);
         this.dbPath = dbPath;
     }
     
@@ -42,24 +68,24 @@ public class AccountsService {
      * @param userName user's name
      * @param password user's password
      * @return user object if successful, otherwise null
-     * @throws IOException
-     * @throws NumberFormatException
+     * @throws java.sql.SQLException
      */
-    public User authenticate(String userName, String password) throws 
-            IOException, NumberFormatException {
+    public User authenticate(String userName, String password) throws SQLException {
         
-        User nextUser = null;
-        BufferedReader reader = databaseBufferedReader();
-        String line;
-        boolean matched = false;
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        User user = null;
         
-        while((line = reader.readLine()) != null && !matched) {
+        try (ResultSet result = statement.executeQuery(new SelectStatement()
+            .setTable(TABLE_NAME)
+            .addData(COLUMN_USER_NAME, String.format("'%1$s'", userName))
+            .addData(COLUMN_PASS_NAME, String.format("'%1$s'", password))
+            .toString())) {
             
-            nextUser = createUserFromTextLine(line);
-            matched = nextUser.authenticate(userName, password);
-        } 
+            boolean matched = result.first();
+            user = matched ? createUserFromResult(result) : null;
+        }
         
-        return matched ? nextUser : null;
+        return user;
     }
     
     /**
@@ -68,21 +94,38 @@ public class AccountsService {
      * @param userName user's name
      * @param password user's password
      * @return created user
-     * @throws IOException 
+     * @throws java.sql.SQLException
      * @throws EntityAlreadyExistsException 
      */
     public User register(String userName, String password) throws
-            IOException, EntityAlreadyExistsException {
+            SQLException, EntityAlreadyExistsException {
         
-        int id = getUniqueIdAndCheckName(userName);
-        User user = new User()
-                .setId(id)
-                .setName(userName)
-                .setPassword(password)
-                .setPoints(0);
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        try {
+            statement.executeUpdate(new InsertStatement()
+                    .setTable(TABLE_NAME)
+                    .addData(COLUMN_USER_NAME, String.format("'%1$s'", userName))
+                    .addData(COLUMN_PASS_NAME, String.format("'%1$s'", password))
+                    .toString());
+        } catch (SQLException ex) {
+            if (ex.getErrorCode() == 30000) {
+                throw new EntityAlreadyExistsException(COLUMN_USER_NAME, userName);
+            } else {
+                throw ex;
+            }
+        }
         
-        String databaseLine = createDatabaseTextLine(user) + System.lineSeparator();
-        Files.write(Paths.get(dbPath), databaseLine.getBytes(), StandardOpenOption.APPEND);
+        User user = null;
+        
+        try (ResultSet result = statement.executeQuery(new SelectStatement()
+                .setTable(TABLE_NAME)
+                .addData(COLUMN_USER_NAME, String.format("'%1$s'", userName))
+                .toString())) {
+            
+            result.first();
+            user = createUserFromResult(result);
+        }
+        
         return user;
     }
     
@@ -91,42 +134,27 @@ public class AccountsService {
      * is thrown.
      * 
      * @param user user data to be updated
-     * @throws IOException
+     * @throws SQLException
      * @throws EntityDoesNotExistException 
      */
     public void update(User user) 
-            throws IOException, EntityDoesNotExistException {
+            throws SQLException, EntityDoesNotExistException {
         
-        ArrayList<String> lines;
-        int userId;
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         
-        try (BufferedReader file = new BufferedReader(new FileReader(dbPath))) {
-            String fileLine;
-            lines = new ArrayList<>();
-            userId = user.getId();
-            while ((fileLine = file.readLine()) != null) {
-                lines.add(fileLine);
+        try (ResultSet result = statement.executeQuery(new SelectStatement()
+                .setTable(TABLE_NAME)
+                .addData(COLUMN_ID_NAME, Integer.toString(user.getId()))
+                .toString())) {
+            
+            if (!result.first()) {
+                throw new EntityDoesNotExistException("ID", Integer.toString(user.getId()));
             }
-        }
-        
-        boolean found = false;
-        ListIterator it = lines.listIterator();
-        while (it.hasNext()) {
-            String[] words = ((String)it.next()).split(" ");
-            if (words.length != 0 && Integer.parseInt(words[0]) == userId) {
-                found = true;
-                break;
-            }
-        }
-        
-        if (!found) {
-            throw new EntityDoesNotExistException("Id", Integer.toString(userId));
-        }
-        it.set(createDatabaseTextLine(user));
-        
-        try (FileOutputStream fileOut = new FileOutputStream(dbPath)) {
-            String input = String.join(System.lineSeparator(), lines) + System.lineSeparator();
-            fileOut.write(input.getBytes());
+            
+            result.updateString(COLUMN_USER_NAME, user.getName());
+            result.updateString(COLUMN_PASS_NAME, user.getPassword());
+            result.updateLong(COLUMN_POINTS_NAME, user.getPoints());
+            result.updateRow();
         }
     }
     
@@ -134,111 +162,34 @@ public class AccountsService {
      * Returns all users from the database.
      * 
      * @return All users list
-     * @throws IOException
-     * @throws NumberFormatException
+     * @throws java.sql.SQLException
      */
-    public List<User> getPlayersList() throws IOException, NumberFormatException {
+    public List<User> getPlayersList() throws SQLException {
         
-        BufferedReader reader = databaseBufferedReader();
-        List<User> result = new ArrayList<>();
-        String line;
-        
-        while ((line = reader.readLine()) != null) {
-            if (endOfDatabseFile(line)) {
-                break;
-            }
-            User user = createUserFromTextLine(line);
-            result.add(user);
-        }
-        
-        return result;
-    }
-    
-    /**
-     * Finds highest id to determine unique id, additionally asserts if given
-     * userName is unique.
-     * 
-     * @param userName new user's name
-     * @return unique id
-     * @throws IOException
-     * @throws EntityAlreadyExistsException 
-     */
-    private int getUniqueIdAndCheckName(String userName) throws
-            IOException, EntityAlreadyExistsException {
-        
-        BufferedReader reader = databaseBufferedReader();
-        String line;
-        int id = 1;
-        
-        while ((line = reader.readLine()) != null) {
-            if (endOfDatabseFile(line)) {
-                break;
-            }
+        List<User> users = new ArrayList<>();
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        try (ResultSet result = statement.executeQuery(
+                new SelectStatement().setTable(TABLE_NAME).toString())) {
             
-            User user = createUserFromTextLine(line);
-            int nextId = user.getId();
-            String nextName = user.getName();
-            
-            if (id < nextId) {
-                id = nextId;
-            }
-            id++;
-            
-            if (userName.equals(nextName)) {
-                throw new EntityAlreadyExistsException("Name", nextName);
+            while(result.next()) {
+                users.add(createUserFromResult(result));
             }
         }
         
-        return id;
+        return users;
     }
     
     /**
-     * Creates user class object with parameters from single text line.
+     * Creates user object based on result set from database.
      * 
-     * @param textLine complete line from database file
-     * @return complete user object
+     * @param resultSet result set from SQL database query
+     * @return user object
      */
-    private User createUserFromTextLine(String textLine) 
-        throws NumberFormatException, IndexOutOfBoundsException {
-        User user = new User();
-        String[] words = textLine.split(" ");
-        int id = Integer.parseInt(words[0]);
-        String name = words[1];
-        String password = words[2];
-        long points = Long.parseLong(words[3]);
-        user.setId(id).setName(name).setPassword(password).setPoints(points);
-        return user;
-    }
-    
-    /**
-     * Creates string containing all user information needed for
-     * database entity.
-     * 
-     * @param user existing user to be saved in database
-     * @return database text line
-     */
-    private String createDatabaseTextLine(User user) {
-        return String.format("%1$d %2$s %3$s %4$s",
-                user.getId(), user.getName(), user.getPassword(), user.getPoints());
-    }
-    
-    /**
-     * Creates {@code BufferedReader} for database file.
-     * 
-     * @return {@code BufferedReader} for database file
-     * @throws IOException 
-     */
-    private BufferedReader databaseBufferedReader() throws IOException {
-        FileInputStream in = new FileInputStream(dbPath);
-        return new BufferedReader(new InputStreamReader(in));
-    }
-    
-    /**
-     * Tests if databse file ends with empty file.
-     * 
-     * @return true if it is end of file
-     */
-    private boolean endOfDatabseFile(String line) {
-        return line.equals("");
+    private User createUserFromResult(ResultSet resultSet) throws SQLException {
+         return new User()
+            .setId(resultSet.getInt(COLUMN_ID_NAME))
+            .setName(resultSet.getString(COLUMN_USER_NAME))
+            .setPassword(resultSet.getString(COLUMN_PASS_NAME))
+            .setPoints(resultSet.getLong(COLUMN_POINTS_NAME));
     }
 }

@@ -2,6 +2,7 @@ package pl.wikihangman.web.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +23,17 @@ import pl.wikihangman.web.services.AccountsService;
 @WebServlet(name = "ScoreboardServlet", urlPatterns = {"/score"})
 public class ScoreboardServlet extends HttpServlet {
     
+    private AccountsService accountsService = null;
+    
+    @Override
+    public void init() {
+        try {
+            accountsService = AccountsService.getInstance(getInitParameter("dbPath"));
+        } catch (ClassNotFoundException | SQLException ex) {
+           System.err.println(ex.getMessage());
+        }
+    }
+    
     /**
      * Displays table of all players' score with active player's score on top
      * of it if there is one.
@@ -33,29 +45,38 @@ public class ScoreboardServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
             PageBuilder page = new PageBuilder(out);
-            AccountsService accountsService = new AccountsService(getInitParameter("dbPath"));
-            List<User> players = accountsService.getPlayersList();
-            Cookie[] cookies = request.getCookies();
-            if (cookies != null) {
-                for (Cookie cookie : cookies) {
-                    if (cookie.getName().equals("auth")) {
-                        int id = Integer.parseInt(cookie.getValue());
-                        User user = players.stream().filter(f -> f.getId() == id).findFirst().get();
-                        page.insertText("Your score: " + Long.toString(user.getPoints()));
+            
+            try {
+                List<User> players = accountsService.getPlayersList();
+                Cookie[] cookies = request.getCookies();
+                if (cookies != null) {
+                    for (Cookie cookie : cookies) {
+                        if (cookie.getName().equals("auth")) {
+                            int id = Integer.parseInt(cookie.getValue());
+                            User user = players.stream().filter(f -> f.getId() == id).findFirst().get();
+                            page.insertText("Your score: " + Long.toString(user.getPoints()));
+                            break;
+                        }
                     }
                 }
+                
+                page.<User>insertTable(t -> t
+                    .setData(players)
+                    .addColumn("Name", c -> c
+                        .setModelBinder(x -> x.getName()))
+                    .addColumn("Points", c -> c
+                        .setModelBinder(x -> Long.toString(x.getPoints()))));
+            } catch (SQLException | NullPointerException exception) {
+                page.insertText("Unexpected error has occured:")
+                    .insertText(exception.getMessage());
             }
-            page.<User>insertTable(t -> t
-                        .setData(players)
-                        .addColumn("Name", c -> c
-                            .setModelBinder(x -> x.getName()))
-                        .addColumn("Points", c -> c
-                            .setModelBinder(x -> Long.toString(x.getPoints()))))
-                    .includeBackButton("home")
-                    .build();
+            
+            page.includeBackButton("home").build();
         }
     }
 
